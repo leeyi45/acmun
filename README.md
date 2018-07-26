@@ -12,4 +12,7 @@ TODO List:
   <li>Get missing flags, and fix flag for ivory coast</li>
   <li>Write up configuration instructions</li>
   <li>Implement debate tracking system</li>
+  <li>Adjust GUI settings to make sure everything scales to fullscreen properly</li>
+  <li>Fix TopicBoxes</li>
+  <li>Fix TimeSelector LabelBoxes</li>
 </ol>
