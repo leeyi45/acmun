@@ -59,10 +59,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AboutBox.cs">
+    <Compile Include="MiscForms\AboutBox\AboutBox.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AboutBox.Designer.cs">
+    <Compile Include="MiscForms\AboutBox\AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\ComboBox.cs">
@@ -97,16 +97,16 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Council.cs" />
-    <Compile Include="DurationPicker.cs">
+    <Compile Include="PickerForms\DurationPicker\DurationPicker.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DurationPicker.Designer.cs">
+    <Compile Include="PickerForms\DurationPicker\DurationPicker.Designer.cs">
       <DependentUpon>DurationPicker.cs</DependentUpon>
     </Compile>
-    <Compile Include="IndexPicker\IndexPicker.cs">
+    <Compile Include="PickerForms\IndexPicker\IndexPicker.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="IndexPicker\IndexPicker.Designer.cs">
+    <Compile Include="PickerForms\IndexPicker\IndexPicker.Designer.cs">
       <DependentUpon>IndexPicker.cs</DependentUpon>
     </Compile>
     <Compile Include="Main Screen\Debate.cs">
@@ -154,31 +154,31 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="SerialDict.cs" />
-    <Compile Include="TimeExt\timeExt.cs">
+    <Compile Include="MiscForms\TimeExt\timeExt.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TimeExt\timeExt.Designer.cs">
+    <Compile Include="MiscForms\TimeExt\timeExt.Designer.cs">
       <DependentUpon>timeExt.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Roll Call\rollCallScreen.cs">
+    <Compile Include="MiscForms\Roll Call\rollCallScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Roll Call\rollCallScreen.Designer.cs">
+    <Compile Include="MiscForms\Roll Call\rollCallScreen.Designer.cs">
       <DependentUpon>rollCallScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Clock.cs" />
-    <Compile Include="Vote Settings\VoteSet.cs">
+    <Compile Include="MiscForms\Vote Settings\VoteSet.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vote Settings\VoteSet.Designer.cs">
+    <Compile Include="MiscForms\Vote Settings\VoteSet.Designer.cs">
       <DependentUpon>VoteSet.cs</DependentUpon>
     </Compile>
-    <Compile Include="YieldPicker\YieldPicker.cs">
+    <Compile Include="PickerForms\YieldPicker\YieldPicker.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="YieldPicker\YieldPicker.Designer.cs">
+    <Compile Include="PickerForms\YieldPicker\YieldPicker.Designer.cs">
       <DependentUpon>YieldPicker.cs</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -190,7 +190,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AboutBox.resx">
+    <EmbeddedResource Include="MiscForms\AboutBox\AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\CountrySelector.resx">
@@ -202,10 +202,10 @@
     <EmbeddedResource Include="Controls\WarningBox.resx">
       <DependentUpon>WarningBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DurationPicker.resx">
+    <EmbeddedResource Include="PickerForms\DurationPicker\DurationPicker.resx">
       <DependentUpon>DurationPicker.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="IndexPicker\IndexPicker.resx">
+    <EmbeddedResource Include="PickerForms\IndexPicker\IndexPicker.resx">
       <DependentUpon>IndexPicker.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main Screen\homescreen.resx">
@@ -218,16 +218,16 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="TimeExt\timeExt.resx">
+    <EmbeddedResource Include="MiscForms\TimeExt\timeExt.resx">
       <DependentUpon>timeExt.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Roll Call\rollCallScreen.resx">
+    <EmbeddedResource Include="MiscForms\Roll Call\rollCallScreen.resx">
       <DependentUpon>rollCallScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vote Settings\VoteSet.resx">
+    <EmbeddedResource Include="MiscForms\Vote Settings\VoteSet.resx">
       <DependentUpon>VoteSet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="YieldPicker\YieldPicker.resx">
+    <EmbeddedResource Include="PickerForms\YieldPicker\YieldPicker.resx">
       <DependentUpon>YieldPicker.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
