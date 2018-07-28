@@ -59,6 +59,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\StateButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\StateButton.Designer.cs">
+      <DependentUpon>StateButton.cs</DependentUpon>
+    </Compile>
     <Compile Include="MiscForms\AboutBox\AboutBox.cs">
       <SubType>Form</SubType>
     </Compile>

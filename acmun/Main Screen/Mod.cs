@@ -14,11 +14,11 @@ namespace leeyi45.acmun.Main_Screen
             ModSpeakTimer = new Clock();
             ModSpeakTimer.Tick += ModSpeakTick;
 
-            ModSpeakTimer.Stopped += ModSpeakStopped;
-            ModTotalTimer.Stopped += ModTotalStopped;
+            ModSpeakTimer.Started += ModSpeakTimerRunning_Changed;
+            ModSpeakTimer.Stopped += ModSpeakTimerRunning_Changed;
 
-            ModSpeakTimer.Started += ModSpeakStarted;
-            ModTotalTimer.Started += ModTotalStarted;
+            ModTotalTimer.Started += ModTotalTimerRunning_Changed;
+            ModTotalTimer.Stopped += ModTotalTimerRunning_Changed;
 
             modSpeakTimeSelector.ValueChanged += modSpeakTimeSelector_ValueChanged;
             modTotalTimeSelector.ValueChanged += modTotalTimeSelector_ValueChanged;
@@ -115,51 +115,22 @@ namespace leeyi45.acmun.Main_Screen
             modSpeakTimeLabel.Text = $"{ModSpeakTimer.CurrentTime.ToValString()}/{ModSpeakTimer.Duration.ToValString()}";
         }
 
-        private void ModTotalStarted(object sender, EventArgs e)
+        private void ModTotalTimerRunning_Changed(object sender, EventArgs e)
         {
-            modTotalTimeSelector.Enabled = false;
-
-            modTotalStartButton.Enabled = false;
-            modTotalStartButton.Text = "Started";
-
-            modTotalPauseButton.Enabled = true;
-            modTotalPauseButton.Text = "Pause";
+            modTotalStartButton.Enabled = !ModSpeakTimer.Running;
+            modTotalPauseButton.Enabled = ModSpeakTimer.Running;
+            modTotalTimeSelector.Enabled = !ModSpeakTimer.Running;
+            modExtendButton.Enabled = !ModSpeakTimer.Running;
         }
 
-        private void ModTotalStopped(object sender, EventArgs e)
+        private void ModSpeakTimerRunning_Changed(object sender, EventArgs e)
         {
-            modTotalTimeSelector.Enabled = true;
-
-            modTotalStartButton.Enabled = true;
-            modTotalStartButton.Text = "Start";
-
-            modTotalPauseButton.Enabled = false;
-            modTotalPauseButton.Text = "Paused";
+            modStartButton.Enabled = !ModSpeakTimer.Running;
+            modPauseButton.Enabled = ModSpeakTimer.Running;
+            modExtendButton.Enabled = !ModSpeakTimer.Running;
+            modSpeakTimeSelector.Enabled = !ModSpeakTimer.Running;
         }
 
-        private void ModSpeakStarted(object sender, EventArgs e)
-        {
-            modStartButton.Enabled = false;
-            modExtendButton.Enabled = false;
-            modStartButton.Text = "Started";
-
-            modPauseButton.Enabled = true;
-            modPauseButton.Text = "Pause";
-
-            modSpeakTimeSelector.Enabled = false;
-        }
-
-        private void ModSpeakStopped(object sender, EventArgs e)
-        {
-            modStartButton.Enabled = true;
-            modExtendButton.Enabled = true;
-            modStartButton.Text = "Start";
-
-            modPauseButton.Enabled = false;
-            modPauseButton.Text = "Paused";
-
-            modSpeakTimeSelector.Enabled = true;
-        }
         #endregion
 
         #region Buttons

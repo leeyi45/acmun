@@ -14,8 +14,8 @@ namespace leeyi45.acmun.Main_Screen
 
             UnmodTimer = new Clock();
             UnmodTimer.Tick += UnmodTimerTick;
-            UnmodTimer.Started += UnmodTimerStarted;
-            UnmodTimer.Stopped += UnmodTimerStopped;
+            UnmodTimer.Started += UnmodTimerRunningChanged;
+            UnmodTimer.Stopped += UnmodTimerRunningChanged;
 
             LoadUnmod(UnmodCaucus.DefaultUnmod);
         }
@@ -52,22 +52,10 @@ namespace leeyi45.acmun.Main_Screen
             unmodTimeLabel.Text = $"{UnmodTimer.CurrentTime.ToValString()}/{UnmodDuration.ToValString()}";
         }
 
-        private void UnmodTimerStarted(object sender, EventArgs e)
+        private void UnmodTimerRunningChanged(object sender, EventArgs e)
         {
-            unmodStartButton.Enabled = false;
-            unmodStartButton.Text = "Started";
-
-            unmodPauseButton.Enabled = true;
-            unmodPauseButton.Text = "Pause";
-        }
-
-        private void UnmodTimerStopped(object sender, EventArgs e)
-        {
-            unmodStartButton.Enabled = true;
-            unmodStartButton.Text = "Start";
-
-            unmodPauseButton.Enabled = false;
-            unmodPauseButton.Text = "Paused";
+            unmodStartButton.Enabled = !UnmodTimer.Running;
+            unmodPauseButton.Enabled = UnmodTimer.Running;
         }
 
         private void unmodTextBox_KeyDown(object sender, KeyEventArgs e)

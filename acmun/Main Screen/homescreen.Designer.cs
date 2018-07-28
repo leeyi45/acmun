@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(homescreen));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.loadXMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,15 +46,9 @@
             this.rollCallToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quorumLabel = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.singleStartButton = new System.Windows.Forms.Button();
-            this.singlePauseButton = new System.Windows.Forms.Button();
-            this.modStartButton = new System.Windows.Forms.Button();
-            this.modPauseButton = new System.Windows.Forms.Button();
             this.modRemoveButton = new System.Windows.Forms.Button();
             this.modClearButton = new System.Windows.Forms.Button();
             this.modNextButton = new System.Windows.Forms.Button();
-            this.gslStartButton = new System.Windows.Forms.Button();
-            this.gslPauseButton = new System.Windows.Forms.Button();
             this.gslRemoveButton = new System.Windows.Forms.Button();
             this.gslYieldButton = new System.Windows.Forms.Button();
             this.gslClearButton = new System.Windows.Forms.Button();
@@ -67,14 +61,10 @@
             this.motionAddButton = new System.Windows.Forms.Button();
             this.motionFailDButton = new System.Windows.Forms.Button();
             this.motionPassDButton = new System.Windows.Forms.Button();
-            this.modTotalStartButton = new System.Windows.Forms.Button();
-            this.modTotalPauseButton = new System.Windows.Forms.Button();
             this.debateTab = new System.Windows.Forms.TabPage();
             this.debatePictureBox = new System.Windows.Forms.PictureBox();
             this.debateResetButton = new System.Windows.Forms.Button();
             this.debateNextButton = new System.Windows.Forms.Button();
-            this.debateStopButton = new System.Windows.Forms.Button();
-            this.debateStartButton = new System.Windows.Forms.Button();
             this.debateAClearButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.debateCountSelector = new System.Windows.Forms.NumericUpDown();
@@ -95,16 +85,21 @@
             this.singleProgressBar = new System.Windows.Forms.ProgressBar();
             this.singleListBox = new System.Windows.Forms.ListBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.motionRollCallButton = new System.Windows.Forms.Button();
             this.motionDGroupBox = new System.Windows.Forms.GroupBox();
             this.motionNGroupBox = new System.Windows.Forms.GroupBox();
             this.motionsDataGrid = new System.Windows.Forms.DataGridView();
+            this.Proposer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Motion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SpeakTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Topic = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.State = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unmodTab = new System.Windows.Forms.TabPage();
             this.unmodReset = new System.Windows.Forms.Button();
             this.unmodExtendButton = new System.Windows.Forms.Button();
             this.unmodFinishButton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.unmodPauseButton = new System.Windows.Forms.Button();
-            this.unmodStartButton = new System.Windows.Forms.Button();
             this.unmodTimeLabel = new System.Windows.Forms.Label();
             this.unmodProgressBar = new System.Windows.Forms.ProgressBar();
             this.modTab = new System.Windows.Forms.TabPage();
@@ -174,18 +169,15 @@
             this.motionsPassDMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.motionsFailDMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.motionsNullMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.Proposer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Motion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SpeakTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Topic = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.State = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.motionRollCallButton = new System.Windows.Forms.Button();
+            this.gslPauseButton = new leeyi45.acmun.Controls.StateButton();
+            this.gslStartButton = new leeyi45.acmun.Controls.StateButton();
             this.labelBox2 = new leeyi45.acmun.Controls.LabelBox();
             this.gslCountryLabel = new leeyi45.acmun.Controls.LabelBox();
             this.gslTimeSelector = new leeyi45.acmun.Controls.TimeSelector();
             this.gslComboBox = new leeyi45.acmun.Controls.ComboBox();
             this.gslListBox = new leeyi45.acmun.Controls.ListBox();
+            this.modPauseButton = new leeyi45.acmun.Controls.StateButton();
+            this.modStartButton = new leeyi45.acmun.Controls.StateButton();
             this.modCountryCountTextBox = new leeyi45.acmun.Controls.LabelBox();
             this.modTopicTextBox = new leeyi45.acmun.Controls.LabelBox();
             this.modCountryTextBox = new leeyi45.acmun.Controls.LabelBox();
@@ -207,6 +199,14 @@
             this.debateFCountryListBox = new leeyi45.acmun.Controls.ListBox();
             this.labelBox1 = new leeyi45.acmun.Controls.LabelBox();
             this.voteTopicBox = new leeyi45.acmun.Controls.TopicBox();
+            this.modTotalStartButton = new leeyi45.acmun.Controls.StateButton();
+            this.modTotalPauseButton = new leeyi45.acmun.Controls.StateButton();
+            this.unmodStartButton = new leeyi45.acmun.Controls.StateButton();
+            this.unmodPauseButton = new leeyi45.acmun.Controls.StateButton();
+            this.singleStartButton = new leeyi45.acmun.Controls.StateButton();
+            this.singlePauseButton = new leeyi45.acmun.Controls.StateButton();
+            this.debateStartButton = new leeyi45.acmun.Controls.StateButton();
+            this.debateStopButton = new leeyi45.acmun.Controls.StateButton();
             this.toolStrip1.SuspendLayout();
             this.debateTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.debatePictureBox)).BeginInit();
@@ -347,52 +347,6 @@
             this.quorumLabel.TabIndex = 2;
             this.quorumLabel.Text = "quorum";
             // 
-            // singleStartButton
-            // 
-            this.singleStartButton.Location = new System.Drawing.Point(719, 524);
-            this.singleStartButton.Name = "singleStartButton";
-            this.singleStartButton.Size = new System.Drawing.Size(75, 23);
-            this.singleStartButton.TabIndex = 26;
-            this.singleStartButton.Text = "Start";
-            this.toolTip1.SetToolTip(this.singleStartButton, "Starts the timer");
-            this.singleStartButton.UseVisualStyleBackColor = true;
-            this.singleStartButton.Click += new System.EventHandler(this.singleStartButton_Click);
-            // 
-            // singlePauseButton
-            // 
-            this.singlePauseButton.Enabled = false;
-            this.singlePauseButton.Location = new System.Drawing.Point(800, 524);
-            this.singlePauseButton.Name = "singlePauseButton";
-            this.singlePauseButton.Size = new System.Drawing.Size(75, 23);
-            this.singlePauseButton.TabIndex = 27;
-            this.singlePauseButton.Text = "Paused";
-            this.toolTip1.SetToolTip(this.singlePauseButton, "Pauses the timer");
-            this.singlePauseButton.UseVisualStyleBackColor = true;
-            this.singlePauseButton.Click += new System.EventHandler(this.singlePauseButton_Click);
-            // 
-            // modStartButton
-            // 
-            this.modStartButton.Location = new System.Drawing.Point(8, 19);
-            this.modStartButton.Name = "modStartButton";
-            this.modStartButton.Size = new System.Drawing.Size(75, 23);
-            this.modStartButton.TabIndex = 22;
-            this.modStartButton.Text = "Start";
-            this.toolTip1.SetToolTip(this.modStartButton, "Starts the timer");
-            this.modStartButton.UseVisualStyleBackColor = true;
-            this.modStartButton.Click += new System.EventHandler(this.modStartButton_Click);
-            // 
-            // modPauseButton
-            // 
-            this.modPauseButton.Enabled = false;
-            this.modPauseButton.Location = new System.Drawing.Point(8, 48);
-            this.modPauseButton.Name = "modPauseButton";
-            this.modPauseButton.Size = new System.Drawing.Size(75, 23);
-            this.modPauseButton.TabIndex = 23;
-            this.modPauseButton.Text = "Paused";
-            this.toolTip1.SetToolTip(this.modPauseButton, "Pauses the timer");
-            this.modPauseButton.UseVisualStyleBackColor = true;
-            this.modPauseButton.Click += new System.EventHandler(this.modPauseButton_Click);
-            // 
             // modRemoveButton
             // 
             this.modRemoveButton.Location = new System.Drawing.Point(1007, 557);
@@ -425,29 +379,6 @@
             this.toolTip1.SetToolTip(this.modNextButton, "Move to the next speaker on the list");
             this.modNextButton.UseVisualStyleBackColor = true;
             this.modNextButton.Click += new System.EventHandler(this.modNextButton_Click);
-            // 
-            // gslStartButton
-            // 
-            this.gslStartButton.Location = new System.Drawing.Point(808, 537);
-            this.gslStartButton.Name = "gslStartButton";
-            this.gslStartButton.Size = new System.Drawing.Size(75, 23);
-            this.gslStartButton.TabIndex = 4;
-            this.gslStartButton.Text = "Start";
-            this.toolTip1.SetToolTip(this.gslStartButton, "Starts the timer");
-            this.gslStartButton.UseVisualStyleBackColor = true;
-            this.gslStartButton.Click += new System.EventHandler(this.gslStartButton_Click);
-            // 
-            // gslPauseButton
-            // 
-            this.gslPauseButton.Enabled = false;
-            this.gslPauseButton.Location = new System.Drawing.Point(808, 566);
-            this.gslPauseButton.Name = "gslPauseButton";
-            this.gslPauseButton.Size = new System.Drawing.Size(75, 23);
-            this.gslPauseButton.TabIndex = 5;
-            this.gslPauseButton.Text = "Paused";
-            this.toolTip1.SetToolTip(this.gslPauseButton, "Pauses the timer");
-            this.gslPauseButton.UseVisualStyleBackColor = true;
-            this.gslPauseButton.Click += new System.EventHandler(this.gslPauseButton_Click);
             // 
             // gslRemoveButton
             // 
@@ -579,34 +510,13 @@
             this.toolTip1.SetToolTip(this.motionPassDButton, "Pass the motion");
             this.motionPassDButton.UseVisualStyleBackColor = true;
             // 
-            // modTotalStartButton
-            // 
-            this.modTotalStartButton.Location = new System.Drawing.Point(8, 19);
-            this.modTotalStartButton.Name = "modTotalStartButton";
-            this.modTotalStartButton.Size = new System.Drawing.Size(75, 23);
-            this.modTotalStartButton.TabIndex = 22;
-            this.modTotalStartButton.Text = "Start";
-            this.toolTip1.SetToolTip(this.modTotalStartButton, "Starts the timer");
-            this.modTotalStartButton.UseVisualStyleBackColor = true;
-            // 
-            // modTotalPauseButton
-            // 
-            this.modTotalPauseButton.Enabled = false;
-            this.modTotalPauseButton.Location = new System.Drawing.Point(8, 48);
-            this.modTotalPauseButton.Name = "modTotalPauseButton";
-            this.modTotalPauseButton.Size = new System.Drawing.Size(75, 23);
-            this.modTotalPauseButton.TabIndex = 23;
-            this.modTotalPauseButton.Text = "Paused";
-            this.toolTip1.SetToolTip(this.modTotalPauseButton, "Pauses the timer");
-            this.modTotalPauseButton.UseVisualStyleBackColor = true;
-            // 
             // debateTab
             // 
+            this.debateTab.Controls.Add(this.debateStopButton);
+            this.debateTab.Controls.Add(this.debateStartButton);
             this.debateTab.Controls.Add(this.debatePictureBox);
             this.debateTab.Controls.Add(this.debateResetButton);
             this.debateTab.Controls.Add(this.debateNextButton);
-            this.debateTab.Controls.Add(this.debateStopButton);
-            this.debateTab.Controls.Add(this.debateStartButton);
             this.debateTab.Controls.Add(this.debateAClearButton);
             this.debateTab.Controls.Add(this.label4);
             this.debateTab.Controls.Add(this.debateCountSelector);
@@ -661,25 +571,6 @@
             this.debateNextButton.TabIndex = 71;
             this.debateNextButton.Text = "Next";
             this.debateNextButton.UseVisualStyleBackColor = true;
-            // 
-            // debateStopButton
-            // 
-            this.debateStopButton.Enabled = false;
-            this.debateStopButton.Location = new System.Drawing.Point(286, 577);
-            this.debateStopButton.Name = "debateStopButton";
-            this.debateStopButton.Size = new System.Drawing.Size(75, 23);
-            this.debateStopButton.TabIndex = 70;
-            this.debateStopButton.Text = "Paused";
-            this.debateStopButton.UseVisualStyleBackColor = true;
-            // 
-            // debateStartButton
-            // 
-            this.debateStartButton.Location = new System.Drawing.Point(205, 577);
-            this.debateStartButton.Name = "debateStartButton";
-            this.debateStartButton.Size = new System.Drawing.Size(75, 23);
-            this.debateStartButton.TabIndex = 69;
-            this.debateStartButton.Text = "Start";
-            this.debateStartButton.UseVisualStyleBackColor = true;
             // 
             // debateAClearButton
             // 
@@ -803,11 +694,11 @@
             // 
             // singleTab
             // 
+            this.singleTab.Controls.Add(this.singlePauseButton);
+            this.singleTab.Controls.Add(this.singleStartButton);
             this.singleTab.Controls.Add(this.singlePictureBox);
             this.singleTab.Controls.Add(this.singleResetButton);
             this.singleTab.Controls.Add(this.label12);
-            this.singleTab.Controls.Add(this.singlePauseButton);
-            this.singleTab.Controls.Add(this.singleStartButton);
             this.singleTab.Controls.Add(this.singleTimeLabel);
             this.singleTab.Controls.Add(this.singleProgressBar);
             this.singleTab.Controls.Add(this.singleCountryTextBox);
@@ -896,6 +787,15 @@
             this.tabPage2.Text = "Motions";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // motionRollCallButton
+            // 
+            this.motionRollCallButton.Location = new System.Drawing.Point(727, 588);
+            this.motionRollCallButton.Name = "motionRollCallButton";
+            this.motionRollCallButton.Size = new System.Drawing.Size(75, 23);
+            this.motionRollCallButton.TabIndex = 9;
+            this.motionRollCallButton.Text = "Vote";
+            this.motionRollCallButton.UseVisualStyleBackColor = true;
+            // 
             // motionDGroupBox
             // 
             this.motionDGroupBox.Controls.Add(this.motionFailDButton);
@@ -926,14 +826,14 @@
             this.motionsDataGrid.AllowUserToResizeRows = false;
             this.motionsDataGrid.BackgroundColor = System.Drawing.SystemColors.Window;
             this.motionsDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.motionsDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.motionsDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.motionsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.motionsDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Proposer,
@@ -942,14 +842,14 @@
             this.SpeakTime,
             this.Topic,
             this.State});
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.motionsDataGrid.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.motionsDataGrid.DefaultCellStyle = dataGridViewCellStyle4;
             this.motionsDataGrid.Location = new System.Drawing.Point(0, 19);
             this.motionsDataGrid.MultiSelect = false;
             this.motionsDataGrid.Name = "motionsDataGrid";
@@ -958,17 +858,61 @@
             this.motionsDataGrid.Size = new System.Drawing.Size(1192, 548);
             this.motionsDataGrid.TabIndex = 1;
             // 
+            // Proposer
+            // 
+            this.Proposer.HeaderText = "Proposer";
+            this.Proposer.Name = "Proposer";
+            this.Proposer.ReadOnly = true;
+            this.Proposer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.Proposer.Width = 166;
+            // 
+            // Motion
+            // 
+            this.Motion.HeaderText = "Motion";
+            this.Motion.Name = "Motion";
+            this.Motion.ReadOnly = true;
+            this.Motion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.Motion.Width = 270;
+            // 
+            // Duration
+            // 
+            this.Duration.HeaderText = "Duration";
+            this.Duration.Name = "Duration";
+            this.Duration.ReadOnly = true;
+            this.Duration.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // SpeakTime
+            // 
+            this.SpeakTime.HeaderText = "Speaking Time";
+            this.SpeakTime.Name = "SpeakTime";
+            this.SpeakTime.ReadOnly = true;
+            this.SpeakTime.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // Topic
+            // 
+            this.Topic.HeaderText = "Topic";
+            this.Topic.Name = "Topic";
+            this.Topic.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.Topic.Width = 410;
+            // 
+            // State
+            // 
+            this.State.HeaderText = "Pass/Fail";
+            this.State.Name = "State";
+            this.State.ReadOnly = true;
+            this.State.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
             // unmodTab
             // 
             this.unmodTab.BackColor = System.Drawing.Color.White;
+            this.unmodTab.Controls.Add(this.unmodPauseButton);
+            this.unmodTab.Controls.Add(this.unmodStartButton);
             this.unmodTab.Controls.Add(this.unmodCountryTextBox);
             this.unmodTab.Controls.Add(this.unmodTopicTextBox);
             this.unmodTab.Controls.Add(this.unmodReset);
             this.unmodTab.Controls.Add(this.unmodExtendButton);
             this.unmodTab.Controls.Add(this.unmodFinishButton);
             this.unmodTab.Controls.Add(this.label5);
-            this.unmodTab.Controls.Add(this.unmodPauseButton);
-            this.unmodTab.Controls.Add(this.unmodStartButton);
             this.unmodTab.Controls.Add(this.unmodTimeLabel);
             this.unmodTab.Controls.Add(this.unmodProgressBar);
             this.unmodTab.Location = new System.Drawing.Point(4, 22);
@@ -1017,27 +961,6 @@
             this.label5.Size = new System.Drawing.Size(121, 24);
             this.label5.TabIndex = 8;
             this.label5.Text = "As Raised By";
-            // 
-            // unmodPauseButton
-            // 
-            this.unmodPauseButton.Enabled = false;
-            this.unmodPauseButton.Location = new System.Drawing.Point(461, 406);
-            this.unmodPauseButton.Name = "unmodPauseButton";
-            this.unmodPauseButton.Size = new System.Drawing.Size(75, 23);
-            this.unmodPauseButton.TabIndex = 7;
-            this.unmodPauseButton.Text = "Paused";
-            this.unmodPauseButton.UseVisualStyleBackColor = true;
-            this.unmodPauseButton.Click += new System.EventHandler(this.unmodPauseButton_Click);
-            // 
-            // unmodStartButton
-            // 
-            this.unmodStartButton.Location = new System.Drawing.Point(380, 406);
-            this.unmodStartButton.Name = "unmodStartButton";
-            this.unmodStartButton.Size = new System.Drawing.Size(75, 23);
-            this.unmodStartButton.TabIndex = 6;
-            this.unmodStartButton.Text = "Start";
-            this.unmodStartButton.UseVisualStyleBackColor = true;
-            this.unmodStartButton.Click += new System.EventHandler(this.unmodStartButton_Click);
             // 
             // unmodTimeLabel
             // 
@@ -1117,8 +1040,8 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.modTotalStartButton);
             this.groupBox4.Controls.Add(this.modTotalPauseButton);
+            this.groupBox4.Controls.Add(this.modTotalStartButton);
             this.groupBox4.Location = new System.Drawing.Point(912, 538);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(89, 82);
@@ -1128,8 +1051,8 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.modStartButton);
             this.groupBox3.Controls.Add(this.modPauseButton);
+            this.groupBox3.Controls.Add(this.modStartButton);
             this.groupBox3.Location = new System.Drawing.Point(817, 538);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(89, 82);
@@ -1196,6 +1119,8 @@
             // 
             // gslTab
             // 
+            this.gslTab.Controls.Add(this.gslPauseButton);
+            this.gslTab.Controls.Add(this.gslStartButton);
             this.gslTab.Controls.Add(this.labelBox2);
             this.gslTab.Controls.Add(this.gslPictureBox);
             this.gslTab.Controls.Add(this.gslCountryLabel);
@@ -1208,8 +1133,6 @@
             this.gslTab.Controls.Add(this.label1);
             this.gslTab.Controls.Add(this.gslYieldButton);
             this.gslTab.Controls.Add(this.gslRemoveButton);
-            this.gslTab.Controls.Add(this.gslPauseButton);
-            this.gslTab.Controls.Add(this.gslStartButton);
             this.gslTab.Controls.Add(this.gslTimeLabel);
             this.gslTab.Controls.Add(this.gslProgressBar);
             this.gslTab.Location = new System.Drawing.Point(4, 22);
@@ -1761,7 +1684,7 @@
             // 
             this.motionsPassMenuItem.CheckOnClick = true;
             this.motionsPassMenuItem.Name = "motionsPassMenuItem";
-            this.motionsPassMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.motionsPassMenuItem.Size = new System.Drawing.Size(169, 22);
             this.motionsPassMenuItem.Text = "Pass";
             this.motionsPassMenuItem.ToolTipText = "Pass the motion";
             // 
@@ -1793,58 +1716,26 @@
             this.motionsNullMenuItem.Text = "Null";
             this.motionsNullMenuItem.ToolTipText = "Undefined state for whether a motion has been passed or not";
             // 
-            // Proposer
+            // gslPauseButton
             // 
-            this.Proposer.HeaderText = "Proposer";
-            this.Proposer.Name = "Proposer";
-            this.Proposer.ReadOnly = true;
-            this.Proposer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.Proposer.Width = 166;
+            this.gslPauseButton.Enabled = false;
+            this.gslPauseButton.FalseText = "Stopped";
+            this.gslPauseButton.Location = new System.Drawing.Point(808, 567);
+            this.gslPauseButton.Name = "gslPauseButton";
+            this.gslPauseButton.Size = new System.Drawing.Size(75, 23);
+            this.gslPauseButton.TabIndex = 29;
+            this.gslPauseButton.TrueText = "Stop";
+            this.gslPauseButton.UseVisualStyleBackColor = true;
             // 
-            // Motion
+            // gslStartButton
             // 
-            this.Motion.HeaderText = "Motion";
-            this.Motion.Name = "Motion";
-            this.Motion.ReadOnly = true;
-            this.Motion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.Motion.Width = 270;
-            // 
-            // Duration
-            // 
-            this.Duration.HeaderText = "Duration";
-            this.Duration.Name = "Duration";
-            this.Duration.ReadOnly = true;
-            this.Duration.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // SpeakTime
-            // 
-            this.SpeakTime.HeaderText = "Speaking Time";
-            this.SpeakTime.Name = "SpeakTime";
-            this.SpeakTime.ReadOnly = true;
-            this.SpeakTime.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // Topic
-            // 
-            this.Topic.HeaderText = "Topic";
-            this.Topic.Name = "Topic";
-            this.Topic.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.Topic.Width = 410;
-            // 
-            // State
-            // 
-            this.State.HeaderText = "Pass/Fail";
-            this.State.Name = "State";
-            this.State.ReadOnly = true;
-            this.State.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // motionRollCallButton
-            // 
-            this.motionRollCallButton.Location = new System.Drawing.Point(727, 588);
-            this.motionRollCallButton.Name = "motionRollCallButton";
-            this.motionRollCallButton.Size = new System.Drawing.Size(75, 23);
-            this.motionRollCallButton.TabIndex = 9;
-            this.motionRollCallButton.Text = "Vote";
-            this.motionRollCallButton.UseVisualStyleBackColor = true;
+            this.gslStartButton.FalseText = "Started";
+            this.gslStartButton.Location = new System.Drawing.Point(808, 537);
+            this.gslStartButton.Name = "gslStartButton";
+            this.gslStartButton.Size = new System.Drawing.Size(75, 23);
+            this.gslStartButton.TabIndex = 28;
+            this.gslStartButton.TrueText = "Start";
+            this.gslStartButton.UseVisualStyleBackColor = true;
             // 
             // labelBox2
             // 
@@ -1896,6 +1787,29 @@
             this.gslListBox.Name = "gslListBox";
             this.gslListBox.Size = new System.Drawing.Size(450, 410);
             this.gslListBox.TabIndex = 22;
+            // 
+            // modPauseButton
+            // 
+            this.modPauseButton.Enabled = false;
+            this.modPauseButton.FalseText = "Stopped";
+            this.modPauseButton.Location = new System.Drawing.Point(8, 48);
+            this.modPauseButton.Name = "modPauseButton";
+            this.modPauseButton.Size = new System.Drawing.Size(75, 23);
+            this.modPauseButton.TabIndex = 25;
+            this.toolTip1.SetToolTip(this.modPauseButton, "Stop the individual speech timer");
+            this.modPauseButton.TrueText = "Stop";
+            this.modPauseButton.UseVisualStyleBackColor = true;
+            // 
+            // modStartButton
+            // 
+            this.modStartButton.FalseText = "Started";
+            this.modStartButton.Location = new System.Drawing.Point(8, 20);
+            this.modStartButton.Name = "modStartButton";
+            this.modStartButton.Size = new System.Drawing.Size(75, 23);
+            this.modStartButton.TabIndex = 24;
+            this.toolTip1.SetToolTip(this.modStartButton, "Start the individual speech timer");
+            this.modStartButton.TrueText = "Start";
+            this.modStartButton.UseVisualStyleBackColor = true;
             // 
             // modCountryCountTextBox
             // 
@@ -2110,6 +2024,94 @@
             this.voteTopicBox.TabIndex = 12;
             this.voteTopicBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // modTotalStartButton
+            // 
+            this.modTotalStartButton.FalseText = "Started";
+            this.modTotalStartButton.Location = new System.Drawing.Point(8, 20);
+            this.modTotalStartButton.Name = "modTotalStartButton";
+            this.modTotalStartButton.Size = new System.Drawing.Size(75, 23);
+            this.modTotalStartButton.TabIndex = 24;
+            this.toolTip1.SetToolTip(this.modTotalStartButton, "Start the main caucus timer");
+            this.modTotalStartButton.TrueText = "Start";
+            this.modTotalStartButton.UseVisualStyleBackColor = true;
+            // 
+            // modTotalPauseButton
+            // 
+            this.modTotalPauseButton.FalseText = "Stopped";
+            this.modTotalPauseButton.Location = new System.Drawing.Point(8, 48);
+            this.modTotalPauseButton.Name = "modTotalPauseButton";
+            this.modTotalPauseButton.Size = new System.Drawing.Size(75, 23);
+            this.modTotalPauseButton.TabIndex = 25;
+            this.toolTip1.SetToolTip(this.modTotalPauseButton, "Pause the main caucus timer");
+            this.modTotalPauseButton.TrueText = "Stop";
+            this.modTotalPauseButton.UseVisualStyleBackColor = true;
+            // 
+            // unmodStartButton
+            // 
+            this.unmodStartButton.FalseText = "Started";
+            this.unmodStartButton.Location = new System.Drawing.Point(380, 406);
+            this.unmodStartButton.Name = "unmodStartButton";
+            this.unmodStartButton.Size = new System.Drawing.Size(75, 23);
+            this.unmodStartButton.TabIndex = 14;
+            this.toolTip1.SetToolTip(this.unmodStartButton, "Start the caucus timer");
+            this.unmodStartButton.TrueText = "Start";
+            this.unmodStartButton.UseVisualStyleBackColor = true;
+            // 
+            // unmodPauseButton
+            // 
+            this.unmodPauseButton.FalseText = "Stop";
+            this.unmodPauseButton.Location = new System.Drawing.Point(461, 406);
+            this.unmodPauseButton.Name = "unmodPauseButton";
+            this.unmodPauseButton.Size = new System.Drawing.Size(75, 23);
+            this.unmodPauseButton.TabIndex = 15;
+            this.toolTip1.SetToolTip(this.unmodPauseButton, "Stop the caucus timer");
+            this.unmodPauseButton.TrueText = "Stopped";
+            this.unmodPauseButton.UseVisualStyleBackColor = true;
+            // 
+            // singleStartButton
+            // 
+            this.singleStartButton.FalseText = "Started";
+            this.singleStartButton.Location = new System.Drawing.Point(719, 524);
+            this.singleStartButton.Name = "singleStartButton";
+            this.singleStartButton.Size = new System.Drawing.Size(75, 23);
+            this.singleStartButton.TabIndex = 56;
+            this.toolTip1.SetToolTip(this.singleStartButton, "Start the speech timer");
+            this.singleStartButton.TrueText = "Start";
+            this.singleStartButton.UseVisualStyleBackColor = true;
+            // 
+            // singlePauseButton
+            // 
+            this.singlePauseButton.FalseText = "Stopped";
+            this.singlePauseButton.Location = new System.Drawing.Point(800, 523);
+            this.singlePauseButton.Name = "singlePauseButton";
+            this.singlePauseButton.Size = new System.Drawing.Size(75, 23);
+            this.singlePauseButton.TabIndex = 57;
+            this.toolTip1.SetToolTip(this.singlePauseButton, "Stop the speech timer");
+            this.singlePauseButton.TrueText = "Stop";
+            this.singlePauseButton.UseVisualStyleBackColor = true;
+            // 
+            // debateStartButton
+            // 
+            this.debateStartButton.FalseText = "Started";
+            this.debateStartButton.Location = new System.Drawing.Point(205, 577);
+            this.debateStartButton.Name = "debateStartButton";
+            this.debateStartButton.Size = new System.Drawing.Size(75, 23);
+            this.debateStartButton.TabIndex = 78;
+            this.toolTip1.SetToolTip(this.debateStartButton, "Start the speech timer");
+            this.debateStartButton.TrueText = "Start";
+            this.debateStartButton.UseVisualStyleBackColor = true;
+            // 
+            // debateStopButton
+            // 
+            this.debateStopButton.FalseText = "Stopped";
+            this.debateStopButton.Location = new System.Drawing.Point(286, 577);
+            this.debateStopButton.Name = "debateStopButton";
+            this.debateStopButton.Size = new System.Drawing.Size(75, 23);
+            this.debateStopButton.TabIndex = 79;
+            this.toolTip1.SetToolTip(this.debateStopButton, "Stop the speech timer");
+            this.debateStopButton.TrueText = "Stop";
+            this.debateStopButton.UseVisualStyleBackColor = true;
+            // 
             // homescreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2180,8 +2182,6 @@
         private Controls.TimeSelector singleTimeSelector;
         private System.Windows.Forms.Button singleResetButton;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button singlePauseButton;
-        private System.Windows.Forms.Button singleStartButton;
         private System.Windows.Forms.Label singleTimeLabel;
         private System.Windows.Forms.ProgressBar singleProgressBar;
         private System.Windows.Forms.ListBox singleListBox;
@@ -2198,8 +2198,6 @@
         private System.Windows.Forms.Button unmodExtendButton;
         private System.Windows.Forms.Button unmodFinishButton;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button unmodPauseButton;
-        private System.Windows.Forms.Button unmodStartButton;
         private System.Windows.Forms.Label unmodTimeLabel;
         private System.Windows.Forms.ProgressBar unmodProgressBar;
         private System.Windows.Forms.TabPage modTab;
@@ -2216,16 +2214,12 @@
         private System.Windows.Forms.Button modClearButton;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button modRemoveButton;
-        private System.Windows.Forms.Button modPauseButton;
-        private System.Windows.Forms.Button modStartButton;
         private System.Windows.Forms.TabPage gslTab;
         private Controls.TimeSelector gslTimeSelector;
         private System.Windows.Forms.Button gslNextButton;
         private System.Windows.Forms.Button gslClearButton;
         private System.Windows.Forms.Button gslYieldButton;
         private System.Windows.Forms.Button gslRemoveButton;
-        private System.Windows.Forms.Button gslPauseButton;
-        private System.Windows.Forms.Button gslStartButton;
         private System.Windows.Forms.Label gslTimeLabel;
         private System.Windows.Forms.ProgressBar gslProgressBar;
         private System.Windows.Forms.TabControl motionsTab;
@@ -2250,8 +2244,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown debateCountSelector;
         private System.Windows.Forms.Button debateAClearButton;
-        private System.Windows.Forms.Button debateStopButton;
-        private System.Windows.Forms.Button debateStartButton;
         private System.Windows.Forms.Button debateNextButton;
         private System.Windows.Forms.GroupBox motionNGroupBox;
         private System.Windows.Forms.GroupBox motionDGroupBox;
@@ -2270,8 +2262,6 @@
         private Controls.LabelBox modCountryCountTextBox;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button modTotalStartButton;
-        private System.Windows.Forms.Button modTotalPauseButton;
         private System.Windows.Forms.Button modResetButton;
         private System.Windows.Forms.ToolStripMenuItem loadXMLToolStripMenuItem;
         private System.Windows.Forms.PictureBox gslPictureBox;
@@ -2341,5 +2331,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn State;
         private System.Windows.Forms.Button motionRollCallButton;
         private Controls.LabelBox motionNoMotionTextBox;
+        private Controls.StateButton gslStartButton;
+        private Controls.StateButton gslPauseButton;
+        private Controls.StateButton modStartButton;
+        private Controls.StateButton modPauseButton;
+        private Controls.StateButton unmodPauseButton;
+        private Controls.StateButton unmodStartButton;
+        private Controls.StateButton modTotalPauseButton;
+        private Controls.StateButton modTotalStartButton;
+        private Controls.StateButton singlePauseButton;
+        private Controls.StateButton singleStartButton;
+        private Controls.StateButton debateStopButton;
+        private Controls.StateButton debateStartButton;
     }
 }

@@ -171,6 +171,13 @@ namespace leeyi45.acmun
         [XmlIgnore]
         public MotionData Internal { get; set; }
 
+        [XmlElement("ID")]
+        public string InternalID
+        {
+            get => Internal.Id;
+            set => Internal = Motions[value];
+        }
+
         [XmlIgnore]
         public string Text
         {

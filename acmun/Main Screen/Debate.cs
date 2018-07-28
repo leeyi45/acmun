@@ -15,9 +15,9 @@ namespace leeyi45.acmun.Main_Screen
             DebateSpeakTime = Council.DebateSpeakTime;
 
             DebateTimer = new Clock();
-            DebateTimer.Started += DebateTimerStarted;
-            DebateTimer.Stopped += DebateTimerStopped;
             DebateTimer.Tick += DebateTimerTick;
+            DebateTimer.Started += DebateTimerRunning_Changed;
+            DebateTimer.Stopped += DebateTimerRunning_Changed;
 
             debateTimeSelector.ValueChanged += debateTimeSelector_ValueChanged;
             debateCountSelector.ValueChanged += debateCountSelector_ValueChanged;
@@ -46,6 +46,13 @@ namespace leeyi45.acmun.Main_Screen
             LoadDebate();
         }
 
+        private void DebateTimerRunning_Changed(object sender, EventArgs e)
+        {
+            debateTimeSelector.Enabled = !DebateTimer.Running;
+            debateStopButton.Enabled = DebateTimer.Running;
+            debateStartButton.Enabled = !DebateTimer.Running;
+        }
+
         private void LoadDebate()
         {
             debateCountSelector.Value = DebateSpeakCount;
@@ -68,28 +75,6 @@ namespace leeyi45.acmun.Main_Screen
             debateCountryLabel.Text = "";
 
             IsFor = true;
-        }
-
-        private void DebateTimerStarted(object sender, EventArgs e)
-        {
-            debateTimeSelector.Enabled = false;
-
-            debateStopButton.Enabled = true;
-            debateStopButton.Text = "Pause";
-
-            debateStartButton.Enabled = false;
-            debateStartButton.Text = "Started";
-        }
-
-        private void DebateTimerStopped(object sender, EventArgs e)
-        {
-            debateTimeSelector.Enabled = true;
-
-            debateStopButton.Enabled = false;
-            debateStopButton.Text = "Paused";
-
-            debateStartButton.Enabled = true;
-            debateStartButton.Text = "Start";
         }
 
         private void DebateTimerTick(object sender, EventArgs e)

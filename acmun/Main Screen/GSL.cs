@@ -21,14 +21,17 @@ namespace leeyi45.acmun.Main_Screen
             GSLSpeakingTime = new TimeSpan(0, 1, 30);
 
             GSLTimer = new Clock(GSLSpeakingTime);
-            GSLTimer.Tick += TimerTick;
-            GSLTimer.TimeUp += TimeUp;
-            GSLTimer.Started += TimerStarted;
-            GSLTimer.Stopped += TimerStopped;
-            GSLTimer.ResetTriggered += TimerReset;
+            GSLTimer.Tick += GSLTimerTick;
+            GSLTimer.TimeUp += GSLTimeUp;
+            GSLTimer.Started += GSLTimerRunningChanged;
+            GSLTimer.Stopped += GSLTimerRunningChanged;
+            GSLTimer.ResetTriggered += GSLTimerReset;
 
             gslTimeSelector.ValueChanged += gslTimeSelector_ValueChanged;
             gslTimeSelector.Value = GSLSpeakingTime;
+
+            gslStartButton.Click += gslStartButton_Click;
+            gslPauseButton.Click += gslPauseButton_Click;
 
             gslPictureBox.SizeMode = PictureBoxSizeMode.CenterImage;
         }
@@ -63,11 +66,11 @@ namespace leeyi45.acmun.Main_Screen
         }
 
         #region Timer
-        private void TimerTick(object sender, EventArgs e)
+        private void GSLTimerTick(object sender, EventArgs e)
         {
             if (InvokeRequired)
             {
-                var thing = new Action(() => TimerTick(null, EventArgs.Empty));
+                var thing = new Action(() => GSLTimerTick(null, EventArgs.Empty));
                 Invoke(thing);
             }
             else
@@ -78,42 +81,24 @@ namespace leeyi45.acmun.Main_Screen
 
         }
 
-        private void TimeUp(object sender, EventArgs e) 
+        private void GSLTimeUp(object sender, EventArgs e) 
             => Invoke(new Action(() => 
             {
                 gslTimeLabel.ForeColor = Color.Red;
                 yielded = true;
             }));
-
-        private void TimerStopped(object sender, EventArgs e)
-        {
-            gslTimeSelector.Enabled = true;
-            gslProgressBar.ForeColor = Color.Red;
-
-            gslStartButton.Enabled = true;
-            gslStartButton.Text = "Start";
-
-            gslPauseButton.Enabled = false;
-            gslPauseButton.Text = "Paused";
-        }
-
-        private void TimerStarted(object sender, EventArgs e)
-        {
-            gslTimeSelector.Enabled = false;
-            gslProgressBar.ForeColor = Color.Green;
-            gslTimeLabel.ForeColor = Color.Black;
-
-            gslStartButton.Enabled = false;
-            gslStartButton.Text = "Started";
-
-            gslPauseButton.Enabled = true;
-            gslPauseButton.Text = "Pause";
-        }
             
-        private void TimerReset(object sender, EventArgs e)
+        private void GSLTimerReset(object sender, EventArgs e)
         {
             gslProgressBar.Value = 0;
             gslTimeLabel.Text = $"00:00/{GSLSpeakingTime.ToValString()}";
+        }
+
+        private void GSLTimerRunningChanged(object sender, EventArgs e)
+        {
+            gslStartButton.Enabled = !GSLTimer.Running;
+            gslPauseButton.Enabled = GSLTimer.Running;
+            gslTimeSelector.Enabled = !GSLTimer.Running;
         }
         #endregion
 

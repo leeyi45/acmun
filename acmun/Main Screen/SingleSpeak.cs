@@ -13,8 +13,8 @@ namespace leeyi45.acmun.Main_Screen
 
             SingleTimer = new Clock();
 
-            SingleTimer.Started += SingleTimerStarted;
-            SingleTimer.Stopped += SingleTimerStopped;
+            SingleTimer.Started += SingleTimerRunningChanged;
+            SingleTimer.Stopped += SingleTimerRunningChanged;
             SingleTimer.Tick += SingleTimerTick;
 
             singlePictureBox.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -60,26 +60,11 @@ namespace leeyi45.acmun.Main_Screen
             singleListBox.SelectedIndex = index;
         }
 
-        private void SingleTimerStarted(object sender, EventArgs e)
+        private void SingleTimerRunningChanged(object sender, EventArgs e)
         {
-            singleStartButton.Enabled = false;
-            singleStartButton.Text = "Started";
-
-            singlePauseButton.Enabled = true;
-            singlePauseButton.Text = "Pause";
-
-            singleTimeSelector.Enabled = false;
-        }
-
-        private void SingleTimerStopped(object sender, EventArgs e)
-        {
-            singleStartButton.Enabled = true;
-            singleStartButton.Text = "Start";
-
-            singlePauseButton.Enabled = false;
-            singlePauseButton.Text = "Paused";
-
-            singleTimeSelector.Enabled = true;
+            singleStartButton.Enabled = !SingleTimer.Running;
+            singlePauseButton.Enabled = SingleTimer.Running;
+            singleTimeSelector.Enabled = !SingleTimer.Running;
         }
 
         private void SingleTimerTick(object sender, EventArgs e)
