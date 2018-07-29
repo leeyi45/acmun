@@ -14,6 +14,6 @@ TODO List:
   <li>Implement debate tracking system</li>
   <li>Adjust GUI settings to make sure everything scales to fullscreen properly</li>
   <li>Fix TopicBoxes</li>
-  <li>Fix TimeSelector LabelBoxes</li>'
+  <li>Fix TimeSelector LabelBoxes</li>
   <li>Implement speech time tracking for single speaker speeches</li>
 </ol>
