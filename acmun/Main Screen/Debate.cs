@@ -99,7 +99,7 @@ namespace leeyi45.acmun.Main_Screen
             {
                 debateSpeaker = value;
                 debateCountryLabel.Text = value.Name;
-                debatePictureBox.ImageLocation = $@"flags\{value.Shortf}.png";
+                debatePictureBox.ImageLocation = $@"flags\{value.AltName}.png";
             }
         }
 

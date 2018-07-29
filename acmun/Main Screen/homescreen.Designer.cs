@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(homescreen));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.loadXMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -176,6 +176,8 @@
             this.gslTimeSelector = new leeyi45.acmun.Controls.TimeSelector();
             this.gslComboBox = new leeyi45.acmun.Controls.ComboBox();
             this.gslListBox = new leeyi45.acmun.Controls.ListBox();
+            this.modTotalPauseButton = new leeyi45.acmun.Controls.StateButton();
+            this.modTotalStartButton = new leeyi45.acmun.Controls.StateButton();
             this.modPauseButton = new leeyi45.acmun.Controls.StateButton();
             this.modStartButton = new leeyi45.acmun.Controls.StateButton();
             this.modCountryCountTextBox = new leeyi45.acmun.Controls.LabelBox();
@@ -185,11 +187,17 @@
             this.modSpeakTimeSelector = new leeyi45.acmun.Controls.TimeSelector();
             this.modComboBox = new leeyi45.acmun.Controls.ComboBox();
             this.modListBox = new leeyi45.acmun.Controls.ListBox();
+            this.unmodPauseButton = new leeyi45.acmun.Controls.StateButton();
+            this.unmodStartButton = new leeyi45.acmun.Controls.StateButton();
             this.unmodCountryTextBox = new leeyi45.acmun.Controls.TopicBox();
             this.unmodTopicTextBox = new leeyi45.acmun.Controls.TopicBox();
             this.motionNoMotionTextBox = new leeyi45.acmun.Controls.LabelBox();
+            this.singlePauseButton = new leeyi45.acmun.Controls.StateButton();
+            this.singleStartButton = new leeyi45.acmun.Controls.StateButton();
             this.singleCountryTextBox = new leeyi45.acmun.Controls.LabelBox();
             this.singleTimeSelector = new leeyi45.acmun.Controls.TimeSelector();
+            this.debateStopButton = new leeyi45.acmun.Controls.StateButton();
+            this.debateStartButton = new leeyi45.acmun.Controls.StateButton();
             this.debateCountryLabel = new leeyi45.acmun.Controls.LabelBox();
             this.debateForTextBox = new leeyi45.acmun.Controls.LabelBox();
             this.debateTimeSelector = new leeyi45.acmun.Controls.TimeSelector();
@@ -199,14 +207,7 @@
             this.debateFCountryListBox = new leeyi45.acmun.Controls.ListBox();
             this.labelBox1 = new leeyi45.acmun.Controls.LabelBox();
             this.voteTopicBox = new leeyi45.acmun.Controls.TopicBox();
-            this.modTotalStartButton = new leeyi45.acmun.Controls.StateButton();
-            this.modTotalPauseButton = new leeyi45.acmun.Controls.StateButton();
-            this.unmodStartButton = new leeyi45.acmun.Controls.StateButton();
-            this.unmodPauseButton = new leeyi45.acmun.Controls.StateButton();
-            this.singleStartButton = new leeyi45.acmun.Controls.StateButton();
-            this.singlePauseButton = new leeyi45.acmun.Controls.StateButton();
-            this.debateStartButton = new leeyi45.acmun.Controls.StateButton();
-            this.debateStopButton = new leeyi45.acmun.Controls.StateButton();
+            this.voteResultButton = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.debateTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.debatePictureBox)).BeginInit();
@@ -826,14 +827,14 @@
             this.motionsDataGrid.AllowUserToResizeRows = false;
             this.motionsDataGrid.BackgroundColor = System.Drawing.SystemColors.Window;
             this.motionsDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.motionsDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.motionsDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.motionsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.motionsDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Proposer,
@@ -842,14 +843,14 @@
             this.SpeakTime,
             this.Topic,
             this.State});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.motionsDataGrid.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.motionsDataGrid.DefaultCellStyle = dataGridViewCellStyle2;
             this.motionsDataGrid.Location = new System.Drawing.Point(0, 19);
             this.motionsDataGrid.MultiSelect = false;
             this.motionsDataGrid.Name = "motionsDataGrid";
@@ -1211,6 +1212,7 @@
             // 
             // votingTab
             // 
+            this.votingTab.Controls.Add(this.voteResultButton);
             this.votingTab.Controls.Add(this.groupBox6);
             this.votingTab.Controls.Add(this.groupBox5);
             this.votingTab.Controls.Add(this.voteSettingsGroupBox);
@@ -1788,6 +1790,28 @@
             this.gslListBox.Size = new System.Drawing.Size(450, 410);
             this.gslListBox.TabIndex = 22;
             // 
+            // modTotalPauseButton
+            // 
+            this.modTotalPauseButton.FalseText = "Stopped";
+            this.modTotalPauseButton.Location = new System.Drawing.Point(8, 48);
+            this.modTotalPauseButton.Name = "modTotalPauseButton";
+            this.modTotalPauseButton.Size = new System.Drawing.Size(75, 23);
+            this.modTotalPauseButton.TabIndex = 25;
+            this.toolTip1.SetToolTip(this.modTotalPauseButton, "Pause the main caucus timer");
+            this.modTotalPauseButton.TrueText = "Stop";
+            this.modTotalPauseButton.UseVisualStyleBackColor = true;
+            // 
+            // modTotalStartButton
+            // 
+            this.modTotalStartButton.FalseText = "Started";
+            this.modTotalStartButton.Location = new System.Drawing.Point(8, 20);
+            this.modTotalStartButton.Name = "modTotalStartButton";
+            this.modTotalStartButton.Size = new System.Drawing.Size(75, 23);
+            this.modTotalStartButton.TabIndex = 24;
+            this.toolTip1.SetToolTip(this.modTotalStartButton, "Start the main caucus timer");
+            this.modTotalStartButton.TrueText = "Start";
+            this.modTotalStartButton.UseVisualStyleBackColor = true;
+            // 
             // modPauseButton
             // 
             this.modPauseButton.Enabled = false;
@@ -1882,6 +1906,28 @@
             this.modListBox.Size = new System.Drawing.Size(450, 410);
             this.modListBox.TabIndex = 49;
             // 
+            // unmodPauseButton
+            // 
+            this.unmodPauseButton.FalseText = "Stop";
+            this.unmodPauseButton.Location = new System.Drawing.Point(461, 406);
+            this.unmodPauseButton.Name = "unmodPauseButton";
+            this.unmodPauseButton.Size = new System.Drawing.Size(75, 23);
+            this.unmodPauseButton.TabIndex = 15;
+            this.toolTip1.SetToolTip(this.unmodPauseButton, "Stop the caucus timer");
+            this.unmodPauseButton.TrueText = "Stopped";
+            this.unmodPauseButton.UseVisualStyleBackColor = true;
+            // 
+            // unmodStartButton
+            // 
+            this.unmodStartButton.FalseText = "Started";
+            this.unmodStartButton.Location = new System.Drawing.Point(380, 406);
+            this.unmodStartButton.Name = "unmodStartButton";
+            this.unmodStartButton.Size = new System.Drawing.Size(75, 23);
+            this.unmodStartButton.TabIndex = 14;
+            this.toolTip1.SetToolTip(this.unmodStartButton, "Start the caucus timer");
+            this.unmodStartButton.TrueText = "Start";
+            this.unmodStartButton.UseVisualStyleBackColor = true;
+            // 
             // unmodCountryTextBox
             // 
             this.unmodCountryTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -1914,6 +1960,28 @@
             this.motionNoMotionTextBox.TabIndex = 10;
             this.motionNoMotionTextBox.Text = "There are currently no motions";
             // 
+            // singlePauseButton
+            // 
+            this.singlePauseButton.FalseText = "Stopped";
+            this.singlePauseButton.Location = new System.Drawing.Point(800, 523);
+            this.singlePauseButton.Name = "singlePauseButton";
+            this.singlePauseButton.Size = new System.Drawing.Size(75, 23);
+            this.singlePauseButton.TabIndex = 57;
+            this.toolTip1.SetToolTip(this.singlePauseButton, "Stop the speech timer");
+            this.singlePauseButton.TrueText = "Stop";
+            this.singlePauseButton.UseVisualStyleBackColor = true;
+            // 
+            // singleStartButton
+            // 
+            this.singleStartButton.FalseText = "Started";
+            this.singleStartButton.Location = new System.Drawing.Point(719, 524);
+            this.singleStartButton.Name = "singleStartButton";
+            this.singleStartButton.Size = new System.Drawing.Size(75, 23);
+            this.singleStartButton.TabIndex = 56;
+            this.toolTip1.SetToolTip(this.singleStartButton, "Start the speech timer");
+            this.singleStartButton.TrueText = "Start";
+            this.singleStartButton.UseVisualStyleBackColor = true;
+            // 
             // singleCountryTextBox
             // 
             this.singleCountryTextBox.BackColor = System.Drawing.SystemColors.Window;
@@ -1932,6 +2000,28 @@
             this.singleTimeSelector.Text = "Speaking Time";
             this.singleTimeSelector.Value = System.TimeSpan.Parse("00:00:01");
             this.singleTimeSelector.Width = 108;
+            // 
+            // debateStopButton
+            // 
+            this.debateStopButton.FalseText = "Stopped";
+            this.debateStopButton.Location = new System.Drawing.Point(286, 577);
+            this.debateStopButton.Name = "debateStopButton";
+            this.debateStopButton.Size = new System.Drawing.Size(75, 23);
+            this.debateStopButton.TabIndex = 79;
+            this.toolTip1.SetToolTip(this.debateStopButton, "Stop the speech timer");
+            this.debateStopButton.TrueText = "Stop";
+            this.debateStopButton.UseVisualStyleBackColor = true;
+            // 
+            // debateStartButton
+            // 
+            this.debateStartButton.FalseText = "Started";
+            this.debateStartButton.Location = new System.Drawing.Point(205, 577);
+            this.debateStartButton.Name = "debateStartButton";
+            this.debateStartButton.Size = new System.Drawing.Size(75, 23);
+            this.debateStartButton.TabIndex = 78;
+            this.toolTip1.SetToolTip(this.debateStartButton, "Start the speech timer");
+            this.debateStartButton.TrueText = "Start";
+            this.debateStartButton.UseVisualStyleBackColor = true;
             // 
             // debateCountryLabel
             // 
@@ -2024,93 +2114,14 @@
             this.voteTopicBox.TabIndex = 12;
             this.voteTopicBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // modTotalStartButton
+            // voteResultButton
             // 
-            this.modTotalStartButton.FalseText = "Started";
-            this.modTotalStartButton.Location = new System.Drawing.Point(8, 20);
-            this.modTotalStartButton.Name = "modTotalStartButton";
-            this.modTotalStartButton.Size = new System.Drawing.Size(75, 23);
-            this.modTotalStartButton.TabIndex = 24;
-            this.toolTip1.SetToolTip(this.modTotalStartButton, "Start the main caucus timer");
-            this.modTotalStartButton.TrueText = "Start";
-            this.modTotalStartButton.UseVisualStyleBackColor = true;
-            // 
-            // modTotalPauseButton
-            // 
-            this.modTotalPauseButton.FalseText = "Stopped";
-            this.modTotalPauseButton.Location = new System.Drawing.Point(8, 48);
-            this.modTotalPauseButton.Name = "modTotalPauseButton";
-            this.modTotalPauseButton.Size = new System.Drawing.Size(75, 23);
-            this.modTotalPauseButton.TabIndex = 25;
-            this.toolTip1.SetToolTip(this.modTotalPauseButton, "Pause the main caucus timer");
-            this.modTotalPauseButton.TrueText = "Stop";
-            this.modTotalPauseButton.UseVisualStyleBackColor = true;
-            // 
-            // unmodStartButton
-            // 
-            this.unmodStartButton.FalseText = "Started";
-            this.unmodStartButton.Location = new System.Drawing.Point(380, 406);
-            this.unmodStartButton.Name = "unmodStartButton";
-            this.unmodStartButton.Size = new System.Drawing.Size(75, 23);
-            this.unmodStartButton.TabIndex = 14;
-            this.toolTip1.SetToolTip(this.unmodStartButton, "Start the caucus timer");
-            this.unmodStartButton.TrueText = "Start";
-            this.unmodStartButton.UseVisualStyleBackColor = true;
-            // 
-            // unmodPauseButton
-            // 
-            this.unmodPauseButton.FalseText = "Stop";
-            this.unmodPauseButton.Location = new System.Drawing.Point(461, 406);
-            this.unmodPauseButton.Name = "unmodPauseButton";
-            this.unmodPauseButton.Size = new System.Drawing.Size(75, 23);
-            this.unmodPauseButton.TabIndex = 15;
-            this.toolTip1.SetToolTip(this.unmodPauseButton, "Stop the caucus timer");
-            this.unmodPauseButton.TrueText = "Stopped";
-            this.unmodPauseButton.UseVisualStyleBackColor = true;
-            // 
-            // singleStartButton
-            // 
-            this.singleStartButton.FalseText = "Started";
-            this.singleStartButton.Location = new System.Drawing.Point(719, 524);
-            this.singleStartButton.Name = "singleStartButton";
-            this.singleStartButton.Size = new System.Drawing.Size(75, 23);
-            this.singleStartButton.TabIndex = 56;
-            this.toolTip1.SetToolTip(this.singleStartButton, "Start the speech timer");
-            this.singleStartButton.TrueText = "Start";
-            this.singleStartButton.UseVisualStyleBackColor = true;
-            // 
-            // singlePauseButton
-            // 
-            this.singlePauseButton.FalseText = "Stopped";
-            this.singlePauseButton.Location = new System.Drawing.Point(800, 523);
-            this.singlePauseButton.Name = "singlePauseButton";
-            this.singlePauseButton.Size = new System.Drawing.Size(75, 23);
-            this.singlePauseButton.TabIndex = 57;
-            this.toolTip1.SetToolTip(this.singlePauseButton, "Stop the speech timer");
-            this.singlePauseButton.TrueText = "Stop";
-            this.singlePauseButton.UseVisualStyleBackColor = true;
-            // 
-            // debateStartButton
-            // 
-            this.debateStartButton.FalseText = "Started";
-            this.debateStartButton.Location = new System.Drawing.Point(205, 577);
-            this.debateStartButton.Name = "debateStartButton";
-            this.debateStartButton.Size = new System.Drawing.Size(75, 23);
-            this.debateStartButton.TabIndex = 78;
-            this.toolTip1.SetToolTip(this.debateStartButton, "Start the speech timer");
-            this.debateStartButton.TrueText = "Start";
-            this.debateStartButton.UseVisualStyleBackColor = true;
-            // 
-            // debateStopButton
-            // 
-            this.debateStopButton.FalseText = "Stopped";
-            this.debateStopButton.Location = new System.Drawing.Point(286, 577);
-            this.debateStopButton.Name = "debateStopButton";
-            this.debateStopButton.Size = new System.Drawing.Size(75, 23);
-            this.debateStopButton.TabIndex = 79;
-            this.toolTip1.SetToolTip(this.debateStopButton, "Stop the speech timer");
-            this.debateStopButton.TrueText = "Stop";
-            this.debateStopButton.UseVisualStyleBackColor = true;
+            this.voteResultButton.Location = new System.Drawing.Point(653, 544);
+            this.voteResultButton.Name = "voteResultButton";
+            this.voteResultButton.Size = new System.Drawing.Size(75, 23);
+            this.voteResultButton.TabIndex = 20;
+            this.voteResultButton.Text = "Result";
+            this.voteResultButton.UseVisualStyleBackColor = true;
             // 
             // homescreen
             // 
@@ -2343,5 +2354,6 @@
         private Controls.StateButton singleStartButton;
         private Controls.StateButton debateStopButton;
         private Controls.StateButton debateStartButton;
+        private System.Windows.Forms.Button voteResultButton;
     }
 }

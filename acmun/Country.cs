@@ -18,6 +18,15 @@ namespace leeyi45.acmun
         [XmlElement]
         public string Name { get; set; }
 
+        private string altName = String.Empty;
+
+        [XmlElement]
+        public string AltName
+        {
+            get => string.IsNullOrWhiteSpace(altName) ? Shortf : altName;
+            set => altName = value;
+        }
+
         [XmlElement]
         public string Shortf { get; set; }
 

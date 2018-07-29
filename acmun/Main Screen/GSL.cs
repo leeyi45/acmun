@@ -48,7 +48,7 @@ namespace leeyi45.acmun.Main_Screen
             {
                 gslSpeaker = value;
                 gslCountryLabel.Text = value.Name;
-                gslPictureBox.ImageLocation = $@"flags\{value.Shortf}.png";
+                gslPictureBox.ImageLocation = $@"flags\{value.AltName}.png";
             }
         }
 

@@ -12,6 +12,7 @@ namespace leeyi45.acmun.Main_Screen
         int forCount = 0;
         int againstCount = 0;
         int abstainCount = 0;
+        bool veto = false;
 
         private RadioButton[] voteRadioButtons;
 
@@ -32,9 +33,11 @@ namespace leeyi45.acmun.Main_Screen
             voteCountButton.Click += VoteCountButton_Click;
             voteClearAllButton.Click += VoteClearAllButton_Click;
             voteDivideButton.Click += VoteDivideButton_Click;
+            voteResultButton.Click += VoteResultButton_Click;
 
             voteAbstainCheckBox.CheckedChanged += voteAbstainCheckBox_CheckedChanged;
             voteWithRightsCheckBox.CheckedChanged += VoteWithRightsCheckBox_CheckedChanged;
+            voteAutoCountCheckBox.CheckedChanged += VoteAutoCountCheckBox_CheckedChanged;
 
             LoadVote(Vote.Default);
 
@@ -42,6 +45,9 @@ namespace leeyi45.acmun.Main_Screen
             voteRadioButton2.CheckedChanged += VoteRadioButton_CheckedChanged;
             voteRadioButton3.CheckedChanged += VoteRadioButton_CheckedChanged;
         }
+
+        private void VoteAutoCountCheckBox_CheckedChanged(object sender, EventArgs e) 
+            => voteCountButton.Enabled = !voteAutoCountCheckBox.Checked;
 
         private void VoteWithRightsCheckBox_CheckedChanged(object sender, EventArgs e)
         {
@@ -52,7 +58,7 @@ namespace leeyi45.acmun.Main_Screen
         private void VoteRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             int i = 0;
-            for(; i < 2; i++)
+            for (; i < 2; i++)
             {
                 if (voteRadioButtons[i].Checked) break;
             }
@@ -82,7 +88,7 @@ namespace leeyi45.acmun.Main_Screen
 
         private void VoteDivideButton_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void VoteClearAllButton_Click(object sender, EventArgs e)
@@ -142,6 +148,9 @@ namespace leeyi45.acmun.Main_Screen
             if (voteCountryBox.SelectedItem == null) return;
             voteAgainstListBox.Items.Add(voteCountryBox.SelectedItem);
             againstCount++;
+
+            if (Council.Voters[voteCountryBox.SelectedIndex].P5Veto) veto = true;
+
             VoteButtons();
         }
 
@@ -151,6 +160,36 @@ namespace leeyi45.acmun.Main_Screen
             voteForListBox.Items.Add(voteCountryBox.SelectedItem);
             forCount++;
             VoteButtons();
+        }
+
+        private void VoteResultButton_Click(object sender, EventArgs e)
+        {
+            switch (CurrentVote.Type)
+            {
+                case Vote.VoteType.Consensus:
+                    {
+                        if (againstCount > 0) VoteResult("A consensus was not reached!", false);
+                        break;
+                    }
+                case Vote.VoteType.Procedural:
+                    {
+                        if (forCount < CurrentVote.ToPass) VoteResult("A simple majority was not reached!", false;);
+                        break;
+                    }
+                case Vote.VoteType.Substantive:
+                    {
+                        if (forCount < CurrentVote.ToPass) VoteResult("A two thirds majority was not reached!", false);
+                        else if (veto) VoteResult("A veto has been issued!", false);
+                        break;
+                    }
+            }
+
+            VoteResult("The vote has been passed", true);
+        }
+
+        private void VoteResult(string Message, bool pass)
+        {
+            CurrentVote.Passed = pass;
         }
 
         private void VoteButtons()

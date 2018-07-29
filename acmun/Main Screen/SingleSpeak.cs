@@ -32,7 +32,7 @@ namespace leeyi45.acmun.Main_Screen
             {
                 singleSpeak = value;
                 singleCountryTextBox.Text = value.Name;
-                singlePictureBox.ImageLocation = $@"flags\{value.Shortf}.png";
+                singlePictureBox.ImageLocation = $@"flags\{value.AltName}.png";
             }
         }
 

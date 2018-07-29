@@ -123,6 +123,8 @@ namespace leeyi45.acmun
 
         public bool HouseDivided { get; set; } = false;
 
+        public bool Passed { get; set; } = false;
+
         public enum VoteType
         {
             Procedural = 0, Substantive = 1, Consensus = 2

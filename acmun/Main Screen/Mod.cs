@@ -53,7 +53,7 @@ namespace leeyi45.acmun.Main_Screen
             {
                 modSpeaker = value;
                 modCountryTextBox.Text = value.Name;
-                modPictureBox.ImageLocation = $@"flags\{value.Shortf}.png";
+                modPictureBox.ImageLocation = $@"flags\{value.AltName}.png";
             }
         }
 
