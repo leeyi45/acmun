@@ -18,17 +18,9 @@ namespace leeyi45.acmun.TimeExt
             DialogResult = DialogResult.Cancel;
             timeLeftLabel.Text = $"{Used.ToValString()}/{Original.ToValString()}";
             purposeLabel.Text = $"Extend time for {(isMod ? "moderated" : "unmoderated" + " caucus")}";
-
-            minSelector.ValueChanged += timeValueChanged;
-            secSelector.ValueChanged += timeValueChanged;
         }
 
-        public TimeSpan Result;
-
-        private void timeValueChanged(object sender, EventArgs e)
-        {
-            Result = new TimeSpan(0, (int)minSelector.Value, (int)secSelector.Value);
-        }
+        public TimeSpan Result => timeSelector1.Value;
 
         private void extendButton_Click(object sender, EventArgs e)
         {
