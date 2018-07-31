@@ -173,7 +173,7 @@ namespace leeyi45.acmun.Main_Screen
                     }
                 case Vote.VoteType.Procedural:
                     {
-                        if (forCount < CurrentVote.ToPass) VoteResult("A simple majority was not reached!", false;);
+                        if (forCount < CurrentVote.ToPass) VoteResult("A simple majority was not reached!", false);
                         break;
                     }
                 case Vote.VoteType.Substantive:

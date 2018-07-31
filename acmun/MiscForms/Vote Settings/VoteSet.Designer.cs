@@ -93,6 +93,7 @@
             this.unmodTimeSelector.Size = new System.Drawing.Size(136, 49);
             this.unmodTimeSelector.TabIndex = 2;
             this.unmodTimeSelector.Text = "Unmod Summary Time";
+            this.unmodTimeSelector.TextBackColor = System.Drawing.SystemColors.Control;
             this.toolTip1.SetToolTip(this.unmodTimeSelector, "Amount of time given to summarize an unmod");
             this.unmodTimeSelector.Value = System.TimeSpan.Parse("00:00:01");
             this.unmodTimeSelector.Width = 136;
@@ -181,7 +182,9 @@
             this.debateTimeSelector.Size = new System.Drawing.Size(108, 49);
             this.debateTimeSelector.TabIndex = 1;
             this.debateTimeSelector.Text = "Speaking Time";
+            this.debateTimeSelector.TextBackColor = System.Drawing.SystemColors.Control;
             this.debateTimeSelector.Value = System.TimeSpan.Parse("00:00:01");
+            this.debateTimeSelector.Width = 108;
             // 
             // numericUpDown1
             // 

@@ -40,6 +40,7 @@
             this.timeSelector1.Size = new System.Drawing.Size(106, 61);
             this.timeSelector1.TabIndex = 0;
             this.timeSelector1.Text = "Select New Time";
+            this.timeSelector1.TextBackColor = System.Drawing.SystemColors.Control;
             this.timeSelector1.Value = System.TimeSpan.Parse("00:00:01");
             this.timeSelector1.Width = 106;
             // 

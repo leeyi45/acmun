@@ -60,6 +60,14 @@ namespace leeyi45.acmun.Controls
             }
         }
 
+        [Browsable(true)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        public Color TextBackColor
+        {
+            get => mainLabel.BackColor;
+            set => mainLabel.BackColor = value;
+        }
+
         public new bool Enabled
         {
             get => _enabled;
