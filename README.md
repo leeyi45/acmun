@@ -10,7 +10,7 @@ TODO List:
   <li>Adjust vote loading in order to make sure the proper checkboxes are checked</li>
   <li>Ensure that motions screen doesn't throw ArgumentOutOfRangeExceptions</li>
   <li>Get missing flags,<strike> and fix flag for ivory coast</strike></li>
-  <li>Write up configuration instructions</li>
+  <li><strike>Write up configuration instructions</strike></li>
   <li>Implement debate tracking system</li>
   <li>Adjust GUI settings to make sure everything scales to fullscreen properly</li>
   <li>Fix TopicBoxes</li>
