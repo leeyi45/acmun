@@ -60,7 +60,7 @@ namespace leeyi45.acmun
         [XmlElement]
         public string Name
         {
-            get => string.IsNullOrWhiteSpace(_name) ? Text : Name;
+            get => string.IsNullOrWhiteSpace(_name) ? Text : _name;
             set => _name = value;
         }
 
