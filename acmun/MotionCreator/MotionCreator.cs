@@ -79,11 +79,11 @@ namespace leeyi45.acmun.MotionCreator
 
             try
             {
-                Result = new Motion(Council.MotionsAsList[typeComboBox.SelectedIndex],
+                Result = new Motion(Council.MotionsAsList[typeComboBox.SelectedIndex].Id,
                topicTextBox.Text, Council.Present[countryComboBox.SelectedIndex], speakTimeSelector.Value,
                totalTimeSelector.Value);
             }
-            catch(Motion.MissingDataException ex)
+            catch(MissingDataException ex)
             {
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;

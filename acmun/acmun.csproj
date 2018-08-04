@@ -23,7 +23,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <ApplicationVersion>0.1.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -65,12 +65,6 @@
     <Compile Include="Controls\StateButton.Designer.cs">
       <DependentUpon>StateButton.cs</DependentUpon>
     </Compile>
-    <Compile Include="MiscForms\AboutBox\AboutBox.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MiscForms\AboutBox\AboutBox.Designer.cs">
-      <DependentUpon>AboutBox.cs</DependentUpon>
-    </Compile>
     <Compile Include="Controls\ComboBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -103,6 +97,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Council.cs" />
+    <Compile Include="MiscForms\AboutBox\AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MiscForms\AboutBox\AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="PickerForms\DurationPicker\DurationPicker.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,11 +149,6 @@
     <Compile Include="MotionCreator\MotionCreator.Designer.cs">
       <DependentUpon>MotionCreator.cs</DependentUpon>
     </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -196,17 +191,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MiscForms\AboutBox\AboutBox.resx">
-      <DependentUpon>AboutBox.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Controls\CountrySelector.resx">
       <DependentUpon>CountrySelector.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\TimeSelector.resx">
-      <DependentUpon>TimeSelector.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Controls\WarningBox.resx">
       <DependentUpon>WarningBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MiscForms\AboutBox\AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PickerForms\DurationPicker\DurationPicker.resx">
       <DependentUpon>DurationPicker.cs</DependentUpon>
@@ -219,10 +211,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MotionCreator\MotionCreator.resx">
       <DependentUpon>MotionCreator.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="MiscForms\TimeExt\timeExt.resx">
       <DependentUpon>timeExt.cs</DependentUpon>

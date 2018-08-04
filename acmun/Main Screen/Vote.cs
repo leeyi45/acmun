@@ -38,12 +38,20 @@ namespace leeyi45.acmun.Main_Screen
             voteAbstainCheckBox.CheckedChanged += voteAbstainCheckBox_CheckedChanged;
             voteWithRightsCheckBox.CheckedChanged += VoteWithRightsCheckBox_CheckedChanged;
             voteAutoCountCheckBox.CheckedChanged += VoteAutoCountCheckBox_CheckedChanged;
+            voteObserverCheckBox.CheckedChanged += VoteObserverCheckBox_CheckedChanged;
 
             LoadVote(Vote.Default);
 
             voteRadioButton1.CheckedChanged += VoteRadioButton_CheckedChanged;
             voteRadioButton2.CheckedChanged += VoteRadioButton_CheckedChanged;
             voteRadioButton3.CheckedChanged += VoteRadioButton_CheckedChanged;
+        }
+
+        #region Checkbox Changed
+        private void VoteObserverCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            voteCountryBox.Items.Clear();
+            voteCountryBox.Items.AddRange(voteObserverCheckBox.Checked ? Council.PresentShortf : Council.VotersShortf);
         }
 
         private void VoteAutoCountCheckBox_CheckedChanged(object sender, EventArgs e) 
@@ -66,26 +74,11 @@ namespace leeyi45.acmun.Main_Screen
             CurrentVote.Type = (Vote.VoteType)i;
         }
 
-        private void LoadVote(Vote vote)
-        {
-            forCount = 0;
-            againstCount = 0;
-            abstainCount = 0;
+        private void voteAbstainCheckBox_CheckedChanged(object sender, EventArgs e)
+            => voteAbstainButton.Enabled = voteAbstainCheckBox.Checked;
+        #endregion
 
-            voteTopicBox.Text = vote.Topic;
-            voteVetoCheckBox.Checked = vote.P5Veto;
-            voteAbstainCheckBox.Checked = vote.AllowAbstentions;
-            voteRadioButtons[(int)vote.Type].Checked = true;
-
-            voteForListBox.Items.Clear();
-            voteAgainstListBox.Items.Clear();
-            voteAbstainListBox.Items.Clear();
-            voteWithRightsCheckBox.Checked = false;
-            UpdateVoteCount();
-
-            CurrentVote = vote;
-        }
-
+        #region Buttons
         private void VoteDivideButton_Click(object sender, EventArgs e)
         {
 
@@ -187,14 +180,11 @@ namespace leeyi45.acmun.Main_Screen
             VoteResult("The vote has been passed", true);
         }
 
-        private void VoteResult(string Message, bool pass)
-        {
-            CurrentVote.Passed = pass;
-        }
-
         private void VoteButtons()
         {
             voteCountryBox.Items.Remove(voteCountryBox.SelectedItem);
+
+            voteObserverCheckBox.Enabled = (forCount + againstCount + abstainCount > 0);
             ButtonUpdate();
         }
 
@@ -217,7 +207,31 @@ namespace leeyi45.acmun.Main_Screen
             voteTotalCountLabel.Text = $"Total Votes: {forCount + againstCount + abstainCount}";
         }
 
-        private void voteAbstainCheckBox_CheckedChanged(object sender, EventArgs e)
-            => voteAbstainButton.Enabled = voteAbstainCheckBox.Checked;
+        #endregion
+
+        private void VoteResult(string Message, bool pass)
+        {
+            CurrentVote.Passed = pass;
+        }
+
+        private void LoadVote(Vote vote)
+        {
+            forCount = 0;
+            againstCount = 0;
+            abstainCount = 0;
+
+            voteTopicBox.Text = vote.Topic;
+            voteVetoCheckBox.Checked = vote.P5Veto;
+            voteAbstainCheckBox.Checked = vote.AllowAbstentions;
+            voteRadioButtons[(int)vote.Type].Checked = true;
+
+            voteForListBox.Items.Clear();
+            voteAgainstListBox.Items.Clear();
+            voteAbstainListBox.Items.Clear();
+            voteWithRightsCheckBox.Checked = false;
+            UpdateVoteCount();
+
+            CurrentVote = vote;
+        }
     }
 }
