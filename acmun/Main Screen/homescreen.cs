@@ -77,7 +77,7 @@ namespace leeyi45.acmun.Main_Screen
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new AboutBox().ShowDialog();
+            new AboutBox.AboutBox().ShowDialog();
         }
 
         private void settingsXMLToolStripMenuItem_Click(object sender, EventArgs e)

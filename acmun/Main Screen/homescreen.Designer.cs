@@ -122,6 +122,7 @@
             this.gslProgressBar = new System.Windows.Forms.ProgressBar();
             this.motionsTab = new System.Windows.Forms.TabControl();
             this.votingTab = new System.Windows.Forms.TabPage();
+            this.voteResultButton = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.voteRadioButton3 = new System.Windows.Forms.RadioButton();
             this.voteRadioButton2 = new System.Windows.Forms.RadioButton();
@@ -207,7 +208,7 @@
             this.debateFCountryListBox = new leeyi45.acmun.Controls.ListBox();
             this.labelBox1 = new leeyi45.acmun.Controls.LabelBox();
             this.voteTopicBox = new leeyi45.acmun.Controls.TopicBox();
-            this.voteResultButton = new System.Windows.Forms.Button();
+            this.voteObserverCheckBox = new System.Windows.Forms.CheckBox();
             this.toolStrip1.SuspendLayout();
             this.debateTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.debatePictureBox)).BeginInit();
@@ -1241,6 +1242,15 @@
             this.votingTab.Text = "Roll Call Voting";
             this.votingTab.UseVisualStyleBackColor = true;
             // 
+            // voteResultButton
+            // 
+            this.voteResultButton.Location = new System.Drawing.Point(653, 544);
+            this.voteResultButton.Name = "voteResultButton";
+            this.voteResultButton.Size = new System.Drawing.Size(75, 23);
+            this.voteResultButton.TabIndex = 20;
+            this.voteResultButton.Text = "Result";
+            this.voteResultButton.UseVisualStyleBackColor = true;
+            // 
             // groupBox6
             // 
             this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -1347,6 +1357,7 @@
             // 
             this.voteSettingsGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.voteSettingsGroupBox.Controls.Add(this.voteObserverCheckBox);
             this.voteSettingsGroupBox.Controls.Add(this.voteWithRightsCheckBox);
             this.voteSettingsGroupBox.Controls.Add(this.voteAbstainCheckBox);
             this.voteSettingsGroupBox.Controls.Add(this.voteVetoCheckBox);
@@ -1765,6 +1776,7 @@
             this.gslTimeSelector.Size = new System.Drawing.Size(112, 48);
             this.gslTimeSelector.TabIndex = 24;
             this.gslTimeSelector.Text = "Speaking Time";
+            this.gslTimeSelector.TextBackColor = System.Drawing.SystemColors.Window;
             this.gslTimeSelector.Value = System.TimeSpan.Parse("00:00:01");
             this.gslTimeSelector.Width = 112;
             // 
@@ -1871,6 +1883,7 @@
             this.modTotalTimeSelector.Size = new System.Drawing.Size(108, 49);
             this.modTotalTimeSelector.TabIndex = 52;
             this.modTotalTimeSelector.Text = "Total Time";
+            this.modTotalTimeSelector.TextBackColor = System.Drawing.SystemColors.Window;
             this.modTotalTimeSelector.Value = System.TimeSpan.Parse("00:00:01");
             this.modTotalTimeSelector.Width = 108;
             // 
@@ -1881,6 +1894,7 @@
             this.modSpeakTimeSelector.Size = new System.Drawing.Size(108, 45);
             this.modSpeakTimeSelector.TabIndex = 51;
             this.modSpeakTimeSelector.Text = "Speaking Time";
+            this.modSpeakTimeSelector.TextBackColor = System.Drawing.SystemColors.Window;
             this.modSpeakTimeSelector.Value = System.TimeSpan.Parse("00:00:01");
             this.modSpeakTimeSelector.Width = 108;
             // 
@@ -1998,6 +2012,7 @@
             this.singleTimeSelector.Size = new System.Drawing.Size(108, 49);
             this.singleTimeSelector.TabIndex = 42;
             this.singleTimeSelector.Text = "Speaking Time";
+            this.singleTimeSelector.TextBackColor = System.Drawing.SystemColors.Window;
             this.singleTimeSelector.Value = System.TimeSpan.Parse("00:00:01");
             this.singleTimeSelector.Width = 108;
             // 
@@ -2048,6 +2063,7 @@
             this.debateTimeSelector.Size = new System.Drawing.Size(108, 49);
             this.debateTimeSelector.TabIndex = 59;
             this.debateTimeSelector.Text = "Speaking Time";
+            this.debateTimeSelector.TextBackColor = System.Drawing.SystemColors.Window;
             this.debateTimeSelector.Value = System.TimeSpan.Parse("00:00:01");
             this.debateTimeSelector.Width = 108;
             // 
@@ -2114,14 +2130,15 @@
             this.voteTopicBox.TabIndex = 12;
             this.voteTopicBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // voteResultButton
+            // voteObserverCheckBox
             // 
-            this.voteResultButton.Location = new System.Drawing.Point(653, 544);
-            this.voteResultButton.Name = "voteResultButton";
-            this.voteResultButton.Size = new System.Drawing.Size(75, 23);
-            this.voteResultButton.TabIndex = 20;
-            this.voteResultButton.Text = "Result";
-            this.voteResultButton.UseVisualStyleBackColor = true;
+            this.voteObserverCheckBox.AutoSize = true;
+            this.voteObserverCheckBox.Location = new System.Drawing.Point(120, 44);
+            this.voteObserverCheckBox.Name = "voteObserverCheckBox";
+            this.voteObserverCheckBox.Size = new System.Drawing.Size(99, 17);
+            this.voteObserverCheckBox.TabIndex = 4;
+            this.voteObserverCheckBox.Text = "Observers Vote";
+            this.voteObserverCheckBox.UseVisualStyleBackColor = true;
             // 
             // homescreen
             // 
@@ -2355,5 +2372,6 @@
         private Controls.StateButton debateStopButton;
         private Controls.StateButton debateStartButton;
         private System.Windows.Forms.Button voteResultButton;
+        private System.Windows.Forms.CheckBox voteObserverCheckBox;
     }
 }
