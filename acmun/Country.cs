@@ -16,9 +16,20 @@ namespace leeyi45.acmun
         }
 
         [XmlElement]
-        public string Name { get; set; }
+        public string Name
+        {
+            get => _name;
+            set
+            {
+                if(string.IsNullOrWhiteSpace(value))
+                {
+                    throw new MissingDataException("Country name cannot be empty or whitespace!");
+                }
+                else _name = value;
+            }
+        }
 
-        private string altName = String.Empty;
+        private string _name = null;
 
         [XmlElement]
         public string AltName
@@ -27,14 +38,22 @@ namespace leeyi45.acmun
             set => altName = value;
         }
 
-        [XmlElement]
-        public string Shortf { get; set; }
+        private string altName = String.Empty;
 
         [XmlElement]
-        public bool Observer { get; set; }
+        public string Shortf
+        {
+            get => string.IsNullOrWhiteSpace(_shortf) ? Name : _shortf;
+            set => _shortf = value;
+        }
+
+        private string _shortf = String.Empty;
 
         [XmlElement]
-        public bool P5Veto { get; set; }
+        public bool Observer { get; set; } = false;
+
+        [XmlElement]
+        public bool P5Veto { get; set; } = false;
 
         [XmlIgnore]
         public bool Present { get; set; }
@@ -49,7 +68,7 @@ namespace leeyi45.acmun
             set => SpeakingTime = TimeSpan.Parse(value);
         }
 
-        public bool ShouldSerializeSpeakingTimeStr() 
+        public bool ShouldSerializeSpeakingTimeStr()
             => SpeakingTime != TimeSpan.Zero;
 
         public int CompareTo(Country other)

@@ -11,15 +11,6 @@ namespace leeyi45.acmun
         [STAThread]
         static void Main(string[] args)
         {
-            //using (var stream = System.IO.File.Open("conf.xml", System.IO.FileMode.Open))
-            //{
-            //    var serializer = new System.Xml.Serialization.XmlSerializer(typeof(Council));
-            //    var instance = (Council)serializer.Deserialize(stream);
-            //    instance.topics = new[] { "generic 1", "generic 2", "generic 3" };
-            //    Country.Serial = false;
-            //    serializer.Serialize(stream, instance);
-            //}
-
             StateVals = new Dictionary<State, string>
             {
                 { State.Pass, "Pass" },
@@ -43,5 +34,15 @@ namespace leeyi45.acmun
             => StateVals[state];
 
         private static Dictionary<State, string> StateVals;
+    }
+
+    public class MissingDataException : Exception
+    {
+        public MissingDataException(string Message) : base(Message) { }
+    }
+
+    public class DataLoadException : Exception
+    {
+        public DataLoadException(string msg) : base(msg) { }
     }
 }

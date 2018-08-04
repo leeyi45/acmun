@@ -31,13 +31,40 @@ namespace leeyi45.acmun
         public int Disruptiveness { get; set; }
 
         [XmlElement]
-        public string Text { get; set; }
+        public string Text
+        {
+            get => _text;
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                    throw new DataLoadException("Text value for motion data cannot be null or empty");
+                else _text = value;
+            }
+        }
+
+        private string _text = null;
 
         [XmlElement]
-        public string Id { get; set; }
+        public string Id
+        {
+            get => _id;
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value)) throw new MissingDataException("Motion ID cannot be null");
+                else _id = value;
+            }
+        }
+
+        private string _id = null;
 
         [XmlElement]
-        public string Name { get; set; }
+        public string Name
+        {
+            get => string.IsNullOrWhiteSpace(_name) ? Text : Name;
+            set => _name = value;
+        }
+
+        private string _name = null;
 
         [XmlElement]
         public bool Duration { get; set; }
@@ -125,6 +152,8 @@ namespace leeyi45.acmun
 
         public bool Passed { get; set; } = false;
 
+        public bool ObserversVote { get; set; } = true;
+
         public enum VoteType
         {
             Procedural = 0, Substantive = 1, Consensus = 2
@@ -141,7 +170,7 @@ namespace leeyi45.acmun
     [Serializable]
     public class Motion : IComparable<Motion>
     {
-        public Motion(MotionData data, string topic, Country Proposer, TimeSpan Duration, 
+        public Motion(string data, string topic, Country Proposer, TimeSpan Duration, 
             TimeSpan SpeakTime) : this(data, topic, Proposer)
         {
             var errMsg = "Missing Data: ";
@@ -156,8 +185,13 @@ namespace leeyi45.acmun
             if (errMsg != "Missing Data: ") throw new MissingDataException(errMsg);
         }
         
-        public Motion(MotionData data, string topic, Country Proposer)
+        public Motion(string _data, string topic, Country Proposer)
         {
+            if(!Motions.TryGetValue(_data, out var data))
+            {
+                throw new MissingDataException($"Failed to load motion with id '{_data}'");
+            }
+
             Internal = data;
             Topic = topic;
             this.Proposer = Proposer;
@@ -173,12 +207,13 @@ namespace leeyi45.acmun
         [XmlIgnore]
         public MotionData Internal { get; set; }
 
+        /*
         [XmlElement("ID")]
         public string InternalID
         {
             get => Internal.Id;
             set => Internal = Motions[value];
-        }
+        }*/
 
         [XmlIgnore]
         public string Text
@@ -194,11 +229,18 @@ namespace leeyi45.acmun
             set => Internal.Name = value;
         }
 
-        [XmlElement]
+        [XmlElement("ID")]
         public string TypeId
         {
             get => Internal.Id;
-            set => Internal.Id = value;
+            set
+            {
+                if (!Motions.TryGetValue(value, out var it))
+                {
+                    throw new DataLoadException($"Could not find motion type with id '{value}'");
+                }
+                else Internal = it;
+            }
         }
 
         [XmlElement]
@@ -272,18 +314,13 @@ namespace leeyi45.acmun
                 }
             }
         }
-
-        public class MissingDataException : Exception
-        {
-            public MissingDataException(string Message) : base(Message) { }
-        }
     }
 
     [Serializable]
     public class ModCaucus : Motion
     {
         public ModCaucus(string Topic, Country Proposer, TimeSpan Duration, TimeSpan SpeakTime) :
-            base(Motions["mod"], Topic, Proposer, Duration, SpeakTime) 
+            base("mod", Topic, Proposer, Duration, SpeakTime) 
             => SpeakerCount = (int)(Duration.TotalSeconds / SpeakTime.TotalSeconds);
 
         private ModCaucus() { }
@@ -298,7 +335,7 @@ namespace leeyi45.acmun
     public class UnmodCaucus : Motion
     {
         public UnmodCaucus(string Topic, Country Proposer, TimeSpan Duration) :
-            base(Motions["unmod"], Topic, Proposer, Duration, TimeSpan.Zero)
+            base("unmod", Topic, Proposer, Duration, TimeSpan.Zero)
             => this.Topic = Topic;
 
         private UnmodCaucus() { }

@@ -46,8 +46,15 @@ namespace leeyi45.acmun
         {
             get
             {
-                if ((_motions?.Count ?? 0) == 0) _motions = _motionsAsList.ToDictionary(x => x.Id, x => x);
-                return _motions;
+                try
+                {
+                    if ((_motions?.Count ?? 0) == 0) _motions = _motionsAsList.ToDictionary(x => x.Id, x => x);
+                    return _motions;
+                }
+                catch(ArgumentException)
+                {
+                    throw new DataLoadException("Conflicting Motion ID detected");
+                }
             }
             set => _motions = motions;
         }
@@ -99,6 +106,9 @@ namespace leeyi45.acmun
         public static Country[] Voters { get; set; }
 
         public static int VoteCount => Voters.Length;
+
+        public static string[] VotersShortf
+            => Voters.Select(x => x.Shortf).ToArray();
 
         public static void UpdatePresent()
         {
@@ -397,4 +407,5 @@ namespace leeyi45.acmun
             }
         }
     }
+   
 }
