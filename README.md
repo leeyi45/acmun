@@ -16,4 +16,5 @@ TODO List:
   <li>Fix TopicBoxes</li>
   <li><strike>Fix TimeSelector LabelBoxes</strike></li>
   <li>Implement speech time tracking for single speaker speeches</li>
+  <li>Fix ListBox DragDrop <strike>and Click</strike> registration</li>
 </ol>
