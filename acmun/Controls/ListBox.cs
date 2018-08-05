@@ -6,6 +6,7 @@ using System.Threading;
 using System.Diagnostics;
 using System.Windows.Forms;
 using System.Drawing;
+using System.ComponentModel;
 
 namespace leeyi45.acmun.Controls
 {
@@ -20,8 +21,6 @@ namespace leeyi45.acmun.Controls
             DragDrop += dragDrop;
 
             MouseTimer = new Stopwatch();
-
-            clickDuration = 70;
         }
 
         Stopwatch MouseTimer;
@@ -30,7 +29,10 @@ namespace leeyi45.acmun.Controls
 
         bool mouseUp = false;
 
-        public int clickDuration { get; set; } = 70;
+        [Browsable(true)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        [DefaultValue(90)]
+        public int clickDuration { get; set; }
 
         int prevIndex = -1;
 
