@@ -14,11 +14,9 @@ namespace leeyi45.acmun.Main_Screen
             ModSpeakTimer = new Clock();
             ModSpeakTimer.Tick += ModSpeakTick;
 
-            ModSpeakTimer.Started += ModSpeakTimerRunning_Changed;
-            ModSpeakTimer.Stopped += ModSpeakTimerRunning_Changed;
+            ModSpeakTimer.RunningChanged += ModSpeakTimerRunning_Changed;
 
-            ModTotalTimer.Started += ModTotalTimerRunning_Changed;
-            ModTotalTimer.Stopped += ModTotalTimerRunning_Changed;
+            ModTotalTimer.RunningChanged += ModTotalTimerRunning_Changed;
 
             modSpeakTimeSelector.ValueChanged += modSpeakTimeSelector_ValueChanged;
             modTotalTimeSelector.ValueChanged += modTotalTimeSelector_ValueChanged;
@@ -117,10 +115,10 @@ namespace leeyi45.acmun.Main_Screen
 
         private void ModTotalTimerRunning_Changed(object sender, EventArgs e)
         {
-            modTotalStartButton.Enabled = !ModSpeakTimer.Running;
-            modTotalPauseButton.Enabled = ModSpeakTimer.Running;
-            modTotalTimeSelector.Enabled = !ModSpeakTimer.Running;
-            modExtendButton.Enabled = !ModSpeakTimer.Running;
+            modTotalStartButton.Enabled = !ModTotalTimer.Running;
+            modTotalPauseButton.Enabled = ModTotalTimer.Running;
+            modTotalTimeSelector.Enabled = !ModTotalTimer.Running;
+            modExtendButton.Enabled = !ModTotalTimer.Running;
         }
 
         private void ModSpeakTimerRunning_Changed(object sender, EventArgs e)

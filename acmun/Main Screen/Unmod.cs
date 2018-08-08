@@ -14,8 +14,7 @@ namespace leeyi45.acmun.Main_Screen
 
             UnmodTimer = new Clock();
             UnmodTimer.Tick += UnmodTimerTick;
-            UnmodTimer.Started += UnmodTimerRunningChanged;
-            UnmodTimer.Stopped += UnmodTimerRunningChanged;
+            UnmodTimer.RunningChanged += UnmodTimerRunningChanged;
 
             unmodStartButton.Click += unmodStartButton_Click;
             unmodPauseButton.Click += unmodPauseButton_Click;

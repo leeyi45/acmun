@@ -47,16 +47,16 @@ namespace leeyi45.acmun
         {
             if (Running) return;
             Running = true;
-            Started?.Invoke(this, EventArgs.Empty);
+            RunningChanged?.Invoke(this, EventArgs.Empty);
             Internal.Start();
         }
 
         public void Stop()
         {
             if (!Running) return;
-            Internal.Stop();
             Running = false;
-            Stopped?.Invoke(this, EventArgs.Empty);
+            RunningChanged?.Invoke(this, EventArgs.Empty);
+            Internal.Stop();
         }
 
         public void Reset()
@@ -82,9 +82,7 @@ namespace leeyi45.acmun
 
         public event EventHandler Tick;
 
-        public event EventHandler Stopped;
-
-        public event EventHandler Started;
+        public event EventHandler RunningChanged;
 
         public event EventHandler ResetTriggered;
     }

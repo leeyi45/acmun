@@ -23,8 +23,7 @@ namespace leeyi45.acmun.Main_Screen
             GSLTimer = new Clock(GSLSpeakingTime);
             GSLTimer.Tick += GSLTimerTick;
             GSLTimer.TimeUp += GSLTimeUp;
-            GSLTimer.Started += GSLTimerRunningChanged;
-            GSLTimer.Stopped += GSLTimerRunningChanged;
+            GSLTimer.RunningChanged += GSLTimerRunningChanged;
             GSLTimer.ResetTriggered += GSLTimerReset;
 
             gslTimeSelector.ValueChanged += gslTimeSelector_ValueChanged;

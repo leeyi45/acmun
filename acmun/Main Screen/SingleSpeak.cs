@@ -13,8 +13,7 @@ namespace leeyi45.acmun.Main_Screen
 
             SingleTimer = new Clock();
 
-            SingleTimer.Started += SingleTimerRunningChanged;
-            SingleTimer.Stopped += SingleTimerRunningChanged;
+            SingleTimer.RunningChanged += SingleTimerRunningChanged;
             SingleTimer.Tick += SingleTimerTick;
 
             singlePictureBox.SizeMode = PictureBoxSizeMode.CenterImage;

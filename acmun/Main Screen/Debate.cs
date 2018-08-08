@@ -16,8 +16,7 @@ namespace leeyi45.acmun.Main_Screen
 
             DebateTimer = new Clock();
             DebateTimer.Tick += DebateTimerTick;
-            DebateTimer.Started += DebateTimerRunning_Changed;
-            DebateTimer.Stopped += DebateTimerRunning_Changed;
+            DebateTimer.RunningChanged += DebateTimerRunning_Changed;
 
             debateTimeSelector.ValueChanged += debateTimeSelector_ValueChanged;
             debateCountSelector.ValueChanged += debateCountSelector_ValueChanged;
