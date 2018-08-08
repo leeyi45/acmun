@@ -194,6 +194,7 @@
             this.unmodCountryTextBox = new leeyi45.acmun.Controls.TopicBox();
             this.unmodTopicTextBox = new leeyi45.acmun.Controls.TopicBox();
             this.motionNoMotionTextBox = new leeyi45.acmun.Controls.LabelBox();
+            this.labelBox3 = new leeyi45.acmun.Controls.LabelBox();
             this.singlePauseButton = new leeyi45.acmun.Controls.StateButton();
             this.singleStartButton = new leeyi45.acmun.Controls.StateButton();
             this.singleCountryTextBox = new leeyi45.acmun.Controls.LabelBox();
@@ -696,6 +697,7 @@
             // 
             // singleTab
             // 
+            this.singleTab.Controls.Add(this.labelBox3);
             this.singleTab.Controls.Add(this.singlePauseButton);
             this.singleTab.Controls.Add(this.singleStartButton);
             this.singleTab.Controls.Add(this.singlePictureBox);
@@ -1473,7 +1475,7 @@
             // voteAutoCountCheckBox
             // 
             this.voteAutoCountCheckBox.AutoSize = true;
-            this.voteAutoCountCheckBox.Location = new System.Drawing.Point(6, 123);
+            this.voteAutoCountCheckBox.Location = new System.Drawing.Point(7, 123);
             this.voteAutoCountCheckBox.Name = "voteAutoCountCheckBox";
             this.voteAutoCountCheckBox.Size = new System.Drawing.Size(79, 17);
             this.voteAutoCountCheckBox.TabIndex = 3;
@@ -1803,7 +1805,7 @@
             // 
             // gslListBox
             // 
-            this.gslListBox.clickDuration = 90;
+            this.gslListBox.clickDuration = 120;
             this.gslListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
             this.gslListBox.FormattingEnabled = true;
             this.gslListBox.ItemHeight = 29;
@@ -1921,7 +1923,7 @@
             // 
             // modListBox
             // 
-            this.modListBox.clickDuration = 90;
+            this.modListBox.clickDuration = 120;
             this.modListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
             this.modListBox.FormattingEnabled = true;
             this.modListBox.ItemHeight = 29;
@@ -1983,6 +1985,16 @@
             this.motionNoMotionTextBox.Size = new System.Drawing.Size(601, 31);
             this.motionNoMotionTextBox.TabIndex = 10;
             this.motionNoMotionTextBox.Text = "There are currently no motions";
+            // 
+            // labelBox3
+            // 
+            this.labelBox3.BackColor = System.Drawing.SystemColors.Window;
+            this.labelBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBox3.Location = new System.Drawing.Point(24, 40);
+            this.labelBox3.Name = "labelBox3";
+            this.labelBox3.Size = new System.Drawing.Size(673, 37);
+            this.labelBox3.TabIndex = 58;
+            this.labelBox3.Text = "Single Speaker";
             // 
             // singlePauseButton
             // 
@@ -2089,7 +2101,7 @@
             // 
             // debateACountryListBox
             // 
-            this.debateACountryListBox.clickDuration = 90;
+            this.debateACountryListBox.clickDuration = 120;
             this.debateACountryListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
             this.debateACountryListBox.FormattingEnabled = true;
             this.debateACountryListBox.ItemHeight = 29;
@@ -2110,7 +2122,7 @@
             // 
             // debateFCountryListBox
             // 
-            this.debateFCountryListBox.clickDuration = 90;
+            this.debateFCountryListBox.clickDuration = 120;
             this.debateFCountryListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
             this.debateFCountryListBox.FormattingEnabled = true;
             this.debateFCountryListBox.ItemHeight = 29;
@@ -2373,5 +2385,6 @@
         private Controls.StateButton debateStartButton;
         private System.Windows.Forms.Button voteResultButton;
         private System.Windows.Forms.CheckBox voteObserverCheckBox;
+        private Controls.LabelBox labelBox3;
     }
 }

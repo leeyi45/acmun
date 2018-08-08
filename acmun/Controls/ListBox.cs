@@ -20,6 +20,8 @@ namespace leeyi45.acmun.Controls
             DragOver += dragOver;
             DragDrop += dragDrop;
 
+            AllowDrop = true;
+
             MouseTimer = new Stopwatch();
         }
 
@@ -31,8 +33,17 @@ namespace leeyi45.acmun.Controls
 
         [Browsable(true)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
-        [DefaultValue(90)]
-        public int clickDuration { get; set; }
+        [DefaultValue(120)]
+        public int clickDuration { get; set; } = 120;
+
+        [Browsable(true)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        [DefaultValue(true)]
+        public new bool AllowDrop
+        {
+            get => base.AllowDrop;
+            private set => base.AllowDrop = value;
+        }
 
         int prevIndex = -1;
 
@@ -83,7 +94,7 @@ namespace leeyi45.acmun.Controls
                 if (drag)
                 { //Drag Drop
                     if (SelectedItem == null) return;
-                    DoDragDrop(SelectedItem, DragDropEffects.Move);
+                    DoDragDrop(SelectedItem, DragDropEffects.All);
                 }
                 else
                 { //Single Click
@@ -120,10 +131,7 @@ namespace leeyi45.acmun.Controls
             DragDone?.Invoke(this, fIndex, dIndex);
         }
 
-        public void Deselect()
-        {
-            SelectedIndex = -1;
-        }
+        public void Deselect() => SelectedIndex = -1;
 
         public event ListBoxClickHandler ClickSelect;
 
