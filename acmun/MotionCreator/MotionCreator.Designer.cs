@@ -120,7 +120,9 @@
             this.totalTimeSelector.Size = new System.Drawing.Size(108, 49);
             this.totalTimeSelector.TabIndex = 31;
             this.totalTimeSelector.Text = "Total Duration";
-            this.totalTimeSelector.Value = System.TimeSpan.Parse("00:00:00");
+            this.totalTimeSelector.TextBackColor = System.Drawing.SystemColors.Control;
+            this.totalTimeSelector.Value = System.TimeSpan.Parse("00:00:01");
+            this.totalTimeSelector.Width = 108;
             // 
             // speakTimeSelector
             // 
@@ -129,7 +131,9 @@
             this.speakTimeSelector.Size = new System.Drawing.Size(108, 49);
             this.speakTimeSelector.TabIndex = 32;
             this.speakTimeSelector.Text = "Speaking Time";
-            this.speakTimeSelector.Value = System.TimeSpan.Parse("00:00:00");
+            this.speakTimeSelector.TextBackColor = System.Drawing.SystemColors.Control;
+            this.speakTimeSelector.Value = System.TimeSpan.Parse("00:00:01");
+            this.speakTimeSelector.Width = 108;
             // 
             // MotionCreator
             // 
