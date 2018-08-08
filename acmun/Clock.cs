@@ -55,8 +55,8 @@ namespace leeyi45.acmun
         {
             if (!Running) return;
             Internal.Stop();
-            Stopped?.Invoke(this, EventArgs.Empty);
             Running = false;
+            Stopped?.Invoke(this, EventArgs.Empty);
         }
 
         public void Reset()
