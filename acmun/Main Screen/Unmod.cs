@@ -17,6 +17,11 @@ namespace leeyi45.acmun.Main_Screen
             UnmodTimer.Started += UnmodTimerRunningChanged;
             UnmodTimer.Stopped += UnmodTimerRunningChanged;
 
+            unmodStartButton.Click += unmodStartButton_Click;
+            unmodPauseButton.Click += unmodPauseButton_Click;
+            unmodExtendButton.Click += unmodExtendButton_Click;
+            unmodFinishButton.Click += unmodFinishButton_Click;
+
             LoadUnmod(UnmodCaucus.DefaultUnmod);
         }
 
@@ -86,10 +91,7 @@ namespace leeyi45.acmun.Main_Screen
             }
         }
 
-        private void unmodPauseButton_Click(object sender, EventArgs e)
-        {
-            UnmodTimer.Stop();
-        }
+        private void unmodPauseButton_Click(object sender, EventArgs e) => UnmodTimer.Stop();
 
         private void unmodReset_Click(object sender, EventArgs e)
         {
