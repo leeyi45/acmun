@@ -21,9 +21,32 @@ namespace leeyi45.acmun.Roll_Call
             rollCallBox.SelectedIndexChanged += rollCallBox_SelectedChanged;
             observerCheckBox.CheckedChanged += observerCheckBox_CheckedChanged;
             allPresentCheckBox.CheckedChanged += allPresentCheckBox_CheckedChanged;
+
+            FormClosing += RollCallScreen_FormClosing;
+
             quorumLabel.Text = $"{rollCallBox.CheckedItems.Count}/{CountryCount}";
             councilNameLabelBox.Text = councilName;
             StartPosition = FormStartPosition.CenterParent;
+        }
+
+        private void RollCallScreen_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            UpdatePresent();
+
+            if (PresentCount == 0)
+            {
+                switch (MessageBox.Show("There are no countries selected!\n Proceed?", "Warning",
+                    MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation))
+                {
+                    case DialogResult.Cancel:
+                        {
+                            e.Cancel = true;
+                            return;
+                        }
+                }
+            }
+
+            Program.Instance.UpdateQuorum();
         }
 
         private int rollCallCount;
@@ -91,22 +114,5 @@ namespace leeyi45.acmun.Roll_Call
 
         private void doneButton_Click(object sender, EventArgs e)
             => Close();
-
-        private new void Close()
-        {
-            UpdatePresent();
-
-           if(PresentCount == 0)
-            {
-                switch (MessageBox.Show("There are no countries selected!\n Proceed?", "Warning", 
-                    MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation))
-                {
-                    case DialogResult.Cancel: return;
-                }
-            }
-
-            Program.Instance.UpdateQuorum();
-            base.Close();
-        }
     }
 }
