@@ -17,4 +17,5 @@ TODO List:
   <li><strike>Fix TimeSelector LabelBoxes</strike></li>
   <li>Implement speech time tracking for single speaker speeches</li>
   <li><strike>Fix ListBox DragDrop and Click registration</strike></li>
+  <li>Implement Timer timeup code</li>
 </ol>
