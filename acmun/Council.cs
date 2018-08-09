@@ -97,6 +97,8 @@ namespace leeyi45.acmun
             set => Instance.Countries = value;
         }
 
+        public static Dictionary<string, Country> CountriesByShortf { get; set; }
+
         public static int CountryCount => CountryList.Length;
 
         public static Country[] Present { get; set; }
@@ -107,8 +109,7 @@ namespace leeyi45.acmun
 
         public static int VoteCount => Voters.Length;
 
-        public static string[] VotersShortf
-            => Voters.Select(x => x.Shortf).ToArray();
+        public static string[] VotersShortf { get; set; }
 
         public static void UpdatePresent()
         {
@@ -117,10 +118,13 @@ namespace leeyi45.acmun
 
             Voters = Present.Where(x => !x.Observer).ToArray();
             Array.Sort(Voters);
+
+            CountriesByShortf = CountryList.ToDictionary(x => x.Shortf, x => x);
+            VotersShortf = Voters.Select(x => x.Shortf).ToArray();
+            PresentShortf = Present.Select(x => x.Shortf).ToArray();
         }
 
-        public static string[] PresentShortf
-            => Present.Select(x => x.Shortf).ToArray();
+        public static string[] PresentShortf { get; set; }
 
         public static bool FiftyPlus1
         {
@@ -239,9 +243,15 @@ namespace leeyi45.acmun
                     Instance = (Council)serializer.Deserialize(stream);
                 }
             }
-            catch (Exception e)
+            catch(DataLoadException e)
             {
                 MessageBox.Show($"There was an error loading the settings xml file: {e.Message}", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (exit) Application.Exit();
+            }
+            catch (InvalidOperationException e)
+            {
+                MessageBox.Show($"There was an error loading the settings xml file: {e.InnerException.Message}", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 if (exit) Application.Exit();
