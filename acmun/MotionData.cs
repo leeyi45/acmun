@@ -284,8 +284,15 @@ namespace leeyi45.acmun
             set => Internal.SpeakTime = value;
         }
 
-        [XmlElement]
+        [XmlIgnore]
         public Country Proposer { get; set; }
+        
+        [XmlElement("Proposer")]
+        public string ProposerShortf
+        {
+            get => Proposer.Shortf;
+            set => Proposer = CountriesByShortf[value];
+        }
 
         [XmlElement]
         public string Topic { get; set; }
