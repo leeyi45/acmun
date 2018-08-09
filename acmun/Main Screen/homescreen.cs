@@ -12,6 +12,8 @@ namespace leeyi45.acmun.Main_Screen
         {
             InitializeComponent();
 
+            //new Roll_Call.rollCallScreen(Council.Name).ShowDialog();
+
             InitializeGSL();
             InitializeUnmod();
             InitializeMod();
@@ -22,7 +24,7 @@ namespace leeyi45.acmun.Main_Screen
 
             acmun.Controls.LabelBox.ParentForm = this;
         }
-
+        
         private void homescreen_Shown(object sender, EventArgs e)
             => new Roll_Call.rollCallScreen(Council.Name).ShowDialog();
 

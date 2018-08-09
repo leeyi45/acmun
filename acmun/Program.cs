@@ -11,6 +11,8 @@ namespace leeyi45.acmun
         [STAThread]
         static void Main(string[] args)
         {
+            Application.EnableVisualStyles();
+
             StateVals = new Dictionary<State, string>
             {
                 { State.Pass, "Pass" },
@@ -20,10 +22,8 @@ namespace leeyi45.acmun
                 { State.Null, "" }
             };
 
-            Council.LoadCouncil("conf.xml");
+            Council.LoadCouncil("conf.xml", true);
             Instance = new Main_Screen.homescreen();
-
-            Application.EnableVisualStyles();
             Application.Run(Instance);
         }
 

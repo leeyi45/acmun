@@ -34,6 +34,7 @@ namespace leeyi45.acmun.Main_Screen
             voteClearAllButton.Click += VoteClearAllButton_Click;
             voteDivideButton.Click += VoteDivideButton_Click;
             voteResultButton.Click += VoteResultButton_Click;
+            voteResetAllButton.Click += VoteResetAllButton_Click;
 
             voteAbstainCheckBox.CheckedChanged += voteAbstainCheckBox_CheckedChanged;
             voteWithRightsCheckBox.CheckedChanged += VoteWithRightsCheckBox_CheckedChanged;
@@ -54,8 +55,11 @@ namespace leeyi45.acmun.Main_Screen
             voteCountryBox.Items.AddRange(voteObserverCheckBox.Checked ? Council.PresentShortf : Council.VotersShortf);
         }
 
-        private void VoteAutoCountCheckBox_CheckedChanged(object sender, EventArgs e) 
-            => voteCountButton.Enabled = !voteAutoCountCheckBox.Checked;
+        private void VoteAutoCountCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            voteCountButton.Enabled = !voteAutoCountCheckBox.Checked;
+            if (voteAutoCountCheckBox.Checked) UpdateVoteCount();
+        }
 
         private void VoteWithRightsCheckBox_CheckedChanged(object sender, EventArgs e)
         {
@@ -74,7 +78,7 @@ namespace leeyi45.acmun.Main_Screen
             CurrentVote.Type = (Vote.VoteType)i;
         }
 
-        private void voteAbstainCheckBox_CheckedChanged(object sender, EventArgs e)
+        private void voteAbstainCheckBox_CheckedChanged(object sender, EventArgs e) 
             => voteAbstainButton.Enabled = voteAbstainCheckBox.Checked;
         #endregion
 
@@ -96,6 +100,7 @@ namespace leeyi45.acmun.Main_Screen
             abstainCount = 0;
 
             UpdateVoteCount();
+            UpdateVoteCountryBox();
         }
 
         private void VoteCountButton_Click(object sender, EventArgs e)
@@ -180,21 +185,24 @@ namespace leeyi45.acmun.Main_Screen
             VoteResult("The vote has been passed", true);
         }
 
+        private void VoteResetAllButton_Click(object sender, EventArgs e) 
+            => LoadVote(Vote.Default);
+
         private void VoteButtons()
         {
             voteCountryBox.Items.Remove(voteCountryBox.SelectedItem);
 
             voteObserverCheckBox.Enabled = (forCount + againstCount + abstainCount > 0);
-            ButtonUpdate();
+            VoteButtonUpdate();
         }
 
         private void VoteRemoveButtons(string country)
         {
             voteCountryBox.Items.Add(country);
-            ButtonUpdate();
+            VoteButtonUpdate();
         }
 
-        private void ButtonUpdate()
+        private void VoteButtonUpdate()
         {
             if (voteAutoCountCheckBox.Checked) UpdateVoteCount();
         }
@@ -230,8 +238,19 @@ namespace leeyi45.acmun.Main_Screen
             voteAbstainListBox.Items.Clear();
             voteWithRightsCheckBox.Checked = false;
             UpdateVoteCount();
+            UpdateVoteCountryBox();
 
             CurrentVote = vote;
+        }
+
+        private void UpdateVoteCountryBox()
+        {
+            voteCountryBox.Items.Clear();
+
+            //This is kind of lazy probably should do something about it
+
+            try { voteCountryBox.Items.AddRange(voteObserverCheckBox.Checked ? Council.PresentShortf : Council.VotersShortf); }
+            catch(ArgumentNullException) { }
         }
     }
 }
