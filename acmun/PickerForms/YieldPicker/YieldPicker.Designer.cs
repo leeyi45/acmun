@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.countryBox = new leeyi45.acmun.Controls.ListBox();
+            this.countryBox = new System.Windows.Forms.ListBox();
             this.yieldButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -36,7 +36,6 @@
             // 
             // countryBox
             // 
-            this.countryBox.clickDuration = 70;
             this.countryBox.FormattingEnabled = true;
             this.countryBox.Location = new System.Drawing.Point(12, 37);
             this.countryBox.Name = "countryBox";
@@ -90,7 +89,7 @@
 
         #endregion
 
-        private Controls.ListBox countryBox;
+        private System.Windows.Forms.ListBox countryBox;
         private System.Windows.Forms.Button yieldButton;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Label label1;
