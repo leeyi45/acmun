@@ -33,9 +33,11 @@ namespace leeyi45.acmun.Main_Screen
             get => singleSpeak;
             set
             {
+                if (singleSpeak != null) singleSpeak.SpeakingTime += SingleTimer.CurrentTime;
+
                 singleSpeak = value;
-                singleCountryTextBox.Text = value.Name;
-                singlePictureBox.ImageLocation = $@"flags\{value.AltName}.png";
+                singleCountryTextBox.Text = value.Name ?? String.Empty;
+                singlePictureBox.ImageLocation = $@"flags\{value.AltName ?? String.Empty}.png";
             }
         }
 
@@ -101,6 +103,7 @@ namespace leeyi45.acmun.Main_Screen
         private void singleResetButton_Click(object sender, EventArgs e)
         {
             SingleTimer.Reset();
+            SingleSpeaker = null;
         }
     }
 }
