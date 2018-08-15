@@ -25,16 +25,13 @@ namespace leeyi45.acmun.Controls
 
         public TimeSpan Value
         {
-            get => _value;
+            get => new TimeSpan(0, (int)minSelector.Value, (int)secSelector.Value);
             set
             {
-                _value = value;
                 minSelector.Value = value.Minutes;
                 secSelector.Value = value.Seconds;
             }
         }
-
-        private TimeSpan _value;
 
         [EditorBrowsable(EditorBrowsableState.Always)]
         [Browsable(true)]
@@ -88,7 +85,6 @@ namespace leeyi45.acmun.Controls
             if (minSelector.Value == 0) secSelector.Minimum = 1;
             else secSelector.Minimum = 0;
 
-            Value = new TimeSpan(0, (int)minSelector.Value, (int)secSelector.Value);
             ValueChanged?.Invoke(this, EventArgs.Empty);
         }
 
