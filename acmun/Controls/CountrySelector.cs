@@ -19,8 +19,6 @@ namespace leeyi45.acmun.Controls
 
             listBox.ClickSelect += ListBox_ClickSelect;
             addButton.Click += AddButton_Click;
-
-            List = new List<Delegation>();
         }
 
         private void AddButton_Click(object sender, EventArgs e)
@@ -31,15 +29,7 @@ namespace leeyi45.acmun.Controls
             comboBox.SelectedIndex = -1;
         }
 
-        public int SelectedIndex
-        {
-            get => listBox.SelectedIndex;
-            set => listBox.SelectedIndex = value;
-        }
-
-        private void ListBox_ClickSelect(object sender, int index)
-            => ClickSelect?.Invoke(this, index);
-
+        #region Combobox
         public int ComboBoxSelectedIndex
         {
             get => comboBox.SelectedIndex;
@@ -48,33 +38,10 @@ namespace leeyi45.acmun.Controls
 
         public void ComboBoxResetItems(string[] items) => comboBox.ResetItems(items);
 
-        public int listBoxSelectedIndex
-        {
-            get => listBox.SelectedIndex;
-            set => listBox.SelectedIndex = value;
-        }
-
-        public object listBoxSelectedItem
-        {
-            get => listBox.SelectedItem;
-            set => listBox.SelectedItem = value;
-        }
-
-        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        private List<Delegation> List { get; set; }
-
-        public new int Height
-        {
-            get => base.Height;
-            set
-            {
-                base.Height = value;
-                listBox.Height = value - 2;
-            }
-        }
-
         public ComboBox.ObjectCollection ComboBoxItems => comboBox.Items;
+        #endregion
 
+        #region listBox
         public List<string> Speakers
         {
             get => listBox.Speakers;
@@ -92,6 +59,22 @@ namespace leeyi45.acmun.Controls
             comboBox.Text = "";
         }
 
+        public int listBoxSelectedIndex
+        {
+            get => listBox.SelectedIndex;
+            set => listBox.SelectedIndex = value;
+        }
+
+        public object listBoxSelectedItem
+        {
+            get => listBox.SelectedItem;
+            set => listBox.SelectedItem = value;
+        }
+
+        private void ListBox_ClickSelect(object sender, int index)
+            => ClickSelect?.Invoke(this, index);
+
         public event ListBoxClickHandler ClickSelect;
+        #endregion
     }
 }
