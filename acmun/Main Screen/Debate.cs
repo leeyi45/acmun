@@ -21,9 +21,6 @@ namespace leeyi45.acmun.Main_Screen
             debateTimeSelector.ValueChanged += debateTimeSelector_ValueChanged;
             debateCountSelector.ValueChanged += debateCountSelector_ValueChanged;
 
-            DebateASpeakers = new List<Delegation>(DebateSpeakCount);
-            DebateFSpeakers = new List<Delegation>(DebateSpeakCount);
-
             debateAddACountry.Click += debateAddACountry_Click;
             debateAddFCountry.Click += debateAddFCountry_Click;
 
@@ -36,9 +33,6 @@ namespace leeyi45.acmun.Main_Screen
             debateNextButton.Click += debateNextButton_Click;
             debateStartButton.Click += debateStartButton_Click;
             debateStopButton.Click += debatePauseButton_Click;
-
-            //debateACountryListBox.DragDone += debateAListBox_DragDrop;
-            //debateFCountryListBox.DragDone += debateFListBox_DragDrop;
 
             debatePictureBox.SizeMode = PictureBoxSizeMode.CenterImage;
 
@@ -84,8 +78,8 @@ namespace leeyi45.acmun.Main_Screen
 
         private int DebateSpeakCount;
 
-        private List<Delegation> DebateASpeakers;
-        private List<Delegation> DebateFSpeakers;
+        //private List<Delegation> debateACountryListBox.Speakers;
+        //private List<Delegation> debateFCountryListBox.Speakers;
 
         private Clock DebateTimer;
         private TimeSpan DebateSpeakTime;
@@ -119,14 +113,8 @@ namespace leeyi45.acmun.Main_Screen
             if (newval < DebateSpeakCount)
             {
                 var diff = DebateSpeakCount - newval;
-                DebateASpeakers.RemoveRange(diff - 1, diff);
-                DebateFSpeakers.RemoveRange(diff - 1, diff);
-
-                debateACountryListBox.Items.Clear();
-                debateACountryListBox.Items.AddRange(DebateASpeakers.Select(x => x.Name).ToArray());
-
-                debateFCountryListBox.Items.Clear();
-                debateFCountryListBox.Items.AddRange(DebateFSpeakers.Select(x => x.Name).ToArray());
+                debateACountryListBox.Speakers.RemoveRange(diff - 1, diff);
+                debateFCountryListBox.Speakers.RemoveRange(diff - 1, diff);
             }
 
             DebateSpeakCount = newval;
@@ -136,24 +124,18 @@ namespace leeyi45.acmun.Main_Screen
         private void debateAddACountry_Click(object sender, EventArgs e)
         {
             if (debateASelector.SelectedItem == null) return;
-            if (DebateASpeakers.Count >= DebateSpeakCount) return;
+            if (debateACountryListBox.Speakers.Count >= DebateSpeakCount) return;
 
-            var country = Council.Present[debateASelector.SelectedIndex];
-
-            debateACountryListBox.Items.Add(country.Name);
-            DebateASpeakers.Add(country);
+            debateACountryListBox.AddSpeaker(Council.Present[debateASelector.SelectedIndex]);
             debateASelector.Text = "";
         }
 
         private void debateAddFCountry_Click(object sender, EventArgs e)
         {
             if (debateFSelector.SelectedItem == null) return;
-            if (DebateFSpeakers.Count >= DebateSpeakCount) return;
+            if (debateFCountryListBox.Speakers.Count >= DebateSpeakCount) return;
 
-            var country = Council.Present[debateFSelector.SelectedIndex];
-
-            debateFCountryListBox.Items.Add(country.Name);
-            DebateFSpeakers.Add(country);
+            debateFCountryListBox.AddSpeaker(Council.Present[debateFSelector.SelectedIndex]);
             debateFSelector.Text = "";
         }
 
@@ -164,7 +146,7 @@ namespace leeyi45.acmun.Main_Screen
             var index = debateACountryListBox.SelectedIndex;
 
             debateACountryListBox.Items.RemoveAt(index);
-            DebateASpeakers.RemoveAt(index);
+            debateACountryListBox.Speakers.RemoveAt(index);
         }
 
         private void debateRemoveFCountry_Click(object sender, EventArgs e)
@@ -174,19 +156,19 @@ namespace leeyi45.acmun.Main_Screen
             var index = debateFCountryListBox.SelectedIndex;
 
             debateFCountryListBox.Items.RemoveAt(index);
-            DebateFSpeakers.RemoveAt(index);
+            debateFCountryListBox.Speakers.RemoveAt(index);
         }
 
         private void debateClearACountry_Click(object sender, EventArgs e)
         {
             debateACountryListBox.Items.Clear();
-            DebateASpeakers.Clear();
+            debateACountryListBox.Speakers.Clear();
         }
 
         private void debateClearFCountry_Click(object sender, EventArgs e)
         {
             debateFCountryListBox.Items.Clear();
-            DebateFSpeakers.Clear();
+            debateFCountryListBox.Speakers.Clear();
         }
 
         private void debateNextButton_Click(object sender, EventArgs e)
@@ -215,30 +197,28 @@ namespace leeyi45.acmun.Main_Screen
 
             if (IsFor)
             {
-                if (DebateFSpeakers.Count == 0)
+                if (debateFCountryListBox.Speakers.Count == 0)
                 {
                     IsFor = false;
                     return;
                 }
 
-                nextSpeaker = DebateFSpeakers[0];
-                DebateFSpeakers.RemoveAt(0);
-                debateFCountryListBox.Items.RemoveAt(0);
+                nextSpeaker = Council.CountriesByShortf[debateFCountryListBox.Speakers[0]];
+                debateFCountryListBox.RemoveSpeaker(0);
                 debateForTextBox.ForeColor = System.Drawing.Color.Green;
                 debateForTextBox.Text = "For";
                 IsFor = false;
             }
             else
             {
-                if (DebateASpeakers.Count == 0)
+                if (debateACountryListBox.Speakers.Count == 0)
                 {
                     IsFor = true;
                     return;
                 }
 
-                nextSpeaker = DebateASpeakers[0];
-                DebateASpeakers.RemoveAt(0);
-                debateACountryListBox.Items.RemoveAt(0);
+                nextSpeaker = Council.CountriesByShortf[debateACountryListBox.Speakers[0]];
+                debateACountryListBox.RemoveSpeaker(0);
                 debateForTextBox.ForeColor = System.Drawing.Color.Red;
                 debateForTextBox.Text = "Against";
                 IsFor = true;
