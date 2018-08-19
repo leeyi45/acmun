@@ -16,7 +16,7 @@ namespace leeyi45.acmun.Controls
         public CountrySelector()
         {
             InitializeComponent();
-            List = new List<Country>();
+            List = new List<Delegation>();
         }
 
         private Button clearButton;
@@ -83,7 +83,7 @@ namespace leeyi45.acmun.Controls
         }
 
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        private List<Country> List { get; set; }
+        private List<Delegation> List { get; set; }
 
         public new int Height
         {

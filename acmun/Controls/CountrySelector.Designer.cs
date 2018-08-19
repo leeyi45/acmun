@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CountrySelector));
             this.comboBox = new leeyi45.acmun.Controls.ComboBox();
             this.listBox = new leeyi45.acmun.Controls.ListBox();
             this.addButton = new System.Windows.Forms.Button();
@@ -36,6 +37,8 @@
             // 
             // comboBox
             // 
+            this.comboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.comboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBox.FormattingEnabled = true;
@@ -46,13 +49,14 @@
             // 
             // listBox
             // 
-            this.listBox.clickDuration = 70;
+            this.listBox.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
             this.listBox.FormattingEnabled = true;
             this.listBox.ItemHeight = 29;
-            this.listBox.Location = new System.Drawing.Point(3, 47);
+            this.listBox.Location = new System.Drawing.Point(0, 58);
             this.listBox.Name = "listBox";
-            this.listBox.Size = new System.Drawing.Size(450, 410);
+            this.listBox.Size = new System.Drawing.Size(457, 410);
+            this.listBox.Speakers = ((System.Collections.Generic.List<string>)(resources.GetObject("listBox.Speakers")));
             this.listBox.TabIndex = 25;
             // 
             // addButton

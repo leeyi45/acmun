@@ -21,8 +21,8 @@ namespace leeyi45.acmun.Main_Screen
             debateTimeSelector.ValueChanged += debateTimeSelector_ValueChanged;
             debateCountSelector.ValueChanged += debateCountSelector_ValueChanged;
 
-            DebateASpeakers = new List<Country>(DebateSpeakCount);
-            DebateFSpeakers = new List<Country>(DebateSpeakCount);
+            DebateASpeakers = new List<Delegation>(DebateSpeakCount);
+            DebateFSpeakers = new List<Delegation>(DebateSpeakCount);
 
             debateAddACountry.Click += debateAddACountry_Click;
             debateAddFCountry.Click += debateAddFCountry_Click;
@@ -37,8 +37,8 @@ namespace leeyi45.acmun.Main_Screen
             debateStartButton.Click += debateStartButton_Click;
             debateStopButton.Click += debatePauseButton_Click;
 
-            debateACountryListBox.DragDone += debateAListBox_DragDrop;
-            debateFCountryListBox.DragDone += debateFListBox_DragDrop;
+            //debateACountryListBox.DragDone += debateAListBox_DragDrop;
+            //debateFCountryListBox.DragDone += debateFListBox_DragDrop;
 
             debatePictureBox.SizeMode = PictureBoxSizeMode.CenterImage;
 
@@ -84,14 +84,14 @@ namespace leeyi45.acmun.Main_Screen
 
         private int DebateSpeakCount;
 
-        private List<Country> DebateASpeakers;
-        private List<Country> DebateFSpeakers;
+        private List<Delegation> DebateASpeakers;
+        private List<Delegation> DebateFSpeakers;
 
         private Clock DebateTimer;
         private TimeSpan DebateSpeakTime;
 
-        private Country debateSpeaker;
-        private Country DebateSpeaker
+        private Delegation debateSpeaker;
+        private Delegation DebateSpeaker
         {
             get => debateSpeaker;
             set
@@ -205,27 +205,13 @@ namespace leeyi45.acmun.Main_Screen
             => LoadDebate();
         #endregion
 
-        private void debateAListBox_DragDrop(object sender, int oldIndex, int newIndex)
-        {
-            var data = DebateASpeakers[oldIndex];
-            DebateASpeakers.RemoveAt(oldIndex);
-            DebateASpeakers.Insert(newIndex, data);
-        }
-
-        private void debateFListBox_DragDrop(object sender, int oldIndex, int newIndex)
-        {
-            var data = DebateFSpeakers[oldIndex];
-            DebateFSpeakers.RemoveAt(oldIndex);
-            DebateFSpeakers.Insert(newIndex, data);
-        }
-
         private void DebateNextSpeaker()
         {
             DebateTimer.Reset();
             debateTimeLabel.Text = $"00:00/{DebateSpeakTime.ToValString()}";
             debateProgressBar.Value = 0;
 
-            Country nextSpeaker;
+            Delegation nextSpeaker;
 
             if (IsFor)
             {

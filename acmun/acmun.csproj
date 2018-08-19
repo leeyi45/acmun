@@ -92,11 +92,11 @@
     <Compile Include="Controls\WarningBox.Designer.cs">
       <DependentUpon>WarningBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Country.cs" />
     <Compile Include="Controls\ListBox.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Council.cs" />
+    <Compile Include="Delegation.cs" />
     <Compile Include="MiscForms\AboutBox\AboutBox.cs">
       <SubType>Form</SubType>
     </Compile>

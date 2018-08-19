@@ -23,6 +23,7 @@ namespace leeyi45.acmun.Controls
             AllowDrop = true;
 
             MouseTimer = new Stopwatch();
+            speakers = new List<string>();
         }
 
         Stopwatch MouseTimer;
@@ -126,19 +127,49 @@ namespace leeyi45.acmun.Controls
             var fIndex = Items.IndexOf(name);
 
             Items.RemoveAt(fIndex);
-            Items.Insert(dIndex, name);
+            Speakers.RemoveAt(fIndex);
 
-            DragDone?.Invoke(this, fIndex, dIndex);
+            Items.Insert(dIndex, name);
+            Speakers.Insert(dIndex, name);
+
+            //DragDone?.Invoke(this, fIndex, dIndex);
+        }
+
+        public List<string> Speakers
+        {
+            get => speakers;
+            set
+            {
+                speakers = value;
+                Items.Clear();
+                Items.AddRange(value.ToArray());
+            }
+        }
+
+        private List<string> speakers;
+
+        public void Clear()
+        {
+            Items.Clear();
+            speakers.Clear();
+        }
+
+        public void AddSpeaker(Delegation del)
+        {
+            speakers.Add(del.Shortf);
+            Items.Add(del.Name);
+        }
+
+        public void RemoveSpeaker(int index)
+        {
+            Items.RemoveAt(index);
+            speakers.RemoveAt(index);
         }
 
         public void Deselect() => SelectedIndex = -1;
 
         public event ListBoxClickHandler ClickSelect;
-
-        public event ListBoxDragHandler DragDone;
     }
 
     public delegate void ListBoxClickHandler(object sender, int Index);
-
-    public delegate void ListBoxDragHandler(object sender, int oldIndex, int newIndex);
 }

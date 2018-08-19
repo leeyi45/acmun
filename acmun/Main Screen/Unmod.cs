@@ -18,7 +18,7 @@ namespace leeyi45.acmun.Main_Screen
 
             unmodStartButton.Click += unmodStartButton_Click;
             unmodPauseButton.Click += unmodPauseButton_Click;
-            unmodExtendButton.Click += unmodExtendButton_Click;
+            //unmodExtendButton.Click += unmodExtendButton_Click;
             unmodFinishButton.Click += unmodFinishButton_Click;
 
             LoadUnmod(UnmodCaucus.DefaultUnmod);
@@ -28,7 +28,7 @@ namespace leeyi45.acmun.Main_Screen
 
         private TimeSpan UnmodDuration;
 
-        private Country UnmodProposer;
+        private Delegation UnmodProposer;
 
         private UnmodCaucus CurrentUnmod;
 

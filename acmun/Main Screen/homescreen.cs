@@ -94,13 +94,13 @@ namespace leeyi45.acmun.Main_Screen
 
         private void saveStateToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CouncilState.SaveState(GSLList, ModList, CurrentMod, CurrentUnmod);
+            CouncilState.SaveState(gslListBox.Speakers,modListBox.Speakers, CurrentMod, CurrentUnmod);
         }
 
         public void LoadState(CouncilState state)
         {
-            GSLList = state.GSLList.ToList();
-            ModList = state.ModList.ToList();
+            gslListBox.Speakers = state.GSLList.ToList();
+            modListBox.Speakers = state.ModList.ToList();
             CurrentMod = state.CurrentMod;
             CurrentUnmod = state.CurrentUnmod;
         }

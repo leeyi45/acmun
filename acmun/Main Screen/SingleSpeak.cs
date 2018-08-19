@@ -27,8 +27,8 @@ namespace leeyi45.acmun.Main_Screen
 
         TimeSpan SingleSpeakTotal;
 
-        Country singleSpeak;
-        Country SingleSpeaker
+        Delegation singleSpeak;
+        Delegation SingleSpeaker
         {
             get => singleSpeak;
             set
@@ -41,7 +41,7 @@ namespace leeyi45.acmun.Main_Screen
             }
         }
 
-        private void LoadSingleSpeak(Country speaker, TimeSpan duration)
+        private void LoadSingleSpeak(Delegation speaker, TimeSpan duration)
         {
             singleProgressBar.Value = 0;
             SingleSpeakTotal = duration;

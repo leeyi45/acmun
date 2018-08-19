@@ -170,7 +170,7 @@ namespace leeyi45.acmun
     [Serializable]
     public class Motion : IComparable<Motion>
     {
-        public Motion(string data, string topic, Country Proposer, TimeSpan Duration, 
+        public Motion(string data, string topic, Delegation Proposer, TimeSpan Duration, 
             TimeSpan SpeakTime) : this(data, topic, Proposer)
         {
             var errMsg = "Missing Data: ";
@@ -185,7 +185,7 @@ namespace leeyi45.acmun
             if (errMsg != "Missing Data: ") throw new MissingDataException(errMsg);
         }
         
-        public Motion(string _data, string topic, Country Proposer)
+        public Motion(string _data, string topic, Delegation Proposer)
         {
             if(!Motions.TryGetValue(_data, out var data))
             {
@@ -285,7 +285,7 @@ namespace leeyi45.acmun
         }
 
         [XmlIgnore]
-        public Country Proposer { get; set; }
+        public Delegation Proposer { get; set; }
         
         [XmlElement("Proposer")]
         public string ProposerShortf
@@ -326,7 +326,7 @@ namespace leeyi45.acmun
     [Serializable]
     public class ModCaucus : Motion
     {
-        public ModCaucus(string Topic, Country Proposer, TimeSpan Duration, TimeSpan SpeakTime) :
+        public ModCaucus(string Topic, Delegation Proposer, TimeSpan Duration, TimeSpan SpeakTime) :
             base("mod", Topic, Proposer, Duration, SpeakTime) 
             => SpeakerCount = (int)(Duration.TotalSeconds / SpeakTime.TotalSeconds);
 
@@ -341,7 +341,7 @@ namespace leeyi45.acmun
     [Serializable]
     public class UnmodCaucus : Motion
     {
-        public UnmodCaucus(string Topic, Country Proposer, TimeSpan Duration) :
+        public UnmodCaucus(string Topic, Delegation Proposer, TimeSpan Duration) :
             base("unmod", Topic, Proposer, Duration, TimeSpan.Zero)
             => this.Topic = Topic;
 

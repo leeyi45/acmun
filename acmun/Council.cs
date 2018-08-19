@@ -16,15 +16,15 @@ namespace leeyi45.acmun
     public class Council
     {
         #region Instance Implementation
-        private Council() => Present = new Country[] { };
+        private Council() => Present = new Delegation[] { };
 
-        public Council(string name, Country[] countries) : this()
+        public Council(string name, Delegation[] countries) : this()
         {
             CouncilName = name;
-            Countries = countries;
+            Delegations = countries;
         }
 
-        public Council(string name, Country[] countries, Dictionary<string, MotionData> data, List<MotionData> listData) :
+        public Council(string name, Delegation[] countries, Dictionary<string, MotionData> data, List<MotionData> listData) :
             this(name, countries)
         {
             motions = data;
@@ -35,8 +35,22 @@ namespace leeyi45.acmun
         public string CouncilName { get; set; }
 
         [XmlArray(Order = 2)]
-        [XmlArrayItem("Country")]
-        public Country[] Countries { get; set; }
+        [XmlArrayItem("Delegation")]
+        public Delegation[] Delegations
+        {
+            get => _Delegations;
+            set
+            {
+                _Delegations = value;
+                DelegationsByName = value.ToDictionary(x => x.Shortf, x => x);
+            }
+        }
+
+        [XmlIgnore]
+        private Delegation[] _Delegations;
+
+        [XmlIgnore]
+        public Dictionary<string, Delegation> DelegationsByName { get; set; } = new Dictionary<string, Delegation>();
 
         [XmlIgnore]
         private Dictionary<string, MotionData> _motions;
@@ -51,7 +65,7 @@ namespace leeyi45.acmun
                     if ((_motions?.Count ?? 0) == 0) _motions = _motionsAsList.ToDictionary(x => x.Id, x => x);
                     return _motions;
                 }
-                catch(ArgumentException)
+                catch (ArgumentException)
                 {
                     throw new DataLoadException("Conflicting Motion ID detected");
                 }
@@ -91,21 +105,21 @@ namespace leeyi45.acmun
             set => Instance.CouncilName = value;
         }
 
-        public static Country[] CountryList
+        public static Delegation[] CountryList
         {
-            get => Instance.Countries;
-            set => Instance.Countries = value;
+            get => Instance.Delegations;
+            set => Instance.Delegations = value;
         }
 
-        public static Dictionary<string, Country> CountriesByShortf { get; set; }
+        public static Dictionary<string, Delegation> CountriesByShortf { get; set; }
 
         public static int CountryCount => CountryList.Length;
 
-        public static Country[] Present { get; set; }
+        public static Delegation[] Present { get; set; }
 
         public static int PresentCount => Present.Length;
 
-        public static Country[] Voters { get; set; }
+        public static Delegation[] Voters { get; set; }
 
         public static int VoteCount => Voters.Length;
 
@@ -243,7 +257,7 @@ namespace leeyi45.acmun
                     Instance = (Council)serializer.Deserialize(stream);
                 }
             }
-            catch(DataLoadException e)
+            catch (DataLoadException e)
             {
                 MessageBox.Show($"There was an error loading the settings xml file: {e.Message}", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -355,10 +369,10 @@ namespace leeyi45.acmun
         private CouncilState() { }
 
         [XmlArrayItem("Speaker")]
-        public Country[] GSLList { get; set; }
+        public string[] GSLList { get; set; }
 
         [XmlArrayItem("Speaker")]
-        public Country[] ModList { get; set; }
+        public string[] ModList { get; set; }
 
         public ModCaucus CurrentMod { get; set; }
 
@@ -367,7 +381,7 @@ namespace leeyi45.acmun
         [XmlArrayItem("Motion")]
         public static Motion[] Motions { get; set; }
 
-        public static void SaveState(List<Country> gslList, List<Country> modList, ModCaucus mod, UnmodCaucus unmod)
+        public static void SaveState(List<string> gslList, List<string> modList, ModCaucus mod, UnmodCaucus unmod)
         {
             try
             {

@@ -4,11 +4,11 @@ using System.Xml.Serialization;
 namespace leeyi45.acmun
 {
     [Serializable]
-    public class Country : IComparable<Country>
+    public class Delegation : IComparable<Delegation>
     {
-        private Country() { }
+        private Delegation() { }
 
-        public Country(string name, string shortf, bool present = false)
+        public Delegation(string name, string shortf, bool present = false)
         {
             Name = name;
             Shortf = shortf;
@@ -61,6 +61,9 @@ namespace leeyi45.acmun
         [XmlIgnore]
         public TimeSpan SpeakingTime { get; set; }
 
+        [XmlElement]
+        public int SpeechCount { get; set; } = 0;
+
         [XmlElement("Speaking Time")]
         public string SpeakingTimeStr
         {
@@ -71,7 +74,7 @@ namespace leeyi45.acmun
         public bool ShouldSerializeSpeakingTimeStr()
             => SpeakingTime != TimeSpan.Zero;
 
-        public int CompareTo(Country other)
+        public int CompareTo(Delegation other)
             => Shortf.CompareTo(other.Shortf);
     }
 }
