@@ -62,9 +62,11 @@ namespace leeyi45.acmun.Main_Screen
 
                 var shortf = Present.Select(x => x.Shortf).ToArray();
 
-                var boxes = new Controls.ComboBox[]{ gslComboBox, modComboBox, debateASelector, debateFSelector };
+                var boxes = new Controls.ComboBox[]{ modComboBox, debateASelector, debateFSelector };
 
                 foreach(var each in boxes) each.ResetItems(shortf);
+
+                gslSelector.ComboBoxResetItems(shortf);
 
                 singleListBox.Items.Clear();
                 singleListBox.Items.AddRange(shortf);
@@ -94,12 +96,12 @@ namespace leeyi45.acmun.Main_Screen
 
         private void saveStateToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CouncilState.SaveState(gslListBox.Speakers,modListBox.Speakers, CurrentMod, CurrentUnmod);
+            CouncilState.SaveState(gslSelector.Speakers,modListBox.Speakers, CurrentMod, CurrentUnmod);
         }
 
         public void LoadState(CouncilState state)
         {
-            gslListBox.Speakers = state.GSLList.ToList();
+            gslSelector.Speakers = state.GSLList.ToList();
             modListBox.Speakers = state.ModList.ToList();
             CurrentMod = state.CurrentMod;
             CurrentUnmod = state.CurrentUnmod;

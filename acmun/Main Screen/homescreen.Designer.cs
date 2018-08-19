@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(homescreen));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.loadXMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -152,10 +152,6 @@
             this.gslPictureBox = new System.Windows.Forms.PictureBox();
             this.gslCountryLabel = new leeyi45.acmun.Controls.LabelBox();
             this.gslTimeSelector = new leeyi45.acmun.Controls.TimeSelector();
-            this.gslComboBox = new leeyi45.acmun.Controls.ComboBox();
-            this.gslListBox = new leeyi45.acmun.Controls.ListBox();
-            this.gslAddButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.gslTimeLabel = new System.Windows.Forms.Label();
             this.gslProgressBar = new System.Windows.Forms.ProgressBar();
             this.motionsTab = new System.Windows.Forms.TabControl();
@@ -211,6 +207,7 @@
             this.motionsPassDMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.motionsFailDMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.motionsNullMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gslSelector = new leeyi45.acmun.Controls.CountrySelector();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.debateCountSelector)).BeginInit();
             this.debateTab.SuspendLayout();
@@ -1066,14 +1063,14 @@
             this.motionsDataGrid.AllowUserToResizeRows = false;
             this.motionsDataGrid.BackgroundColor = System.Drawing.SystemColors.Window;
             this.motionsDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.motionsDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.motionsDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.motionsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.motionsDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Proposer,
@@ -1082,14 +1079,14 @@
             this.SpeakTime,
             this.Topic,
             this.State});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.motionsDataGrid.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.motionsDataGrid.DefaultCellStyle = dataGridViewCellStyle2;
             this.motionsDataGrid.Location = new System.Drawing.Point(0, 19);
             this.motionsDataGrid.MultiSelect = false;
             this.motionsDataGrid.Name = "motionsDataGrid";
@@ -1454,18 +1451,15 @@
             // 
             // gslTab
             // 
+            this.gslTab.Controls.Add(this.gslSelector);
             this.gslTab.Controls.Add(this.gslPauseButton);
             this.gslTab.Controls.Add(this.gslStartButton);
             this.gslTab.Controls.Add(this.labelBox2);
             this.gslTab.Controls.Add(this.gslPictureBox);
             this.gslTab.Controls.Add(this.gslCountryLabel);
             this.gslTab.Controls.Add(this.gslTimeSelector);
-            this.gslTab.Controls.Add(this.gslComboBox);
-            this.gslTab.Controls.Add(this.gslListBox);
             this.gslTab.Controls.Add(this.gslNextButton);
-            this.gslTab.Controls.Add(this.gslAddButton);
             this.gslTab.Controls.Add(this.gslClearButton);
-            this.gslTab.Controls.Add(this.label1);
             this.gslTab.Controls.Add(this.gslYieldButton);
             this.gslTab.Controls.Add(this.gslRemoveButton);
             this.gslTab.Controls.Add(this.gslTimeLabel);
@@ -1537,49 +1531,6 @@
             this.gslTimeSelector.TextBackColor = System.Drawing.SystemColors.Window;
             this.gslTimeSelector.Value = System.TimeSpan.Parse("00:00:01");
             this.gslTimeSelector.Width = 112;
-            // 
-            // gslComboBox
-            // 
-            this.gslComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.gslComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.gslComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.gslComboBox.FormattingEnabled = true;
-            this.gslComboBox.Location = new System.Drawing.Point(763, 65);
-            this.gslComboBox.Name = "gslComboBox";
-            this.gslComboBox.Size = new System.Drawing.Size(414, 28);
-            this.gslComboBox.TabIndex = 23;
-            // 
-            // gslListBox
-            // 
-            this.gslListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
-            this.gslListBox.FormattingEnabled = true;
-            this.gslListBox.ItemHeight = 29;
-            this.gslListBox.Location = new System.Drawing.Point(727, 98);
-            this.gslListBox.Name = "gslListBox";
-            this.gslListBox.Size = new System.Drawing.Size(450, 410);
-            this.gslListBox.Speakers = ((System.Collections.Generic.List<string>)(resources.GetObject("gslListBox.Speakers")));
-            this.gslListBox.TabIndex = 22;
-            // 
-            // gslAddButton
-            // 
-            this.gslAddButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gslAddButton.Location = new System.Drawing.Point(727, 68);
-            this.gslAddButton.Name = "gslAddButton";
-            this.gslAddButton.Size = new System.Drawing.Size(29, 23);
-            this.gslAddButton.TabIndex = 17;
-            this.gslAddButton.Text = "+";
-            this.gslAddButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.gslAddButton.UseVisualStyleBackColor = true;
-            this.gslAddButton.Click += new System.EventHandler(this.gslAddButton_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(727, 51);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 13);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Countries:";
             // 
             // gslTimeLabel
             // 
@@ -2166,6 +2117,14 @@
             this.motionsNullMenuItem.Text = "Null";
             this.motionsNullMenuItem.ToolTipText = "Undefined state for whether a motion has been passed or not";
             // 
+            // gslSelector
+            // 
+            this.gslSelector.ComboBoxSelectedIndex = -1;
+            this.gslSelector.Location = new System.Drawing.Point(729, 57);
+            this.gslSelector.Name = "gslSelector";
+            this.gslSelector.Size = new System.Drawing.Size(457, 468);
+            this.gslSelector.TabIndex = 30;
+            // 
             // homescreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2291,10 +2250,6 @@
         private System.Windows.Forms.Button debateFClearButton;
         private System.Windows.Forms.Button debateARemoveButton;
         private System.Windows.Forms.Button debateFRemoveButton;
-        private Controls.ComboBox gslComboBox;
-        private Controls.ListBox gslListBox;
-        private System.Windows.Forms.Button gslAddButton;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown debateCountSelector;
         private System.Windows.Forms.Button debateAClearButton;
@@ -2401,5 +2356,6 @@
         private System.Windows.Forms.CheckBox voteObserverCheckBox;
         private Controls.LabelBox labelBox3;
         private System.Windows.Forms.ToolStripMenuItem speakingTimeToolStripMenuItem;
+        private Controls.CountrySelector gslSelector;
     }
 }

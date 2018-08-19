@@ -13,9 +13,9 @@ namespace leeyi45.acmun.Main_Screen
     {
         private void InitializeGSL()
         {
-            gslListBox.ClickSelect += gslListBox_ClickSelect;
+            gslSelector.ClickSelect += gslListBox_ClickSelect;
 
-            gslComboBox.ItemSelected += gslComboBox_ItemSelected;
+            //gslComboBox.ItemSelected += gslComboBox_ItemSelected;
 
             GSLSpeakingTime = new TimeSpan(0, 1, 30);
 
@@ -108,35 +108,23 @@ namespace leeyi45.acmun.Main_Screen
 
         private void gslRemoveButton_Click(object sender, EventArgs e)
         {
-            if (gslListBox.Items.Count == 0) return;
+            if (gslSelector.Speakers.Count == 0) return;
 
-            if (gslListBox.SelectedItem == null) return;
+            if (gslSelector.listBoxSelectedItem == null) return;
 
-            var selectedIndex = gslListBox.SelectedIndex;
-            gslListBox.Items.RemoveAt(gslListBox.SelectedIndex);
+            var selectedIndex = gslSelector.listBoxSelectedIndex;
+            gslSelector.RemoveSpeaker(gslSelector.listBoxSelectedIndex);
 
-            if (gslListBox.Items.Count == 0) return;
+            if (gslSelector.Speakers.Count == 0) return;
 
-            gslListBox.SelectedIndex = Math.Max(0, selectedIndex - 1);
+            gslSelector.listBoxSelectedIndex = Math.Max(0, selectedIndex - 1);
         }
 
-        private void gslClearButton_Click(object sender, EventArgs e)
-        {
-            gslListBox.Items.Clear();
-            gslComboBox.Text = "";
-        }
-
-        private void gslAddButton_Click(object sender, EventArgs e)
-        {
-            if (gslComboBox?.SelectedItem == null) return;
-            GSLAddSpeaker(gslComboBox.SelectedIndex);
-
-            gslComboBox.SelectedIndex = -1;
-        }
+        private void gslClearButton_Click(object sender, EventArgs e) => gslSelector.ClearSpeakers();
 
         private void gslNextButton_Click(object sender, EventArgs e)
         {
-            if (gslListBox.Items.Count == 0) return;
+            if (gslSelector.Speakers.Count == 0) return;
             else GSLNextSpeaker();
         }
 
@@ -170,7 +158,7 @@ namespace leeyi45.acmun.Main_Screen
         private void gslComboBox_ItemSelected(object sender, int index) => GSLAddSpeaker(index);
 
         private void GSLAddSpeaker(int index) 
-            => gslListBox.AddSpeaker(Council.Present[index]);
+            => gslSelector.AddSpeaker(Council.Present[index]);
 
         private void GSLNextSpeaker(int index = 0)
         {
@@ -181,8 +169,8 @@ namespace leeyi45.acmun.Main_Screen
             }
             GSLTimer.Restart();
 
-            GSLCurrentSpeaker = Council.CountriesByShortf[gslListBox.Speakers[index]];
-            gslListBox.RemoveSpeaker(index);
+            GSLCurrentSpeaker = Council.CountriesByShortf[gslSelector.Speakers[index]];
+            gslSelector.RemoveSpeaker(index);
             yielded = false;
         }
 
