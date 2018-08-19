@@ -127,10 +127,10 @@ namespace leeyi45.acmun.Controls
             var fIndex = Items.IndexOf(name);
 
             Items.RemoveAt(fIndex);
-            Speakers.RemoveAt(fIndex);
+            speakers.RemoveAt(fIndex);
 
             Items.Insert(dIndex, name);
-            Speakers.Insert(dIndex, name);
+            speakers.Insert(dIndex, name);
 
             //DragDone?.Invoke(this, fIndex, dIndex);
         }
