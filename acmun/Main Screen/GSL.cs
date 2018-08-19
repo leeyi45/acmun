@@ -13,7 +13,6 @@ namespace leeyi45.acmun.Main_Screen
     {
         private void InitializeGSL()
         {
-            gslListBox.DragDone += gslListBox_DragDone;
             gslListBox.ClickSelect += gslListBox_ClickSelect;
 
             gslComboBox.ItemSelected += gslComboBox_ItemSelected;
@@ -35,12 +34,10 @@ namespace leeyi45.acmun.Main_Screen
             gslPictureBox.SizeMode = PictureBoxSizeMode.CenterImage;
         }
 
-        List<Country> GSLList = new List<Country>();
-
         TimeSpan GSLSpeakingTime;
 
-        Country gslSpeaker;
-        Country GSLCurrentSpeaker
+        Delegation gslSpeaker;
+        Delegation GSLCurrentSpeaker
         {
             get => gslSpeaker;
             set
@@ -132,10 +129,7 @@ namespace leeyi45.acmun.Main_Screen
         private void gslAddButton_Click(object sender, EventArgs e)
         {
             if (gslComboBox?.SelectedItem == null) return;
-
-            var country = Council.Present[gslComboBox.SelectedIndex];
-            GSLList.Insert(GSLList.Count, country);
-            gslListBox.Items.Add(country.Name);
+            GSLAddSpeaker(gslComboBox.SelectedIndex);
 
             gslComboBox.SelectedIndex = -1;
         }
@@ -162,13 +156,6 @@ namespace leeyi45.acmun.Main_Screen
 
         #region ListBox
         private void gslListBox_ClickSelect(object sender, int index) => GSLNextSpeaker(index);
-
-        private void gslListBox_DragDone(object sender, int oldIndex, int newIndex)
-        {
-            var data = GSLList[oldIndex];
-            GSLList.RemoveAt(oldIndex);
-            GSLList.Insert(newIndex, data);
-        }
         #endregion
 
         private void gslTimeSelector_ValueChanged(object sender, EventArgs e)
@@ -176,28 +163,26 @@ namespace leeyi45.acmun.Main_Screen
             GSLSpeakingTime = gslTimeSelector.Value;
             gslProgressBar.Maximum = (int)GSLSpeakingTime.TotalSeconds;
 
-            gslTimeLabel.Text = GSLTimer.CurrentTime.ToString(@"mm\:ss") + "/" + GSLSpeakingTime.ToString(@"mm\:ss");
+            gslTimeLabel.Text = $"{GSLTimer.CurrentTime.ToValString()}/{GSLSpeakingTime.ToValString()}";
             GSLTimer.EditDuration(GSLSpeakingTime);
         }
 
         private void gslComboBox_ItemSelected(object sender, int index) => GSLAddSpeaker(index);
 
-        private void GSLAddSpeaker(int index)
-        {
-            var country = Council.Present[index];
-            GSLList.Insert(GSLList.Count, country);
-            gslListBox.Items.Add(country.Name);
-        }
+        private void GSLAddSpeaker(int index) 
+            => gslListBox.AddSpeaker(Council.Present[index]);
 
         private void GSLNextSpeaker(int index = 0)
         {
-            if(GSLCurrentSpeaker != null) GSLCurrentSpeaker.SpeakingTime += GSLTimer.CurrentTime;
+            if (GSLCurrentSpeaker != null)
+            {
+                GSLCurrentSpeaker.SpeakingTime += GSLTimer.CurrentTime;
+                GSLCurrentSpeaker.SpeechCount++;
+            }
             GSLTimer.Restart();
 
-            GSLCurrentSpeaker = GSLList[index];
-            GSLList.RemoveAt(index);
-
-            gslListBox.Items.RemoveAt(index);
+            GSLCurrentSpeaker = Council.CountriesByShortf[gslListBox.Speakers[index]];
+            gslListBox.RemoveSpeaker(index);
             yielded = false;
         }
 

@@ -21,7 +21,6 @@ namespace leeyi45.acmun.Main_Screen
             modSpeakTimeSelector.ValueChanged += modSpeakTimeSelector_ValueChanged;
             modTotalTimeSelector.ValueChanged += modTotalTimeSelector_ValueChanged;
 
-            modListBox.DragDone += modListBox_DragDone;
             modListBox.ClickSelect += modListBox_ClickSelect;
 
             modComboBox.ItemSelected += modComboBox_ItemSelected;
@@ -43,8 +42,8 @@ namespace leeyi45.acmun.Main_Screen
         TimeSpan ModSpeakTime;
         TimeSpan ModTotalTime;
 
-        Country modSpeaker;
-        Country ModCurrentSpeaker
+        Delegation modSpeaker;
+        Delegation ModCurrentSpeaker
         {
             get => modSpeaker;
             set
@@ -54,8 +53,6 @@ namespace leeyi45.acmun.Main_Screen
                 modPictureBox.ImageLocation = $@"flags\{value.AltName}.png";
             }
         }
-
-        List<Country> ModList;
 
         int ModSpeakerCount;
         int ModSpeakerIndex;
@@ -94,8 +91,6 @@ namespace leeyi45.acmun.Main_Screen
             modCountryCountTextBox.Text = $"Speaker 0 out of {ModSpeakerCount}";
             modCountryTextBox.Clear();
             modListBox.Items.Clear();
-
-            ModList = new List<Country>(caucus.SpeakerCount);
 
             CurrentMod = caucus;
         }
@@ -147,8 +142,7 @@ namespace leeyi45.acmun.Main_Screen
         {
             if (modListBox.SelectedItem != null)
             {
-                ModList.RemoveAt(modListBox.SelectedIndex);
-                modListBox.Items.RemoveAt(modListBox.SelectedIndex);
+                modListBox.RemoveSpeaker(modListBox.SelectedIndex);
                 modListBox.Deselect();
             }
         }
@@ -196,8 +190,8 @@ namespace leeyi45.acmun.Main_Screen
             ModSpeakTimer.Restart();
             ModTotalTimer.Start();
 
-            ModCurrentSpeaker = ModList[index];
-            ModList.RemoveAt(index);
+            ModCurrentSpeaker = Council.CountriesByShortf[modListBox.Speakers[index]];
+            modListBox.RemoveSpeaker(index);
 
             modListBox.Items.RemoveAt(index);
 
@@ -226,13 +220,6 @@ namespace leeyi45.acmun.Main_Screen
         }
         #endregion
 
-        private void modListBox_DragDone(object sender, int oldIndex, int newIndex)
-        {
-            var data = ModList[oldIndex];
-            ModList.RemoveAt(oldIndex);
-            ModList.Insert(newIndex, data);
-        }
-
         private void modListBox_ClickSelect(object sender, int index)
         {
             ModNextSpeaker(index);
@@ -243,12 +230,10 @@ namespace leeyi45.acmun.Main_Screen
 
         private void ModListAdd(int index)
         {
-            if (ModList.Count >= ModSpeakerCount) MessageBox.Show("Exceeded Caucus Speaker Count!", "Exceeded!",
+            if (modListBox.Speakers.Count >= ModSpeakerCount) MessageBox.Show("Exceeded Caucus Speaker Count!", "Exceeded!",
                  MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
-            var country = Council.Present[index];
-            ModList.Insert(ModList.Count, country);
-            modListBox.Items.Add(country.Name);
+            modListBox.AddSpeaker(Council.Present[index]);
         }
 
     }
