@@ -16,29 +16,19 @@ namespace leeyi45.acmun.Controls
         public CountrySelector()
         {
             InitializeComponent();
+
+            listBox.ClickSelect += ListBox_ClickSelect;
+            addButton.Click += AddButton_Click;
+
             List = new List<Delegation>();
         }
 
-        private Button clearButton;
-        public Button ClearButton
+        private void AddButton_Click(object sender, EventArgs e)
         {
-            get => clearButton;
-            set
-            {
-                clearButton = value;
-                clearButton.Click += ClearButton_Click;
-            }
-        }
+            if (comboBox?.SelectedItem == null) return;
+            AddSpeaker(Present[comboBox.SelectedIndex]);
 
-        private Button removeButton;
-        public Button RemoveButton
-        {
-            get => removeButton;
-            set
-            {
-                removeButton = value;
-                removeButton.Click += RemoveButton_Click;
-            }
+            comboBox.SelectedIndex = -1;
         }
 
         public int SelectedIndex
@@ -47,39 +37,27 @@ namespace leeyi45.acmun.Controls
             set => listBox.SelectedIndex = value;
         }
 
-        private void RemoveButton_Click(object sender, EventArgs e)
-        {
-            if (listBox.Items.Count == 0) return;
-
-            if (listBox.SelectedItem == null) return;
-
-            var selectedIndex = listBox.SelectedIndex;
-            listBox.Items.RemoveAt(listBox.SelectedIndex);
-            List.RemoveAt(listBox.SelectedIndex);
-
-            if (listBox.Items.Count == 0) return;
-
-            listBox.SelectedIndex = Math.Max(0, selectedIndex - 1);
-        }
-
-        private void ClearButton_Click(object sender, EventArgs e)
-            => listBox.Items.Clear();
-
-        private void AddButton_Click(object sender, EventArgs e)
-        {
-            if (comboBox?.SelectedItem == null) return;
-
-            var country = Present[comboBox.SelectedIndex];
-            listBox.Items.Add(country.Name);
-            List.Insert(List.Count, country);
-
-            comboBox.SelectedIndex = -1;
-        }
+        private void ListBox_ClickSelect(object sender, int index)
+            => ClickSelect?.Invoke(this, index);
 
         public int ComboBoxSelectedIndex
         {
             get => comboBox.SelectedIndex;
             set => comboBox.SelectedIndex = value;
+        }
+
+        public void ComboBoxResetItems(string[] items) => comboBox.ResetItems(items);
+
+        public int listBoxSelectedIndex
+        {
+            get => listBox.SelectedIndex;
+            set => listBox.SelectedIndex = value;
+        }
+
+        public object listBoxSelectedItem
+        {
+            get => listBox.SelectedItem;
+            set => listBox.SelectedItem = value;
         }
 
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -94,5 +72,26 @@ namespace leeyi45.acmun.Controls
                 listBox.Height = value - 2;
             }
         }
+
+        public ComboBox.ObjectCollection ComboBoxItems => comboBox.Items;
+
+        public List<string> Speakers
+        {
+            get => listBox.Speakers;
+            set => listBox.Speakers = value;
+
+        }
+
+        public void AddSpeaker(Delegation del) => listBox.AddSpeaker(del);
+
+        public void RemoveSpeaker(int index) => listBox.RemoveSpeaker(index);
+
+        public void ClearSpeakers()
+        {
+            listBox.Clear();
+            comboBox.Text = "";
+        }
+
+        public event ListBoxClickHandler ClickSelect;
     }
 }

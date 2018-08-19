@@ -69,7 +69,6 @@
             this.addButton.Text = "+";
             this.addButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.addButton.UseVisualStyleBackColor = true;
-            this.addButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // label1
             // 
