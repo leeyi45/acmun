@@ -103,6 +103,12 @@
     <Compile Include="MiscForms\AboutBox\AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="MiscForms\TimeList\TimeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MiscForms\TimeList\TimeList.Designer.cs">
+      <DependentUpon>TimeList.cs</DependentUpon>
+    </Compile>
     <Compile Include="PickerForms\DurationPicker\DurationPicker.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,6 +205,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MiscForms\AboutBox\AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MiscForms\TimeList\TimeList.resx">
+      <DependentUpon>TimeList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PickerForms\DurationPicker\DurationPicker.resx">
       <DependentUpon>DurationPicker.cs</DependentUpon>

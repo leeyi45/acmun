@@ -326,15 +326,16 @@
             // rollCallToolStripMenuItem
             // 
             this.rollCallToolStripMenuItem.Name = "rollCallToolStripMenuItem";
-            this.rollCallToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.rollCallToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.rollCallToolStripMenuItem.Text = "Roll Call";
             this.rollCallToolStripMenuItem.Click += new System.EventHandler(this.rollCallToolStripMenuItem_Click);
             // 
             // speakingTimeToolStripMenuItem
             // 
             this.speakingTimeToolStripMenuItem.Name = "speakingTimeToolStripMenuItem";
-            this.speakingTimeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.speakingTimeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.speakingTimeToolStripMenuItem.Text = "Speaking Time";
+            this.speakingTimeToolStripMenuItem.Click += new System.EventHandler(this.speakingTimeToolStripMenuItem_Click);
             // 
             // quorumLabel
             // 
@@ -1646,10 +1647,7 @@
             // 
             // gslSelector
             // 
-            this.gslSelector.ComboBoxSelectedIndex = -1;
             this.gslSelector.LabelText = "Countries:";
-            this.gslSelector.ListBoxSelectedIndex = -1;
-            this.gslSelector.ListBoxSelectedItem = null;
             this.gslSelector.Location = new System.Drawing.Point(729, 57);
             this.gslSelector.Name = "gslSelector";
             this.gslSelector.Size = new System.Drawing.Size(457, 468);
@@ -1709,10 +1707,7 @@
             // 
             // modSelector
             // 
-            this.modSelector.ComboBoxSelectedIndex = -1;
             this.modSelector.LabelText = "Countries:";
-            this.modSelector.ListBoxSelectedIndex = -1;
-            this.modSelector.ListBoxSelectedItem = null;
             this.modSelector.Location = new System.Drawing.Point(735, 55);
             this.modSelector.Name = "modSelector";
             this.modSelector.Size = new System.Drawing.Size(457, 460);
@@ -1926,10 +1921,7 @@
             // 
             // debateASelector
             // 
-            this.debateASelector.ComboBoxSelectedIndex = -1;
             this.debateASelector.LabelText = "Countries Against:";
-            this.debateASelector.ListBoxSelectedIndex = -1;
-            this.debateASelector.ListBoxSelectedItem = null;
             this.debateASelector.Location = new System.Drawing.Point(736, 320);
             this.debateASelector.Name = "debateASelector";
             this.debateASelector.Size = new System.Drawing.Size(456, 252);
@@ -1938,10 +1930,7 @@
             // 
             // debateFSelector
             // 
-            this.debateFSelector.ComboBoxSelectedIndex = -1;
             this.debateFSelector.LabelText = "Countries For:";
-            this.debateFSelector.ListBoxSelectedIndex = -1;
-            this.debateFSelector.ListBoxSelectedItem = null;
             this.debateFSelector.Location = new System.Drawing.Point(736, 63);
             this.debateFSelector.Name = "debateFSelector";
             this.debateFSelector.Size = new System.Drawing.Size(450, 222);

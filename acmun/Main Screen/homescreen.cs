@@ -114,5 +114,10 @@ namespace leeyi45.acmun.Main_Screen
                 MessageBox.Show("Loaded the file", "File Loaded", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void speakingTimeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TimeList.TimeList.Show(CountryList);
+        }
     }
 }
