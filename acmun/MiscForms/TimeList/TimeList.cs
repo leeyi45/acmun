@@ -17,6 +17,7 @@ namespace leeyi45.acmun.TimeList
             InitializeComponent();
 
             closeButton.Click += CloseButton_Click;
+            StartPosition = FormStartPosition.CenterParent;
         }
 
         private void CloseButton_Click(object sender, EventArgs e) => Close();

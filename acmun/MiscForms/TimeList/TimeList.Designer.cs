@@ -43,6 +43,7 @@
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DelColumn,
@@ -76,7 +77,7 @@
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(75, 23);
             this.closeButton.TabIndex = 1;
-            this.closeButton.Text = "button1";
+            this.closeButton.Text = "Close";
             this.closeButton.UseVisualStyleBackColor = true;
             // 
             // TimeList
@@ -87,7 +88,7 @@
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.dataGridView1);
             this.Name = "TimeList";
-            this.Text = "TimeList";
+            this.Text = "Speech Timing";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
