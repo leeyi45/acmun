@@ -49,7 +49,9 @@
             // 
             // listBox
             // 
-            this.listBox.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.listBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.listBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
             this.listBox.FormattingEnabled = true;
             this.listBox.ItemHeight = 29;

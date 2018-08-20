@@ -30,6 +30,8 @@ namespace leeyi45.acmun.Controls
         }
 
         #region Combobox
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        [Browsable(false)]
         public int ComboBoxSelectedIndex
         {
             get => comboBox.SelectedIndex;
@@ -59,13 +61,17 @@ namespace leeyi45.acmun.Controls
             comboBox.Text = "";
         }
 
-        public int listBoxSelectedIndex
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        [Browsable(false)]
+        public int ListBoxSelectedIndex
         {
             get => listBox.SelectedIndex;
             set => listBox.SelectedIndex = value;
         }
 
-        public object listBoxSelectedItem
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        [Browsable(false)]
+        public object ListBoxSelectedItem
         {
             get => listBox.SelectedItem;
             set => listBox.SelectedItem = value;
@@ -76,5 +82,11 @@ namespace leeyi45.acmun.Controls
 
         public event ListBoxClickHandler ClickSelect;
         #endregion
+
+        public string LabelText
+        {
+            get => label1.Text;
+            set => label1.Text = value;
+        }
     }
 }
