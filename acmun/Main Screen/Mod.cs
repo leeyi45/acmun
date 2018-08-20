@@ -21,9 +21,7 @@ namespace leeyi45.acmun.Main_Screen
             modSpeakTimeSelector.ValueChanged += modSpeakTimeSelector_ValueChanged;
             modTotalTimeSelector.ValueChanged += modTotalTimeSelector_ValueChanged;
 
-            modListBox.ClickSelect += modListBox_ClickSelect;
-
-            modComboBox.ItemSelected += modComboBox_ItemSelected;
+            modSelector.ClickSelect += modSelector_ClickSelect;
 
             modTotalStartButton.Click += modTotalStartButton_Click;
             modTotalPauseButton.Click += modTotalPauseButton_Click;
@@ -90,7 +88,7 @@ namespace leeyi45.acmun.Main_Screen
 
             modCountryCountTextBox.Text = $"Speaker 0 out of {ModSpeakerCount}";
             modCountryTextBox.Clear();
-            modListBox.Items.Clear();
+            modSelector.ClearSpeakers();
 
             CurrentMod = caucus;
         }
@@ -136,14 +134,14 @@ namespace leeyi45.acmun.Main_Screen
             => ModSpeakTimer.Stop();
 
         private void modClearButton_Click(object sender, EventArgs e)
-            => modListBox.Items.Clear();
+            => modSelector.ClearSpeakers();
 
         private void modRemoveButton_Click(object sender, EventArgs e)
         {
-            if (modListBox.SelectedItem != null)
+            if (modSelector.ListBoxSelectedItem != null)
             {
-                modListBox.RemoveSpeaker(modListBox.SelectedIndex);
-                modListBox.Deselect();
+                modSelector.RemoveSpeaker(modSelector.ListBoxSelectedIndex);
+                modSelector.ListBoxSelectedIndex = -1;
             }
         }
 
@@ -155,15 +153,8 @@ namespace leeyi45.acmun.Main_Screen
 
         private void modNextButton_Click(object sender, EventArgs e)
         {
-            if (modListBox.Items.Count == 0) return;
+            if (modSelector.Speakers.Count == 0) return;
             ModNextSpeaker(0);
-        }
-
-        private void modAddButton_Click(object sender, EventArgs e)
-        {
-            if (modComboBox.SelectedItem == null) return;
-            ModListAdd(modComboBox.SelectedIndex);
-            modComboBox.Text = "";
         }
 
         private void modResetButton_Click(object sender, EventArgs e) => LoadMod(ModCaucus.DefaultMod);
@@ -190,10 +181,8 @@ namespace leeyi45.acmun.Main_Screen
             ModSpeakTimer.Restart();
             ModTotalTimer.Start();
 
-            ModCurrentSpeaker = Council.CountriesByShortf[modListBox.Speakers[index]];
-            modListBox.RemoveSpeaker(index);
-
-            modListBox.Items.RemoveAt(index);
+            ModCurrentSpeaker = Council.CountriesByShortf[modSelector.Speakers[index]];
+            modSelector.RemoveSpeaker(index);
 
             ModSpeakerIndex++;
             modSpeakProgressBar.Value = 0;
@@ -220,7 +209,7 @@ namespace leeyi45.acmun.Main_Screen
         }
         #endregion
 
-        private void modListBox_ClickSelect(object sender, int index)
+        private void modSelector_ClickSelect(object sender, int index)
         {
             ModNextSpeaker(index);
         }
@@ -230,10 +219,10 @@ namespace leeyi45.acmun.Main_Screen
 
         private void ModListAdd(int index)
         {
-            if (modListBox.Speakers.Count >= ModSpeakerCount) MessageBox.Show("Exceeded Caucus Speaker Count!", "Exceeded!",
+            if (modSelector.Speakers.Count >= ModSpeakerCount) MessageBox.Show("Exceeded Caucus Speaker Count!", "Exceeded!",
                  MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
-            modListBox.AddSpeaker(Council.Present[index]);
+            modSelector.AddSpeaker(Council.Present[index]);
         }
 
     }

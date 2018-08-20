@@ -21,9 +21,6 @@ namespace leeyi45.acmun.Main_Screen
             debateTimeSelector.ValueChanged += debateTimeSelector_ValueChanged;
             debateCountSelector.ValueChanged += debateCountSelector_ValueChanged;
 
-            debateAddACountry.Click += debateAddACountry_Click;
-            debateAddFCountry.Click += debateAddFCountry_Click;
-
             debateARemoveButton.Click += debateRemoveACountry_Click;
             debateFRemoveButton.Click += debateRemoveFCountry_Click;
 
@@ -59,8 +56,8 @@ namespace leeyi45.acmun.Main_Screen
 
             DebateTimer.Reset();
 
-            debateACountryListBox.Items.Clear();
-            debateFCountryListBox.Items.Clear();
+            debateFSelector.ClearSpeakers();
+            debateASelector.ClearSpeakers();
 
             debateForTextBox.ForeColor = System.Drawing.Color.Green;
             debateForTextBox.Text = "For";
@@ -113,63 +110,31 @@ namespace leeyi45.acmun.Main_Screen
             if (newval < DebateSpeakCount)
             {
                 var diff = DebateSpeakCount - newval;
-                debateACountryListBox.Speakers.RemoveRange(diff - 1, diff);
-                debateFCountryListBox.Speakers.RemoveRange(diff - 1, diff);
+                debateASelector.Speakers.RemoveRange(diff - 1, diff);
+                debateASelector.Speakers.RemoveRange(diff - 1, diff);
             }
 
             DebateSpeakCount = newval;
         }
 
         #region Buttons
-        private void debateAddACountry_Click(object sender, EventArgs e)
-        {
-            if (debateASelector.SelectedItem == null) return;
-            if (debateACountryListBox.Speakers.Count >= DebateSpeakCount) return;
-
-            debateACountryListBox.AddSpeaker(Council.Present[debateASelector.SelectedIndex]);
-            debateASelector.Text = "";
-        }
-
-        private void debateAddFCountry_Click(object sender, EventArgs e)
-        {
-            if (debateFSelector.SelectedItem == null) return;
-            if (debateFCountryListBox.Speakers.Count >= DebateSpeakCount) return;
-
-            debateFCountryListBox.AddSpeaker(Council.Present[debateFSelector.SelectedIndex]);
-            debateFSelector.Text = "";
-        }
-
         private void debateRemoveACountry_Click(object sender, EventArgs e)
         {
-            if (debateACountryListBox.SelectedItem == null) return;
+            if (debateASelector.ListBoxSelectedItem == null) return;
 
-            var index = debateACountryListBox.SelectedIndex;
-
-            debateACountryListBox.Items.RemoveAt(index);
-            debateACountryListBox.Speakers.RemoveAt(index);
+            debateASelector.RemoveSpeaker(debateASelector.ListBoxSelectedIndex);
         }
 
         private void debateRemoveFCountry_Click(object sender, EventArgs e)
         {
-            if (debateFCountryListBox.SelectedItem == null) return;
+            if (debateFSelector.ListBoxSelectedItem == null) return;
 
-            var index = debateFCountryListBox.SelectedIndex;
-
-            debateFCountryListBox.Items.RemoveAt(index);
-            debateFCountryListBox.Speakers.RemoveAt(index);
+            debateFSelector.RemoveSpeaker(debateFSelector.ListBoxSelectedIndex);
         }
 
-        private void debateClearACountry_Click(object sender, EventArgs e)
-        {
-            debateACountryListBox.Items.Clear();
-            debateACountryListBox.Speakers.Clear();
-        }
+        private void debateClearACountry_Click(object sender, EventArgs e) => debateASelector.ClearSpeakers();
 
-        private void debateClearFCountry_Click(object sender, EventArgs e)
-        {
-            debateFCountryListBox.Items.Clear();
-            debateFCountryListBox.Speakers.Clear();
-        }
+        private void debateClearFCountry_Click(object sender, EventArgs e) => debateFSelector.ClearSpeakers();
 
         private void debateNextButton_Click(object sender, EventArgs e)
             => DebateNextSpeaker();
@@ -197,28 +162,28 @@ namespace leeyi45.acmun.Main_Screen
 
             if (IsFor)
             {
-                if (debateFCountryListBox.Speakers.Count == 0)
+                if (debateFSelector.Speakers.Count == 0)
                 {
                     IsFor = false;
                     return;
                 }
 
-                nextSpeaker = Council.CountriesByShortf[debateFCountryListBox.Speakers[0]];
-                debateFCountryListBox.RemoveSpeaker(0);
+                nextSpeaker = Council.CountriesByShortf[debateFSelector.Speakers[0]];
+                debateFSelector.RemoveSpeaker(0);
                 debateForTextBox.ForeColor = System.Drawing.Color.Green;
                 debateForTextBox.Text = "For";
                 IsFor = false;
             }
             else
             {
-                if (debateACountryListBox.Speakers.Count == 0)
+                if (debateASelector.Speakers.Count == 0)
                 {
                     IsFor = true;
                     return;
                 }
 
-                nextSpeaker = Council.CountriesByShortf[debateACountryListBox.Speakers[0]];
-                debateACountryListBox.RemoveSpeaker(0);
+                nextSpeaker = Council.CountriesByShortf[debateASelector.Speakers[0]];
+                debateASelector.RemoveSpeaker(0);
                 debateForTextBox.ForeColor = System.Drawing.Color.Red;
                 debateForTextBox.Text = "Against";
                 IsFor = true;

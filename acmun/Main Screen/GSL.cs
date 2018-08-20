@@ -110,14 +110,14 @@ namespace leeyi45.acmun.Main_Screen
         {
             if (gslSelector.Speakers.Count == 0) return;
 
-            if (gslSelector.listBoxSelectedItem == null) return;
+            if (gslSelector.ListBoxSelectedItem == null) return;
 
-            var selectedIndex = gslSelector.listBoxSelectedIndex;
-            gslSelector.RemoveSpeaker(gslSelector.listBoxSelectedIndex);
+            var selectedIndex = gslSelector.ListBoxSelectedIndex;
+            gslSelector.RemoveSpeaker(gslSelector.ListBoxSelectedIndex);
 
             if (gslSelector.Speakers.Count == 0) return;
 
-            gslSelector.listBoxSelectedIndex = Math.Max(0, selectedIndex - 1);
+            gslSelector.ListBoxSelectedIndex = Math.Max(0, selectedIndex - 1);
         }
 
         private void gslClearButton_Click(object sender, EventArgs e) => gslSelector.ClearSpeakers();
