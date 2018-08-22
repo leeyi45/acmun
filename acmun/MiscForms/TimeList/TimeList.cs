@@ -12,7 +12,7 @@ namespace leeyi45.acmun.TimeList
 {
     public partial class TimeList : Form
     {
-        public TimeList()
+        private TimeList()
         {
             InitializeComponent();
 
@@ -57,9 +57,11 @@ namespace leeyi45.acmun.TimeList
 
         private Delegation[] dels;
 
-        public static void Show(Delegation[] dels)
+        public static void Show(Delegation[] dels, string council)
         {
             var form = new TimeList();
+
+            form.label1.Text = $"Speaking time for delegations in {council}";
 
             foreach(var each in dels)
             {
