@@ -105,7 +105,7 @@ namespace leeyi45.acmun
             set => Instance.CouncilName = value;
         }
 
-        public static Delegation[] CountryList
+        public static Delegation[] DelList
         {
             get => Instance.Delegations;
             set => Instance.Delegations = value;
@@ -113,7 +113,7 @@ namespace leeyi45.acmun
 
         public static Dictionary<string, Delegation> CountriesByShortf { get; set; }
 
-        public static int CountryCount => CountryList.Length;
+        public static int CountryCount => DelList.Length;
 
         public static Delegation[] Present { get; set; }
 
@@ -125,21 +125,22 @@ namespace leeyi45.acmun
 
         public static string[] VotersShortf { get; set; }
 
+        public static string[] PresentShortf { get; set; }
+
         public static void UpdatePresent()
         {
-            Present = CountryList.Where(x => x.Present).ToArray();
+            Present = DelList.Where(x => x.Present).ToArray();
             Array.Sort(Present);
 
             Voters = Present.Where(x => !x.Observer).ToArray();
             Array.Sort(Voters);
 
-            CountriesByShortf = CountryList.ToDictionary(x => x.Shortf, x => x);
+            CountriesByShortf = DelList.ToDictionary(x => x.Shortf, x => x);
             VotersShortf = Voters.Select(x => x.Shortf).ToArray();
             PresentShortf = Present.Select(x => x.Shortf).ToArray();
         }
 
-        public static string[] PresentShortf { get; set; }
-
+        #region Settings
         public static bool FiftyPlus1
         {
             get => Instance.Settings.FiftyPlus1;
@@ -217,6 +218,7 @@ namespace leeyi45.acmun
             get => Instance.Settings.ResoReadTime;
             set => Instance.Settings.ResoReadTime = value;
         }
+        #endregion
 
         public static Dictionary<string, MotionData> Motions
             => Instance.motions;

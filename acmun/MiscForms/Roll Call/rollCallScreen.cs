@@ -53,9 +53,9 @@ namespace leeyi45.acmun.Roll_Call
 
         private void rollCallScreen_Load(object sender, EventArgs e)
         {
-            rollCallBox.Items.AddRange(CountryList.Select(x => x.Name).ToArray());
+            rollCallBox.Items.AddRange(DelList.Select(x => x.Name).ToArray());
 
-            var arr = CountryList;
+            var arr = DelList;
 
             for(int i = 0; i < arr.Length; i++)
             {
@@ -70,7 +70,7 @@ namespace leeyi45.acmun.Roll_Call
             if (e.NewValue == CheckState.Checked) rollCallCount++;
             else rollCallCount--;
 
-            CountryList[e.Index].Present = e.NewValue == CheckState.Checked;
+            DelList[e.Index].Present = e.NewValue == CheckState.Checked;
 
             quorumLabel.Text = $"{rollCallCount}/{CountryCount}";
 
@@ -88,7 +88,7 @@ namespace leeyi45.acmun.Roll_Call
             {
                 observerCheckBox.Enabled = true;
                 observerCheckBox.CheckedChanged -= observerCheckBox_CheckedChanged;
-                observerCheckBox.Checked = CountryList[rollCallBox.SelectedIndex].Observer;
+                observerCheckBox.Checked = DelList[rollCallBox.SelectedIndex].Observer;
                 observerCheckBox.CheckedChanged += observerCheckBox_CheckedChanged;
             }
         }
@@ -97,9 +97,9 @@ namespace leeyi45.acmun.Roll_Call
         {
             if (rollCallBox.SelectedIndex == -1) return;
 
-            CountryList[rollCallBox.SelectedIndex].Observer = observerCheckBox.Checked;
-            if (CountryList[rollCallBox.SelectedIndex].Observer) rollCallBox.Items[rollCallBox.SelectedIndex] += " (Observer)";
-            else rollCallBox.Items[rollCallBox.SelectedIndex] = CountryList[rollCallBox.SelectedIndex].Shortf;
+            DelList[rollCallBox.SelectedIndex].Observer = observerCheckBox.Checked;
+            if (DelList[rollCallBox.SelectedIndex].Observer) rollCallBox.Items[rollCallBox.SelectedIndex] += " (Observer)";
+            else rollCallBox.Items[rollCallBox.SelectedIndex] = DelList[rollCallBox.SelectedIndex].Shortf;
         }
 
         private void allPresentCheckBox_CheckedChanged(object sender, EventArgs e)

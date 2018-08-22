@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(homescreen));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.loadXMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -170,7 +170,6 @@
             this.labelBox2 = new leeyi45.acmun.Controls.LabelBox();
             this.gslCountryLabel = new leeyi45.acmun.Controls.LabelBox();
             this.gslTimeSelector = new leeyi45.acmun.Controls.TimeSelector();
-            this.modSelector = new leeyi45.acmun.Controls.CountrySelector();
             this.modTotalPauseButton = new leeyi45.acmun.Controls.StateButton();
             this.modTotalStartButton = new leeyi45.acmun.Controls.StateButton();
             this.modPauseButton = new leeyi45.acmun.Controls.StateButton();
@@ -180,6 +179,7 @@
             this.modCountryTextBox = new leeyi45.acmun.Controls.LabelBox();
             this.modTotalTimeSelector = new leeyi45.acmun.Controls.TimeSelector();
             this.modSpeakTimeSelector = new leeyi45.acmun.Controls.TimeSelector();
+            this.modSelector = new leeyi45.acmun.Controls.CountrySelector();
             this.unmodPauseButton = new leeyi45.acmun.Controls.StateButton();
             this.unmodStartButton = new leeyi45.acmun.Controls.StateButton();
             this.unmodCountryTextBox = new leeyi45.acmun.Controls.TopicBox();
@@ -326,14 +326,14 @@
             // rollCallToolStripMenuItem
             // 
             this.rollCallToolStripMenuItem.Name = "rollCallToolStripMenuItem";
-            this.rollCallToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.rollCallToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.rollCallToolStripMenuItem.Text = "Roll Call";
             this.rollCallToolStripMenuItem.Click += new System.EventHandler(this.rollCallToolStripMenuItem_Click);
             // 
             // speakingTimeToolStripMenuItem
             // 
             this.speakingTimeToolStripMenuItem.Name = "speakingTimeToolStripMenuItem";
-            this.speakingTimeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.speakingTimeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.speakingTimeToolStripMenuItem.Text = "Speaking Time";
             this.speakingTimeToolStripMenuItem.Click += new System.EventHandler(this.speakingTimeToolStripMenuItem_Click);
             // 
@@ -782,14 +782,14 @@
             this.motionsDataGrid.AllowUserToResizeRows = false;
             this.motionsDataGrid.BackgroundColor = System.Drawing.SystemColors.Window;
             this.motionsDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.motionsDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.motionsDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.motionsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.motionsDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Proposer,
@@ -798,14 +798,14 @@
             this.SpeakTime,
             this.Topic,
             this.State});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.motionsDataGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.motionsDataGrid.DefaultCellStyle = dataGridViewCellStyle8;
             this.motionsDataGrid.Location = new System.Drawing.Point(0, 19);
             this.motionsDataGrid.MultiSelect = false;
             this.motionsDataGrid.Name = "motionsDataGrid";
@@ -938,7 +938,6 @@
             // 
             // modTab
             // 
-            this.modTab.Controls.Add(this.modSelector);
             this.modTab.Controls.Add(this.modExtendButton);
             this.modTab.Controls.Add(this.modPictureBox);
             this.modTab.Controls.Add(this.modResetButton);
@@ -956,6 +955,7 @@
             this.modTab.Controls.Add(this.modCountryTextBox);
             this.modTab.Controls.Add(this.modTotalTimeSelector);
             this.modTab.Controls.Add(this.modSpeakTimeSelector);
+            this.modTab.Controls.Add(this.modSelector);
             this.modTab.Location = new System.Drawing.Point(4, 22);
             this.modTab.Name = "modTab";
             this.modTab.Padding = new System.Windows.Forms.Padding(3);
@@ -1705,15 +1705,6 @@
             this.gslTimeSelector.Value = System.TimeSpan.Parse("00:00:01");
             this.gslTimeSelector.Width = 112;
             // 
-            // modSelector
-            // 
-            this.modSelector.LabelText = "Countries:";
-            this.modSelector.Location = new System.Drawing.Point(735, 55);
-            this.modSelector.Name = "modSelector";
-            this.modSelector.Size = new System.Drawing.Size(457, 460);
-            this.modSelector.Speakers = ((System.Collections.Generic.List<string>)(resources.GetObject("modSelector.Speakers")));
-            this.modSelector.TabIndex = 61;
-            // 
             // modTotalPauseButton
             // 
             this.modTotalPauseButton.Enabled = false;
@@ -1764,7 +1755,7 @@
             // 
             this.modCountryCountTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.modCountryCountTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.modCountryCountTextBox.Location = new System.Drawing.Point(736, 516);
+            this.modCountryCountTextBox.Location = new System.Drawing.Point(736, 511);
             this.modCountryCountTextBox.Name = "modCountryCountTextBox";
             this.modCountryCountTextBox.Size = new System.Drawing.Size(204, 16);
             this.modCountryCountTextBox.TabIndex = 55;
@@ -1810,6 +1801,15 @@
             this.modSpeakTimeSelector.TextBackColor = System.Drawing.SystemColors.Window;
             this.modSpeakTimeSelector.Value = System.TimeSpan.Parse("00:00:01");
             this.modSpeakTimeSelector.Width = 108;
+            // 
+            // modSelector
+            // 
+            this.modSelector.LabelText = "Countries:";
+            this.modSelector.Location = new System.Drawing.Point(735, 55);
+            this.modSelector.Name = "modSelector";
+            this.modSelector.Size = new System.Drawing.Size(457, 450);
+            this.modSelector.Speakers = ((System.Collections.Generic.List<string>)(resources.GetObject("modSelector.Speakers")));
+            this.modSelector.TabIndex = 61;
             // 
             // unmodPauseButton
             // 

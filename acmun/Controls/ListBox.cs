@@ -35,7 +35,7 @@ namespace leeyi45.acmun.Controls
         [Browsable(true)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         [DefaultValue(120)]
-        public int clickDuration { get; set; } = 120;
+        public int ClickDuration { get; set; } = 120;
 
         [Browsable(true)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -67,14 +67,14 @@ namespace leeyi45.acmun.Controls
             MouseTimer.Start();
             while (true)
             {
-                if (mouseUp || MouseTimer.ElapsedMilliseconds >= clickDuration)
+                if (mouseUp || MouseTimer.ElapsedMilliseconds >= ClickDuration)
                 {
                     MouseTimer.Stop();
                     break;
                 }
             }
             
-            var drag = MouseTimer.ElapsedMilliseconds >= clickDuration;
+            var drag = MouseTimer.ElapsedMilliseconds >= ClickDuration;
             MouseTimer.Reset();
 
             clickSelect(e, drag);
@@ -120,6 +120,11 @@ namespace leeyi45.acmun.Controls
         {
             if (Items.Count <= 1) return;
 
+            //Currently pointtoclient doesn't seem to return the correct values
+            var newpoint = PointToClient(new Point(e.X, e.Y));
+
+            MessageBox.Show($"({e.X} {e.Y}), ({newpoint.X}, {newpoint.Y})");
+
             int dIndex = IndexFromPoint(PointToClient(new Point(e.X, e.Y)));
             if (dIndex < 0 || dIndex > Items.Count - 1) dIndex = Items.Count - 1;
             var name = (string)e.Data.GetData(typeof(string));
@@ -131,8 +136,6 @@ namespace leeyi45.acmun.Controls
 
             Items.Insert(dIndex, name);
             speakers.Insert(dIndex, name);
-
-            //DragDone?.Invoke(this, fIndex, dIndex);
         }
 
         public List<string> Speakers
@@ -148,7 +151,7 @@ namespace leeyi45.acmun.Controls
 
         private List<string> speakers;
 
-        public void Clear()
+        public void ClearSpeakers()
         {
             Items.Clear();
             speakers.Clear();
