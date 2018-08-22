@@ -57,7 +57,7 @@ namespace leeyi45.acmun.Controls
 
         public void ClearSpeakers()
         {
-            listBox.Clear();
+            listBox.ClearSpeakers();
             comboBox.Text = "";
         }
 
