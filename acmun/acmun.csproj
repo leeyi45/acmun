@@ -83,8 +83,14 @@
     <Compile Include="Controls\TimeSelector.Designer.cs">
       <DependentUpon>TimeSelector.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\TopicBox.cs">
+    <Compile Include="Controls\TopicBox\TopicBox.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TopicBox\TopicForm.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TopicBox\TopicForm.Designer.cs">
+      <DependentUpon>TopicForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\WarningBox.cs">
       <SubType>UserControl</SubType>
@@ -199,6 +205,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Controls\CountrySelector.resx">
       <DependentUpon>CountrySelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TopicBox\TopicForm.resx">
+      <DependentUpon>TopicForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\WarningBox.resx">
       <DependentUpon>WarningBox.cs</DependentUpon>

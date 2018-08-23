@@ -18,10 +18,17 @@ namespace leeyi45.acmun.Main_Screen
 
             unmodStartButton.Click += unmodStartButton_Click;
             unmodPauseButton.Click += unmodPauseButton_Click;
-            //unmodExtendButton.Click += unmodExtendButton_Click;
             unmodFinishButton.Click += unmodFinishButton_Click;
 
+            unmodTopicTextBox.TopicChanged += UnmodTopicTextBox_TopicChanged;
+            unmodTopicTextBox.Enter += DisableTextBox;
+
             LoadUnmod(UnmodCaucus.DefaultUnmod);
+        }
+
+        private void UnmodTopicTextBox_TopicChanged(object sender, EventArgs e)
+        {
+            CurrentUnmod.Topic = unmodTopicTextBox.Text;
         }
 
         private Clock UnmodTimer;

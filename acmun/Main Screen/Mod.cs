@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace leeyi45.acmun.Main_Screen
 {
@@ -15,8 +16,10 @@ namespace leeyi45.acmun.Main_Screen
             ModSpeakTimer.Tick += ModSpeakTick;
 
             ModSpeakTimer.RunningChanged += ModSpeakTimerRunning_Changed;
-
             ModTotalTimer.RunningChanged += ModTotalTimerRunning_Changed;
+
+            ModSpeakTimer.TimeUp += ModSpeakTimer_TimeUp;
+            ModTotalTimer.TimeUp += ModTotalTimer_TimeUp;
 
             modSpeakTimeSelector.ValueChanged += modSpeakTimeSelector_ValueChanged;
             modTotalTimeSelector.ValueChanged += modTotalTimeSelector_ValueChanged;
@@ -88,10 +91,17 @@ namespace leeyi45.acmun.Main_Screen
 
             modCountryCountTextBox.Text = $"Speaker 0 out of {ModSpeakerCount}";
             modCountryTextBox.Clear();
+            modTotalTimeLabel.ForeColor = Color.Black;
             modSelector.ClearSpeakers();
+
+            modTopicTextBox.Click += DisableTextBox;
+            modTopicTextBox.TopicChanged += ModTopicTextBox_TopicChanged;
 
             CurrentMod = caucus;
         }
+
+        private void ModTopicTextBox_TopicChanged(object sender, EventArgs e) 
+            => CurrentMod.Topic = modTopicTextBox.Text;
 
         #region Timer Stuff
         private void ModTotalTick(object sender, EventArgs e)
@@ -121,6 +131,12 @@ namespace leeyi45.acmun.Main_Screen
             modExtendButton.Enabled = !ModSpeakTimer.Running;
             modSpeakTimeSelector.Enabled = !ModSpeakTimer.Running;
         }
+
+        private void ModSpeakTimer_TimeUp(object sender, EventArgs e) 
+            => modSpeakTimeLabel.ForeColor = Color.Red;
+
+        private void ModTotalTimer_TimeUp(object sender, EventArgs e)
+            => modTotalTimeLabel.ForeColor = Color.Red;
 
         #endregion
 
@@ -187,6 +203,7 @@ namespace leeyi45.acmun.Main_Screen
             ModSpeakerIndex++;
             modSpeakProgressBar.Value = 0;
             modCountryCountTextBox.Text = $"Speaker { ModSpeakerIndex } out of {ModSpeakerCount}";
+            modSpeakTimeLabel.ForeColor = Color.Black;
         }
 
         #region Time ValueUpDowns

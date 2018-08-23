@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(homescreen));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.loadXMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -170,12 +170,12 @@
             this.labelBox2 = new leeyi45.acmun.Controls.LabelBox();
             this.gslCountryLabel = new leeyi45.acmun.Controls.LabelBox();
             this.gslTimeSelector = new leeyi45.acmun.Controls.TimeSelector();
+            this.modTopicTextBox = new leeyi45.acmun.Controls.TopicBox();
             this.modTotalPauseButton = new leeyi45.acmun.Controls.StateButton();
             this.modTotalStartButton = new leeyi45.acmun.Controls.StateButton();
             this.modPauseButton = new leeyi45.acmun.Controls.StateButton();
             this.modStartButton = new leeyi45.acmun.Controls.StateButton();
             this.modCountryCountTextBox = new leeyi45.acmun.Controls.LabelBox();
-            this.modTopicTextBox = new leeyi45.acmun.Controls.LabelBox();
             this.modCountryTextBox = new leeyi45.acmun.Controls.LabelBox();
             this.modTotalTimeSelector = new leeyi45.acmun.Controls.TimeSelector();
             this.modSpeakTimeSelector = new leeyi45.acmun.Controls.TimeSelector();
@@ -782,14 +782,14 @@
             this.motionsDataGrid.AllowUserToResizeRows = false;
             this.motionsDataGrid.BackgroundColor = System.Drawing.SystemColors.Window;
             this.motionsDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.motionsDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.motionsDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.motionsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.motionsDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Proposer,
@@ -798,14 +798,14 @@
             this.SpeakTime,
             this.Topic,
             this.State});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.motionsDataGrid.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.motionsDataGrid.DefaultCellStyle = dataGridViewCellStyle2;
             this.motionsDataGrid.Location = new System.Drawing.Point(0, 19);
             this.motionsDataGrid.MultiSelect = false;
             this.motionsDataGrid.Name = "motionsDataGrid";
@@ -938,6 +938,7 @@
             // 
             // modTab
             // 
+            this.modTab.Controls.Add(this.modTopicTextBox);
             this.modTab.Controls.Add(this.modExtendButton);
             this.modTab.Controls.Add(this.modPictureBox);
             this.modTab.Controls.Add(this.modResetButton);
@@ -951,7 +952,6 @@
             this.modTab.Controls.Add(this.modClearButton);
             this.modTab.Controls.Add(this.modRemoveButton);
             this.modTab.Controls.Add(this.modCountryCountTextBox);
-            this.modTab.Controls.Add(this.modTopicTextBox);
             this.modTab.Controls.Add(this.modCountryTextBox);
             this.modTab.Controls.Add(this.modTotalTimeSelector);
             this.modTab.Controls.Add(this.modSpeakTimeSelector);
@@ -1705,6 +1705,18 @@
             this.gslTimeSelector.Value = System.TimeSpan.Parse("00:00:01");
             this.gslTimeSelector.Width = 112;
             // 
+            // modTopicTextBox
+            // 
+            this.modTopicTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.modTopicTextBox.Cursor = System.Windows.Forms.Cursors.Default;
+            this.modTopicTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.25F);
+            this.modTopicTextBox.Location = new System.Drawing.Point(29, 55);
+            this.modTopicTextBox.Name = "modTopicTextBox";
+            this.modTopicTextBox.Size = new System.Drawing.Size(673, 33);
+            this.modTopicTextBox.TabIndex = 62;
+            this.modTopicTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.modTopicTextBox.Topic = null;
+            // 
             // modTotalPauseButton
             // 
             this.modTotalPauseButton.Enabled = false;
@@ -1761,15 +1773,6 @@
             this.modCountryCountTextBox.TabIndex = 55;
             this.modCountryCountTextBox.Text = "Speaker 5 out of 10";
             this.modCountryCountTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // modTopicTextBox
-            // 
-            this.modTopicTextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.modTopicTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.25F);
-            this.modTopicTextBox.Location = new System.Drawing.Point(30, 59);
-            this.modTopicTextBox.Name = "modTopicTextBox";
-            this.modTopicTextBox.Size = new System.Drawing.Size(673, 33);
-            this.modTopicTextBox.TabIndex = 54;
             // 
             // modCountryTextBox
             // 
@@ -1844,6 +1847,7 @@
             this.unmodCountryTextBox.TabIndex = 13;
             this.unmodCountryTextBox.Text = "Country";
             this.unmodCountryTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.unmodCountryTextBox.Topic = null;
             // 
             // unmodTopicTextBox
             // 
@@ -1855,6 +1859,7 @@
             this.unmodTopicTextBox.TabIndex = 12;
             this.unmodTopicTextBox.Text = "Topic";
             this.unmodTopicTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.unmodTopicTextBox.Topic = "Unmod caucus";
             // 
             // motionNoMotionTextBox
             // 
@@ -2004,12 +2009,14 @@
             // voteTopicBox
             // 
             this.voteTopicBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.voteTopicBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.voteTopicBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.voteTopicBox.Location = new System.Drawing.Point(281, 103);
             this.voteTopicBox.Name = "voteTopicBox";
             this.voteTopicBox.Size = new System.Drawing.Size(631, 32);
             this.voteTopicBox.TabIndex = 12;
             this.voteTopicBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.voteTopicBox.Topic = null;
             // 
             // homescreen
             // 
@@ -2137,7 +2144,6 @@
         private Controls.TopicBox unmodTopicTextBox;
         private Controls.TopicBox unmodCountryTextBox;
         private Controls.LabelBox gslCountryLabel;
-        private Controls.LabelBox modTopicTextBox;
         private Controls.LabelBox modCountryTextBox;
         private Controls.LabelBox singleCountryTextBox;
         private Controls.LabelBox debateCountryLabel;
@@ -2234,5 +2240,6 @@
         private Controls.CountrySelector modSelector;
         private Controls.CountrySelector debateFSelector;
         private Controls.CountrySelector debateASelector;
+        private Controls.TopicBox modTopicTextBox;
     }
 }
