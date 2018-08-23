@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace leeyi45.acmun.Main_Screen
 {
@@ -12,9 +13,11 @@ namespace leeyi45.acmun.Main_Screen
             singleListBox.SelectedIndexChanged += singleListBox_SelectionChanged;
 
             SingleTimer = new Clock();
+            SingleTimer.EditDuration(new TimeSpan(0, 1, 30));
 
             SingleTimer.RunningChanged += SingleTimerRunningChanged;
             SingleTimer.Tick += SingleTimerTick;
+            //SingleTimer.TimeUp += SingleTimer_TimeUp;
 
             singlePictureBox.SizeMode = PictureBoxSizeMode.CenterImage;
 
@@ -22,6 +25,8 @@ namespace leeyi45.acmun.Main_Screen
             singlePauseButton.Click += singlePauseButton_Click;
             singleResetButton.Click += singleResetButton_Click;
         }
+
+        //private void SingleTimer_TimeUp(object sender, EventArgs e) => singleTimeLabel.ForeColor = Color.Red;
 
         Clock SingleTimer;
 
@@ -36,8 +41,8 @@ namespace leeyi45.acmun.Main_Screen
                 if (singleSpeak != null) singleSpeak.SpeakingTime += SingleTimer.CurrentTime;
 
                 singleSpeak = value;
-                singleCountryTextBox.Text = value.Name ?? String.Empty;
-                singlePictureBox.ImageLocation = $@"flags\{value.AltName ?? String.Empty}.png";
+                singleCountryTextBox.Text = value?.Name ?? String.Empty;
+                singlePictureBox.ImageLocation = $@"flags\{value?.AltName ?? String.Empty}.png";
             }
         }
 
@@ -70,6 +75,7 @@ namespace leeyi45.acmun.Main_Screen
             singleStartButton.Enabled = !SingleTimer.Running;
             singlePauseButton.Enabled = SingleTimer.Running;
             singleTimeSelector.Enabled = !SingleTimer.Running;
+            singleListBox.Enabled = !SingleTimer.Running;
         }
 
         private void SingleTimerTick(object sender, EventArgs e)
