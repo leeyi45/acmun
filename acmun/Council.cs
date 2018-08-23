@@ -179,8 +179,8 @@ namespace leeyi45.acmun
 
         public static TimeSpan ModTotalTime
         {
-            get => Instance.Settings.ModSpeakTime;
-            set => Instance.Settings.ModSpeakTime = value;
+            get => Instance.Settings.ModTotalTime;
+            set => Instance.Settings.ModTotalTime = value;
         }
 
         public static bool SaveSpeakTime
