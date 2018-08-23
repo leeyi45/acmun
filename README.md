@@ -13,7 +13,7 @@ TODO List:
   <li><strike>Write up configuration instructions</strike></li>
   <li>Implement debate tracking system</li>
   <li>Adjust GUI settings to make sure everything scales to fullscreen properly</li>
-  <li>Fix TopicBoxes</li>
+  <li><strike>Fix TopicBoxes</strike></li>
   <li><strike>Fix TimeSelector LabelBoxes</strike></li>
   <li><strike>Implement speech time tracking for single speaker speeches</strike></li>
   <li><strike>Fix ListBox DragDrop and Click registration</strike></li>
