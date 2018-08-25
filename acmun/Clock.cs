@@ -16,7 +16,7 @@ namespace leeyi45.acmun
 
             Internal.Tick += TickHandler;
             
-            CurrentTime = new TimeSpan(0, 0, 0);
+            ElapsedTime = new TimeSpan(0, 0, 0);
         }
 
         public Clock(TimeSpan Duration) : this()
@@ -24,7 +24,7 @@ namespace leeyi45.acmun
 
         Timer Internal;
 
-        public TimeSpan CurrentTime { get; private set; }
+        public TimeSpan ElapsedTime { get; private set; }
 
         public TimeSpan Duration { get; private set; }
 
@@ -36,9 +36,9 @@ namespace leeyi45.acmun
         {
             Tick?.Invoke(this, EventArgs.Empty);
 
-            CurrentTime = CurrentTime.Add(OneSecond);
+            ElapsedTime = ElapsedTime.Add(OneSecond);
 
-            if (CurrentTime > Duration)
+            if (ElapsedTime > Duration)
             {
                 Stop();
                 Elapsed = true;
@@ -66,7 +66,7 @@ namespace leeyi45.acmun
         {
             Stop();
             Elapsed = false;
-            CurrentTime = TimeSpan.Zero;
+            ElapsedTime = TimeSpan.Zero;
             ResetTriggered?.Invoke(this, EventArgs.Empty);
         }
 
