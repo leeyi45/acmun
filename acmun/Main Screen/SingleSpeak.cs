@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Linq;
 
 namespace leeyi45.acmun.Main_Screen
 {
@@ -17,7 +18,8 @@ namespace leeyi45.acmun.Main_Screen
 
             SingleTimer.RunningChanged += SingleTimerRunningChanged;
             SingleTimer.Tick += SingleTimerTick;
-            //SingleTimer.TimeUp += SingleTimer_TimeUp;
+            SingleTimer.TimeUp += SingleTimer_TimeUp;
+            SingleTimer.ResetTriggered += SingleTimer_ResetTriggered;
 
             singlePictureBox.SizeMode = PictureBoxSizeMode.CenterImage;
 
@@ -26,7 +28,9 @@ namespace leeyi45.acmun.Main_Screen
             singleResetButton.Click += singleResetButton_Click;
         }
 
-        //private void SingleTimer_TimeUp(object sender, EventArgs e) => singleTimeLabel.ForeColor = Color.Red;
+        private void SingleTimer_ResetTriggered(object sender, EventArgs e) => singleTimeLabel.ForeColor = Color.Black;
+
+        private void SingleTimer_TimeUp(object sender, EventArgs e) => singleTimeLabel.ForeColor = Color.Red;
 
         Clock SingleTimer;
 

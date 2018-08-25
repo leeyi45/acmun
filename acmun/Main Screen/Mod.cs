@@ -94,14 +94,10 @@ namespace leeyi45.acmun.Main_Screen
             modTotalTimeLabel.ForeColor = Color.Black;
             modSelector.ClearSpeakers();
 
-            modTopicTextBox.Click += DisableTextBox;
             modTopicTextBox.TopicChanged += ModTopicTextBox_TopicChanged;
 
             CurrentMod = caucus;
         }
-
-        private void ModTopicTextBox_TopicChanged(object sender, EventArgs e) 
-            => CurrentMod.Topic = modTopicTextBox.Text;
 
         #region Timer Stuff
         private void ModTotalTick(object sender, EventArgs e)
@@ -202,7 +198,7 @@ namespace leeyi45.acmun.Main_Screen
 
             ModSpeakerIndex++;
             modSpeakProgressBar.Value = 0;
-            modCountryCountTextBox.Text = $"Speaker { ModSpeakerIndex } out of {ModSpeakerCount}";
+            modCountryCountTextBox.Text = $"Speaker { ModSpeakerIndex } out of { ModSpeakerCount }";
             modSpeakTimeLabel.ForeColor = Color.Black;
         }
 
@@ -233,6 +229,9 @@ namespace leeyi45.acmun.Main_Screen
 
         private void modComboBox_ItemSelected(object sender, int index)
             => ModListAdd(index);
+
+        private void ModTopicTextBox_TopicChanged(object sender, EventArgs e)
+            => CurrentMod.Topic = modTopicTextBox.Text;
 
         private void ModListAdd(int index)
         {

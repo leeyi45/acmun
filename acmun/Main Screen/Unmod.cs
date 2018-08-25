@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace leeyi45.acmun.Main_Screen
 {
@@ -15,13 +16,13 @@ namespace leeyi45.acmun.Main_Screen
             UnmodTimer = new Clock();
             UnmodTimer.Tick += UnmodTimerTick;
             UnmodTimer.RunningChanged += UnmodTimerRunningChanged;
+            UnmodTimer.TimeUp += UnmodTimer_TimeUp;
 
             unmodStartButton.Click += unmodStartButton_Click;
             unmodPauseButton.Click += unmodPauseButton_Click;
             unmodFinishButton.Click += unmodFinishButton_Click;
 
             unmodTopicTextBox.TopicChanged += UnmodTopicTextBox_TopicChanged;
-            unmodTopicTextBox.Enter += DisableTextBox;
 
             LoadUnmod(UnmodCaucus.DefaultUnmod);
         }
@@ -53,6 +54,7 @@ namespace leeyi45.acmun.Main_Screen
             unmodProgressBar.Value = 0;
 
             unmodTimeLabel.Text = $"00:00/{UnmodDuration.ToValString()}";
+            unmodTimeLabel.ForeColor = Color.Black;
 
             CurrentUnmod = caucus;
         }
@@ -68,6 +70,9 @@ namespace leeyi45.acmun.Main_Screen
             unmodStartButton.Enabled = !UnmodTimer.Running;
             unmodPauseButton.Enabled = UnmodTimer.Running;
         }
+
+        private void UnmodTimer_TimeUp(object sender, EventArgs e)
+            => unmodTimeLabel.ForeColor = Color.Red;
 
         private void unmodTextBox_KeyDown(object sender, KeyEventArgs e)
         {

@@ -17,6 +17,7 @@ namespace leeyi45.acmun.Main_Screen
             DebateTimer = new Clock();
             DebateTimer.Tick += DebateTimerTick;
             DebateTimer.RunningChanged += DebateTimerRunning_Changed;
+            DebateTimer.TimeUp += DebateTimer_TimeUp;
 
             debateTimeSelector.ValueChanged += debateTimeSelector_ValueChanged;
             debateCountSelector.ValueChanged += debateCountSelector_ValueChanged;
@@ -35,6 +36,9 @@ namespace leeyi45.acmun.Main_Screen
 
             LoadDebate();
         }
+
+        private void DebateTimer_TimeUp(object sender, EventArgs e) 
+            => debateTimeLabel.ForeColor = System.Drawing.Color.Red;
 
         private void DebateTimerRunning_Changed(object sender, EventArgs e)
         {
@@ -190,6 +194,7 @@ namespace leeyi45.acmun.Main_Screen
             }
 
             if (DebateSpeaker != null) DebateSpeaker.SpeakingTime.Add(DebateTimer.CurrentTime);
+            debateTimeLabel.ForeColor = System.Drawing.Color.Black;
 
             DebateSpeaker = nextSpeaker;
             DebateTimer.Start();

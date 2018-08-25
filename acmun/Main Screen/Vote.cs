@@ -46,8 +46,6 @@ namespace leeyi45.acmun.Main_Screen
             voteRadioButton1.CheckedChanged += VoteRadioButton_CheckedChanged;
             voteRadioButton2.CheckedChanged += VoteRadioButton_CheckedChanged;
             voteRadioButton3.CheckedChanged += VoteRadioButton_CheckedChanged;
-
-            voteTopicBox.Click += DisableTextBox;
         }
 
         #region Checkbox Changed
