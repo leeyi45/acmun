@@ -77,6 +77,12 @@
     <Compile Include="Controls\LabelBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\TimeBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TimeBar.Designer.cs">
+      <DependentUpon>TimeBar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\TimeSelector.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -205,6 +211,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Controls\CountrySelector.resx">
       <DependentUpon>CountrySelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TimeBar.resx">
+      <DependentUpon>TimeBar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\TopicBox\TopicForm.resx">
       <DependentUpon>TopicForm.cs</DependentUpon>

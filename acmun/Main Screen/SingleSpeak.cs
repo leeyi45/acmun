@@ -13,13 +13,9 @@ namespace leeyi45.acmun.Main_Screen
 
             singleListBox.SelectedIndexChanged += singleListBox_SelectionChanged;
 
-            SingleTimer = new Clock();
-            SingleTimer.EditDuration(new TimeSpan(0, 1, 30));
+            SingleTimeBar.Duration = new TimeSpan(0, 1, 30);
 
-            SingleTimer.RunningChanged += SingleTimerRunningChanged;
-            SingleTimer.Tick += SingleTimerTick;
-            SingleTimer.TimeUp += SingleTimer_TimeUp;
-            SingleTimer.ResetTriggered += SingleTimer_ResetTriggered;
+            SingleTimeBar.RunningChanged += SingleTimerRunningChanged;
 
             singlePictureBox.SizeMode = PictureBoxSizeMode.CenterImage;
 
@@ -27,12 +23,6 @@ namespace leeyi45.acmun.Main_Screen
             singlePauseButton.Click += singlePauseButton_Click;
             singleResetButton.Click += singleResetButton_Click;
         }
-
-        private void SingleTimer_ResetTriggered(object sender, EventArgs e) => singleTimeLabel.ForeColor = Color.Black;
-
-        private void SingleTimer_TimeUp(object sender, EventArgs e) => singleTimeLabel.ForeColor = Color.Red;
-
-        Clock SingleTimer;
 
         TimeSpan SingleSpeakTotal;
 
@@ -42,7 +32,7 @@ namespace leeyi45.acmun.Main_Screen
             get => singleSpeak;
             set
             {
-                if (singleSpeak != null) singleSpeak.SpeakingTime += SingleTimer.CurrentTime;
+                if (singleSpeak != null) singleSpeak.SpeakingTime += SingleTimeBar.ElapsedTime;
 
                 singleSpeak = value;
                 singleCountryTextBox.Text = value?.Name ?? String.Empty;
@@ -52,12 +42,9 @@ namespace leeyi45.acmun.Main_Screen
 
         private void LoadSingleSpeak(Delegation speaker, TimeSpan duration)
         {
-            singleProgressBar.Value = 0;
             SingleSpeakTotal = duration;
-            SingleTimer.EditDuration(duration);
+            SingleTimeBar.Duration = duration;
             SingleSpeaker = speaker;
-
-            singleProgressBar.Maximum = (int)duration.TotalSeconds;
 
             singleTimeSelector.Value = duration;
 
@@ -76,43 +63,31 @@ namespace leeyi45.acmun.Main_Screen
 
         private void SingleTimerRunningChanged(object sender, EventArgs e)
         {
-            singleStartButton.Enabled = !SingleTimer.Running;
-            singlePauseButton.Enabled = SingleTimer.Running;
-            singleTimeSelector.Enabled = !SingleTimer.Running;
-            singleListBox.Enabled = !SingleTimer.Running;
-        }
-
-        private void SingleTimerTick(object sender, EventArgs e)
-        {
-            singleProgressBar.Increment(1);
-            singleTimeLabel.Text = $"{SingleTimer.CurrentTime.ToValString()}/{SingleSpeakTotal.ToValString()}";
+            singleStartButton.Enabled = !SingleTimeBar.Running;
+            singlePauseButton.Enabled = SingleTimeBar.Running;
+            singleTimeSelector.Enabled = !SingleTimeBar.Running;
+            singleListBox.Enabled = !SingleTimeBar.Running;
         }
 
         private void singleSpeak_ValueChanged(object sender, EventArgs e)
         {
             var time = singleTimeSelector.Value;
             SingleSpeakTotal = time;
-            SingleTimer.EditDuration(time);
-            singleTimeLabel.Text = $"{SingleTimer.CurrentTime.ToValString()}/{SingleSpeakTotal.ToValString()}";
+            SingleTimeBar.Duration = time;
         }
 
-        private void singleListBox_SelectionChanged(object sender, EventArgs e)
-        {
-            if(!SingleTimer.Running)
-            {
-                LoadSingleSpeak(Council.Present[singleListBox.SelectedIndex], SingleTimer.Duration);
-            }
-        }
+        private void singleListBox_SelectionChanged(object sender, EventArgs e) 
+            => LoadSingleSpeak(Council.Present[singleListBox.SelectedIndex], SingleTimeBar.Duration);
 
         private void singleStartButton_Click(object sender, EventArgs e)
-            => SingleTimer.Start();
+            => SingleTimeBar.Start();
 
         private void singlePauseButton_Click(object sender, EventArgs e)
-            => SingleTimer.Stop();
+            => SingleTimeBar.Stop();
 
         private void singleResetButton_Click(object sender, EventArgs e)
         {
-            SingleTimer.Reset();
+            SingleTimeBar.Reset();
             SingleSpeaker = null;
         }
     }

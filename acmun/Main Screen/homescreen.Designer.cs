@@ -63,20 +63,7 @@
             this.motionFailDButton = new System.Windows.Forms.Button();
             this.motionPassDButton = new System.Windows.Forms.Button();
             this.debateCountSelector = new System.Windows.Forms.NumericUpDown();
-            this.modTotalPauseButton = new leeyi45.acmun.Controls.StateButton();
-            this.modTotalStartButton = new leeyi45.acmun.Controls.StateButton();
-            this.modPauseButton = new leeyi45.acmun.Controls.StateButton();
-            this.modStartButton = new leeyi45.acmun.Controls.StateButton();
-            this.unmodPauseButton = new leeyi45.acmun.Controls.StateButton();
-            this.unmodStartButton = new leeyi45.acmun.Controls.StateButton();
-            this.singlePauseButton = new leeyi45.acmun.Controls.StateButton();
-            this.singleStartButton = new leeyi45.acmun.Controls.StateButton();
-            this.debateStopButton = new leeyi45.acmun.Controls.StateButton();
-            this.debateStartButton = new leeyi45.acmun.Controls.StateButton();
-            this.debateTimeSelector = new leeyi45.acmun.Controls.TimeSelector();
             this.debateTab = new System.Windows.Forms.TabPage();
-            this.debateASelector = new leeyi45.acmun.Controls.CountrySelector();
-            this.debateFSelector = new leeyi45.acmun.Controls.CountrySelector();
             this.debatePictureBox = new System.Windows.Forms.PictureBox();
             this.debateResetButton = new System.Windows.Forms.Button();
             this.debateNextButton = new System.Windows.Forms.Button();
@@ -85,22 +72,12 @@
             this.debateFClearButton = new System.Windows.Forms.Button();
             this.debateARemoveButton = new System.Windows.Forms.Button();
             this.debateFRemoveButton = new System.Windows.Forms.Button();
-            this.debateTimeLabel = new System.Windows.Forms.Label();
-            this.debateProgressBar = new System.Windows.Forms.ProgressBar();
-            this.debateCountryLabel = new leeyi45.acmun.Controls.LabelBox();
-            this.debateForTextBox = new leeyi45.acmun.Controls.LabelBox();
             this.singleTab = new System.Windows.Forms.TabPage();
-            this.labelBox3 = new leeyi45.acmun.Controls.LabelBox();
             this.singlePictureBox = new System.Windows.Forms.PictureBox();
             this.singleResetButton = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
-            this.singleTimeLabel = new System.Windows.Forms.Label();
-            this.singleProgressBar = new System.Windows.Forms.ProgressBar();
-            this.singleCountryTextBox = new leeyi45.acmun.Controls.LabelBox();
-            this.singleTimeSelector = new leeyi45.acmun.Controls.TimeSelector();
             this.singleListBox = new System.Windows.Forms.ListBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.motionNoMotionTextBox = new leeyi45.acmun.Controls.LabelBox();
             this.motionRollCallButton = new System.Windows.Forms.Button();
             this.motionDGroupBox = new System.Windows.Forms.GroupBox();
             this.motionNGroupBox = new System.Windows.Forms.GroupBox();
@@ -112,40 +89,18 @@
             this.Topic = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.State = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unmodTab = new System.Windows.Forms.TabPage();
-            this.unmodCountryTextBox = new leeyi45.acmun.Controls.TopicBox();
-            this.unmodTopicTextBox = new leeyi45.acmun.Controls.TopicBox();
             this.unmodReset = new System.Windows.Forms.Button();
             this.unmodExtendButton = new System.Windows.Forms.Button();
             this.unmodFinishButton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.unmodTimeLabel = new System.Windows.Forms.Label();
-            this.unmodProgressBar = new System.Windows.Forms.ProgressBar();
             this.modTab = new System.Windows.Forms.TabPage();
-            this.modTopicTextBox = new leeyi45.acmun.Controls.TopicBox();
             this.modExtendButton = new System.Windows.Forms.Button();
             this.modPictureBox = new System.Windows.Forms.PictureBox();
             this.modResetButton = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.modTotalTimeLabel = new System.Windows.Forms.Label();
-            this.modTotalProgressBar = new System.Windows.Forms.ProgressBar();
-            this.modSpeakTimeLabel = new System.Windows.Forms.Label();
-            this.modSpeakProgressBar = new System.Windows.Forms.ProgressBar();
-            this.modCountryCountTextBox = new leeyi45.acmun.Controls.LabelBox();
-            this.modCountryTextBox = new leeyi45.acmun.Controls.LabelBox();
-            this.modTotalTimeSelector = new leeyi45.acmun.Controls.TimeSelector();
-            this.modSpeakTimeSelector = new leeyi45.acmun.Controls.TimeSelector();
-            this.modSelector = new leeyi45.acmun.Controls.CountrySelector();
             this.gslTab = new System.Windows.Forms.TabPage();
-            this.gslSelector = new leeyi45.acmun.Controls.CountrySelector();
-            this.gslPauseButton = new leeyi45.acmun.Controls.StateButton();
-            this.gslStartButton = new leeyi45.acmun.Controls.StateButton();
-            this.labelBox2 = new leeyi45.acmun.Controls.LabelBox();
             this.gslPictureBox = new System.Windows.Forms.PictureBox();
-            this.gslCountryLabel = new leeyi45.acmun.Controls.LabelBox();
-            this.gslTimeSelector = new leeyi45.acmun.Controls.TimeSelector();
-            this.gslTimeLabel = new System.Windows.Forms.Label();
-            this.gslProgressBar = new System.Windows.Forms.ProgressBar();
             this.motionsTab = new System.Windows.Forms.TabControl();
             this.votingTab = new System.Windows.Forms.TabPage();
             this.voteResultButton = new System.Windows.Forms.Button();
@@ -181,8 +136,6 @@
             this.voteAgainstButton = new System.Windows.Forms.Button();
             this.voteForButton = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.labelBox1 = new leeyi45.acmun.Controls.LabelBox();
-            this.voteTopicBox = new leeyi45.acmun.Controls.TopicBox();
             this.voteCountryBox = new System.Windows.Forms.ListBox();
             this.label9 = new System.Windows.Forms.Label();
             this.voteAbstainListBox = new System.Windows.Forms.ListBox();
@@ -198,8 +151,49 @@
             this.motionsPassDMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.motionsFailDMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.motionsNullMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.councilLabel = new leeyi45.acmun.Controls.TopicBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.GSLTimeBar = new leeyi45.acmun.Controls.TimeBar();
+            this.gslSelector = new leeyi45.acmun.Controls.CountrySelector();
+            this.gslPauseButton = new leeyi45.acmun.Controls.StateButton();
+            this.gslStartButton = new leeyi45.acmun.Controls.StateButton();
+            this.labelBox2 = new leeyi45.acmun.Controls.LabelBox();
+            this.gslCountryLabel = new leeyi45.acmun.Controls.LabelBox();
+            this.gslTimeSelector = new leeyi45.acmun.Controls.TimeSelector();
+            this.ModTotalTimeBar = new leeyi45.acmun.Controls.TimeBar();
+            this.ModSpeakTimeBar = new leeyi45.acmun.Controls.TimeBar();
+            this.modTopicTextBox = new leeyi45.acmun.Controls.TopicBox();
+            this.modTotalPauseButton = new leeyi45.acmun.Controls.StateButton();
+            this.modTotalStartButton = new leeyi45.acmun.Controls.StateButton();
+            this.modPauseButton = new leeyi45.acmun.Controls.StateButton();
+            this.modStartButton = new leeyi45.acmun.Controls.StateButton();
+            this.modCountryCountTextBox = new leeyi45.acmun.Controls.LabelBox();
+            this.modCountryTextBox = new leeyi45.acmun.Controls.LabelBox();
+            this.modTotalTimeSelector = new leeyi45.acmun.Controls.TimeSelector();
+            this.modSpeakTimeSelector = new leeyi45.acmun.Controls.TimeSelector();
+            this.modSelector = new leeyi45.acmun.Controls.CountrySelector();
+            this.unmodPauseButton = new leeyi45.acmun.Controls.StateButton();
+            this.unmodStartButton = new leeyi45.acmun.Controls.StateButton();
+            this.unmodCountryTextBox = new leeyi45.acmun.Controls.TopicBox();
+            this.unmodTopicTextBox = new leeyi45.acmun.Controls.TopicBox();
+            this.motionNoMotionTextBox = new leeyi45.acmun.Controls.LabelBox();
+            this.labelBox3 = new leeyi45.acmun.Controls.LabelBox();
+            this.singlePauseButton = new leeyi45.acmun.Controls.StateButton();
+            this.singleStartButton = new leeyi45.acmun.Controls.StateButton();
+            this.singleCountryTextBox = new leeyi45.acmun.Controls.LabelBox();
+            this.singleTimeSelector = new leeyi45.acmun.Controls.TimeSelector();
+            this.debateASelector = new leeyi45.acmun.Controls.CountrySelector();
+            this.debateFSelector = new leeyi45.acmun.Controls.CountrySelector();
+            this.debateStopButton = new leeyi45.acmun.Controls.StateButton();
+            this.debateStartButton = new leeyi45.acmun.Controls.StateButton();
+            this.debateCountryLabel = new leeyi45.acmun.Controls.LabelBox();
+            this.debateForTextBox = new leeyi45.acmun.Controls.LabelBox();
+            this.debateTimeSelector = new leeyi45.acmun.Controls.TimeSelector();
+            this.labelBox1 = new leeyi45.acmun.Controls.LabelBox();
+            this.voteTopicBox = new leeyi45.acmun.Controls.TopicBox();
+            this.councilLabel = new leeyi45.acmun.Controls.TopicBox();
+            this.UnmodTimeBar = new leeyi45.acmun.Controls.TimeBar();
+            this.SingleTimeBar = new leeyi45.acmun.Controls.TimeBar();
+            this.DebateTimeBar = new leeyi45.acmun.Controls.TimeBar();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.debateCountSelector)).BeginInit();
             this.debateTab.SuspendLayout();
@@ -529,135 +523,9 @@
             0,
             0});
             // 
-            // modTotalPauseButton
-            // 
-            this.modTotalPauseButton.Enabled = false;
-            this.modTotalPauseButton.FalseText = "Stopped";
-            this.modTotalPauseButton.Location = new System.Drawing.Point(8, 48);
-            this.modTotalPauseButton.Name = "modTotalPauseButton";
-            this.modTotalPauseButton.Size = new System.Drawing.Size(75, 23);
-            this.modTotalPauseButton.TabIndex = 25;
-            this.toolTip1.SetToolTip(this.modTotalPauseButton, "Pause the main caucus timer");
-            this.modTotalPauseButton.TrueText = "Stop";
-            this.modTotalPauseButton.UseVisualStyleBackColor = true;
-            // 
-            // modTotalStartButton
-            // 
-            this.modTotalStartButton.FalseText = "Started";
-            this.modTotalStartButton.Location = new System.Drawing.Point(8, 20);
-            this.modTotalStartButton.Name = "modTotalStartButton";
-            this.modTotalStartButton.Size = new System.Drawing.Size(75, 23);
-            this.modTotalStartButton.TabIndex = 24;
-            this.toolTip1.SetToolTip(this.modTotalStartButton, "Start the main caucus timer");
-            this.modTotalStartButton.TrueText = "Start";
-            this.modTotalStartButton.UseVisualStyleBackColor = true;
-            // 
-            // modPauseButton
-            // 
-            this.modPauseButton.Enabled = false;
-            this.modPauseButton.FalseText = "Stopped";
-            this.modPauseButton.Location = new System.Drawing.Point(8, 48);
-            this.modPauseButton.Name = "modPauseButton";
-            this.modPauseButton.Size = new System.Drawing.Size(75, 23);
-            this.modPauseButton.TabIndex = 25;
-            this.toolTip1.SetToolTip(this.modPauseButton, "Stop the individual speech timer");
-            this.modPauseButton.TrueText = "Stop";
-            this.modPauseButton.UseVisualStyleBackColor = true;
-            // 
-            // modStartButton
-            // 
-            this.modStartButton.FalseText = "Started";
-            this.modStartButton.Location = new System.Drawing.Point(8, 20);
-            this.modStartButton.Name = "modStartButton";
-            this.modStartButton.Size = new System.Drawing.Size(75, 23);
-            this.modStartButton.TabIndex = 24;
-            this.toolTip1.SetToolTip(this.modStartButton, "Start the individual speech timer");
-            this.modStartButton.TrueText = "Start";
-            this.modStartButton.UseVisualStyleBackColor = true;
-            // 
-            // unmodPauseButton
-            // 
-            this.unmodPauseButton.Enabled = false;
-            this.unmodPauseButton.FalseText = "Stopped";
-            this.unmodPauseButton.Location = new System.Drawing.Point(461, 406);
-            this.unmodPauseButton.Name = "unmodPauseButton";
-            this.unmodPauseButton.Size = new System.Drawing.Size(75, 23);
-            this.unmodPauseButton.TabIndex = 15;
-            this.toolTip1.SetToolTip(this.unmodPauseButton, "Stop the caucus timer");
-            this.unmodPauseButton.TrueText = "Stop";
-            this.unmodPauseButton.UseVisualStyleBackColor = true;
-            // 
-            // unmodStartButton
-            // 
-            this.unmodStartButton.FalseText = "Started";
-            this.unmodStartButton.Location = new System.Drawing.Point(380, 406);
-            this.unmodStartButton.Name = "unmodStartButton";
-            this.unmodStartButton.Size = new System.Drawing.Size(75, 23);
-            this.unmodStartButton.TabIndex = 14;
-            this.toolTip1.SetToolTip(this.unmodStartButton, "Start the caucus timer");
-            this.unmodStartButton.TrueText = "Start";
-            this.unmodStartButton.UseVisualStyleBackColor = true;
-            // 
-            // singlePauseButton
-            // 
-            this.singlePauseButton.Enabled = false;
-            this.singlePauseButton.FalseText = "Stopped";
-            this.singlePauseButton.Location = new System.Drawing.Point(800, 523);
-            this.singlePauseButton.Name = "singlePauseButton";
-            this.singlePauseButton.Size = new System.Drawing.Size(75, 23);
-            this.singlePauseButton.TabIndex = 57;
-            this.toolTip1.SetToolTip(this.singlePauseButton, "Stop the speech timer");
-            this.singlePauseButton.TrueText = "Stop";
-            this.singlePauseButton.UseVisualStyleBackColor = true;
-            // 
-            // singleStartButton
-            // 
-            this.singleStartButton.FalseText = "Started";
-            this.singleStartButton.Location = new System.Drawing.Point(719, 524);
-            this.singleStartButton.Name = "singleStartButton";
-            this.singleStartButton.Size = new System.Drawing.Size(75, 23);
-            this.singleStartButton.TabIndex = 56;
-            this.toolTip1.SetToolTip(this.singleStartButton, "Start the speech timer");
-            this.singleStartButton.TrueText = "Start";
-            this.singleStartButton.UseVisualStyleBackColor = true;
-            // 
-            // debateStopButton
-            // 
-            this.debateStopButton.Enabled = false;
-            this.debateStopButton.FalseText = "Stopped";
-            this.debateStopButton.Location = new System.Drawing.Point(286, 577);
-            this.debateStopButton.Name = "debateStopButton";
-            this.debateStopButton.Size = new System.Drawing.Size(75, 23);
-            this.debateStopButton.TabIndex = 79;
-            this.toolTip1.SetToolTip(this.debateStopButton, "Stop the speech timer");
-            this.debateStopButton.TrueText = "Stop";
-            this.debateStopButton.UseVisualStyleBackColor = true;
-            // 
-            // debateStartButton
-            // 
-            this.debateStartButton.FalseText = "Started";
-            this.debateStartButton.Location = new System.Drawing.Point(205, 577);
-            this.debateStartButton.Name = "debateStartButton";
-            this.debateStartButton.Size = new System.Drawing.Size(75, 23);
-            this.debateStartButton.TabIndex = 78;
-            this.toolTip1.SetToolTip(this.debateStartButton, "Start the speech timer");
-            this.debateStartButton.TrueText = "Start";
-            this.debateStartButton.UseVisualStyleBackColor = true;
-            // 
-            // debateTimeSelector
-            // 
-            this.debateTimeSelector.Location = new System.Drawing.Point(736, 9);
-            this.debateTimeSelector.Name = "debateTimeSelector";
-            this.debateTimeSelector.Size = new System.Drawing.Size(108, 49);
-            this.debateTimeSelector.TabIndex = 59;
-            this.debateTimeSelector.Text = "Speaking Time";
-            this.debateTimeSelector.TextBackColor = System.Drawing.SystemColors.Window;
-            this.toolTip1.SetToolTip(this.debateTimeSelector, "Speaking time for each speaker");
-            this.debateTimeSelector.Value = System.TimeSpan.Parse("00:01:00");
-            this.debateTimeSelector.Width = 108;
-            // 
             // debateTab
             // 
+            this.debateTab.Controls.Add(this.DebateTimeBar);
             this.debateTab.Controls.Add(this.debateASelector);
             this.debateTab.Controls.Add(this.debateFSelector);
             this.debateTab.Controls.Add(this.debateStopButton);
@@ -671,8 +539,6 @@
             this.debateTab.Controls.Add(this.debateFClearButton);
             this.debateTab.Controls.Add(this.debateARemoveButton);
             this.debateTab.Controls.Add(this.debateFRemoveButton);
-            this.debateTab.Controls.Add(this.debateTimeLabel);
-            this.debateTab.Controls.Add(this.debateProgressBar);
             this.debateTab.Controls.Add(this.debateCountryLabel);
             this.debateTab.Controls.Add(this.debateForTextBox);
             this.debateTab.Controls.Add(this.debateTimeSelector);
@@ -683,24 +549,6 @@
             this.debateTab.TabIndex = 6;
             this.debateTab.Text = "Closed Debate";
             this.debateTab.UseVisualStyleBackColor = true;
-            // 
-            // debateASelector
-            // 
-            this.debateASelector.LabelText = "Speakers Against:";
-            this.debateASelector.Location = new System.Drawing.Point(736, 320);
-            this.debateASelector.Name = "debateASelector";
-            this.debateASelector.Size = new System.Drawing.Size(456, 252);
-            this.debateASelector.Speakers = ((System.Collections.Generic.List<string>)(resources.GetObject("debateASelector.Speakers")));
-            this.debateASelector.TabIndex = 81;
-            // 
-            // debateFSelector
-            // 
-            this.debateFSelector.LabelText = "Speakers For:";
-            this.debateFSelector.Location = new System.Drawing.Point(736, 63);
-            this.debateFSelector.Name = "debateFSelector";
-            this.debateFSelector.Size = new System.Drawing.Size(450, 222);
-            this.debateFSelector.Speakers = ((System.Collections.Generic.List<string>)(resources.GetObject("debateFSelector.Speakers")));
-            this.debateFSelector.TabIndex = 80;
             // 
             // debatePictureBox
             // 
@@ -775,52 +623,15 @@
             this.debateFRemoveButton.Text = "Remove";
             this.debateFRemoveButton.UseVisualStyleBackColor = true;
             // 
-            // debateTimeLabel
-            // 
-            this.debateTimeLabel.AutoSize = true;
-            this.debateTimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.debateTimeLabel.Location = new System.Drawing.Point(254, 474);
-            this.debateTimeLabel.Name = "debateTimeLabel";
-            this.debateTimeLabel.Size = new System.Drawing.Size(229, 46);
-            this.debateTimeLabel.TabIndex = 61;
-            this.debateTimeLabel.Text = "00:00/01:30";
-            // 
-            // debateProgressBar
-            // 
-            this.debateProgressBar.Location = new System.Drawing.Point(32, 419);
-            this.debateProgressBar.Maximum = 90;
-            this.debateProgressBar.Name = "debateProgressBar";
-            this.debateProgressBar.Size = new System.Drawing.Size(673, 38);
-            this.debateProgressBar.TabIndex = 60;
-            // 
-            // debateCountryLabel
-            // 
-            this.debateCountryLabel.BackColor = System.Drawing.SystemColors.Window;
-            this.debateCountryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F);
-            this.debateCountryLabel.Location = new System.Drawing.Point(30, 348);
-            this.debateCountryLabel.Name = "debateCountryLabel";
-            this.debateCountryLabel.Size = new System.Drawing.Size(673, 33);
-            this.debateCountryLabel.TabIndex = 76;
-            // 
-            // debateForTextBox
-            // 
-            this.debateForTextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.debateForTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F);
-            this.debateForTextBox.Location = new System.Drawing.Point(30, 19);
-            this.debateForTextBox.Name = "debateForTextBox";
-            this.debateForTextBox.Size = new System.Drawing.Size(673, 33);
-            this.debateForTextBox.TabIndex = 75;
-            // 
             // singleTab
             // 
+            this.singleTab.Controls.Add(this.SingleTimeBar);
             this.singleTab.Controls.Add(this.labelBox3);
             this.singleTab.Controls.Add(this.singlePauseButton);
             this.singleTab.Controls.Add(this.singleStartButton);
             this.singleTab.Controls.Add(this.singlePictureBox);
             this.singleTab.Controls.Add(this.singleResetButton);
             this.singleTab.Controls.Add(this.label12);
-            this.singleTab.Controls.Add(this.singleTimeLabel);
-            this.singleTab.Controls.Add(this.singleProgressBar);
             this.singleTab.Controls.Add(this.singleCountryTextBox);
             this.singleTab.Controls.Add(this.singleTimeSelector);
             this.singleTab.Controls.Add(this.singleListBox);
@@ -831,16 +642,6 @@
             this.singleTab.TabIndex = 4;
             this.singleTab.Text = "Single Speaker";
             this.singleTab.UseVisualStyleBackColor = true;
-            // 
-            // labelBox3
-            // 
-            this.labelBox3.BackColor = System.Drawing.SystemColors.Window;
-            this.labelBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBox3.Location = new System.Drawing.Point(24, 40);
-            this.labelBox3.Name = "labelBox3";
-            this.labelBox3.Size = new System.Drawing.Size(673, 37);
-            this.labelBox3.TabIndex = 58;
-            this.labelBox3.Text = "Single Speaker";
             // 
             // singlePictureBox
             // 
@@ -870,44 +671,6 @@
             this.label12.TabIndex = 30;
             this.label12.Text = "Countries:";
             // 
-            // singleTimeLabel
-            // 
-            this.singleTimeLabel.AutoSize = true;
-            this.singleTimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.singleTimeLabel.Location = new System.Drawing.Point(248, 489);
-            this.singleTimeLabel.Name = "singleTimeLabel";
-            this.singleTimeLabel.Size = new System.Drawing.Size(229, 46);
-            this.singleTimeLabel.TabIndex = 25;
-            this.singleTimeLabel.Text = "00:00/01:30";
-            // 
-            // singleProgressBar
-            // 
-            this.singleProgressBar.Location = new System.Drawing.Point(26, 434);
-            this.singleProgressBar.Maximum = 90;
-            this.singleProgressBar.Name = "singleProgressBar";
-            this.singleProgressBar.Size = new System.Drawing.Size(673, 38);
-            this.singleProgressBar.TabIndex = 24;
-            // 
-            // singleCountryTextBox
-            // 
-            this.singleCountryTextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.singleCountryTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.25F);
-            this.singleCountryTextBox.Location = new System.Drawing.Point(28, 388);
-            this.singleCountryTextBox.Name = "singleCountryTextBox";
-            this.singleCountryTextBox.Size = new System.Drawing.Size(673, 33);
-            this.singleCountryTextBox.TabIndex = 54;
-            // 
-            // singleTimeSelector
-            // 
-            this.singleTimeSelector.Location = new System.Drawing.Point(719, 40);
-            this.singleTimeSelector.Name = "singleTimeSelector";
-            this.singleTimeSelector.Size = new System.Drawing.Size(108, 49);
-            this.singleTimeSelector.TabIndex = 42;
-            this.singleTimeSelector.Text = "Speaking Time";
-            this.singleTimeSelector.TextBackColor = System.Drawing.SystemColors.Window;
-            this.singleTimeSelector.Value = System.TimeSpan.Parse("00:01:30");
-            this.singleTimeSelector.Width = 108;
-            // 
             // singleListBox
             // 
             this.singleListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
@@ -936,16 +699,6 @@
             this.tabPage2.TabIndex = 3;
             this.tabPage2.Text = "Motions";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // motionNoMotionTextBox
-            // 
-            this.motionNoMotionTextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.motionNoMotionTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
-            this.motionNoMotionTextBox.Location = new System.Drawing.Point(296, 291);
-            this.motionNoMotionTextBox.Name = "motionNoMotionTextBox";
-            this.motionNoMotionTextBox.Size = new System.Drawing.Size(601, 31);
-            this.motionNoMotionTextBox.TabIndex = 10;
-            this.motionNoMotionTextBox.Text = "There are currently no motions";
             // 
             // motionRollCallButton
             // 
@@ -1065,6 +818,7 @@
             // unmodTab
             // 
             this.unmodTab.BackColor = System.Drawing.Color.White;
+            this.unmodTab.Controls.Add(this.UnmodTimeBar);
             this.unmodTab.Controls.Add(this.unmodPauseButton);
             this.unmodTab.Controls.Add(this.unmodStartButton);
             this.unmodTab.Controls.Add(this.unmodCountryTextBox);
@@ -1073,38 +827,12 @@
             this.unmodTab.Controls.Add(this.unmodExtendButton);
             this.unmodTab.Controls.Add(this.unmodFinishButton);
             this.unmodTab.Controls.Add(this.label5);
-            this.unmodTab.Controls.Add(this.unmodTimeLabel);
-            this.unmodTab.Controls.Add(this.unmodProgressBar);
             this.unmodTab.Location = new System.Drawing.Point(4, 22);
             this.unmodTab.Name = "unmodTab";
             this.unmodTab.Padding = new System.Windows.Forms.Padding(3);
             this.unmodTab.Size = new System.Drawing.Size(1192, 623);
             this.unmodTab.TabIndex = 2;
             this.unmodTab.Text = "Unmod Caucus";
-            // 
-            // unmodCountryTextBox
-            // 
-            this.unmodCountryTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.unmodCountryTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.unmodCountryTextBox.Location = new System.Drawing.Point(251, 252);
-            this.unmodCountryTextBox.Name = "unmodCountryTextBox";
-            this.unmodCountryTextBox.Size = new System.Drawing.Size(673, 25);
-            this.unmodCountryTextBox.TabIndex = 13;
-            this.unmodCountryTextBox.Text = "Country";
-            this.unmodCountryTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.unmodCountryTextBox.Topic = null;
-            // 
-            // unmodTopicTextBox
-            // 
-            this.unmodTopicTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.unmodTopicTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            this.unmodTopicTextBox.Location = new System.Drawing.Point(251, 143);
-            this.unmodTopicTextBox.Name = "unmodTopicTextBox";
-            this.unmodTopicTextBox.Size = new System.Drawing.Size(673, 37);
-            this.unmodTopicTextBox.TabIndex = 12;
-            this.unmodTopicTextBox.Text = "Topic";
-            this.unmodTopicTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.unmodTopicTextBox.Topic = "Unmod caucus";
             // 
             // unmodReset
             // 
@@ -1146,36 +874,16 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "As Raised By";
             // 
-            // unmodTimeLabel
-            // 
-            this.unmodTimeLabel.AutoSize = true;
-            this.unmodTimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.unmodTimeLabel.Location = new System.Drawing.Point(479, 324);
-            this.unmodTimeLabel.Name = "unmodTimeLabel";
-            this.unmodTimeLabel.Size = new System.Drawing.Size(229, 46);
-            this.unmodTimeLabel.TabIndex = 3;
-            this.unmodTimeLabel.Text = "00:00/01:30";
-            // 
-            // unmodProgressBar
-            // 
-            this.unmodProgressBar.Location = new System.Drawing.Point(251, 283);
-            this.unmodProgressBar.Maximum = 90;
-            this.unmodProgressBar.Name = "unmodProgressBar";
-            this.unmodProgressBar.Size = new System.Drawing.Size(673, 38);
-            this.unmodProgressBar.TabIndex = 2;
-            // 
             // modTab
             // 
+            this.modTab.Controls.Add(this.ModTotalTimeBar);
+            this.modTab.Controls.Add(this.ModSpeakTimeBar);
             this.modTab.Controls.Add(this.modTopicTextBox);
             this.modTab.Controls.Add(this.modExtendButton);
             this.modTab.Controls.Add(this.modPictureBox);
             this.modTab.Controls.Add(this.modResetButton);
             this.modTab.Controls.Add(this.groupBox4);
             this.modTab.Controls.Add(this.groupBox3);
-            this.modTab.Controls.Add(this.modTotalTimeLabel);
-            this.modTab.Controls.Add(this.modTotalProgressBar);
-            this.modTab.Controls.Add(this.modSpeakTimeLabel);
-            this.modTab.Controls.Add(this.modSpeakProgressBar);
             this.modTab.Controls.Add(this.modNextButton);
             this.modTab.Controls.Add(this.modClearButton);
             this.modTab.Controls.Add(this.modRemoveButton);
@@ -1192,18 +900,6 @@
             this.modTab.Text = "Mod Caucus";
             this.modTab.UseVisualStyleBackColor = true;
             // 
-            // modTopicTextBox
-            // 
-            this.modTopicTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.modTopicTextBox.Cursor = System.Windows.Forms.Cursors.Default;
-            this.modTopicTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.25F);
-            this.modTopicTextBox.Location = new System.Drawing.Point(29, 55);
-            this.modTopicTextBox.Name = "modTopicTextBox";
-            this.modTopicTextBox.Size = new System.Drawing.Size(673, 33);
-            this.modTopicTextBox.TabIndex = 62;
-            this.modTopicTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.modTopicTextBox.Topic = "Mod Caucus";
-            // 
             // modExtendButton
             // 
             this.modExtendButton.Location = new System.Drawing.Point(1088, 557);
@@ -1216,7 +912,7 @@
             // modPictureBox
             // 
             this.modPictureBox.ImageLocation = "";
-            this.modPictureBox.Location = new System.Drawing.Point(29, 103);
+            this.modPictureBox.Location = new System.Drawing.Point(29, 88);
             this.modPictureBox.Name = "modPictureBox";
             this.modPictureBox.Size = new System.Drawing.Size(673, 258);
             this.modPictureBox.TabIndex = 59;
@@ -1253,95 +949,9 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Indiv Clock";
             // 
-            // modTotalTimeLabel
-            // 
-            this.modTotalTimeLabel.AutoSize = true;
-            this.modTotalTimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.modTotalTimeLabel.Location = new System.Drawing.Point(254, 578);
-            this.modTotalTimeLabel.Name = "modTotalTimeLabel";
-            this.modTotalTimeLabel.Size = new System.Drawing.Size(229, 46);
-            this.modTotalTimeLabel.TabIndex = 44;
-            this.modTotalTimeLabel.Text = "00:00/10:00";
-            // 
-            // modTotalProgressBar
-            // 
-            this.modTotalProgressBar.Location = new System.Drawing.Point(32, 523);
-            this.modTotalProgressBar.Maximum = 90;
-            this.modTotalProgressBar.Name = "modTotalProgressBar";
-            this.modTotalProgressBar.Size = new System.Drawing.Size(673, 38);
-            this.modTotalProgressBar.TabIndex = 43;
-            // 
-            // modSpeakTimeLabel
-            // 
-            this.modSpeakTimeLabel.AutoSize = true;
-            this.modSpeakTimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.modSpeakTimeLabel.Location = new System.Drawing.Point(254, 474);
-            this.modSpeakTimeLabel.Name = "modSpeakTimeLabel";
-            this.modSpeakTimeLabel.Size = new System.Drawing.Size(229, 46);
-            this.modSpeakTimeLabel.TabIndex = 41;
-            this.modSpeakTimeLabel.Text = "00:00/01:00";
-            // 
-            // modSpeakProgressBar
-            // 
-            this.modSpeakProgressBar.Location = new System.Drawing.Point(32, 419);
-            this.modSpeakProgressBar.Maximum = 90;
-            this.modSpeakProgressBar.Name = "modSpeakProgressBar";
-            this.modSpeakProgressBar.Size = new System.Drawing.Size(673, 38);
-            this.modSpeakProgressBar.TabIndex = 40;
-            // 
-            // modCountryCountTextBox
-            // 
-            this.modCountryCountTextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.modCountryCountTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.modCountryCountTextBox.Location = new System.Drawing.Point(736, 511);
-            this.modCountryCountTextBox.Name = "modCountryCountTextBox";
-            this.modCountryCountTextBox.Size = new System.Drawing.Size(204, 16);
-            this.modCountryCountTextBox.TabIndex = 55;
-            this.modCountryCountTextBox.Text = "Speaker 5 out of 10";
-            this.modCountryCountTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // modCountryTextBox
-            // 
-            this.modCountryTextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.modCountryTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.25F);
-            this.modCountryTextBox.Location = new System.Drawing.Point(38, 385);
-            this.modCountryTextBox.Name = "modCountryTextBox";
-            this.modCountryTextBox.Size = new System.Drawing.Size(673, 33);
-            this.modCountryTextBox.TabIndex = 53;
-            // 
-            // modTotalTimeSelector
-            // 
-            this.modTotalTimeSelector.Location = new System.Drawing.Point(865, 9);
-            this.modTotalTimeSelector.Name = "modTotalTimeSelector";
-            this.modTotalTimeSelector.Size = new System.Drawing.Size(108, 49);
-            this.modTotalTimeSelector.TabIndex = 52;
-            this.modTotalTimeSelector.Text = "Total Time";
-            this.modTotalTimeSelector.TextBackColor = System.Drawing.SystemColors.Window;
-            this.modTotalTimeSelector.Value = System.TimeSpan.Parse("00:10:00");
-            this.modTotalTimeSelector.Width = 108;
-            // 
-            // modSpeakTimeSelector
-            // 
-            this.modSpeakTimeSelector.Location = new System.Drawing.Point(736, 9);
-            this.modSpeakTimeSelector.Name = "modSpeakTimeSelector";
-            this.modSpeakTimeSelector.Size = new System.Drawing.Size(108, 45);
-            this.modSpeakTimeSelector.TabIndex = 51;
-            this.modSpeakTimeSelector.Text = "Speaking Time";
-            this.modSpeakTimeSelector.TextBackColor = System.Drawing.SystemColors.Window;
-            this.modSpeakTimeSelector.Value = System.TimeSpan.Parse("00:00:01");
-            this.modSpeakTimeSelector.Width = 108;
-            // 
-            // modSelector
-            // 
-            this.modSelector.LabelText = "Countries:";
-            this.modSelector.Location = new System.Drawing.Point(735, 55);
-            this.modSelector.Name = "modSelector";
-            this.modSelector.Size = new System.Drawing.Size(457, 450);
-            this.modSelector.Speakers = ((System.Collections.Generic.List<string>)(resources.GetObject("modSelector.Speakers")));
-            this.modSelector.TabIndex = 61;
-            // 
             // gslTab
             // 
+            this.gslTab.Controls.Add(this.GSLTimeBar);
             this.gslTab.Controls.Add(this.gslSelector);
             this.gslTab.Controls.Add(this.gslPauseButton);
             this.gslTab.Controls.Add(this.gslStartButton);
@@ -1353,8 +963,6 @@
             this.gslTab.Controls.Add(this.gslClearButton);
             this.gslTab.Controls.Add(this.gslYieldButton);
             this.gslTab.Controls.Add(this.gslRemoveButton);
-            this.gslTab.Controls.Add(this.gslTimeLabel);
-            this.gslTab.Controls.Add(this.gslProgressBar);
             this.gslTab.Location = new System.Drawing.Point(4, 22);
             this.gslTab.Name = "gslTab";
             this.gslTab.Padding = new System.Windows.Forms.Padding(3);
@@ -1362,46 +970,6 @@
             this.gslTab.TabIndex = 0;
             this.gslTab.Text = "GSL";
             this.gslTab.UseVisualStyleBackColor = true;
-            // 
-            // gslSelector
-            // 
-            this.gslSelector.LabelText = "Countries:";
-            this.gslSelector.Location = new System.Drawing.Point(729, 57);
-            this.gslSelector.Name = "gslSelector";
-            this.gslSelector.Size = new System.Drawing.Size(457, 468);
-            this.gslSelector.Speakers = ((System.Collections.Generic.List<string>)(resources.GetObject("gslSelector.Speakers")));
-            this.gslSelector.TabIndex = 30;
-            // 
-            // gslPauseButton
-            // 
-            this.gslPauseButton.Enabled = false;
-            this.gslPauseButton.FalseText = "Stopped";
-            this.gslPauseButton.Location = new System.Drawing.Point(808, 567);
-            this.gslPauseButton.Name = "gslPauseButton";
-            this.gslPauseButton.Size = new System.Drawing.Size(75, 23);
-            this.gslPauseButton.TabIndex = 29;
-            this.gslPauseButton.TrueText = "Stop";
-            this.gslPauseButton.UseVisualStyleBackColor = true;
-            // 
-            // gslStartButton
-            // 
-            this.gslStartButton.FalseText = "Started";
-            this.gslStartButton.Location = new System.Drawing.Point(808, 537);
-            this.gslStartButton.Name = "gslStartButton";
-            this.gslStartButton.Size = new System.Drawing.Size(75, 23);
-            this.gslStartButton.TabIndex = 28;
-            this.gslStartButton.TrueText = "Start";
-            this.gslStartButton.UseVisualStyleBackColor = true;
-            // 
-            // labelBox2
-            // 
-            this.labelBox2.BackColor = System.Drawing.SystemColors.Window;
-            this.labelBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.labelBox2.Location = new System.Drawing.Point(32, 36);
-            this.labelBox2.Name = "labelBox2";
-            this.labelBox2.Size = new System.Drawing.Size(673, 31);
-            this.labelBox2.TabIndex = 27;
-            this.labelBox2.Text = "General Speakers\' List";
             // 
             // gslPictureBox
             // 
@@ -1411,44 +979,6 @@
             this.gslPictureBox.Size = new System.Drawing.Size(673, 258);
             this.gslPictureBox.TabIndex = 26;
             this.gslPictureBox.TabStop = false;
-            // 
-            // gslCountryLabel
-            // 
-            this.gslCountryLabel.BackColor = System.Drawing.SystemColors.Window;
-            this.gslCountryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F);
-            this.gslCountryLabel.Location = new System.Drawing.Point(32, 378);
-            this.gslCountryLabel.Name = "gslCountryLabel";
-            this.gslCountryLabel.Size = new System.Drawing.Size(673, 33);
-            this.gslCountryLabel.TabIndex = 25;
-            // 
-            // gslTimeSelector
-            // 
-            this.gslTimeSelector.Location = new System.Drawing.Point(727, 3);
-            this.gslTimeSelector.Name = "gslTimeSelector";
-            this.gslTimeSelector.Size = new System.Drawing.Size(112, 48);
-            this.gslTimeSelector.TabIndex = 24;
-            this.gslTimeSelector.Text = "Speaking Time";
-            this.gslTimeSelector.TextBackColor = System.Drawing.SystemColors.Window;
-            this.gslTimeSelector.Value = System.TimeSpan.Parse("00:00:01");
-            this.gslTimeSelector.Width = 112;
-            // 
-            // gslTimeLabel
-            // 
-            this.gslTimeLabel.AutoSize = true;
-            this.gslTimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.gslTimeLabel.Location = new System.Drawing.Point(254, 474);
-            this.gslTimeLabel.Name = "gslTimeLabel";
-            this.gslTimeLabel.Size = new System.Drawing.Size(229, 46);
-            this.gslTimeLabel.TabIndex = 1;
-            this.gslTimeLabel.Text = "00:00/01:30";
-            // 
-            // gslProgressBar
-            // 
-            this.gslProgressBar.Location = new System.Drawing.Point(32, 419);
-            this.gslProgressBar.Maximum = 90;
-            this.gslProgressBar.Name = "gslProgressBar";
-            this.gslProgressBar.Size = new System.Drawing.Size(673, 38);
-            this.gslProgressBar.TabIndex = 0;
             // 
             // motionsTab
             // 
@@ -1852,29 +1382,6 @@
             this.label10.TabIndex = 7;
             this.label10.Text = "Select Country";
             // 
-            // labelBox1
-            // 
-            this.labelBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.labelBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.labelBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.labelBox1.Location = new System.Drawing.Point(281, 78);
-            this.labelBox1.Name = "labelBox1";
-            this.labelBox1.Size = new System.Drawing.Size(631, 19);
-            this.labelBox1.TabIndex = 13;
-            this.labelBox1.Text = "Voting for:";
-            // 
-            // voteTopicBox
-            // 
-            this.voteTopicBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.voteTopicBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.voteTopicBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.voteTopicBox.Location = new System.Drawing.Point(281, 103);
-            this.voteTopicBox.Name = "voteTopicBox";
-            this.voteTopicBox.Size = new System.Drawing.Size(631, 25);
-            this.voteTopicBox.TabIndex = 12;
-            this.voteTopicBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.voteTopicBox.Topic = "Vote";
-            // 
             // voteCountryBox
             // 
             this.voteCountryBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -2009,6 +1516,414 @@
             this.motionsNullMenuItem.Text = "Null";
             this.motionsNullMenuItem.ToolTipText = "Undefined state for whether a motion has been passed or not";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label1.Location = new System.Drawing.Point(15, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 17);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Council:";
+            // 
+            // GSLTimeBar
+            // 
+            this.GSLTimeBar.Duration = System.TimeSpan.Parse("00:00:00");
+            this.GSLTimeBar.Location = new System.Drawing.Point(32, 430);
+            this.GSLTimeBar.Name = "GSLTimeBar";
+            this.GSLTimeBar.Size = new System.Drawing.Size(673, 121);
+            this.GSLTimeBar.TabIndex = 31;
+            // 
+            // gslSelector
+            // 
+            this.gslSelector.LabelText = "Countries:";
+            this.gslSelector.Location = new System.Drawing.Point(729, 57);
+            this.gslSelector.Name = "gslSelector";
+            this.gslSelector.Size = new System.Drawing.Size(457, 468);
+            this.gslSelector.Speakers = ((System.Collections.Generic.List<string>)(resources.GetObject("gslSelector.Speakers")));
+            this.gslSelector.TabIndex = 30;
+            // 
+            // gslPauseButton
+            // 
+            this.gslPauseButton.Enabled = false;
+            this.gslPauseButton.FalseText = "Stopped";
+            this.gslPauseButton.Location = new System.Drawing.Point(808, 567);
+            this.gslPauseButton.Name = "gslPauseButton";
+            this.gslPauseButton.Size = new System.Drawing.Size(75, 23);
+            this.gslPauseButton.TabIndex = 29;
+            this.gslPauseButton.TrueText = "Stop";
+            this.gslPauseButton.UseVisualStyleBackColor = true;
+            // 
+            // gslStartButton
+            // 
+            this.gslStartButton.FalseText = "Started";
+            this.gslStartButton.Location = new System.Drawing.Point(808, 537);
+            this.gslStartButton.Name = "gslStartButton";
+            this.gslStartButton.Size = new System.Drawing.Size(75, 23);
+            this.gslStartButton.TabIndex = 28;
+            this.gslStartButton.TrueText = "Start";
+            this.gslStartButton.UseVisualStyleBackColor = true;
+            // 
+            // labelBox2
+            // 
+            this.labelBox2.BackColor = System.Drawing.SystemColors.Window;
+            this.labelBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.labelBox2.Location = new System.Drawing.Point(32, 36);
+            this.labelBox2.Name = "labelBox2";
+            this.labelBox2.Size = new System.Drawing.Size(673, 31);
+            this.labelBox2.TabIndex = 27;
+            this.labelBox2.Text = "General Speakers\' List";
+            // 
+            // gslCountryLabel
+            // 
+            this.gslCountryLabel.BackColor = System.Drawing.SystemColors.Window;
+            this.gslCountryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F);
+            this.gslCountryLabel.Location = new System.Drawing.Point(32, 378);
+            this.gslCountryLabel.Name = "gslCountryLabel";
+            this.gslCountryLabel.Size = new System.Drawing.Size(673, 33);
+            this.gslCountryLabel.TabIndex = 25;
+            // 
+            // gslTimeSelector
+            // 
+            this.gslTimeSelector.Location = new System.Drawing.Point(727, 3);
+            this.gslTimeSelector.Name = "gslTimeSelector";
+            this.gslTimeSelector.Size = new System.Drawing.Size(112, 48);
+            this.gslTimeSelector.TabIndex = 24;
+            this.gslTimeSelector.Text = "Speaking Time";
+            this.gslTimeSelector.TextBackColor = System.Drawing.SystemColors.Window;
+            this.gslTimeSelector.Value = System.TimeSpan.Parse("00:00:01");
+            this.gslTimeSelector.Width = 112;
+            // 
+            // ModTotalTimeBar
+            // 
+            this.ModTotalTimeBar.Duration = System.TimeSpan.Parse("00:00:00");
+            this.ModTotalTimeBar.Location = new System.Drawing.Point(29, 516);
+            this.ModTotalTimeBar.Name = "ModTotalTimeBar";
+            this.ModTotalTimeBar.Size = new System.Drawing.Size(673, 112);
+            this.ModTotalTimeBar.TabIndex = 64;
+            // 
+            // ModSpeakTimeBar
+            // 
+            this.ModSpeakTimeBar.Duration = System.TimeSpan.Parse("00:00:00");
+            this.ModSpeakTimeBar.Location = new System.Drawing.Point(29, 397);
+            this.ModSpeakTimeBar.Name = "ModSpeakTimeBar";
+            this.ModSpeakTimeBar.Size = new System.Drawing.Size(673, 112);
+            this.ModSpeakTimeBar.TabIndex = 63;
+            // 
+            // modTopicTextBox
+            // 
+            this.modTopicTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.modTopicTextBox.Cursor = System.Windows.Forms.Cursors.Default;
+            this.modTopicTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.25F);
+            this.modTopicTextBox.Location = new System.Drawing.Point(29, 40);
+            this.modTopicTextBox.Name = "modTopicTextBox";
+            this.modTopicTextBox.Size = new System.Drawing.Size(673, 33);
+            this.modTopicTextBox.TabIndex = 62;
+            this.modTopicTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.modTopicTextBox.Topic = "Mod Caucus";
+            // 
+            // modTotalPauseButton
+            // 
+            this.modTotalPauseButton.Enabled = false;
+            this.modTotalPauseButton.FalseText = "Stopped";
+            this.modTotalPauseButton.Location = new System.Drawing.Point(8, 48);
+            this.modTotalPauseButton.Name = "modTotalPauseButton";
+            this.modTotalPauseButton.Size = new System.Drawing.Size(75, 23);
+            this.modTotalPauseButton.TabIndex = 25;
+            this.toolTip1.SetToolTip(this.modTotalPauseButton, "Pause the main caucus timer");
+            this.modTotalPauseButton.TrueText = "Stop";
+            this.modTotalPauseButton.UseVisualStyleBackColor = true;
+            // 
+            // modTotalStartButton
+            // 
+            this.modTotalStartButton.FalseText = "Started";
+            this.modTotalStartButton.Location = new System.Drawing.Point(8, 20);
+            this.modTotalStartButton.Name = "modTotalStartButton";
+            this.modTotalStartButton.Size = new System.Drawing.Size(75, 23);
+            this.modTotalStartButton.TabIndex = 24;
+            this.toolTip1.SetToolTip(this.modTotalStartButton, "Start the main caucus timer");
+            this.modTotalStartButton.TrueText = "Start";
+            this.modTotalStartButton.UseVisualStyleBackColor = true;
+            // 
+            // modPauseButton
+            // 
+            this.modPauseButton.Enabled = false;
+            this.modPauseButton.FalseText = "Stopped";
+            this.modPauseButton.Location = new System.Drawing.Point(8, 48);
+            this.modPauseButton.Name = "modPauseButton";
+            this.modPauseButton.Size = new System.Drawing.Size(75, 23);
+            this.modPauseButton.TabIndex = 25;
+            this.toolTip1.SetToolTip(this.modPauseButton, "Stop the individual speech timer");
+            this.modPauseButton.TrueText = "Stop";
+            this.modPauseButton.UseVisualStyleBackColor = true;
+            // 
+            // modStartButton
+            // 
+            this.modStartButton.FalseText = "Started";
+            this.modStartButton.Location = new System.Drawing.Point(8, 20);
+            this.modStartButton.Name = "modStartButton";
+            this.modStartButton.Size = new System.Drawing.Size(75, 23);
+            this.modStartButton.TabIndex = 24;
+            this.toolTip1.SetToolTip(this.modStartButton, "Start the individual speech timer");
+            this.modStartButton.TrueText = "Start";
+            this.modStartButton.UseVisualStyleBackColor = true;
+            // 
+            // modCountryCountTextBox
+            // 
+            this.modCountryCountTextBox.BackColor = System.Drawing.SystemColors.Window;
+            this.modCountryCountTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.modCountryCountTextBox.Location = new System.Drawing.Point(736, 511);
+            this.modCountryCountTextBox.Name = "modCountryCountTextBox";
+            this.modCountryCountTextBox.Size = new System.Drawing.Size(204, 16);
+            this.modCountryCountTextBox.TabIndex = 55;
+            this.modCountryCountTextBox.Text = "Speaker 5 out of 10";
+            this.modCountryCountTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // modCountryTextBox
+            // 
+            this.modCountryTextBox.BackColor = System.Drawing.SystemColors.Window;
+            this.modCountryTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.25F);
+            this.modCountryTextBox.Location = new System.Drawing.Point(30, 358);
+            this.modCountryTextBox.Name = "modCountryTextBox";
+            this.modCountryTextBox.Size = new System.Drawing.Size(673, 33);
+            this.modCountryTextBox.TabIndex = 53;
+            // 
+            // modTotalTimeSelector
+            // 
+            this.modTotalTimeSelector.Location = new System.Drawing.Point(865, 9);
+            this.modTotalTimeSelector.Name = "modTotalTimeSelector";
+            this.modTotalTimeSelector.Size = new System.Drawing.Size(108, 49);
+            this.modTotalTimeSelector.TabIndex = 52;
+            this.modTotalTimeSelector.Text = "Total Time";
+            this.modTotalTimeSelector.TextBackColor = System.Drawing.SystemColors.Window;
+            this.modTotalTimeSelector.Value = System.TimeSpan.Parse("00:10:00");
+            this.modTotalTimeSelector.Width = 108;
+            // 
+            // modSpeakTimeSelector
+            // 
+            this.modSpeakTimeSelector.Location = new System.Drawing.Point(736, 9);
+            this.modSpeakTimeSelector.Name = "modSpeakTimeSelector";
+            this.modSpeakTimeSelector.Size = new System.Drawing.Size(108, 45);
+            this.modSpeakTimeSelector.TabIndex = 51;
+            this.modSpeakTimeSelector.Text = "Speaking Time";
+            this.modSpeakTimeSelector.TextBackColor = System.Drawing.SystemColors.Window;
+            this.modSpeakTimeSelector.Value = System.TimeSpan.Parse("00:00:01");
+            this.modSpeakTimeSelector.Width = 108;
+            // 
+            // modSelector
+            // 
+            this.modSelector.LabelText = "Countries:";
+            this.modSelector.Location = new System.Drawing.Point(735, 55);
+            this.modSelector.Name = "modSelector";
+            this.modSelector.Size = new System.Drawing.Size(457, 450);
+            this.modSelector.Speakers = ((System.Collections.Generic.List<string>)(resources.GetObject("modSelector.Speakers")));
+            this.modSelector.TabIndex = 61;
+            // 
+            // unmodPauseButton
+            // 
+            this.unmodPauseButton.Enabled = false;
+            this.unmodPauseButton.FalseText = "Stopped";
+            this.unmodPauseButton.Location = new System.Drawing.Point(461, 406);
+            this.unmodPauseButton.Name = "unmodPauseButton";
+            this.unmodPauseButton.Size = new System.Drawing.Size(75, 23);
+            this.unmodPauseButton.TabIndex = 15;
+            this.toolTip1.SetToolTip(this.unmodPauseButton, "Stop the caucus timer");
+            this.unmodPauseButton.TrueText = "Stop";
+            this.unmodPauseButton.UseVisualStyleBackColor = true;
+            // 
+            // unmodStartButton
+            // 
+            this.unmodStartButton.FalseText = "Started";
+            this.unmodStartButton.Location = new System.Drawing.Point(380, 406);
+            this.unmodStartButton.Name = "unmodStartButton";
+            this.unmodStartButton.Size = new System.Drawing.Size(75, 23);
+            this.unmodStartButton.TabIndex = 14;
+            this.toolTip1.SetToolTip(this.unmodStartButton, "Start the caucus timer");
+            this.unmodStartButton.TrueText = "Start";
+            this.unmodStartButton.UseVisualStyleBackColor = true;
+            // 
+            // unmodCountryTextBox
+            // 
+            this.unmodCountryTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.unmodCountryTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.unmodCountryTextBox.Location = new System.Drawing.Point(251, 252);
+            this.unmodCountryTextBox.Name = "unmodCountryTextBox";
+            this.unmodCountryTextBox.Size = new System.Drawing.Size(673, 25);
+            this.unmodCountryTextBox.TabIndex = 13;
+            this.unmodCountryTextBox.Text = "Country";
+            this.unmodCountryTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.unmodCountryTextBox.Topic = null;
+            // 
+            // unmodTopicTextBox
+            // 
+            this.unmodTopicTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.unmodTopicTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.unmodTopicTextBox.Location = new System.Drawing.Point(251, 143);
+            this.unmodTopicTextBox.Name = "unmodTopicTextBox";
+            this.unmodTopicTextBox.Size = new System.Drawing.Size(673, 37);
+            this.unmodTopicTextBox.TabIndex = 12;
+            this.unmodTopicTextBox.Text = "Topic";
+            this.unmodTopicTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.unmodTopicTextBox.Topic = "Unmod caucus";
+            // 
+            // motionNoMotionTextBox
+            // 
+            this.motionNoMotionTextBox.BackColor = System.Drawing.SystemColors.Window;
+            this.motionNoMotionTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
+            this.motionNoMotionTextBox.Location = new System.Drawing.Point(296, 291);
+            this.motionNoMotionTextBox.Name = "motionNoMotionTextBox";
+            this.motionNoMotionTextBox.Size = new System.Drawing.Size(601, 31);
+            this.motionNoMotionTextBox.TabIndex = 10;
+            this.motionNoMotionTextBox.Text = "There are currently no motions";
+            // 
+            // labelBox3
+            // 
+            this.labelBox3.BackColor = System.Drawing.SystemColors.Window;
+            this.labelBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBox3.Location = new System.Drawing.Point(24, 40);
+            this.labelBox3.Name = "labelBox3";
+            this.labelBox3.Size = new System.Drawing.Size(673, 37);
+            this.labelBox3.TabIndex = 58;
+            this.labelBox3.Text = "Single Speaker";
+            // 
+            // singlePauseButton
+            // 
+            this.singlePauseButton.Enabled = false;
+            this.singlePauseButton.FalseText = "Stopped";
+            this.singlePauseButton.Location = new System.Drawing.Point(800, 523);
+            this.singlePauseButton.Name = "singlePauseButton";
+            this.singlePauseButton.Size = new System.Drawing.Size(75, 23);
+            this.singlePauseButton.TabIndex = 57;
+            this.toolTip1.SetToolTip(this.singlePauseButton, "Stop the speech timer");
+            this.singlePauseButton.TrueText = "Stop";
+            this.singlePauseButton.UseVisualStyleBackColor = true;
+            // 
+            // singleStartButton
+            // 
+            this.singleStartButton.FalseText = "Started";
+            this.singleStartButton.Location = new System.Drawing.Point(719, 524);
+            this.singleStartButton.Name = "singleStartButton";
+            this.singleStartButton.Size = new System.Drawing.Size(75, 23);
+            this.singleStartButton.TabIndex = 56;
+            this.toolTip1.SetToolTip(this.singleStartButton, "Start the speech timer");
+            this.singleStartButton.TrueText = "Start";
+            this.singleStartButton.UseVisualStyleBackColor = true;
+            // 
+            // singleCountryTextBox
+            // 
+            this.singleCountryTextBox.BackColor = System.Drawing.SystemColors.Window;
+            this.singleCountryTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.25F);
+            this.singleCountryTextBox.Location = new System.Drawing.Point(28, 388);
+            this.singleCountryTextBox.Name = "singleCountryTextBox";
+            this.singleCountryTextBox.Size = new System.Drawing.Size(673, 33);
+            this.singleCountryTextBox.TabIndex = 54;
+            // 
+            // singleTimeSelector
+            // 
+            this.singleTimeSelector.Location = new System.Drawing.Point(719, 40);
+            this.singleTimeSelector.Name = "singleTimeSelector";
+            this.singleTimeSelector.Size = new System.Drawing.Size(108, 49);
+            this.singleTimeSelector.TabIndex = 42;
+            this.singleTimeSelector.Text = "Speaking Time";
+            this.singleTimeSelector.TextBackColor = System.Drawing.SystemColors.Window;
+            this.singleTimeSelector.Value = System.TimeSpan.Parse("00:01:30");
+            this.singleTimeSelector.Width = 108;
+            // 
+            // debateASelector
+            // 
+            this.debateASelector.LabelText = "Speakers Against:";
+            this.debateASelector.Location = new System.Drawing.Point(736, 320);
+            this.debateASelector.Name = "debateASelector";
+            this.debateASelector.Size = new System.Drawing.Size(456, 252);
+            this.debateASelector.Speakers = ((System.Collections.Generic.List<string>)(resources.GetObject("debateASelector.Speakers")));
+            this.debateASelector.TabIndex = 81;
+            // 
+            // debateFSelector
+            // 
+            this.debateFSelector.LabelText = "Speakers For:";
+            this.debateFSelector.Location = new System.Drawing.Point(736, 63);
+            this.debateFSelector.Name = "debateFSelector";
+            this.debateFSelector.Size = new System.Drawing.Size(450, 222);
+            this.debateFSelector.Speakers = ((System.Collections.Generic.List<string>)(resources.GetObject("debateFSelector.Speakers")));
+            this.debateFSelector.TabIndex = 80;
+            // 
+            // debateStopButton
+            // 
+            this.debateStopButton.Enabled = false;
+            this.debateStopButton.FalseText = "Stopped";
+            this.debateStopButton.Location = new System.Drawing.Point(286, 577);
+            this.debateStopButton.Name = "debateStopButton";
+            this.debateStopButton.Size = new System.Drawing.Size(75, 23);
+            this.debateStopButton.TabIndex = 79;
+            this.toolTip1.SetToolTip(this.debateStopButton, "Stop the speech timer");
+            this.debateStopButton.TrueText = "Stop";
+            this.debateStopButton.UseVisualStyleBackColor = true;
+            // 
+            // debateStartButton
+            // 
+            this.debateStartButton.FalseText = "Started";
+            this.debateStartButton.Location = new System.Drawing.Point(205, 577);
+            this.debateStartButton.Name = "debateStartButton";
+            this.debateStartButton.Size = new System.Drawing.Size(75, 23);
+            this.debateStartButton.TabIndex = 78;
+            this.toolTip1.SetToolTip(this.debateStartButton, "Start the speech timer");
+            this.debateStartButton.TrueText = "Start";
+            this.debateStartButton.UseVisualStyleBackColor = true;
+            // 
+            // debateCountryLabel
+            // 
+            this.debateCountryLabel.BackColor = System.Drawing.SystemColors.Window;
+            this.debateCountryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F);
+            this.debateCountryLabel.Location = new System.Drawing.Point(30, 348);
+            this.debateCountryLabel.Name = "debateCountryLabel";
+            this.debateCountryLabel.Size = new System.Drawing.Size(673, 33);
+            this.debateCountryLabel.TabIndex = 76;
+            // 
+            // debateForTextBox
+            // 
+            this.debateForTextBox.BackColor = System.Drawing.SystemColors.Window;
+            this.debateForTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F);
+            this.debateForTextBox.Location = new System.Drawing.Point(30, 19);
+            this.debateForTextBox.Name = "debateForTextBox";
+            this.debateForTextBox.Size = new System.Drawing.Size(673, 33);
+            this.debateForTextBox.TabIndex = 75;
+            // 
+            // debateTimeSelector
+            // 
+            this.debateTimeSelector.Location = new System.Drawing.Point(736, 9);
+            this.debateTimeSelector.Name = "debateTimeSelector";
+            this.debateTimeSelector.Size = new System.Drawing.Size(108, 49);
+            this.debateTimeSelector.TabIndex = 59;
+            this.debateTimeSelector.Text = "Speaking Time";
+            this.debateTimeSelector.TextBackColor = System.Drawing.SystemColors.Window;
+            this.toolTip1.SetToolTip(this.debateTimeSelector, "Speaking time for each speaker");
+            this.debateTimeSelector.Value = System.TimeSpan.Parse("00:01:00");
+            this.debateTimeSelector.Width = 108;
+            // 
+            // labelBox1
+            // 
+            this.labelBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.labelBox1.BackColor = System.Drawing.SystemColors.Window;
+            this.labelBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.labelBox1.Location = new System.Drawing.Point(281, 78);
+            this.labelBox1.Name = "labelBox1";
+            this.labelBox1.Size = new System.Drawing.Size(631, 19);
+            this.labelBox1.TabIndex = 13;
+            this.labelBox1.Text = "Voting for:";
+            // 
+            // voteTopicBox
+            // 
+            this.voteTopicBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.voteTopicBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.voteTopicBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.voteTopicBox.Location = new System.Drawing.Point(281, 103);
+            this.voteTopicBox.Name = "voteTopicBox";
+            this.voteTopicBox.Size = new System.Drawing.Size(631, 25);
+            this.voteTopicBox.TabIndex = 12;
+            this.voteTopicBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.voteTopicBox.Topic = "Vote";
+            // 
             // councilLabel
             // 
             this.councilLabel.BackColor = System.Drawing.SystemColors.Control;
@@ -2022,16 +1937,29 @@
             this.councilLabel.Text = "council";
             this.councilLabel.Topic = "Council Name";
             // 
-            // label1
+            // UnmodTimeBar
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label1.Location = new System.Drawing.Point(15, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 17);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Council:";
+            this.UnmodTimeBar.Duration = System.TimeSpan.Parse("00:00:00");
+            this.UnmodTimeBar.Location = new System.Drawing.Point(251, 288);
+            this.UnmodTimeBar.Name = "UnmodTimeBar";
+            this.UnmodTimeBar.Size = new System.Drawing.Size(673, 112);
+            this.UnmodTimeBar.TabIndex = 16;
+            // 
+            // SingleTimeBar
+            // 
+            this.SingleTimeBar.Duration = System.TimeSpan.Parse("00:00:00");
+            this.SingleTimeBar.Location = new System.Drawing.Point(26, 427);
+            this.SingleTimeBar.Name = "SingleTimeBar";
+            this.SingleTimeBar.Size = new System.Drawing.Size(673, 112);
+            this.SingleTimeBar.TabIndex = 59;
+            // 
+            // DebateTimeBar
+            // 
+            this.DebateTimeBar.Duration = System.TimeSpan.Parse("00:00:00");
+            this.DebateTimeBar.Location = new System.Drawing.Point(30, 387);
+            this.DebateTimeBar.Name = "DebateTimeBar";
+            this.DebateTimeBar.Size = new System.Drawing.Size(673, 112);
+            this.DebateTimeBar.TabIndex = 82;
             // 
             // homescreen
             // 
@@ -2104,8 +2032,6 @@
         private Controls.TimeSelector singleTimeSelector;
         private System.Windows.Forms.Button singleResetButton;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label singleTimeLabel;
-        private System.Windows.Forms.ProgressBar singleProgressBar;
         private System.Windows.Forms.ListBox singleListBox;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button motionSortButton;
@@ -2120,15 +2046,9 @@
         private System.Windows.Forms.Button unmodExtendButton;
         private System.Windows.Forms.Button unmodFinishButton;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label unmodTimeLabel;
-        private System.Windows.Forms.ProgressBar unmodProgressBar;
         private System.Windows.Forms.TabPage modTab;
         private Controls.TimeSelector modTotalTimeSelector;
         private Controls.TimeSelector modSpeakTimeSelector;
-        private System.Windows.Forms.Label modTotalTimeLabel;
-        private System.Windows.Forms.ProgressBar modTotalProgressBar;
-        private System.Windows.Forms.Label modSpeakTimeLabel;
-        private System.Windows.Forms.ProgressBar modSpeakProgressBar;
         private System.Windows.Forms.Button modNextButton;
         private System.Windows.Forms.Button modClearButton;
         private System.Windows.Forms.Button modRemoveButton;
@@ -2138,12 +2058,8 @@
         private System.Windows.Forms.Button gslClearButton;
         private System.Windows.Forms.Button gslYieldButton;
         private System.Windows.Forms.Button gslRemoveButton;
-        private System.Windows.Forms.Label gslTimeLabel;
-        private System.Windows.Forms.ProgressBar gslProgressBar;
         private System.Windows.Forms.TabControl motionsTab;
         private Controls.TimeSelector debateTimeSelector;
-        private System.Windows.Forms.Label debateTimeLabel;
-        private System.Windows.Forms.ProgressBar debateProgressBar;
         private System.Windows.Forms.Button debateFClearButton;
         private System.Windows.Forms.Button debateARemoveButton;
         private System.Windows.Forms.Button debateFRemoveButton;
@@ -2258,5 +2174,11 @@
         private Controls.TopicBox modTopicTextBox;
         private Controls.TopicBox councilLabel;
         private System.Windows.Forms.Label label1;
+        private Controls.TimeBar GSLTimeBar;
+        private Controls.TimeBar ModTotalTimeBar;
+        private Controls.TimeBar ModSpeakTimeBar;
+        private Controls.TimeBar UnmodTimeBar;
+        private Controls.TimeBar SingleTimeBar;
+        private Controls.TimeBar DebateTimeBar;
     }
 }

@@ -16,16 +16,22 @@ namespace leeyi45.acmun.Controls
 
         private void TopicBox_Click(object sender, EventArgs e)
         {
+           ParentForm.ActiveControl = null;
            (var info, var str) = TopicForm.Show(Topic, Text);
             if(info == DialogResult.OK)
             {
                 Text = str;
                 TopicChanged?.Invoke(this, EventArgs.Empty);
-            }            
+            }
         }
 
         public string Topic { get; set; }
 
         public event EventHandler TopicChanged;
+
+        private void Disable(object sender, EventArgs e)
+            => ParentForm.ActiveControl = null;
+
+        public static Form ParentForm { get; set; }
     }
 }

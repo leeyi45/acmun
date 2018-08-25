@@ -15,15 +15,9 @@ namespace leeyi45.acmun.Main_Screen
         {
             gslSelector.ClickSelect += gslListBox_ClickSelect;
 
-            //gslComboBox.ItemSelected += gslComboBox_ItemSelected;
-
             GSLSpeakingTime = new TimeSpan(0, 1, 30);
-
-            GSLTimer = new Clock(GSLSpeakingTime);
-            GSLTimer.Tick += GSLTimerTick;
-            GSLTimer.TimeUp += GSLTimeUp;
-            GSLTimer.RunningChanged += GSLTimerRunningChanged;
-            GSLTimer.ResetTriggered += GSLTimerReset;
+            GSLTimeBar.Duration = GSLSpeakingTime;
+            GSLTimeBar.RunningChanged += GSLTimerRunningChanged;
 
             gslTimeSelector.ValueChanged += gslTimeSelector_ValueChanged;
             gslTimeSelector.Value = GSLSpeakingTime;
@@ -48,8 +42,6 @@ namespace leeyi45.acmun.Main_Screen
             }
         }
 
-        Clock GSLTimer;
-
         bool yielded_;
         bool yielded
         {
@@ -62,49 +54,21 @@ namespace leeyi45.acmun.Main_Screen
         }
 
         #region Timer
-        private void GSLTimerTick(object sender, EventArgs e)
-        {
-            if (InvokeRequired)
-            {
-                var thing = new Action(() => GSLTimerTick(null, EventArgs.Empty));
-                Invoke(thing);
-            }
-            else
-            {
-                gslTimeLabel.Text = $"{GSLTimer.CurrentTime.ToValString()}/{GSLSpeakingTime.ToValString()}";
-                gslProgressBar.Increment(1);
-            }
-
-        }
-
-        private void GSLTimeUp(object sender, EventArgs e) 
-            => Invoke(new Action(() => 
-            {
-                gslTimeLabel.ForeColor = Color.Red;
-                yielded = true;
-            }));
-            
-        private void GSLTimerReset(object sender, EventArgs e)
-        {
-            gslProgressBar.Value = 0;
-            gslTimeLabel.Text = $"00:00/{GSLSpeakingTime.ToValString()}";
-        }
-
         private void GSLTimerRunningChanged(object sender, EventArgs e)
         {
-            gslStartButton.Enabled = !GSLTimer.Running;
-            gslPauseButton.Enabled = GSLTimer.Running;
-            gslTimeSelector.Enabled = !GSLTimer.Running;
+            gslStartButton.Enabled = !GSLTimeBar.Running;
+            gslPauseButton.Enabled = GSLTimeBar.Running;
+            gslTimeSelector.Enabled = !GSLTimeBar.Running;
         }
         #endregion
 
         #region Buttons
         private void gslStartButton_Click(object sender, EventArgs e)
         {
-            if (GSLCurrentSpeaker != null) GSLTimer.Start();
+            if (GSLCurrentSpeaker != null) GSLTimeBar.Start();
         }
 
-        private void gslPauseButton_Click(object sender, EventArgs e) => GSLTimer.Stop();
+        private void gslPauseButton_Click(object sender, EventArgs e) => GSLTimeBar.Stop();
 
         private void gslRemoveButton_Click(object sender, EventArgs e)
         {
@@ -130,7 +94,7 @@ namespace leeyi45.acmun.Main_Screen
 
         private void gslYieldButton_Click(object sender, EventArgs e)
         {
-            GSLTimer.Stop();
+            GSLTimeBar.Stop();
             var yield = new YieldPicker.YieldPicker();
 
             if (yield.ShowDialog() == DialogResult.OK)
@@ -149,10 +113,7 @@ namespace leeyi45.acmun.Main_Screen
         private void gslTimeSelector_ValueChanged(object sender, EventArgs e)
         {
             GSLSpeakingTime = gslTimeSelector.Value;
-            gslProgressBar.Maximum = (int)GSLSpeakingTime.TotalSeconds;
-
-            gslTimeLabel.Text = $"{GSLTimer.CurrentTime.ToValString()}/{GSLSpeakingTime.ToValString()}";
-            GSLTimer.EditDuration(GSLSpeakingTime);
+            GSLTimeBar.Duration = GSLSpeakingTime;
         }
 
         private void gslComboBox_ItemSelected(object sender, int index) => GSLAddSpeaker(index);
@@ -164,10 +125,10 @@ namespace leeyi45.acmun.Main_Screen
         {
             if (GSLCurrentSpeaker != null)
             {
-                GSLCurrentSpeaker.SpeakingTime += GSLTimer.CurrentTime;
+                GSLCurrentSpeaker.SpeakingTime += GSLTimeBar.ElapsedTime;
                 GSLCurrentSpeaker.SpeechCount++;
             }
-            GSLTimer.Restart();
+            GSLTimeBar.Restart();
 
             GSLCurrentSpeaker = Council.CountriesByShortf[gslSelector.Speakers[index]];
             gslSelector.RemoveSpeaker(index);

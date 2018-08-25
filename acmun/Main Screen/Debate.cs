@@ -14,10 +14,7 @@ namespace leeyi45.acmun.Main_Screen
             DebateSpeakCount = Council.DebateSpeakCount;
             DebateSpeakTime = Council.DebateSpeakTime;
 
-            DebateTimer = new Clock();
-            DebateTimer.Tick += DebateTimerTick;
-            DebateTimer.RunningChanged += DebateTimerRunning_Changed;
-            DebateTimer.TimeUp += DebateTimer_TimeUp;
+            DebateTimeBar.RunningChanged += DebateTimerRunning_Changed;
 
             debateTimeSelector.ValueChanged += debateTimeSelector_ValueChanged;
             debateCountSelector.ValueChanged += debateCountSelector_ValueChanged;
@@ -37,14 +34,11 @@ namespace leeyi45.acmun.Main_Screen
             LoadDebate();
         }
 
-        private void DebateTimer_TimeUp(object sender, EventArgs e) 
-            => debateTimeLabel.ForeColor = System.Drawing.Color.Red;
-
         private void DebateTimerRunning_Changed(object sender, EventArgs e)
         {
-            debateTimeSelector.Enabled = !DebateTimer.Running;
-            debateStopButton.Enabled = DebateTimer.Running;
-            debateStartButton.Enabled = !DebateTimer.Running;
+            debateTimeSelector.Enabled = !DebateTimeBar.Running;
+            debateStopButton.Enabled = DebateTimeBar.Running;
+            debateStartButton.Enabled = !DebateTimeBar.Running;
         }
 
         private void LoadDebate()
@@ -52,13 +46,8 @@ namespace leeyi45.acmun.Main_Screen
             debateCountSelector.Value = DebateSpeakCount;
             debateTimeSelector.Value = DebateSpeakTime;
 
-            DebateTimer.EditDuration(DebateSpeakTime);
-
-            debateTimeLabel.Text = $"00:00/{DebateSpeakTime.ToValString()}";
-            debateProgressBar.Value = 0;
-            debateProgressBar.Maximum = (int)DebateSpeakTime.TotalSeconds;
-
-            DebateTimer.Reset();
+            DebateTimeBar.Duration = DebateSpeakTime;
+            DebateTimeBar.Reset();
 
             debateFSelector.ClearSpeakers();
             debateASelector.ClearSpeakers();
@@ -71,18 +60,8 @@ namespace leeyi45.acmun.Main_Screen
             IsFor = true;
         }
 
-        private void DebateTimerTick(object sender, EventArgs e)
-        {
-            debateProgressBar.Increment(1);
-            debateTimeLabel.Text = $"{DebateTimer.CurrentTime.ToValString()}/{DebateSpeakTime.ToValString()}";
-        }
-
         private int DebateSpeakCount;
 
-        //private List<Delegation> debateACountryListBox.Speakers;
-        //private List<Delegation> debateFCountryListBox.Speakers;
-
-        private Clock DebateTimer;
         private TimeSpan DebateSpeakTime;
 
         private Delegation debateSpeaker;
@@ -101,10 +80,8 @@ namespace leeyi45.acmun.Main_Screen
 
         private void debateTimeSelector_ValueChanged(object sender, EventArgs e)
         {
-            DebateTimer.EditDuration(debateTimeSelector.Value);
+            DebateTimeBar.Duration = debateTimeSelector.Value;
             DebateSpeakTime = debateTimeSelector.Value;
-            debateProgressBar.Maximum = (int)DebateSpeakTime.TotalSeconds;
-            debateTimeLabel.Text = $"{DebateTimer.CurrentTime.ToValString()}/{DebateSpeakTime.ToValString()}";
         }
 
         private void debateCountSelector_ValueChanged(object sender, EventArgs e)
@@ -144,11 +121,11 @@ namespace leeyi45.acmun.Main_Screen
             => DebateNextSpeaker();
 
         private void debatePauseButton_Click(object sender, EventArgs e)
-            => DebateTimer.Stop();
+            => DebateTimeBar.Stop();
 
         private void debateStartButton_Click(object sender, EventArgs e)
         {
-            if (DebateSpeaker != null) DebateTimer.Start();
+            if (DebateSpeaker != null) DebateTimeBar.Start();
             else DebateNextSpeaker();
         }
 
@@ -158,9 +135,7 @@ namespace leeyi45.acmun.Main_Screen
 
         private void DebateNextSpeaker()
         {
-            DebateTimer.Reset();
-            debateTimeLabel.Text = $"00:00/{DebateSpeakTime.ToValString()}";
-            debateProgressBar.Value = 0;
+            DebateTimeBar.Reset();
 
             Delegation nextSpeaker;
 
@@ -193,11 +168,10 @@ namespace leeyi45.acmun.Main_Screen
                 IsFor = true;
             }
 
-            if (DebateSpeaker != null) DebateSpeaker.SpeakingTime.Add(DebateTimer.CurrentTime);
-            debateTimeLabel.ForeColor = System.Drawing.Color.Black;
+            if (DebateSpeaker != null) DebateSpeaker.SpeakingTime.Add(DebateTimeBar.ElapsedTime);
 
             DebateSpeaker = nextSpeaker;
-            DebateTimer.Start();
+            DebateTimeBar.Start();
 
         }
     }

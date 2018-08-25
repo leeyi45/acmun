@@ -13,10 +13,7 @@ namespace leeyi45.acmun.Main_Screen
             unmodTopicTextBox.KeyDown += unmodTextBox_KeyDown;
             unmodCountryTextBox.KeyDown += unmodTextBox_KeyDown;
 
-            UnmodTimer = new Clock();
-            UnmodTimer.Tick += UnmodTimerTick;
-            UnmodTimer.RunningChanged += UnmodTimerRunningChanged;
-            UnmodTimer.TimeUp += UnmodTimer_TimeUp;
+            UnmodTimeBar.RunningChanged += UnmodTimerRunningChanged;
 
             unmodStartButton.Click += unmodStartButton_Click;
             unmodPauseButton.Click += unmodPauseButton_Click;
@@ -32,8 +29,6 @@ namespace leeyi45.acmun.Main_Screen
             CurrentUnmod.Topic = unmodTopicTextBox.Text;
         }
 
-        private Clock UnmodTimer;
-
         private TimeSpan UnmodDuration;
 
         private Delegation UnmodProposer;
@@ -47,32 +42,17 @@ namespace leeyi45.acmun.Main_Screen
             unmodTopicTextBox.Text = caucus.Topic;
             unmodCountryTextBox.Text = caucus.Proposer?.Shortf ?? "";
 
-            UnmodTimer.EditDuration(caucus.Duration);
+            UnmodTimeBar.Duration = caucus.Duration;
             UnmodDuration = caucus.Duration;
-
-            unmodProgressBar.Maximum = (int)UnmodDuration.TotalSeconds;
-            unmodProgressBar.Value = 0;
-
-            unmodTimeLabel.Text = $"00:00/{UnmodDuration.ToValString()}";
-            unmodTimeLabel.ForeColor = Color.Black;
 
             CurrentUnmod = caucus;
         }
 
-        private void UnmodTimerTick(object sender, EventArgs e)
-        {
-            unmodProgressBar.Increment(1);
-            unmodTimeLabel.Text = $"{UnmodTimer.CurrentTime.ToValString()}/{UnmodDuration.ToValString()}";
-        }
-
         private void UnmodTimerRunningChanged(object sender, EventArgs e)
         {
-            unmodStartButton.Enabled = !UnmodTimer.Running;
-            unmodPauseButton.Enabled = UnmodTimer.Running;
+            unmodStartButton.Enabled = !UnmodTimeBar.Running;
+            unmodPauseButton.Enabled = UnmodTimeBar.Running;
         }
-
-        private void UnmodTimer_TimeUp(object sender, EventArgs e)
-            => unmodTimeLabel.ForeColor = Color.Red;
 
         private void unmodTextBox_KeyDown(object sender, KeyEventArgs e)
         {
@@ -85,31 +65,29 @@ namespace leeyi45.acmun.Main_Screen
         }    
 
         private void unmodStartButton_Click(object sender, EventArgs e)
-            => UnmodTimer.Start();
+            => UnmodTimeBar.Start();
 
         private void unmodExtendButton_Click(object sender, EventArgs e)
         {
-            UnmodTimer.Stop();
+            UnmodTimeBar.Stop();
 
-            var ext = new TimeExt.timeExt(UnmodTimer.CurrentTime, UnmodDuration, false);
+            var ext = new TimeExt.timeExt(UnmodTimeBar.ElapsedTime, UnmodDuration, false);
             ext.ShowDialog();
 
             if(ext.DialogResult == DialogResult.OK)
             {
                 UnmodDuration += ext.Result;
-                UnmodTimer.EditDuration(UnmodDuration);
-                unmodTimeLabel.Text = $"{UnmodTimer.CurrentTime.ToValString()}/{UnmodDuration.ToValString()}";
+                UnmodTimeBar.Duration = UnmodDuration;
             }
         }
 
-        private void unmodPauseButton_Click(object sender, EventArgs e) => UnmodTimer.Stop();
+        private void unmodPauseButton_Click(object sender, EventArgs e) => UnmodTimeBar.Stop();
 
         private void unmodReset_Click(object sender, EventArgs e)
         {
             unmodTopicTextBox.Text = "Enter topic here";
             unmodCountryTextBox.Text = "Enter country here";
-            UnmodTimer.Reset();
-            unmodProgressBar.Value = 0;
+            UnmodTimeBar.Reset();
         }
 
         private void unmodFinishButton_Click(object sender, EventArgs e)

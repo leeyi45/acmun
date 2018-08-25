@@ -9,17 +9,8 @@ namespace leeyi45.acmun.Main_Screen
     {
         private void InitializeMod()
         {
-            ModTotalTimer = new Clock();
-            ModTotalTimer.Tick += ModTotalTick;
-
-            ModSpeakTimer = new Clock();
-            ModSpeakTimer.Tick += ModSpeakTick;
-
-            ModSpeakTimer.RunningChanged += ModSpeakTimerRunning_Changed;
-            ModTotalTimer.RunningChanged += ModTotalTimerRunning_Changed;
-
-            ModSpeakTimer.TimeUp += ModSpeakTimer_TimeUp;
-            ModTotalTimer.TimeUp += ModTotalTimer_TimeUp;
+            ModSpeakTimeBar.RunningChanged += ModSpeakTimerRunning_Changed;
+            ModTotalTimeBar.RunningChanged += ModTotalTimerRunning_Changed;
 
             modSpeakTimeSelector.ValueChanged += modSpeakTimeSelector_ValueChanged;
             modTotalTimeSelector.ValueChanged += modTotalTimeSelector_ValueChanged;
@@ -36,9 +27,6 @@ namespace leeyi45.acmun.Main_Screen
 
             LoadMod(ModCaucus.DefaultMod);
         }
-
-        Clock ModSpeakTimer;
-        Clock ModTotalTimer;
 
         TimeSpan ModSpeakTime;
         TimeSpan ModTotalTime;
@@ -62,23 +50,14 @@ namespace leeyi45.acmun.Main_Screen
 
         private void LoadMod(ModCaucus caucus)
         {
-            ModTotalTimer.Reset();
-            ModSpeakTimer.Reset();
+            ModTotalTimeBar.Reset();
+            ModSpeakTimeBar.Reset();
 
-            ModTotalTimer.EditDuration(caucus.Duration);
-            ModSpeakTimer.EditDuration(caucus.SpeakTime);
+            ModTotalTimeBar.Duration = caucus.Duration;
+            ModSpeakTimeBar.Duration = caucus.SpeakTime;
 
             modTopicTextBox.Text = caucus.Topic;
             modCountryTextBox.Text = "";
-
-            modTotalTimeLabel.Text = $"00:00/{caucus.Duration.ToValString()}";
-            modSpeakTimeLabel.Text = $"00:00/{caucus.SpeakTime.ToValString()}";
-
-            modSpeakProgressBar.Value = 0;
-            modTotalProgressBar.Value = 0;
-
-            modSpeakProgressBar.Maximum = (int)caucus.SpeakTime.TotalSeconds;
-            modTotalProgressBar.Maximum = (int)caucus.Duration.TotalSeconds;
 
             ModSpeakTime = caucus.SpeakTime;
             ModTotalTime = caucus.Duration;
@@ -91,7 +70,6 @@ namespace leeyi45.acmun.Main_Screen
 
             modCountryCountTextBox.Text = $"Speaker 0 out of {ModSpeakerCount}";
             modCountryTextBox.Clear();
-            modTotalTimeLabel.ForeColor = Color.Black;
             modSelector.ClearSpeakers();
 
             modTopicTextBox.TopicChanged += ModTopicTextBox_TopicChanged;
@@ -100,50 +78,31 @@ namespace leeyi45.acmun.Main_Screen
         }
 
         #region Timer Stuff
-        private void ModTotalTick(object sender, EventArgs e)
-        {
-            modTotalProgressBar.Increment(1);
-            modTotalTimeLabel.Text = $"{ModTotalTimer.CurrentTime.ToValString()}/{ModTotalTimer.Duration.ToValString()}";
-        }
-
-        private void ModSpeakTick(object sender, EventArgs e)
-        {
-            modSpeakProgressBar.Increment(1);
-            modSpeakTimeLabel.Text = $"{ModSpeakTimer.CurrentTime.ToValString()}/{ModSpeakTimer.Duration.ToValString()}";
-        }
-
         private void ModTotalTimerRunning_Changed(object sender, EventArgs e)
         {
-            modTotalStartButton.Enabled = !ModTotalTimer.Running;
-            modTotalPauseButton.Enabled = ModTotalTimer.Running;
-            modTotalTimeSelector.Enabled = !ModTotalTimer.Running;
-            modExtendButton.Enabled = !ModTotalTimer.Running;
+            modTotalStartButton.Enabled = !ModTotalTimeBar.Running;
+            modTotalPauseButton.Enabled = ModTotalTimeBar.Running;
+            modTotalTimeSelector.Enabled = !ModTotalTimeBar.Running;
+            modExtendButton.Enabled = !ModTotalTimeBar.Running;
         }
 
         private void ModSpeakTimerRunning_Changed(object sender, EventArgs e)
         {
-            modStartButton.Enabled = !ModSpeakTimer.Running;
-            modPauseButton.Enabled = ModSpeakTimer.Running;
-            modExtendButton.Enabled = !ModSpeakTimer.Running;
-            modSpeakTimeSelector.Enabled = !ModSpeakTimer.Running;
+            modStartButton.Enabled = !ModSpeakTimeBar.Running;
+            modPauseButton.Enabled = ModSpeakTimeBar.Running;
+            modExtendButton.Enabled = !ModSpeakTimeBar.Running;
+            modSpeakTimeSelector.Enabled = !ModSpeakTimeBar.Running;
         }
-
-        private void ModSpeakTimer_TimeUp(object sender, EventArgs e) 
-            => modSpeakTimeLabel.ForeColor = Color.Red;
-
-        private void ModTotalTimer_TimeUp(object sender, EventArgs e)
-            => modTotalTimeLabel.ForeColor = Color.Red;
-
         #endregion
 
         #region Buttons
         private void modStartButton_Click(object sender, EventArgs e)
         {
-            if (ModCurrentSpeaker != null) ModSpeakTimer.Start();
+            if (ModCurrentSpeaker != null) ModSpeakTimeBar.Start();
         }
 
         private void modPauseButton_Click(object sender, EventArgs e)
-            => ModSpeakTimer.Stop();
+            => ModSpeakTimeBar.Stop();
 
         private void modClearButton_Click(object sender, EventArgs e)
             => modSelector.ClearSpeakers();
@@ -158,10 +117,10 @@ namespace leeyi45.acmun.Main_Screen
         }
 
         private void modTotalStartButton_Click(object sender, EventArgs e)
-            => ModTotalTimer.Start();
+            => ModTotalTimeBar.Start();
 
         private void modTotalPauseButton_Click(object sender, EventArgs e)
-            => ModTotalTimer.Stop();
+            => ModTotalTimeBar.Stop();
 
         private void modNextButton_Click(object sender, EventArgs e)
         {
@@ -173,52 +132,43 @@ namespace leeyi45.acmun.Main_Screen
 
         private void modExtendButton_Click(object sender, EventArgs e)
         {
-            ModTotalTimer.Stop();
+            ModTotalTimeBar.Stop();
 
-            var ext = new TimeExt.timeExt(ModTotalTimer.CurrentTime, ModTotalTime, false);
+            var ext = new TimeExt.timeExt(ModTotalTimeBar.ElapsedTime, ModTotalTime, false);
             ext.ShowDialog();
 
             if (ext.DialogResult == DialogResult.OK)
             {
                 ModTotalTime += ext.Result;
-                ModTotalTimer.EditDuration(UnmodDuration);
-                modTotalTimeLabel.Text = $"{UnmodTimer.CurrentTime.ToValString()}/{UnmodDuration.ToValString()}";
+                ModTotalTimeBar.Duration = ModTotalTime;
             }
         }
         #endregion
 
         private void ModNextSpeaker(int index)
         {
-            if(ModCurrentSpeaker != null) ModCurrentSpeaker.SpeakingTime.Add(ModSpeakTimer.CurrentTime);
-            ModSpeakTimer.Restart();
-            ModTotalTimer.Start();
+            if(ModCurrentSpeaker != null) ModCurrentSpeaker.SpeakingTime.Add(ModSpeakTimeBar.ElapsedTime);
+            ModSpeakTimeBar.Restart();
+            ModTotalTimeBar.Start();
 
             ModCurrentSpeaker = Council.CountriesByShortf[modSelector.Speakers[index]];
             modSelector.RemoveSpeaker(index);
 
             ModSpeakerIndex++;
-            modSpeakProgressBar.Value = 0;
             modCountryCountTextBox.Text = $"Speaker { ModSpeakerIndex } out of { ModSpeakerCount }";
-            modSpeakTimeLabel.ForeColor = Color.Black;
         }
 
         #region Time ValueUpDowns
         private void modSpeakTimeSelector_ValueChanged(object sender, EventArgs e)
         {
             ModSpeakTime = modSpeakTimeSelector.Value;
-            modSpeakProgressBar.Maximum = (int)ModSpeakTime.TotalSeconds;
-
-            modSpeakTimeLabel.Text = $"{ModSpeakTimer.CurrentTime.ToValString()}/{ModSpeakTime.ToValString()}";
-            ModSpeakTimer.EditDuration(ModSpeakTime);
+            ModSpeakTimeBar.Duration = ModSpeakTime;
         }
 
         private void modTotalTimeSelector_ValueChanged(object sender, EventArgs e)
         {
             ModTotalTime = modTotalTimeSelector.Value;
-            modTotalProgressBar.Maximum = (int)ModTotalTime.TotalSeconds;
-
-            modTotalTimeLabel.Text = $"{ModTotalTimer.CurrentTime.ToValString()}/{ModTotalTime.ToValString()}";
-            ModTotalTimer.EditDuration(ModTotalTime);
+            ModTotalTimeBar.Duration = ModTotalTime;
         }
         #endregion
 
