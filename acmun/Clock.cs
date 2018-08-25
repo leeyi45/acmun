@@ -30,6 +30,8 @@ namespace leeyi45.acmun
 
         public bool Running { get; private set; } = false;
 
+        public bool Elapsed { get; private set; } = false;
+
         void TickHandler(object sender, EventArgs e)
         {
             Tick?.Invoke(this, EventArgs.Empty);
@@ -39,13 +41,14 @@ namespace leeyi45.acmun
             if (CurrentTime > Duration)
             {
                 Stop();
+                Elapsed = true;
                 TimeUp?.Invoke(this, EventArgs.Empty);
             }
         }
 
         public void Start()
         {
-            if (Running) return;
+            if (Running || Elapsed) return;
             Running = true;
             RunningChanged?.Invoke(this, EventArgs.Empty);
             Internal.Start();
@@ -62,6 +65,7 @@ namespace leeyi45.acmun
         public void Reset()
         {
             Stop();
+            Elapsed = false;
             CurrentTime = TimeSpan.Zero;
             ResetTriggered?.Invoke(this, EventArgs.Empty);
         }
@@ -75,6 +79,7 @@ namespace leeyi45.acmun
         public void EditDuration(TimeSpan NewDuration)
         {
             Stop();
+            if (Duration > NewDuration) Elapsed = false;
             Duration = NewDuration;
         }
 
