@@ -23,8 +23,14 @@ namespace leeyi45.acmun.Main_Screen
             InitializeVote();
 
             acmun.Controls.LabelBox.ParentForm = this;
+            acmun.Controls.TopicBox.ParentForm = this;
+
+            councilLabel.TopicChanged += CouncilLabel_TopicChanged;
         }
-        
+
+        private void CouncilLabel_TopicChanged(object sender, EventArgs e)
+            => Council.Name = councilLabel.Text;
+
         private void homescreen_Shown(object sender, EventArgs e)
             => new Roll_Call.rollCallScreen(Council.Name).ShowDialog();
 
@@ -72,7 +78,7 @@ namespace leeyi45.acmun.Main_Screen
                 voteCountryBox.Items.Clear();
                 voteCountryBox.Items.AddRange(Present.Where(x => !x.Observer).Select(x => x.Shortf).ToArray());
 
-                councilLabel.Text = $"Council: {Council.Name}";
+                councilLabel.Text = Council.Name;
                 topicLabel.Text = $"Issue: {Topics[CurrentTopic]}";
             }
         }
@@ -119,8 +125,5 @@ namespace leeyi45.acmun.Main_Screen
         {
             TimeList.TimeList.Show(DelList, Council.Name);
         }
-
-        private void DisableTextBox(object sender, EventArgs e)
-            => ActiveControl = null;
     }
 }
