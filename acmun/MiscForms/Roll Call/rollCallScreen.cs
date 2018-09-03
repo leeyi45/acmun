@@ -24,7 +24,7 @@ namespace leeyi45.acmun.Roll_Call
 
             FormClosing += RollCallScreen_FormClosing;
 
-            quorumLabel.Text = $"{rollCallBox.CheckedItems.Count}/{CountryCount}";
+            quorumLabel.Text = $"{rollCallBox.CheckedItems.Count}/{DelCount}";
             councilNameLabelBox.Text = councilName;
             StartPosition = FormStartPosition.CenterParent;
         }
@@ -72,7 +72,7 @@ namespace leeyi45.acmun.Roll_Call
 
             DelList[e.Index].Present = e.NewValue == CheckState.Checked;
 
-            quorumLabel.Text = $"{rollCallCount}/{CountryCount}";
+            quorumLabel.Text = $"{rollCallCount}/{DelCount}";
 
             //allPresentCheckBox.CheckedChanged -= allPresentCheckBox_CheckedChanged;
             //if (rollCallCount == rollCallBox.Items.Count) allPresentCheckBox.Checked = true;

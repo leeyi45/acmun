@@ -151,7 +151,7 @@ namespace leeyi45.acmun.Main_Screen
             ModSpeakTimeBar.Restart();
             ModTotalTimeBar.Start();
 
-            ModCurrentSpeaker = Council.CountriesByShortf[modSelector.Speakers[index]];
+            ModCurrentSpeaker = Council.DelsByShortf[modSelector.Speakers[index]];
             modSelector.RemoveSpeaker(index);
 
             ModSpeakerIndex++;

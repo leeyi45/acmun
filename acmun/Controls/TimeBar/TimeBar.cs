@@ -22,10 +22,8 @@ namespace leeyi45.acmun.Controls
             Internal.RunningChanged += Internal_RunningChanged;
         }
 
-        private void Internal_RunningChanged(object sender, EventArgs e)
-        {
-            RunningChanged?.Invoke(this, EventArgs.Empty);
-        }
+        private void Internal_RunningChanged(object sender, EventArgs e) 
+            => RunningChanged?.Invoke(this, EventArgs.Empty);
 
         private Clock Internal;
 

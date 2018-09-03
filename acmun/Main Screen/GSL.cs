@@ -53,14 +53,12 @@ namespace leeyi45.acmun.Main_Screen
             }
         }
 
-        #region Timer
         private void GSLTimerRunningChanged(object sender, EventArgs e)
         {
             gslStartButton.Enabled = !GSLTimeBar.Running;
             gslPauseButton.Enabled = GSLTimeBar.Running;
             gslTimeSelector.Enabled = !GSLTimeBar.Running;
         }
-        #endregion
 
         #region Buttons
         private void gslStartButton_Click(object sender, EventArgs e)
@@ -106,9 +104,7 @@ namespace leeyi45.acmun.Main_Screen
         }
         #endregion
 
-        #region ListBox
         private void gslListBox_ClickSelect(object sender, int index) => GSLNextSpeaker(index);
-        #endregion
 
         private void gslTimeSelector_ValueChanged(object sender, EventArgs e)
         {
@@ -130,7 +126,7 @@ namespace leeyi45.acmun.Main_Screen
             }
             GSLTimeBar.Restart();
 
-            GSLCurrentSpeaker = Council.CountriesByShortf[gslSelector.Speakers[index]];
+            GSLCurrentSpeaker = Council.DelsByShortf[gslSelector.Speakers[index]];
             gslSelector.RemoveSpeaker(index);
             yielded = false;
         }

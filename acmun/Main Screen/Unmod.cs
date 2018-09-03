@@ -8,26 +8,30 @@ namespace leeyi45.acmun.Main_Screen
     {
         private void InitializeUnmod()
         {
-            unmodTab.Click += unmodTab_Click;
-
-            unmodTopicTextBox.KeyDown += unmodTextBox_KeyDown;
-            unmodCountryTextBox.KeyDown += unmodTextBox_KeyDown;
-
             UnmodTimeBar.RunningChanged += UnmodTimerRunningChanged;
 
             unmodStartButton.Click += unmodStartButton_Click;
             unmodPauseButton.Click += unmodPauseButton_Click;
             unmodFinishButton.Click += unmodFinishButton_Click;
+            unmodCountryTextBox.Click += UnmodCountryTextBox_Click;
 
             unmodTopicTextBox.TopicChanged += UnmodTopicTextBox_TopicChanged;
 
             LoadUnmod(UnmodCaucus.DefaultUnmod);
         }
 
-        private void UnmodTopicTextBox_TopicChanged(object sender, EventArgs e)
+        private void UnmodCountryTextBox_Click(object sender, EventArgs e)
         {
-            CurrentUnmod.Topic = unmodTopicTextBox.Text;
+            var index = IndexPicker.IndexPicker.ShowDialog(Council.PresentShortf, "Select new proposer", "Proposer");
+            if(index != -1)
+            {
+                CurrentUnmod.Proposer = Council.Present[index];
+                unmodCountryTextBox.Text = CurrentUnmod.Proposer.Shortf;
+            }
         }
+
+        private void UnmodTopicTextBox_TopicChanged(object sender, EventArgs e)
+            => CurrentUnmod.Topic = unmodTopicTextBox.Text;
 
         private TimeSpan UnmodDuration;
 
@@ -53,16 +57,6 @@ namespace leeyi45.acmun.Main_Screen
             unmodStartButton.Enabled = !UnmodTimeBar.Running;
             unmodPauseButton.Enabled = UnmodTimeBar.Running;
         }
-
-        private void unmodTextBox_KeyDown(object sender, KeyEventArgs e)
-        {
-            var box = sender as TextBox;
-            if (e.KeyCode == Keys.Escape || e.KeyCode == Keys.Escape)
-            {
-                ActiveControl = null;
-                e.Handled = true;
-            }
-        }    
 
         private void unmodStartButton_Click(object sender, EventArgs e)
             => UnmodTimeBar.Start();
@@ -95,8 +89,5 @@ namespace leeyi45.acmun.Main_Screen
             LoadSingleSpeak(UnmodProposer, Council.UnmodSummaryTime);
             motionsTab.SelectTab(singleTab);
         }
-
-        private void unmodTab_Click(object sender, EventArgs e)
-            => ActiveControl = unmodTab;
     }
 }

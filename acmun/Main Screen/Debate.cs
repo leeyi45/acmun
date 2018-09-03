@@ -147,7 +147,7 @@ namespace leeyi45.acmun.Main_Screen
                     return;
                 }
 
-                nextSpeaker = Council.CountriesByShortf[debateFSelector.Speakers[0]];
+                nextSpeaker = Council.DelsByShortf[debateFSelector.Speakers[0]];
                 debateFSelector.RemoveSpeaker(0);
                 debateForTextBox.ForeColor = System.Drawing.Color.Green;
                 debateForTextBox.Text = "For";
@@ -161,7 +161,7 @@ namespace leeyi45.acmun.Main_Screen
                     return;
                 }
 
-                nextSpeaker = Council.CountriesByShortf[debateASelector.Speakers[0]];
+                nextSpeaker = Council.DelsByShortf[debateASelector.Speakers[0]];
                 debateASelector.RemoveSpeaker(0);
                 debateForTextBox.ForeColor = System.Drawing.Color.Red;
                 debateForTextBox.Text = "Against";

@@ -21,7 +21,7 @@ namespace leeyi45.acmun.Main_Screen
 
             motionPassDButton.Click += motionPassDButton_Click;
             motionFailDButton.Click += motionFailDButton_Click;
-            motionRollCallButton.Click += motionRollCallButton_Click;
+            motionLoadVoteButton.Click += motionLoadVoteButton_Click;
 
             motionsPassMenuItem.Click += MotionsPassMenuItem_Click;
             motionsPassDMenuItem.Click += MotionsPassDMenuItem_Click;
@@ -32,21 +32,21 @@ namespace leeyi45.acmun.Main_Screen
 
         #region Motion State Drop Down Code
         private void MotionsFailMenuItem_Click(object sender, EventArgs e)
-            => UpdateMotionState(acmun.State.Fail);
+            => UpdateMotionState(acmun.VoteState.Fail);
 
         private void MotionsPassMenuItem_Click(object sender, EventArgs e) 
-            => UpdateMotionState(acmun.State.Pass);
+            => UpdateMotionState(acmun.VoteState.Pass);
 
         private void MotionsPassDMenuItem_Click(object sender, EventArgs e)
-            => UpdateMotionState(acmun.State.PassD);
+            => UpdateMotionState(acmun.VoteState.PassD);
 
         private void MotionsFailDMenuItem_Click(object sender, EventArgs e) 
-            => UpdateMotionState(acmun.State.FailD);
+            => UpdateMotionState(acmun.VoteState.FailD);
 
         private void MotionsNullMenuItem_Click(object sender, EventArgs e) 
-            => UpdateMotionState(acmun.State.Null);
+            => UpdateMotionState(acmun.VoteState.Null);
 
-        private void UpdateMotionState(State state)
+        private void UpdateMotionState(VoteState state)
         {
             SelectedMotion.State = state;
             motionsDataGrid.Rows[_SelectedMotion].Cells[5].Value = state.ToValString();
@@ -204,9 +204,9 @@ namespace leeyi45.acmun.Main_Screen
 
             var motion = SelectedMotion;
 
-            if (motion.State != acmun.State.Null) return;
+            if (motion.State != acmun.VoteState.Null) return;
 
-            motion.State = acmun.State.Pass;
+            motion.State = acmun.VoteState.Pass;
             motionsDataGrid.SelectedRows[0].Cells[5].Value = "Pass";
 
             ExecuteMotion(motion);
@@ -218,9 +218,9 @@ namespace leeyi45.acmun.Main_Screen
 
             var motion = SelectedMotion;
 
-            if (motion.State != acmun.State.Null) return;
+            if (motion.State != acmun.VoteState.Null) return;
 
-            motion.State = acmun.State.Fail;
+            motion.State = acmun.VoteState.Fail;
             motionsDataGrid.SelectedRows[0].Cells[5].Value = "Fail";
         }
 
@@ -236,9 +236,9 @@ namespace leeyi45.acmun.Main_Screen
                 var motion = Motions[i];
 
                 motionsDataGrid.Rows.Add(motion.Proposer.Shortf, motion.Name,
-                    motion.Duration != TimeSpan.Zero ? motion.Duration.ToValString() : "-",
-                    motion.SpeakTime != TimeSpan.Zero ? motion.SpeakTime.ToValString() : "-",
-                    string.IsNullOrWhiteSpace(motion.Topic) ? "-" : motion.Topic
+                    motion.HasDuration ? motion.Duration.ToValString() : "-",
+                    motion.HasSpeakTime ? motion.SpeakTime.ToValString() : "-",
+                    motion.HasTopic ? "-" : motion.Topic
                     );
             }
         }
@@ -249,9 +249,9 @@ namespace leeyi45.acmun.Main_Screen
 
             var motion = SelectedMotion;
 
-            if (motion.State != acmun.State.Null) return;
+            if (motion.State != acmun.VoteState.Null) return;
 
-            motion.State = acmun.State.PassD;
+            motion.State = acmun.VoteState.PassD;
             motionsDataGrid.SelectedRows[0].Cells[5].Value = "Passed by discretion";
 
             ExecuteMotion(motion);
@@ -263,14 +263,15 @@ namespace leeyi45.acmun.Main_Screen
 
             var motion = SelectedMotion;
 
-            if (motion.State != acmun.State.Null) return;
+            if (motion.State != acmun.VoteState.Null) return;
 
-            motion.State = acmun.State.FailD;
+            motion.State = acmun.VoteState.FailD;
             motionsDataGrid.SelectedRows[0].Cells[5].Value = "Failed by discretion";
         }
 
-        private void motionRollCallButton_Click(object sender, EventArgs e)
+        private void motionLoadVoteButton_Click(object sender, EventArgs e)
         {
+            if (Motions.Count < 1 || SelectedMotion.IsDefault) return;
             LoadVote(SelectedMotion.Internal.VoteData);
             motionsTab.SelectTab(votingTab);
         }
@@ -278,12 +279,12 @@ namespace leeyi45.acmun.Main_Screen
 
         private void motionsDataGrid_SelectionChanged(object sender, EventArgs e)
         {
-            if (_SelectedMotion < 0) return;
+            //if (_SelectedMotion < 0) return;
             try
             {
                 _SelectedMotion = motionsDataGrid.SelectedRows[0].Index;
-                motionNGroupBox.Enabled = SelectedMotion.State == acmun.State.Null;
-                motionDGroupBox.Enabled = SelectedMotion.State == acmun.State.Null;
+                motionNGroupBox.Enabled = SelectedMotion.State == VoteState.Null;
+                motionDGroupBox.Enabled = SelectedMotion.State == VoteState.Null;
             }
             catch(ArgumentOutOfRangeException) { _SelectedMotion = -1; }
         }

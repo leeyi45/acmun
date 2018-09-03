@@ -14,13 +14,13 @@ namespace leeyi45.acmun
         {
             Application.EnableVisualStyles();
 
-            StateVals = new Dictionary<State, string>
+            StateVals = new Dictionary<VoteState, string>
             {
-                { State.Pass, "Pass" },
-                { State.Fail, "Fail" },
-                { State.PassD, "Passed by discretion" },
-                { State.FailD, "Failed by discretion" },
-                { State.Null, "" }
+                { VoteState.Pass, "Pass" },
+                { VoteState.Fail, "Fail" },
+                { VoteState.PassD, "Passed by discretion" },
+                { VoteState.FailD, "Failed by discretion" },
+                { VoteState.Null, "" }
             };
 
             Council.LoadCouncil("conf.xml", true);
@@ -31,10 +31,10 @@ namespace leeyi45.acmun
         public static string ToValString(this TimeSpan span)
             => span.ToString(@"mm\:ss");
 
-        public static string ToValString(this State state)
+        public static string ToValString(this VoteState state)
             => StateVals[state];
 
-        private static Dictionary<State, string> StateVals;
+        private static Dictionary<VoteState, string> StateVals;
     }
 
     public class MissingDataException : Exception

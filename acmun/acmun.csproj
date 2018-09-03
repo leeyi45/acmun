@@ -59,34 +59,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\StateButton.cs">
+    <Compile Include="Controls\StateButton\StateButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\StateButton.Designer.cs">
+    <Compile Include="Controls\StateButton\StateButton.Designer.cs">
       <DependentUpon>StateButton.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\ComboBox.cs">
+    <Compile Include="Controls\ComboBox\ComboBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\CountrySelector.cs">
+    <Compile Include="Controls\CountrySelector\CountrySelector.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\CountrySelector.Designer.cs">
+    <Compile Include="Controls\CountrySelector\CountrySelector.Designer.cs">
       <DependentUpon>CountrySelector.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\LabelBox.cs">
+    <Compile Include="Controls\LabelBox\LabelBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\TimeBar.cs">
+    <Compile Include="Controls\TimeBar\TimeBar.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\TimeBar.Designer.cs">
+    <Compile Include="Controls\TimeBar\TimeBar.Designer.cs">
       <DependentUpon>TimeBar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\TimeSelector.cs">
+    <Compile Include="Controls\TimeSelector\TimeSelector.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\TimeSelector.Designer.cs">
+    <Compile Include="Controls\TimeSelector\TimeSelector.Designer.cs">
       <DependentUpon>TimeSelector.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\TopicBox\TopicBox.cs">
@@ -98,13 +98,13 @@
     <Compile Include="Controls\TopicBox\TopicForm.Designer.cs">
       <DependentUpon>TopicForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\WarningBox.cs">
+    <Compile Include="Controls\WarningBox\WarningBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\WarningBox.Designer.cs">
+    <Compile Include="Controls\WarningBox\WarningBox.Designer.cs">
       <DependentUpon>WarningBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\ListBox.cs">
+    <Compile Include="Controls\ListBox\ListBox.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Council.cs" />
@@ -209,16 +209,16 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Controls\CountrySelector.resx">
+    <EmbeddedResource Include="Controls\CountrySelector\CountrySelector.resx">
       <DependentUpon>CountrySelector.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\TimeBar.resx">
+    <EmbeddedResource Include="Controls\TimeBar\TimeBar.resx">
       <DependentUpon>TimeBar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\TopicBox\TopicForm.resx">
       <DependentUpon>TopicForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\WarningBox.resx">
+    <EmbeddedResource Include="Controls\WarningBox\WarningBox.resx">
       <DependentUpon>WarningBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MiscForms\AboutBox\AboutBox.resx">

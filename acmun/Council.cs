@@ -8,6 +8,8 @@ using System.Xml.Serialization;
 using System.IO;
 using System.Windows.Forms;
 using leeyi45.acmun.Controls;
+using System.Reflection;
+using System.ComponentModel;
 
 namespace leeyi45.acmun
 {
@@ -30,6 +32,23 @@ namespace leeyi45.acmun
             motions = data;
             motionsAsList = listData;
         }
+
+        [XmlElement(Order = 0)]
+        [DefaultValue(null)]
+        public string Version
+        {
+            get => _version;
+            set
+            {
+                if(string.IsNullOrWhiteSpace(value))
+                {
+                    MessageBox.Show("No version detected for conf.xml file, using it anyways!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                _version = value;
+            }
+        }
+
+        private string _version;
 
         [XmlElement("Name", Order = 1)]
         public string CouncilName { get; set; }
@@ -111,9 +130,9 @@ namespace leeyi45.acmun
             set => Instance.Delegations = value;
         }
 
-        public static Dictionary<string, Delegation> CountriesByShortf { get; set; }
+        public static Dictionary<string, Delegation> DelsByShortf { get; set; }
 
-        public static int CountryCount => DelList.Length;
+        public static int DelCount => DelList.Length;
 
         public static Delegation[] Present { get; set; }
 
@@ -135,7 +154,7 @@ namespace leeyi45.acmun
             Voters = Present.Where(x => !x.Observer).ToArray();
             Array.Sort(Voters);
 
-            CountriesByShortf = DelList.ToDictionary(x => x.Shortf, x => x);
+            DelsByShortf = DelList.ToDictionary(x => x.Shortf, x => x);
             VotersShortf = Voters.Select(x => x.Shortf).ToArray();
             PresentShortf = Present.Select(x => x.Shortf).ToArray();
         }
@@ -380,6 +399,8 @@ namespace leeyi45.acmun
 
         public UnmodCaucus CurrentUnmod { get; set; }
 
+        public Delegation[] Dels { get; set; }
+
         [XmlArrayItem("Motion")]
         public static Motion[] Motions { get; set; }
 
@@ -395,7 +416,8 @@ namespace leeyi45.acmun
                         GSLList = gslList.ToArray(),
                         ModList = modList.ToArray(),
                         CurrentMod = mod,
-                        CurrentUnmod = unmod
+                        CurrentUnmod = unmod,
+                        Dels = Council.DelList
                     });
 
                     stream.Flush();
