@@ -162,7 +162,7 @@ namespace leeyi45.acmun
         public static Vote Default { get; private set; } = new Vote();
     }
 
-    public enum State
+    public enum VoteState
     {
         Pass, Fail, PassD, FailD, Null
     }
@@ -171,7 +171,7 @@ namespace leeyi45.acmun
     public class Motion : IComparable<Motion>
     {
         public Motion(string data, string topic, Delegation Proposer, TimeSpan Duration, 
-            TimeSpan SpeakTime) : this(data, topic, Proposer)
+            TimeSpan SpeakTime, bool isDefault = false) : this(data, topic, Proposer, isDefault)
         {
             var errMsg = "Missing Data: ";
 
@@ -184,8 +184,8 @@ namespace leeyi45.acmun
 
             if (errMsg != "Missing Data: ") throw new MissingDataException(errMsg);
         }
-        
-        public Motion(string _data, string topic, Delegation Proposer)
+
+        public Motion(string _data, string topic, Delegation Proposer, bool isDefault = false)
         {
             if(!Motions.TryGetValue(_data, out var data))
             {
@@ -195,6 +195,7 @@ namespace leeyi45.acmun
             Internal = data;
             Topic = topic;
             this.Proposer = Proposer;
+            IsDefault = isDefault;
             var errMsg = "Missing Data: ";
 
             if (Internal.Topic && string.IsNullOrWhiteSpace(topic)) errMsg += "Topic\n";
@@ -206,14 +207,6 @@ namespace leeyi45.acmun
 
         [XmlIgnore]
         public MotionData Internal { get; set; }
-
-        /*
-        [XmlElement("ID")]
-        public string InternalID
-        {
-            get => Internal.Id;
-            set => Internal = Motions[value];
-        }*/
 
         [XmlIgnore]
         public string Text
@@ -250,6 +243,7 @@ namespace leeyi45.acmun
             set => Internal.Disruptiveness = value;
         }
 
+        #region Duration
         [XmlElement("Duration")]
         public double DurationSeconds
         {
@@ -267,6 +261,10 @@ namespace leeyi45.acmun
             set => Internal.Duration = value;
         }
 
+        public bool ShouldSerializeDurationSeconds() => HasDuration;
+        #endregion
+
+        #region SpeakTime
         [XmlElement("SpeakTime")]
         public double SpeakTimeSeconds
         {
@@ -284,6 +282,10 @@ namespace leeyi45.acmun
             set => Internal.SpeakTime = value;
         }
 
+        public bool ShouldSerializeSpeakTimeSeconds() => HasSpeakTime;
+        #endregion
+
+        #region Proposer
         [XmlIgnore]
         public Delegation Proposer { get; set; }
         
@@ -291,9 +293,14 @@ namespace leeyi45.acmun
         public string ProposerShortf
         {
             get => Proposer.Shortf;
-            set => Proposer = CountriesByShortf[value];
+            set => Proposer = DelsByShortf[value];
         }
 
+        public bool ShouldSerializeProposerShortf()
+            => Proposer != null;
+        #endregion
+
+        #region Topic
         [XmlElement]
         public string Topic { get; set; }
 
@@ -304,8 +311,14 @@ namespace leeyi45.acmun
             set => Internal.Topic = value;
         }
 
+        public bool ShouldSerializeTopic() => HasTopic;
+        #endregion
+
         [XmlElement]
-        public State State { get; set; } = State.Null;
+        public VoteState State { get; set; } = VoteState.Null;
+
+        [XmlIgnore]
+        public bool IsDefault { get; set; } = false;
 
         public int CompareTo(Motion other)
         {
@@ -326,8 +339,8 @@ namespace leeyi45.acmun
     [Serializable]
     public class ModCaucus : Motion
     {
-        public ModCaucus(string Topic, Delegation Proposer, TimeSpan Duration, TimeSpan SpeakTime) :
-            base("mod", Topic, Proposer, Duration, SpeakTime) 
+        public ModCaucus(string Topic, Delegation Proposer, TimeSpan Duration, TimeSpan SpeakTime, bool isDefault = false) :
+            base("mod", Topic, Proposer, Duration, SpeakTime, isDefault) 
             => SpeakerCount = (int)(Duration.TotalSeconds / SpeakTime.TotalSeconds);
 
         private ModCaucus() { }
@@ -335,19 +348,19 @@ namespace leeyi45.acmun
         [XmlIgnore]
         public int SpeakerCount { get; private set; }
 
-        public static ModCaucus DefaultMod => new ModCaucus("Topic", null, ModTotalTime, ModSpeakTime);
+        public static ModCaucus DefaultMod => new ModCaucus("Topic", null, ModTotalTime, ModSpeakTime, true);
     }
 
     [Serializable]
     public class UnmodCaucus : Motion
     {
-        public UnmodCaucus(string Topic, Delegation Proposer, TimeSpan Duration) :
-            base("unmod", Topic, Proposer, Duration, TimeSpan.Zero)
+        public UnmodCaucus(string Topic, Delegation Proposer, TimeSpan Duration, bool isDefault = false) :
+            base("unmod", Topic, Proposer, Duration, TimeSpan.Zero, isDefault)
             => this.Topic = Topic;
 
         private UnmodCaucus() { }
 
-        public static UnmodCaucus DefaultUnmod => new UnmodCaucus("Topic", null, UnmodSpeakTime);
+        public static UnmodCaucus DefaultUnmod => new UnmodCaucus("Topic", null, UnmodSpeakTime, true);
     }
 
 }
