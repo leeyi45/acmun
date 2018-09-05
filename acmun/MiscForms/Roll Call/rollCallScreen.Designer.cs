@@ -69,9 +69,9 @@
             this.allPresentCheckBox.AutoSize = true;
             this.allPresentCheckBox.Location = new System.Drawing.Point(324, 315);
             this.allPresentCheckBox.Name = "allPresentCheckBox";
-            this.allPresentCheckBox.Size = new System.Drawing.Size(71, 17);
+            this.allPresentCheckBox.Size = new System.Drawing.Size(76, 17);
             this.allPresentCheckBox.TabIndex = 4;
-            this.allPresentCheckBox.Text = "Check All";
+            this.allPresentCheckBox.Text = "All Present";
             this.allPresentCheckBox.UseVisualStyleBackColor = true;
             // 
             // doneButton
