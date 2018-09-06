@@ -20,6 +20,9 @@ namespace leeyi45.acmun.Main_Screen
             modTotalStartButton.Click += modTotalStartButton_Click;
             modTotalPauseButton.Click += modTotalPauseButton_Click;
 
+            modStartButton.Click += modStartButton_Click;
+            modPauseButton.Click += modPauseButton_Click;
+
             modResetButton.Click += modResetButton_Click;
             modExtendButton.Click += modExtendButton_Click;
 
