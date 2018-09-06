@@ -55,12 +55,13 @@ namespace leeyi45.acmun.Roll_Call
 
         private void rollCallScreen_Load(object sender, EventArgs e)
         {
-            rollCallBox.Items.AddRange(DelList.Select(x => x.Name).ToArray());
-
             var arr = DelList;
 
-            for(int i = 0; i < arr.Length; i++)
+            for(int i = 0; i < DelList.Length; i++)
             {
+                var del = DelList[i];
+
+                rollCallBox.Items.Add(del.Name += (del.Observer ? " (Observer)" : ""));
                 rollCallBox.SetItemChecked(i, arr[i].Present);
             }
 
