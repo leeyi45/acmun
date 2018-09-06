@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(homescreen));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.loadXMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -344,6 +344,7 @@
             // 
             // modRemoveButton
             // 
+            this.modRemoveButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.modRemoveButton.Location = new System.Drawing.Point(1007, 557);
             this.modRemoveButton.Name = "modRemoveButton";
             this.modRemoveButton.Size = new System.Drawing.Size(75, 23);
@@ -355,6 +356,7 @@
             // 
             // modClearButton
             // 
+            this.modClearButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.modClearButton.Location = new System.Drawing.Point(1007, 586);
             this.modClearButton.Name = "modClearButton";
             this.modClearButton.Size = new System.Drawing.Size(75, 23);
@@ -366,6 +368,7 @@
             // 
             // modNextButton
             // 
+            this.modNextButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.modNextButton.Location = new System.Drawing.Point(736, 558);
             this.modNextButton.Name = "modNextButton";
             this.modNextButton.Size = new System.Drawing.Size(75, 23);
@@ -377,6 +380,7 @@
             // 
             // gslRemoveButton
             // 
+            this.gslRemoveButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.gslRemoveButton.Location = new System.Drawing.Point(889, 537);
             this.gslRemoveButton.Name = "gslRemoveButton";
             this.gslRemoveButton.Size = new System.Drawing.Size(75, 23);
@@ -388,6 +392,7 @@
             // 
             // gslYieldButton
             // 
+            this.gslYieldButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.gslYieldButton.Location = new System.Drawing.Point(727, 566);
             this.gslYieldButton.Name = "gslYieldButton";
             this.gslYieldButton.Size = new System.Drawing.Size(75, 23);
@@ -399,7 +404,8 @@
             // 
             // gslClearButton
             // 
-            this.gslClearButton.Location = new System.Drawing.Point(889, 566);
+            this.gslClearButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.gslClearButton.Location = new System.Drawing.Point(889, 567);
             this.gslClearButton.Name = "gslClearButton";
             this.gslClearButton.Size = new System.Drawing.Size(75, 23);
             this.gslClearButton.TabIndex = 11;
@@ -410,6 +416,7 @@
             // 
             // gslNextButton
             // 
+            this.gslNextButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.gslNextButton.Location = new System.Drawing.Point(727, 537);
             this.gslNextButton.Name = "gslNextButton";
             this.gslNextButton.Size = new System.Drawing.Size(75, 23);
@@ -421,6 +428,7 @@
             // 
             // motionSortButton
             // 
+            this.motionSortButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.motionSortButton.Location = new System.Drawing.Point(215, 588);
             this.motionSortButton.Name = "motionSortButton";
             this.motionSortButton.Size = new System.Drawing.Size(75, 23);
@@ -432,6 +440,7 @@
             // 
             // motionClearButton
             // 
+            this.motionClearButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.motionClearButton.Location = new System.Drawing.Point(296, 588);
             this.motionClearButton.Name = "motionClearButton";
             this.motionClearButton.Size = new System.Drawing.Size(75, 23);
@@ -465,6 +474,7 @@
             // 
             // motionRemoveButton
             // 
+            this.motionRemoveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.motionRemoveButton.Location = new System.Drawing.Point(134, 588);
             this.motionRemoveButton.Name = "motionRemoveButton";
             this.motionRemoveButton.Size = new System.Drawing.Size(75, 23);
@@ -476,6 +486,7 @@
             // 
             // motionAddButton
             // 
+            this.motionAddButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.motionAddButton.Location = new System.Drawing.Point(52, 588);
             this.motionAddButton.Name = "motionAddButton";
             this.motionAddButton.Size = new System.Drawing.Size(75, 23);
@@ -507,6 +518,7 @@
             // 
             // debateCountSelector
             // 
+            this.debateCountSelector.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.debateCountSelector.Location = new System.Drawing.Point(894, 32);
             this.debateCountSelector.Minimum = new decimal(new int[] {
             1,
@@ -571,9 +583,10 @@
             // 
             // unmodPauseButton
             // 
+            this.unmodPauseButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.unmodPauseButton.Enabled = false;
             this.unmodPauseButton.FalseText = "Stopped";
-            this.unmodPauseButton.Location = new System.Drawing.Point(461, 406);
+            this.unmodPauseButton.Location = new System.Drawing.Point(463, 406);
             this.unmodPauseButton.Name = "unmodPauseButton";
             this.unmodPauseButton.Size = new System.Drawing.Size(75, 23);
             this.unmodPauseButton.TabIndex = 15;
@@ -583,8 +596,9 @@
             // 
             // unmodStartButton
             // 
+            this.unmodStartButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.unmodStartButton.FalseText = "Started";
-            this.unmodStartButton.Location = new System.Drawing.Point(380, 406);
+            this.unmodStartButton.Location = new System.Drawing.Point(382, 406);
             this.unmodStartButton.Name = "unmodStartButton";
             this.unmodStartButton.Size = new System.Drawing.Size(75, 23);
             this.unmodStartButton.TabIndex = 14;
@@ -594,9 +608,10 @@
             // 
             // singlePauseButton
             // 
+            this.singlePauseButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.singlePauseButton.Enabled = false;
             this.singlePauseButton.FalseText = "Stopped";
-            this.singlePauseButton.Location = new System.Drawing.Point(800, 523);
+            this.singlePauseButton.Location = new System.Drawing.Point(802, 523);
             this.singlePauseButton.Name = "singlePauseButton";
             this.singlePauseButton.Size = new System.Drawing.Size(75, 23);
             this.singlePauseButton.TabIndex = 57;
@@ -606,8 +621,9 @@
             // 
             // singleStartButton
             // 
+            this.singleStartButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.singleStartButton.FalseText = "Started";
-            this.singleStartButton.Location = new System.Drawing.Point(719, 524);
+            this.singleStartButton.Location = new System.Drawing.Point(721, 524);
             this.singleStartButton.Name = "singleStartButton";
             this.singleStartButton.Size = new System.Drawing.Size(75, 23);
             this.singleStartButton.TabIndex = 56;
@@ -617,6 +633,7 @@
             // 
             // debateStopButton
             // 
+            this.debateStopButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.debateStopButton.Enabled = false;
             this.debateStopButton.FalseText = "Stopped";
             this.debateStopButton.Location = new System.Drawing.Point(286, 577);
@@ -629,6 +646,7 @@
             // 
             // debateStartButton
             // 
+            this.debateStartButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.debateStartButton.FalseText = "Started";
             this.debateStartButton.Location = new System.Drawing.Point(205, 577);
             this.debateStartButton.Name = "debateStartButton";
@@ -640,6 +658,7 @@
             // 
             // debateTimeSelector
             // 
+            this.debateTimeSelector.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.debateTimeSelector.Location = new System.Drawing.Point(736, 9);
             this.debateTimeSelector.Name = "debateTimeSelector";
             this.debateTimeSelector.Size = new System.Drawing.Size(108, 49);
@@ -679,6 +698,7 @@
             // 
             // DebateTimeBar
             // 
+            this.DebateTimeBar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.DebateTimeBar.Duration = System.TimeSpan.Parse("00:00:00");
             this.DebateTimeBar.Location = new System.Drawing.Point(30, 387);
             this.DebateTimeBar.Name = "DebateTimeBar";
@@ -687,6 +707,7 @@
             // 
             // debateASelector
             // 
+            this.debateASelector.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.debateASelector.LabelText = "Speakers Against:";
             this.debateASelector.Location = new System.Drawing.Point(736, 320);
             this.debateASelector.Name = "debateASelector";
@@ -696,6 +717,7 @@
             // 
             // debateFSelector
             // 
+            this.debateFSelector.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.debateFSelector.LabelText = "Speakers For:";
             this.debateFSelector.Location = new System.Drawing.Point(736, 63);
             this.debateFSelector.Name = "debateFSelector";
@@ -705,6 +727,7 @@
             // 
             // debatePictureBox
             // 
+            this.debatePictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.debatePictureBox.ImageLocation = "";
             this.debatePictureBox.Location = new System.Drawing.Point(30, 78);
             this.debatePictureBox.Name = "debatePictureBox";
@@ -714,6 +737,7 @@
             // 
             // debateResetButton
             // 
+            this.debateResetButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.debateResetButton.Location = new System.Drawing.Point(448, 577);
             this.debateResetButton.Name = "debateResetButton";
             this.debateResetButton.Size = new System.Drawing.Size(75, 23);
@@ -724,6 +748,7 @@
             // 
             // debateNextButton
             // 
+            this.debateNextButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.debateNextButton.Location = new System.Drawing.Point(367, 577);
             this.debateNextButton.Name = "debateNextButton";
             this.debateNextButton.Size = new System.Drawing.Size(75, 23);
@@ -733,6 +758,7 @@
             // 
             // debateAClearButton
             // 
+            this.debateAClearButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.debateAClearButton.Location = new System.Drawing.Point(817, 578);
             this.debateAClearButton.Name = "debateAClearButton";
             this.debateAClearButton.Size = new System.Drawing.Size(75, 23);
@@ -742,6 +768,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(886, 9);
             this.label4.Name = "label4";
@@ -751,6 +778,7 @@
             // 
             // debateFClearButton
             // 
+            this.debateFClearButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.debateFClearButton.Location = new System.Drawing.Point(817, 291);
             this.debateFClearButton.Name = "debateFClearButton";
             this.debateFClearButton.Size = new System.Drawing.Size(75, 23);
@@ -760,6 +788,7 @@
             // 
             // debateARemoveButton
             // 
+            this.debateARemoveButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.debateARemoveButton.Location = new System.Drawing.Point(736, 578);
             this.debateARemoveButton.Name = "debateARemoveButton";
             this.debateARemoveButton.Size = new System.Drawing.Size(75, 23);
@@ -769,6 +798,7 @@
             // 
             // debateFRemoveButton
             // 
+            this.debateFRemoveButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.debateFRemoveButton.Location = new System.Drawing.Point(736, 291);
             this.debateFRemoveButton.Name = "debateFRemoveButton";
             this.debateFRemoveButton.Size = new System.Drawing.Size(75, 23);
@@ -778,6 +808,7 @@
             // 
             // debateCountryLabel
             // 
+            this.debateCountryLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.debateCountryLabel.BackColor = System.Drawing.SystemColors.Window;
             this.debateCountryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F);
             this.debateCountryLabel.Location = new System.Drawing.Point(30, 348);
@@ -787,6 +818,7 @@
             // 
             // debateForTextBox
             // 
+            this.debateForTextBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.debateForTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.debateForTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F);
             this.debateForTextBox.Location = new System.Drawing.Point(30, 19);
@@ -809,24 +841,26 @@
             this.singleTab.Location = new System.Drawing.Point(4, 22);
             this.singleTab.Name = "singleTab";
             this.singleTab.Padding = new System.Windows.Forms.Padding(3);
-            this.singleTab.Size = new System.Drawing.Size(1192, 623);
+            this.singleTab.Size = new System.Drawing.Size(1196, 623);
             this.singleTab.TabIndex = 4;
             this.singleTab.Text = "Single Speaker";
             this.singleTab.UseVisualStyleBackColor = true;
             // 
             // SingleTimeBar
             // 
+            this.SingleTimeBar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.SingleTimeBar.Duration = System.TimeSpan.Parse("00:00:00");
-            this.SingleTimeBar.Location = new System.Drawing.Point(26, 427);
+            this.SingleTimeBar.Location = new System.Drawing.Point(28, 427);
             this.SingleTimeBar.Name = "SingleTimeBar";
             this.SingleTimeBar.Size = new System.Drawing.Size(673, 112);
             this.SingleTimeBar.TabIndex = 59;
             // 
             // labelBox3
             // 
+            this.labelBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelBox3.BackColor = System.Drawing.SystemColors.Window;
             this.labelBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBox3.Location = new System.Drawing.Point(24, 40);
+            this.labelBox3.Location = new System.Drawing.Point(26, 40);
             this.labelBox3.Name = "labelBox3";
             this.labelBox3.Size = new System.Drawing.Size(673, 37);
             this.labelBox3.TabIndex = 58;
@@ -834,8 +868,9 @@
             // 
             // singlePictureBox
             // 
+            this.singlePictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.singlePictureBox.ImageLocation = "";
-            this.singlePictureBox.Location = new System.Drawing.Point(26, 108);
+            this.singlePictureBox.Location = new System.Drawing.Point(28, 108);
             this.singlePictureBox.Name = "singlePictureBox";
             this.singlePictureBox.Size = new System.Drawing.Size(673, 258);
             this.singlePictureBox.TabIndex = 55;
@@ -843,7 +878,8 @@
             // 
             // singleResetButton
             // 
-            this.singleResetButton.Location = new System.Drawing.Point(882, 523);
+            this.singleResetButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.singleResetButton.Location = new System.Drawing.Point(884, 523);
             this.singleResetButton.Name = "singleResetButton";
             this.singleResetButton.Size = new System.Drawing.Size(75, 23);
             this.singleResetButton.TabIndex = 41;
@@ -853,6 +889,7 @@
             // 
             // label12
             // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(719, 90);
             this.label12.Name = "label12";
@@ -871,7 +908,8 @@
             // 
             // singleTimeSelector
             // 
-            this.singleTimeSelector.Location = new System.Drawing.Point(719, 40);
+            this.singleTimeSelector.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.singleTimeSelector.Location = new System.Drawing.Point(721, 40);
             this.singleTimeSelector.Name = "singleTimeSelector";
             this.singleTimeSelector.Size = new System.Drawing.Size(108, 49);
             this.singleTimeSelector.TabIndex = 42;
@@ -882,10 +920,11 @@
             // 
             // singleListBox
             // 
+            this.singleListBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.singleListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
             this.singleListBox.FormattingEnabled = true;
             this.singleListBox.ItemHeight = 29;
-            this.singleListBox.Location = new System.Drawing.Point(719, 108);
+            this.singleListBox.Location = new System.Drawing.Point(721, 108);
             this.singleListBox.Name = "singleListBox";
             this.singleListBox.Size = new System.Drawing.Size(450, 410);
             this.singleListBox.TabIndex = 39;
@@ -921,6 +960,7 @@
             // 
             // motionLoadVoteButton
             // 
+            this.motionLoadVoteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.motionLoadVoteButton.Location = new System.Drawing.Point(727, 588);
             this.motionLoadVoteButton.Name = "motionLoadVoteButton";
             this.motionLoadVoteButton.Size = new System.Drawing.Size(75, 23);
@@ -930,6 +970,7 @@
             // 
             // motionDGroupBox
             // 
+            this.motionDGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.motionDGroupBox.Controls.Add(this.motionFailDButton);
             this.motionDGroupBox.Controls.Add(this.motionPassDButton);
             this.motionDGroupBox.Location = new System.Drawing.Point(552, 569);
@@ -941,6 +982,7 @@
             // 
             // motionNGroupBox
             // 
+            this.motionNGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.motionNGroupBox.Controls.Add(this.motionFailButton);
             this.motionNGroupBox.Controls.Add(this.motionPassButton);
             this.motionNGroupBox.Location = new System.Drawing.Point(377, 569);
@@ -958,14 +1000,14 @@
             this.motionsDataGrid.AllowUserToResizeRows = false;
             this.motionsDataGrid.BackgroundColor = System.Drawing.SystemColors.Window;
             this.motionsDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.motionsDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.motionsDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.motionsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.motionsDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Proposer,
@@ -974,14 +1016,14 @@
             this.SpeakTime,
             this.Topic,
             this.State});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.motionsDataGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.motionsDataGrid.DefaultCellStyle = dataGridViewCellStyle4;
             this.motionsDataGrid.Location = new System.Drawing.Point(0, 19);
             this.motionsDataGrid.MultiSelect = false;
             this.motionsDataGrid.Name = "motionsDataGrid";
@@ -1049,15 +1091,16 @@
             this.unmodTab.Location = new System.Drawing.Point(4, 22);
             this.unmodTab.Name = "unmodTab";
             this.unmodTab.Padding = new System.Windows.Forms.Padding(3);
-            this.unmodTab.Size = new System.Drawing.Size(1192, 623);
+            this.unmodTab.Size = new System.Drawing.Size(1196, 623);
             this.unmodTab.TabIndex = 2;
             this.unmodTab.Text = "Unmod Caucus";
             // 
             // unmodCountryTextBox
             // 
+            this.unmodCountryTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.unmodCountryTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.unmodCountryTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.unmodCountryTextBox.Location = new System.Drawing.Point(251, 254);
+            this.unmodCountryTextBox.Location = new System.Drawing.Point(253, 254);
             this.unmodCountryTextBox.Name = "unmodCountryTextBox";
             this.unmodCountryTextBox.Size = new System.Drawing.Size(673, 22);
             this.unmodCountryTextBox.TabIndex = 17;
@@ -1065,17 +1108,19 @@
             // 
             // UnmodTimeBar
             // 
+            this.UnmodTimeBar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.UnmodTimeBar.Duration = System.TimeSpan.Parse("00:00:00");
-            this.UnmodTimeBar.Location = new System.Drawing.Point(251, 288);
+            this.UnmodTimeBar.Location = new System.Drawing.Point(253, 288);
             this.UnmodTimeBar.Name = "UnmodTimeBar";
             this.UnmodTimeBar.Size = new System.Drawing.Size(673, 112);
             this.UnmodTimeBar.TabIndex = 16;
             // 
             // unmodTopicTextBox
             // 
+            this.unmodTopicTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.unmodTopicTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.unmodTopicTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            this.unmodTopicTextBox.Location = new System.Drawing.Point(251, 143);
+            this.unmodTopicTextBox.Location = new System.Drawing.Point(253, 143);
             this.unmodTopicTextBox.Name = "unmodTopicTextBox";
             this.unmodTopicTextBox.Size = new System.Drawing.Size(673, 37);
             this.unmodTopicTextBox.TabIndex = 12;
@@ -1085,7 +1130,8 @@
             // 
             // unmodReset
             // 
-            this.unmodReset.Location = new System.Drawing.Point(704, 406);
+            this.unmodReset.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.unmodReset.Location = new System.Drawing.Point(706, 406);
             this.unmodReset.Name = "unmodReset";
             this.unmodReset.Size = new System.Drawing.Size(75, 23);
             this.unmodReset.TabIndex = 11;
@@ -1095,7 +1141,8 @@
             // 
             // unmodExtendButton
             // 
-            this.unmodExtendButton.Location = new System.Drawing.Point(542, 406);
+            this.unmodExtendButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.unmodExtendButton.Location = new System.Drawing.Point(544, 406);
             this.unmodExtendButton.Name = "unmodExtendButton";
             this.unmodExtendButton.Size = new System.Drawing.Size(75, 23);
             this.unmodExtendButton.TabIndex = 10;
@@ -1105,7 +1152,8 @@
             // 
             // unmodFinishButton
             // 
-            this.unmodFinishButton.Location = new System.Drawing.Point(623, 406);
+            this.unmodFinishButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.unmodFinishButton.Location = new System.Drawing.Point(625, 406);
             this.unmodFinishButton.Name = "unmodFinishButton";
             this.unmodFinishButton.Size = new System.Drawing.Size(75, 23);
             this.unmodFinishButton.TabIndex = 9;
@@ -1115,9 +1163,10 @@
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label5.Location = new System.Drawing.Point(527, 218);
+            this.label5.Location = new System.Drawing.Point(529, 218);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(121, 24);
             this.label5.TabIndex = 8;
@@ -1151,6 +1200,7 @@
             // 
             // ModTotalTimeBar
             // 
+            this.ModTotalTimeBar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.ModTotalTimeBar.Duration = System.TimeSpan.Parse("00:00:00");
             this.ModTotalTimeBar.Location = new System.Drawing.Point(29, 516);
             this.ModTotalTimeBar.Name = "ModTotalTimeBar";
@@ -1159,6 +1209,7 @@
             // 
             // ModSpeakTimeBar
             // 
+            this.ModSpeakTimeBar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.ModSpeakTimeBar.Duration = System.TimeSpan.Parse("00:00:00");
             this.ModSpeakTimeBar.Location = new System.Drawing.Point(29, 397);
             this.ModSpeakTimeBar.Name = "ModSpeakTimeBar";
@@ -1167,6 +1218,7 @@
             // 
             // modTopicTextBox
             // 
+            this.modTopicTextBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.modTopicTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.modTopicTextBox.Cursor = System.Windows.Forms.Cursors.Default;
             this.modTopicTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.25F);
@@ -1179,6 +1231,7 @@
             // 
             // modExtendButton
             // 
+            this.modExtendButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.modExtendButton.Location = new System.Drawing.Point(1088, 557);
             this.modExtendButton.Name = "modExtendButton";
             this.modExtendButton.Size = new System.Drawing.Size(75, 23);
@@ -1188,6 +1241,7 @@
             // 
             // modPictureBox
             // 
+            this.modPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.modPictureBox.ImageLocation = "";
             this.modPictureBox.Location = new System.Drawing.Point(29, 88);
             this.modPictureBox.Name = "modPictureBox";
@@ -1197,6 +1251,7 @@
             // 
             // modResetButton
             // 
+            this.modResetButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.modResetButton.Location = new System.Drawing.Point(736, 586);
             this.modResetButton.Name = "modResetButton";
             this.modResetButton.Size = new System.Drawing.Size(75, 23);
@@ -1206,6 +1261,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.groupBox4.Controls.Add(this.modTotalPauseButton);
             this.groupBox4.Controls.Add(this.modTotalStartButton);
             this.groupBox4.Location = new System.Drawing.Point(912, 538);
@@ -1217,6 +1273,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.groupBox3.Controls.Add(this.modPauseButton);
             this.groupBox3.Controls.Add(this.modStartButton);
             this.groupBox3.Location = new System.Drawing.Point(817, 538);
@@ -1228,6 +1285,7 @@
             // 
             // modCountryCountTextBox
             // 
+            this.modCountryCountTextBox.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.modCountryCountTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.modCountryCountTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.modCountryCountTextBox.Location = new System.Drawing.Point(736, 511);
@@ -1239,6 +1297,7 @@
             // 
             // modCountryTextBox
             // 
+            this.modCountryTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.modCountryTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.modCountryTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.25F);
             this.modCountryTextBox.Location = new System.Drawing.Point(30, 358);
@@ -1248,6 +1307,7 @@
             // 
             // modTotalTimeSelector
             // 
+            this.modTotalTimeSelector.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.modTotalTimeSelector.Location = new System.Drawing.Point(865, 9);
             this.modTotalTimeSelector.Name = "modTotalTimeSelector";
             this.modTotalTimeSelector.Size = new System.Drawing.Size(108, 49);
@@ -1259,6 +1319,7 @@
             // 
             // modSpeakTimeSelector
             // 
+            this.modSpeakTimeSelector.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.modSpeakTimeSelector.Location = new System.Drawing.Point(736, 9);
             this.modSpeakTimeSelector.Name = "modSpeakTimeSelector";
             this.modSpeakTimeSelector.Size = new System.Drawing.Size(108, 45);
@@ -1270,6 +1331,7 @@
             // 
             // modSelector
             // 
+            this.modSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.modSelector.LabelText = "Countries:";
             this.modSelector.Location = new System.Drawing.Point(735, 55);
             this.modSelector.Name = "modSelector";
@@ -1301,6 +1363,7 @@
             // 
             // GSLTimeBar
             // 
+            this.GSLTimeBar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.GSLTimeBar.Duration = System.TimeSpan.Parse("00:00:00");
             this.GSLTimeBar.Location = new System.Drawing.Point(32, 430);
             this.GSLTimeBar.Name = "GSLTimeBar";
@@ -1309,6 +1372,7 @@
             // 
             // gslSelector
             // 
+            this.gslSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.gslSelector.LabelText = "Countries:";
             this.gslSelector.Location = new System.Drawing.Point(729, 57);
             this.gslSelector.Name = "gslSelector";
@@ -1318,6 +1382,7 @@
             // 
             // gslPauseButton
             // 
+            this.gslPauseButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.gslPauseButton.Enabled = false;
             this.gslPauseButton.FalseText = "Stopped";
             this.gslPauseButton.Location = new System.Drawing.Point(808, 567);
@@ -1329,6 +1394,7 @@
             // 
             // gslStartButton
             // 
+            this.gslStartButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.gslStartButton.FalseText = "Started";
             this.gslStartButton.Location = new System.Drawing.Point(808, 537);
             this.gslStartButton.Name = "gslStartButton";
@@ -1339,6 +1405,7 @@
             // 
             // labelBox2
             // 
+            this.labelBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelBox2.BackColor = System.Drawing.SystemColors.Window;
             this.labelBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.labelBox2.Location = new System.Drawing.Point(32, 36);
@@ -1349,6 +1416,7 @@
             // 
             // gslPictureBox
             // 
+            this.gslPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gslPictureBox.ImageLocation = "";
             this.gslPictureBox.Location = new System.Drawing.Point(32, 98);
             this.gslPictureBox.Name = "gslPictureBox";
@@ -1358,6 +1426,7 @@
             // 
             // gslCountryLabel
             // 
+            this.gslCountryLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gslCountryLabel.BackColor = System.Drawing.SystemColors.Window;
             this.gslCountryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F);
             this.gslCountryLabel.Location = new System.Drawing.Point(32, 378);
@@ -1367,6 +1436,7 @@
             // 
             // gslTimeSelector
             // 
+            this.gslTimeSelector.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gslTimeSelector.Location = new System.Drawing.Point(727, 3);
             this.gslTimeSelector.Name = "gslTimeSelector";
             this.gslTimeSelector.Size = new System.Drawing.Size(112, 48);
@@ -1436,8 +1506,7 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox6.Controls.Add(this.voteRadioButton3);
             this.groupBox6.Controls.Add(this.voteRadioButton2);
             this.groupBox6.Controls.Add(this.voteRadioButton1);
@@ -1486,8 +1555,7 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox5.Controls.Add(this.voteWithRightsButton);
             this.groupBox5.Controls.Add(this.voteDivideButton);
             this.groupBox5.Controls.Add(this.voteResetAllButton);
@@ -1538,8 +1606,7 @@
             // 
             // voteSettingsGroupBox
             // 
-            this.voteSettingsGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.voteSettingsGroupBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.voteSettingsGroupBox.Controls.Add(this.voteObserverCheckBox);
             this.voteSettingsGroupBox.Controls.Add(this.voteWithRightsCheckBox);
             this.voteSettingsGroupBox.Controls.Add(this.voteAbstainCheckBox);
@@ -1593,6 +1660,7 @@
             // 
             // voteAbstainRemoveButton
             // 
+            this.voteAbstainRemoveButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.voteAbstainRemoveButton.Location = new System.Drawing.Point(6, 545);
             this.voteAbstainRemoveButton.Name = "voteAbstainRemoveButton";
             this.voteAbstainRemoveButton.Size = new System.Drawing.Size(75, 23);
@@ -1602,6 +1670,7 @@
             // 
             // voteAgainstRemoveButton
             // 
+            this.voteAgainstRemoveButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.voteAgainstRemoveButton.Location = new System.Drawing.Point(6, 356);
             this.voteAgainstRemoveButton.Name = "voteAgainstRemoveButton";
             this.voteAgainstRemoveButton.Size = new System.Drawing.Size(75, 23);
@@ -1611,6 +1680,7 @@
             // 
             // voteForRemoveButton
             // 
+            this.voteForRemoveButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.voteForRemoveButton.Location = new System.Drawing.Point(6, 167);
             this.voteForRemoveButton.Name = "voteForRemoveButton";
             this.voteForRemoveButton.Size = new System.Drawing.Size(75, 23);
@@ -1620,8 +1690,7 @@
             // 
             // voteDetailsBox
             // 
-            this.voteDetailsBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.voteDetailsBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.voteDetailsBox.Controls.Add(this.voteTotalCountLabel);
             this.voteDetailsBox.Controls.Add(this.voteCountButton);
             this.voteDetailsBox.Controls.Add(this.voteAutoCountCheckBox);
@@ -1769,7 +1838,7 @@
             // 
             // label10
             // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label10.Location = new System.Drawing.Point(277, 143);
@@ -1780,7 +1849,7 @@
             // 
             // labelBox1
             // 
-            this.labelBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.labelBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelBox1.BackColor = System.Drawing.SystemColors.Window;
             this.labelBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.labelBox1.Location = new System.Drawing.Point(281, 78);
@@ -1791,7 +1860,7 @@
             // 
             // voteTopicBox
             // 
-            this.voteTopicBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.voteTopicBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.voteTopicBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.voteTopicBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.voteTopicBox.Location = new System.Drawing.Point(281, 103);
@@ -1803,9 +1872,7 @@
             // 
             // voteCountryBox
             // 
-            this.voteCountryBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.voteCountryBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.voteCountryBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.voteCountryBox.FormattingEnabled = true;
             this.voteCountryBox.ItemHeight = 16;
@@ -1817,6 +1884,7 @@
             // 
             // label9
             // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label9.Location = new System.Drawing.Point(6, 384);
@@ -1827,6 +1895,7 @@
             // 
             // voteAbstainListBox
             // 
+            this.voteAbstainListBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.voteAbstainListBox.FormattingEnabled = true;
             this.voteAbstainListBox.Location = new System.Drawing.Point(6, 405);
             this.voteAbstainListBox.Name = "voteAbstainListBox";
@@ -1836,6 +1905,7 @@
             // 
             // label8
             // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label8.Location = new System.Drawing.Point(6, 195);
@@ -1846,6 +1916,7 @@
             // 
             // voteAgainstListBox
             // 
+            this.voteAgainstListBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.voteAgainstListBox.FormattingEnabled = true;
             this.voteAgainstListBox.Location = new System.Drawing.Point(6, 216);
             this.voteAgainstListBox.Name = "voteAgainstListBox";
@@ -1855,9 +1926,10 @@
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label6.Location = new System.Drawing.Point(6, 9);
+            this.label6.Location = new System.Drawing.Point(11, 10);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(29, 17);
             this.label6.TabIndex = 1;
@@ -1865,6 +1937,7 @@
             // 
             // voteForListBox
             // 
+            this.voteForListBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.voteForListBox.FormattingEnabled = true;
             this.voteForListBox.Location = new System.Drawing.Point(6, 30);
             this.voteForListBox.Name = "voteForListBox";
