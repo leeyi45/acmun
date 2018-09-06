@@ -17,7 +17,6 @@ namespace leeyi45.acmun.TimeList
             InitializeComponent();
 
             closeButton.Click += CloseButton_Click;
-            StartPosition = FormStartPosition.CenterParent;
             dataGridView1.CellValueChanged += DataGridView1_CellValueChanged;
         }
 
