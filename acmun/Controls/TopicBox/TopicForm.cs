@@ -21,7 +21,13 @@ namespace leeyi45.acmun.Controls
                 button1.Click += Button1_Click;
                 button2.Click += Button2_Click;
                 textBox1.KeyDown += TextBox1_KeyDown;
+
                 StartPosition = FormStartPosition.CenterParent;
+                FormBorderStyle = FormBorderStyle.FixedDialog;
+                MaximizeBox = false;
+                MinimizeBox = false;
+                AcceptButton = button1;
+                CancelButton = button2;
 
                 DialogResult = DialogResult.Cancel;
             }

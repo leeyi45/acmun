@@ -26,8 +26,9 @@ namespace leeyi45.acmun.Roll_Call
 
             quorumLabel.Text = $"{rollCallBox.CheckedItems.Count}/{DelCount}";
             councilNameLabelBox.Text = councilName;
-            StartPosition = FormStartPosition.CenterParent;
             councilNameLabelBox.Enter += new EventHandler((sender, _) => { ActiveControl = null; });
+            MaximizeBox = false;
+            MinimizeBox = false;
         }
 
         private void RollCallScreen_FormClosing(object sender, FormClosingEventArgs e)

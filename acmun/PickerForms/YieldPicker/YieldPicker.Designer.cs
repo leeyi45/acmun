@@ -73,14 +73,20 @@
             // 
             // YieldPicker
             // 
+            this.AcceptButton = this.yieldButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.cancelButton;
             this.ClientSize = new System.Drawing.Size(418, 313);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.yieldButton);
             this.Controls.Add(this.countryBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "YieldPicker";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Yield";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -19,7 +19,6 @@ namespace leeyi45.acmun.YieldPicker
 
             countryBox.Items.AddRange(PresentShortf);
             countryBox.SelectedIndexChanged += CountryBox_SelectedIndexChanged;
-            StartPosition = FormStartPosition.CenterParent;
         }
 
         private void CountryBox_SelectedIndexChanged(object sender, EventArgs e)
