@@ -101,7 +101,7 @@ namespace leeyi45.acmun.Roll_Call
 
             DelList[rollCallBox.SelectedIndex].Observer = observerCheckBox.Checked;
             if (DelList[rollCallBox.SelectedIndex].Observer) rollCallBox.Items[rollCallBox.SelectedIndex] += " (Observer)";
-            else rollCallBox.Items[rollCallBox.SelectedIndex] = DelList[rollCallBox.SelectedIndex].Shortf;
+            else rollCallBox.Items[rollCallBox.SelectedIndex] = DelList[rollCallBox.SelectedIndex].Name;
         }
 
         private void allPresentCheckBox_CheckedChanged(object sender, EventArgs e)
