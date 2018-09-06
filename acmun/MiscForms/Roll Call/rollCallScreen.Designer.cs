@@ -106,7 +106,6 @@
             // 
             // rollCallScreen
             // 
-            this.AcceptButton = this.doneButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(418, 363);
@@ -118,9 +117,14 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.rollCallBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "rollCallScreen";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Roll Call";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.rollCallScreen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
