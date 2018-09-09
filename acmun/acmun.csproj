@@ -59,6 +59,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\ComboBox\ComboButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ComboBox\ComboButton.Designer.cs">
+      <DependentUpon>ComboButton.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\StateButton\StateButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -209,6 +215,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Controls\ComboBox\ComboButton.resx">
+      <DependentUpon>ComboButton.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\CountrySelector\CountrySelector.resx">
       <DependentUpon>CountrySelector.cs</DependentUpon>
     </EmbeddedResource>

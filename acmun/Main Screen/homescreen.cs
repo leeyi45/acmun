@@ -26,31 +26,17 @@ namespace leeyi45.acmun.Main_Screen
             acmun.Controls.TopicBox.ParentForm = this;
 
             councilLabel.TopicChanged += CouncilLabel_TopicChanged;
+            quorumLabel.Click += QuorumLabel_Click;
         }
+
+        private void QuorumLabel_Click(object sender, EventArgs e) 
+            => new Roll_Call.rollCallScreen(Council.Name).ShowDialog();
 
         private void CouncilLabel_TopicChanged(object sender, EventArgs e)
             => Council.Name = councilLabel.Text;
 
         private void homescreen_Shown(object sender, EventArgs e)
             => new Roll_Call.rollCallScreen(Council.Name).ShowDialog();
-
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void rollCallToolStripMenuItem_Click(object sender, EventArgs e)
-            => new Roll_Call.rollCallScreen(Council.Name).ShowDialog();
-
-        private void fileToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //Program.GenerateDefaultXML();
-        }
-
-        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            new Vote_Settings.VoteSet().ShowDialog();
-        }
 
         public void UpdateQuorum()
         {
@@ -83,6 +69,46 @@ namespace leeyi45.acmun.Main_Screen
             }
         }
 
+        public void LoadState(CouncilState state)
+        {
+            gslSelector.Speakers = state.GSLList.ToList();
+            modSelector.Speakers = state.ModList.ToList();
+            CurrentMod = state.CurrentMod;
+            CurrentUnmod = state.CurrentUnmod;
+        }
+
+        #region ToolStripMenuItems
+        private void stateXMLToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (xmlFilePicker.ShowDialog() == DialogResult.Cancel) return;
+            else
+            {
+                CouncilState.LoadState(xmlFilePicker.FileName);
+                MessageBox.Show("Loaded the file", "File Loaded", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void speakingTimeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TimeList.TimeList.Show(DelList, Council.Name);
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e) => Application.Exit();
+
+        private void rollCallToolStripMenuItem_Click(object sender, EventArgs e)
+            => new Roll_Call.rollCallScreen(Council.Name).ShowDialog();
+
+        private void fileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Program.GenerateDefaultXML();
+        }
+
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Vote_Settings.VoteSet().ShowDialog();
+        }
+
+
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new AboutBox.AboutBox().ShowDialog();
@@ -102,28 +128,6 @@ namespace leeyi45.acmun.Main_Screen
         {
             CouncilState.SaveState(gslSelector.Speakers, modSelector.Speakers, CurrentMod, CurrentUnmod);
         }
-
-        public void LoadState(CouncilState state)
-        {
-            gslSelector.Speakers = state.GSLList.ToList();
-            modSelector.Speakers = state.ModList.ToList();
-            CurrentMod = state.CurrentMod;
-            CurrentUnmod = state.CurrentUnmod;
-        }
-
-        private void stateXMLToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (xmlFilePicker.ShowDialog() == DialogResult.Cancel) return;
-            else
-            {
-                CouncilState.LoadState(xmlFilePicker.FileName);
-                MessageBox.Show("Loaded the file", "File Loaded", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
-
-        private void speakingTimeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            TimeList.TimeList.Show(DelList, Council.Name);
-        }
+        #endregion
     }
 }

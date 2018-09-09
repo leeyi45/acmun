@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(homescreen));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.loadXMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -74,6 +74,7 @@
             this.debateStopButton = new leeyi45.acmun.Controls.StateButton();
             this.debateStartButton = new leeyi45.acmun.Controls.StateButton();
             this.debateTimeSelector = new leeyi45.acmun.Controls.TimeSelector();
+            this.councilLabel = new leeyi45.acmun.Controls.TopicBox();
             this.debateTab = new System.Windows.Forms.TabPage();
             this.DebateTimeBar = new leeyi45.acmun.Controls.TimeBar();
             this.debateASelector = new leeyi45.acmun.Controls.CountrySelector();
@@ -118,6 +119,7 @@
             this.unmodFinishButton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.modTab = new System.Windows.Forms.TabPage();
+            this.modSelector = new leeyi45.acmun.Controls.CountrySelector();
             this.ModTotalTimeBar = new leeyi45.acmun.Controls.TimeBar();
             this.ModSpeakTimeBar = new leeyi45.acmun.Controls.TimeBar();
             this.modTopicTextBox = new leeyi45.acmun.Controls.TopicBox();
@@ -130,17 +132,16 @@
             this.modCountryTextBox = new leeyi45.acmun.Controls.LabelBox();
             this.modTotalTimeSelector = new leeyi45.acmun.Controls.TimeSelector();
             this.modSpeakTimeSelector = new leeyi45.acmun.Controls.TimeSelector();
-            this.modSelector = new leeyi45.acmun.Controls.CountrySelector();
             this.gslTab = new System.Windows.Forms.TabPage();
-            this.GSLTimeBar = new leeyi45.acmun.Controls.TimeBar();
             this.gslSelector = new leeyi45.acmun.Controls.CountrySelector();
+            this.GSLTimeBar = new leeyi45.acmun.Controls.TimeBar();
             this.gslPauseButton = new leeyi45.acmun.Controls.StateButton();
             this.gslStartButton = new leeyi45.acmun.Controls.StateButton();
             this.labelBox2 = new leeyi45.acmun.Controls.LabelBox();
             this.gslPictureBox = new System.Windows.Forms.PictureBox();
             this.gslCountryLabel = new leeyi45.acmun.Controls.LabelBox();
             this.gslTimeSelector = new leeyi45.acmun.Controls.TimeSelector();
-            this.motionsTab = new System.Windows.Forms.TabControl();
+            this.mainScreen = new System.Windows.Forms.TabControl();
             this.votingTab = new System.Windows.Forms.TabPage();
             this.voteResultButton = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -193,7 +194,6 @@
             this.motionsFailDMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.motionsNullMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
-            this.councilLabel = new leeyi45.acmun.Controls.TopicBox();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.debateCountSelector)).BeginInit();
             this.debateTab.SuspendLayout();
@@ -211,7 +211,7 @@
             this.groupBox3.SuspendLayout();
             this.gslTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gslPictureBox)).BeginInit();
-            this.motionsTab.SuspendLayout();
+            this.mainScreen.SuspendLayout();
             this.votingTab.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -341,6 +341,7 @@
             this.quorumLabel.Size = new System.Drawing.Size(56, 17);
             this.quorumLabel.TabIndex = 2;
             this.quorumLabel.Text = "quorum";
+            this.toolTip1.SetToolTip(this.quorumLabel, "Click to edit quorum");
             // 
             // modRemoveButton
             // 
@@ -669,6 +670,20 @@
             this.debateTimeSelector.Value = System.TimeSpan.Parse("00:01:00");
             this.debateTimeSelector.Width = 108;
             // 
+            // councilLabel
+            // 
+            this.councilLabel.BackColor = System.Drawing.SystemColors.Control;
+            this.councilLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.councilLabel.Cursor = System.Windows.Forms.Cursors.Default;
+            this.councilLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.councilLabel.Location = new System.Drawing.Point(72, 29);
+            this.councilLabel.Name = "councilLabel";
+            this.councilLabel.Size = new System.Drawing.Size(469, 16);
+            this.councilLabel.TabIndex = 5;
+            this.councilLabel.Text = "council";
+            this.toolTip1.SetToolTip(this.councilLabel, "Click to edit council name");
+            this.councilLabel.Topic = "Council Name";
+            // 
             // debateTab
             // 
             this.debateTab.Controls.Add(this.DebateTimeBar);
@@ -707,8 +722,12 @@
             // 
             // debateASelector
             // 
+            this.debateASelector.AllowComboSelect = false;
             this.debateASelector.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.debateASelector.ComboBoxFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.debateASelector.ComboBoxSize = new System.Drawing.Size(34, 23);
             this.debateASelector.LabelText = "Speakers Against:";
+            this.debateASelector.ListBoxFont = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
             this.debateASelector.Location = new System.Drawing.Point(736, 320);
             this.debateASelector.Name = "debateASelector";
             this.debateASelector.Size = new System.Drawing.Size(456, 252);
@@ -717,8 +736,12 @@
             // 
             // debateFSelector
             // 
+            this.debateFSelector.AllowComboSelect = false;
             this.debateFSelector.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.debateFSelector.ComboBoxFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.debateFSelector.ComboBoxSize = new System.Drawing.Size(34, 23);
             this.debateFSelector.LabelText = "Speakers For:";
+            this.debateFSelector.ListBoxFont = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
             this.debateFSelector.Location = new System.Drawing.Point(736, 63);
             this.debateFSelector.Name = "debateFSelector";
             this.debateFSelector.Size = new System.Drawing.Size(450, 222);
@@ -841,7 +864,7 @@
             this.singleTab.Location = new System.Drawing.Point(4, 22);
             this.singleTab.Name = "singleTab";
             this.singleTab.Padding = new System.Windows.Forms.Padding(3);
-            this.singleTab.Size = new System.Drawing.Size(1196, 623);
+            this.singleTab.Size = new System.Drawing.Size(1192, 623);
             this.singleTab.TabIndex = 4;
             this.singleTab.Text = "Single Speaker";
             this.singleTab.UseVisualStyleBackColor = true;
@@ -899,6 +922,7 @@
             // 
             // singleCountryTextBox
             // 
+            this.singleCountryTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.singleCountryTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.singleCountryTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.25F);
             this.singleCountryTextBox.Location = new System.Drawing.Point(28, 388);
@@ -1000,14 +1024,14 @@
             this.motionsDataGrid.AllowUserToResizeRows = false;
             this.motionsDataGrid.BackgroundColor = System.Drawing.SystemColors.Window;
             this.motionsDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.motionsDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.motionsDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.motionsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.motionsDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Proposer,
@@ -1016,14 +1040,14 @@
             this.SpeakTime,
             this.Topic,
             this.State});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.motionsDataGrid.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.motionsDataGrid.DefaultCellStyle = dataGridViewCellStyle2;
             this.motionsDataGrid.Location = new System.Drawing.Point(0, 19);
             this.motionsDataGrid.MultiSelect = false;
             this.motionsDataGrid.Name = "motionsDataGrid";
@@ -1091,7 +1115,7 @@
             this.unmodTab.Location = new System.Drawing.Point(4, 22);
             this.unmodTab.Name = "unmodTab";
             this.unmodTab.Padding = new System.Windows.Forms.Padding(3);
-            this.unmodTab.Size = new System.Drawing.Size(1196, 623);
+            this.unmodTab.Size = new System.Drawing.Size(1192, 623);
             this.unmodTab.TabIndex = 2;
             this.unmodTab.Text = "Unmod Caucus";
             // 
@@ -1174,6 +1198,7 @@
             // 
             // modTab
             // 
+            this.modTab.Controls.Add(this.modSelector);
             this.modTab.Controls.Add(this.ModTotalTimeBar);
             this.modTab.Controls.Add(this.ModSpeakTimeBar);
             this.modTab.Controls.Add(this.modTopicTextBox);
@@ -1189,7 +1214,6 @@
             this.modTab.Controls.Add(this.modCountryTextBox);
             this.modTab.Controls.Add(this.modTotalTimeSelector);
             this.modTab.Controls.Add(this.modSpeakTimeSelector);
-            this.modTab.Controls.Add(this.modSelector);
             this.modTab.Location = new System.Drawing.Point(4, 22);
             this.modTab.Name = "modTab";
             this.modTab.Padding = new System.Windows.Forms.Padding(3);
@@ -1197,6 +1221,18 @@
             this.modTab.TabIndex = 1;
             this.modTab.Text = "Mod Caucus";
             this.modTab.UseVisualStyleBackColor = true;
+            // 
+            // modSelector
+            // 
+            this.modSelector.ComboBoxFont = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modSelector.ComboBoxSize = new System.Drawing.Size(451, 35);
+            this.modSelector.LabelText = "Countries:";
+            this.modSelector.ListBoxFont = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
+            this.modSelector.Location = new System.Drawing.Point(739, 59);
+            this.modSelector.Name = "modSelector";
+            this.modSelector.Size = new System.Drawing.Size(457, 450);
+            this.modSelector.Speakers = ((System.Collections.Generic.List<string>)(resources.GetObject("modSelector.Speakers")));
+            this.modSelector.TabIndex = 65;
             // 
             // ModTotalTimeBar
             // 
@@ -1329,20 +1365,10 @@
             this.modSpeakTimeSelector.Value = System.TimeSpan.Parse("00:00:01");
             this.modSpeakTimeSelector.Width = 108;
             // 
-            // modSelector
-            // 
-            this.modSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.modSelector.LabelText = "Countries:";
-            this.modSelector.Location = new System.Drawing.Point(735, 55);
-            this.modSelector.Name = "modSelector";
-            this.modSelector.Size = new System.Drawing.Size(457, 450);
-            this.modSelector.Speakers = ((System.Collections.Generic.List<string>)(resources.GetObject("modSelector.Speakers")));
-            this.modSelector.TabIndex = 61;
-            // 
             // gslTab
             // 
-            this.gslTab.Controls.Add(this.GSLTimeBar);
             this.gslTab.Controls.Add(this.gslSelector);
+            this.gslTab.Controls.Add(this.GSLTimeBar);
             this.gslTab.Controls.Add(this.gslPauseButton);
             this.gslTab.Controls.Add(this.gslStartButton);
             this.gslTab.Controls.Add(this.labelBox2);
@@ -1361,6 +1387,19 @@
             this.gslTab.Text = "GSL";
             this.gslTab.UseVisualStyleBackColor = true;
             // 
+            // gslSelector
+            // 
+            this.gslSelector.AllowComboSelect = false;
+            this.gslSelector.ComboBoxFont = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gslSelector.ComboBoxSize = new System.Drawing.Size(451, 35);
+            this.gslSelector.LabelText = "Countries:";
+            this.gslSelector.ListBoxFont = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
+            this.gslSelector.Location = new System.Drawing.Point(729, 57);
+            this.gslSelector.Name = "gslSelector";
+            this.gslSelector.Size = new System.Drawing.Size(457, 468);
+            this.gslSelector.Speakers = ((System.Collections.Generic.List<string>)(resources.GetObject("gslSelector.Speakers")));
+            this.gslSelector.TabIndex = 32;
+            // 
             // GSLTimeBar
             // 
             this.GSLTimeBar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -1369,16 +1408,6 @@
             this.GSLTimeBar.Name = "GSLTimeBar";
             this.GSLTimeBar.Size = new System.Drawing.Size(673, 121);
             this.GSLTimeBar.TabIndex = 31;
-            // 
-            // gslSelector
-            // 
-            this.gslSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.gslSelector.LabelText = "Countries:";
-            this.gslSelector.Location = new System.Drawing.Point(729, 57);
-            this.gslSelector.Name = "gslSelector";
-            this.gslSelector.Size = new System.Drawing.Size(457, 468);
-            this.gslSelector.Speakers = ((System.Collections.Generic.List<string>)(resources.GetObject("gslSelector.Speakers")));
-            this.gslSelector.TabIndex = 30;
             // 
             // gslPauseButton
             // 
@@ -1446,23 +1475,23 @@
             this.gslTimeSelector.Value = System.TimeSpan.Parse("00:00:01");
             this.gslTimeSelector.Width = 112;
             // 
-            // motionsTab
+            // mainScreen
             // 
-            this.motionsTab.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.mainScreen.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.motionsTab.Controls.Add(this.gslTab);
-            this.motionsTab.Controls.Add(this.modTab);
-            this.motionsTab.Controls.Add(this.unmodTab);
-            this.motionsTab.Controls.Add(this.tabPage2);
-            this.motionsTab.Controls.Add(this.singleTab);
-            this.motionsTab.Controls.Add(this.debateTab);
-            this.motionsTab.Controls.Add(this.votingTab);
-            this.motionsTab.Location = new System.Drawing.Point(0, 102);
-            this.motionsTab.Name = "motionsTab";
-            this.motionsTab.SelectedIndex = 0;
-            this.motionsTab.Size = new System.Drawing.Size(1200, 649);
-            this.motionsTab.TabIndex = 0;
+            this.mainScreen.Controls.Add(this.gslTab);
+            this.mainScreen.Controls.Add(this.modTab);
+            this.mainScreen.Controls.Add(this.unmodTab);
+            this.mainScreen.Controls.Add(this.tabPage2);
+            this.mainScreen.Controls.Add(this.singleTab);
+            this.mainScreen.Controls.Add(this.debateTab);
+            this.mainScreen.Controls.Add(this.votingTab);
+            this.mainScreen.Location = new System.Drawing.Point(0, 102);
+            this.mainScreen.Name = "mainScreen";
+            this.mainScreen.SelectedIndex = 0;
+            this.mainScreen.Size = new System.Drawing.Size(1200, 649);
+            this.mainScreen.TabIndex = 0;
             // 
             // votingTab
             // 
@@ -1497,6 +1526,7 @@
             // 
             // voteResultButton
             // 
+            this.voteResultButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.voteResultButton.Location = new System.Drawing.Point(653, 544);
             this.voteResultButton.Name = "voteResultButton";
             this.voteResultButton.Size = new System.Drawing.Size(75, 23);
@@ -2019,19 +2049,6 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Council:";
             // 
-            // councilLabel
-            // 
-            this.councilLabel.BackColor = System.Drawing.SystemColors.Control;
-            this.councilLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.councilLabel.Cursor = System.Windows.Forms.Cursors.Default;
-            this.councilLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.councilLabel.Location = new System.Drawing.Point(72, 29);
-            this.councilLabel.Name = "councilLabel";
-            this.councilLabel.Size = new System.Drawing.Size(469, 16);
-            this.councilLabel.TabIndex = 5;
-            this.councilLabel.Text = "council";
-            this.councilLabel.Topic = "Council Name";
-            // 
             // homescreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2041,7 +2058,7 @@
             this.Controls.Add(this.topicLabel);
             this.Controls.Add(this.quorumLabel);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.motionsTab);
+            this.Controls.Add(this.mainScreen);
             this.Controls.Add(this.councilLabel);
             this.Name = "homescreen";
             this.Text = "ACMUN";
@@ -2070,7 +2087,7 @@
             this.gslTab.ResumeLayout(false);
             this.gslTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gslPictureBox)).EndInit();
-            this.motionsTab.ResumeLayout(false);
+            this.mainScreen.ResumeLayout(false);
             this.votingTab.ResumeLayout(false);
             this.votingTab.PerformLayout();
             this.groupBox6.ResumeLayout(false);
@@ -2129,7 +2146,7 @@
         private System.Windows.Forms.Button gslClearButton;
         private System.Windows.Forms.Button gslYieldButton;
         private System.Windows.Forms.Button gslRemoveButton;
-        private System.Windows.Forms.TabControl motionsTab;
+        private System.Windows.Forms.TabControl mainScreen;
         private Controls.TimeSelector debateTimeSelector;
         private System.Windows.Forms.Button debateFClearButton;
         private System.Windows.Forms.Button debateARemoveButton;
@@ -2237,8 +2254,6 @@
         private System.Windows.Forms.CheckBox voteObserverCheckBox;
         private Controls.LabelBox labelBox3;
         private System.Windows.Forms.ToolStripMenuItem speakingTimeToolStripMenuItem;
-        private Controls.CountrySelector gslSelector;
-        private Controls.CountrySelector modSelector;
         private Controls.CountrySelector debateFSelector;
         private Controls.CountrySelector debateASelector;
         private Controls.TopicBox modTopicTextBox;
@@ -2251,5 +2266,7 @@
         private Controls.TimeBar SingleTimeBar;
         private Controls.TimeBar DebateTimeBar;
         private Controls.LabelBox unmodCountryTextBox;
+        private Controls.CountrySelector modSelector;
+        private Controls.CountrySelector gslSelector;
     }
 }
