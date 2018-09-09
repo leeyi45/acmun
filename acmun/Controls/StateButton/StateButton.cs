@@ -16,6 +16,8 @@ namespace leeyi45.acmun.Controls
         [Browsable(true)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         [Bindable(true)]
+        [Category("Text")]
+        [Description("Text to be displayed when the button is enabled")]
         public string TrueText
         {
             get => _trueText;
@@ -37,6 +39,8 @@ namespace leeyi45.acmun.Controls
         [Browsable(true)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         [Bindable(true)]
+        [Category("Text")]
+        [Description("Text to be displayed when the button is disabled")]
         public string FalseText
         {
             get => _falseText;
