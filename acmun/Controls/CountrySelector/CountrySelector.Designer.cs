@@ -29,23 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CountrySelector));
-            this.comboBox = new leeyi45.acmun.Controls.ComboBox();
             this.listBox = new leeyi45.acmun.Controls.ListBox();
-            this.addButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.comboButton1 = new leeyi45.acmun.Controls.ComboButton();
             this.SuspendLayout();
-            // 
-            // comboBox
-            // 
-            this.comboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox.FormattingEnabled = true;
-            this.comboBox.Location = new System.Drawing.Point(39, 18);
-            this.comboBox.Name = "comboBox";
-            this.comboBox.Size = new System.Drawing.Size(414, 21);
-            this.comboBox.TabIndex = 26;
             // 
             // listBox
             // 
@@ -61,17 +48,6 @@
             this.listBox.Speakers = ((System.Collections.Generic.List<string>)(resources.GetObject("listBox.Speakers")));
             this.listBox.TabIndex = 25;
             // 
-            // addButton
-            // 
-            this.addButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addButton.Location = new System.Drawing.Point(3, 17);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(29, 23);
-            this.addButton.TabIndex = 24;
-            this.addButton.Text = "+";
-            this.addButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.addButton.UseVisualStyleBackColor = true;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -81,14 +57,27 @@
             this.label1.TabIndex = 27;
             this.label1.Text = "Countries:";
             // 
+            // comboButton1
+            // 
+            this.comboButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboButton1.ItemHeight = 13;
+            this.comboButton1.Location = new System.Drawing.Point(0, 17);
+            this.comboButton1.MinimumSize = new System.Drawing.Size(34, 23);
+            this.comboButton1.Name = "comboButton1";
+            this.comboButton1.SelectedIndex = -1;
+            this.comboButton1.SelectedItem = null;
+            this.comboButton1.Size = new System.Drawing.Size(451, 23);
+            this.comboButton1.TabIndex = 28;
+            // 
             // CountrySelector
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.comboButton1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox);
             this.Controls.Add(this.listBox);
-            this.Controls.Add(this.addButton);
             this.Name = "CountrySelector";
             this.Size = new System.Drawing.Size(457, 468);
             this.ResumeLayout(false);
@@ -97,10 +86,8 @@
         }
 
         #endregion
-
-        private ComboBox comboBox;
         private ListBox listBox;
-        private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Label label1;
+        private ComboButton comboButton1;
     }
 }
