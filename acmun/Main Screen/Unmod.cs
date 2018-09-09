@@ -87,7 +87,7 @@ namespace leeyi45.acmun.Main_Screen
         private void unmodFinishButton_Click(object sender, EventArgs e)
         {
             LoadSingleSpeak(UnmodProposer, Council.UnmodSummaryTime);
-            motionsTab.SelectTab(singleTab);
+            mainScreen.SelectTab(singleTab);
         }
     }
 }

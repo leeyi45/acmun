@@ -273,7 +273,7 @@ namespace leeyi45.acmun.Main_Screen
         {
             if (Motions.Count < 1 || SelectedMotion.IsDefault) return;
             LoadVote(SelectedMotion.Internal.VoteData);
-            motionsTab.SelectTab(votingTab);
+            mainScreen.SelectTab(votingTab);
         }
         #endregion
 
@@ -308,20 +308,20 @@ namespace leeyi45.acmun.Main_Screen
                 case "mod":
                     {
                         LoadMod((ModCaucus)motion);
-                        motionsTab.SelectTab(modTab);
+                        mainScreen.SelectTab(modTab);
                         break;
                     }
                 case "unmod":
                     {
                         LoadUnmod((UnmodCaucus)motion);
-                        motionsTab.SelectTab(unmodTab);
+                        mainScreen.SelectTab(unmodTab);
                         break;
                     }
                 case "reso_int":
                     {
                         var caucus = new UnmodCaucus("Reading time for resolution", motion.Proposer, Council.ResoReadTime);
                         LoadUnmod(caucus);
-                        motionsTab.SelectTab(unmodTab);
+                        mainScreen.SelectTab(unmodTab);
                         break;
                     }
             }
