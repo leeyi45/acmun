@@ -84,11 +84,7 @@ namespace leeyi45.acmun.Main_Screen
 
         private void gslClearButton_Click(object sender, EventArgs e) => gslSelector.ClearSpeakers();
 
-        private void gslNextButton_Click(object sender, EventArgs e)
-        {
-            if (gslSelector.Speakers.Count == 0) return;
-            else GSLNextSpeaker();
-        }
+        private void gslNextButton_Click(object sender, EventArgs e) => GSLNextSpeaker();
 
         private void gslYieldButton_Click(object sender, EventArgs e)
         {
@@ -112,13 +108,11 @@ namespace leeyi45.acmun.Main_Screen
             GSLTimeBar.Duration = GSLSpeakingTime;
         }
 
-        private void gslComboBox_ItemSelected(object sender, int index) => GSLAddSpeaker(index);
-
-        private void GSLAddSpeaker(int index) 
-            => gslSelector.AddSpeaker(Council.Present[index]);
-
         private void GSLNextSpeaker(int index = 0)
         {
+            var shortf = gslSelector.NextSpeaker(index);
+            if (shortf == null) return;
+
             if (GSLCurrentSpeaker != null)
             {
                 GSLCurrentSpeaker.SpeakingTime += GSLTimeBar.ElapsedTime;
@@ -126,8 +120,8 @@ namespace leeyi45.acmun.Main_Screen
             }
             GSLTimeBar.Restart();
 
-            GSLCurrentSpeaker = Council.DelsByShortf[gslSelector.Speakers[index]];
-            gslSelector.RemoveSpeaker(index);
+            GSLCurrentSpeaker = Council.DelsByShortf[shortf];
+
             yielded = false;
         }
 

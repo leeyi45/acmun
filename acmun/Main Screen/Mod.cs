@@ -150,12 +150,14 @@ namespace leeyi45.acmun.Main_Screen
 
         private void ModNextSpeaker(int index)
         {
-            if(ModCurrentSpeaker != null) ModCurrentSpeaker.SpeakingTime.Add(ModSpeakTimeBar.ElapsedTime);
+            var shortf = modSelector.NextSpeaker(index);
+            if (shortf == null) return;
+
+            if (ModCurrentSpeaker != null) ModCurrentSpeaker.SpeakingTime.Add(ModSpeakTimeBar.ElapsedTime);
             ModSpeakTimeBar.Restart();
             ModTotalTimeBar.Start();
 
-            ModCurrentSpeaker = Council.DelsByShortf[modSelector.Speakers[index]];
-            modSelector.RemoveSpeaker(index);
+            ModCurrentSpeaker = Council.DelsByShortf[shortf];
 
             ModSpeakerIndex++;
             modCountryCountTextBox.Text = $"Speaker { ModSpeakerIndex } out of { ModSpeakerCount }";

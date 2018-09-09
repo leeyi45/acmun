@@ -57,7 +57,7 @@ namespace leeyi45.acmun.Main_Screen
 
             debateCountryLabel.Text = "";
 
-            IsFor = true;
+            DebateIsFor = true;
         }
 
         private int DebateSpeakCount;
@@ -76,7 +76,7 @@ namespace leeyi45.acmun.Main_Screen
             }
         }
 
-        private bool IsFor;
+        private bool DebateIsFor;
 
         private void debateTimeSelector_ValueChanged(object sender, EventArgs e)
         {
@@ -137,36 +137,17 @@ namespace leeyi45.acmun.Main_Screen
         {
             DebateTimeBar.Reset();
 
-            Delegation nextSpeaker;
+            var shortf = DebateIsFor ? debateFSelector.NextSpeaker() : debateASelector.NextSpeaker();
+            if (shortf == null) return;
 
-            if (IsFor)
-            {
-                if (debateFSelector.Speakers.Count == 0)
-                {
-                    IsFor = false;
-                    return;
-                }
+            debateForTextBox.Text = DebateIsFor ? "For" : "Against";
+            debateForTextBox.ForeColor = DebateIsFor ? System.Drawing.Color.Green : System.Drawing.Color.Red;
+            var nextSpeaker = Council.DelsByShortf[shortf];
 
-                nextSpeaker = Council.DelsByShortf[debateFSelector.Speakers[0]];
-                debateFSelector.RemoveSpeaker(0);
-                debateForTextBox.ForeColor = System.Drawing.Color.Green;
-                debateForTextBox.Text = "For";
-                IsFor = false;
-            }
-            else
-            {
-                if (debateASelector.Speakers.Count == 0)
-                {
-                    IsFor = true;
-                    return;
-                }
+            DebateIsFor = !DebateIsFor;
 
-                nextSpeaker = Council.DelsByShortf[debateASelector.Speakers[0]];
-                debateASelector.RemoveSpeaker(0);
-                debateForTextBox.ForeColor = System.Drawing.Color.Red;
-                debateForTextBox.Text = "Against";
-                IsFor = true;
-            }
+            if ((!DebateIsFor && debateFSelector.Speakers.Count == 0) || 
+                (DebateIsFor && debateASelector.Speakers.Count == 0)) return;
 
             if (DebateSpeaker != null) DebateSpeaker.SpeakingTime.Add(DebateTimeBar.ElapsedTime);
 
