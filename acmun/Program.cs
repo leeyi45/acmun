@@ -23,7 +23,10 @@ namespace leeyi45.acmun
                 { VoteState.Null, "" }
             };
 
-            Council.LoadCouncil("conf.xml", true);
+            if (!Council.LoadCouncil("conf.xml", true))
+            {
+                Council.LoadDefault();
+            }
             Instance = new Main_Screen.homescreen();
             Application.Run(Instance);
         }

@@ -33,6 +33,23 @@ namespace leeyi45.acmun
             motionsAsList = listData;
         }
 
+        public static void LoadDefault()
+        {
+            Instance = new Council()
+            {
+                CouncilName = "Null",
+                Delegations = { },
+                topics = new []{ "1", "2" },
+                Settings = SettingsHolder.Default,
+                motions = new Dictionary<string, MotionData>()
+                {
+                    { "unmod", new MotionData("test", "test", "unmod", 2, true, false, false) },
+                    { "mod", new MotionData("test", "test", "mod", 1, true, true, true) }
+                    //{ }
+                }
+            };
+        }
+
         [XmlElement(Order = 0)]
         [DefaultValue(null)]
         public string Version
@@ -93,7 +110,7 @@ namespace leeyi45.acmun
         }
 
         [XmlElement(Order = 3)]
-        public Settings Settings { get; set; } = new Settings();
+        public SettingsHolder Settings { get; set; } = new SettingsHolder();
 
         [XmlArray("Motions", Order = 4)]
         [XmlArrayItem("Motion")]
@@ -261,13 +278,13 @@ namespace leeyi45.acmun
         public static int CurrentTopic { get; set; } = 0;
         #endregion
 
-        public static void LoadCouncil(string path, bool exit = false)
+        public static bool LoadCouncil(string path, bool exit = false)
         {
             if (!File.Exists(path))
             {
-                MessageBox.Show("Failed to locate file at the specified location, please try again", "Error",
+                MessageBox.Show("Failed to locate file at the specified location while loading council, please try again", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                return false;
             }
 
             try
@@ -277,6 +294,8 @@ namespace leeyi45.acmun
                     var serializer = new XmlSerializer(typeof(Council));
                     Instance = (Council)serializer.Deserialize(stream);
                 }
+
+                return true;
             }
             catch (DataLoadException e)
             {
@@ -291,11 +310,12 @@ namespace leeyi45.acmun
 
                 if (exit) Application.Exit();
             }
+            return false;
         }
     }
 
     [Serializable]
-    public class Settings
+    public class SettingsHolder
     {
         public bool FiftyPlus1 { get; set; } = false;
 
@@ -382,6 +402,13 @@ namespace leeyi45.acmun
         public bool TrackDebate { get; set; } = false;
 
         public int DebateSpeakCount { get; set; } = 2;
+
+        public static SettingsHolder Default { get; internal set; }
+
+        static SettingsHolder()
+        {
+            Default = new SettingsHolder();
+        }
     }
 
     [Serializable]
