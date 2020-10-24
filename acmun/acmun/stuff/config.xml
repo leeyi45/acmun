@@ -1,0 +1,44 @@
+﻿<Council>
+  <!-- Council Configurations-->
+  <Name>United Nations General Assembly</Name>
+  
+  <!-- 
+  Configuration Option for majorities
+  0 - for regular, 1 - for majority + 1
+  
+  Any other value will indicate the exact number?
+  -->
+  <Majority>0</Majority>
+  <SuperMajority>0</SuperMajority>
+  
+  <AdminOptions>
+    <!-- Indicate true if you want the server to generate passwords for delegations
+    Indicate false, and you have to manually specify for each delegation
+    -->
+    <GeneratePasswords>true</GeneratePasswords>
+    <AdminAccounts>
+      <Account>
+        <Username>admin</Username>
+        <Password>admin</Password>
+      </Account>
+    </AdminAccounts>
+  </AdminOptions>
+  
+  <Delegations>
+    <!--
+  <Delegation>
+    <FullName>Full name for that delegation</FullName>
+    <ShortName>A shortened version of that name</ShortName>
+    <Veto>true or false indicating if that delegation has veto power</Veto>
+    <Observer>true or false indicating if delegation is an observer state</Observer>
+    <Passcode>Custom passcode</Passcode>
+  </Delegation>
+  -->
+    <Delegation>
+      <FullName>United States of America</FullName>
+      <ShortName>USA</ShortName>
+      <Veto>true</Veto>
+      <Observer>false</Observer>
+    </Delegation>
+  </Delegations>
+</Council>
