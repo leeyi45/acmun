@@ -8,6 +8,7 @@
   
   Any other value will indicate the exact number?
   -->
+  
   <Majority>0</Majority>
   <SuperMajority>0</SuperMajority>
   
@@ -26,14 +27,15 @@
   
   <Delegations>
     <!--
-  <Delegation>
-    <FullName>Full name for that delegation</FullName>
-    <ShortName>A shortened version of that name</ShortName>
-    <Veto>true or false indicating if that delegation has veto power</Veto>
-    <Observer>true or false indicating if delegation is an observer state</Observer>
-    <Passcode>Custom passcode</Passcode>
-  </Delegation>
-  -->
+    <Delegation>
+      <FullName>Full name for that delegation</FullName>
+      <ShortName>A shortened version of that name</ShortName>
+      <Veto>true or false indicating if that delegation has veto power</Veto>
+      <Observer>true or false indicating if delegation is an observer state</Observer>
+      <Passcode>Custom passcode</Passcode>
+    </Delegation>
+    -->
+    
     <Delegation>
       <FullName>United States of America</FullName>
       <ShortName>USA</ShortName>

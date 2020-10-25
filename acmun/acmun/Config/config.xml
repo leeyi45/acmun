@@ -1,0 +1,5 @@
+﻿<Config>
+  <Address>127.0.0.1</Address>
+  <Port>80</Port>
+  <WebRoot>E:\source\repos\acmun\acmun\acmun\WebRoot</WebRoot>
+</Config>

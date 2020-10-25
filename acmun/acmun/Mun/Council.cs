@@ -18,18 +18,10 @@ namespace acmun
         public Delegation[] Delegations { get; set; } = Delegation.GetDefault();
 
         static Council LoadCouncilFromFile(string path)
-        {
-            var serializer = new XmlSerializer(typeof(Council));
-            using var configFile = File.OpenRead(path);
-            return (Council)serializer.Deserialize(configFile);
-        }
+            => HelperMethods.DeserializeXMLFromFile<Council>(path);
 
-        static void WriteConfigToFile(Council council, string path)
-        {
-            var serializer = new XmlSerializer(typeof(Council));
-            using var configFile = File.OpenRead(path);
-            serializer.Serialize(configFile, council);
-        }
+        static void WriteConfigToFile(Council council, string path) 
+            => HelperMethods.SerializeToXMLFile(path, council);
     }
 
     [Serializable]

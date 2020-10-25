@@ -47,8 +47,13 @@ namespace acmun.TestHTTP
 
             try
             {
-                string line;
-                while ((line = reader.ReadLine()) != null) lines.Add(line);
+                while(true)
+                {
+                    string line = reader.ReadLine();
+
+                    if (string.IsNullOrWhiteSpace(line)) break;
+                    lines.Add(line);
+                }
             }
             catch (IOException) { }
 
